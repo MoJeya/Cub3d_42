@@ -6,7 +6,7 @@
 /*   By: mjeyavat <mjeyavat@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/02 17:50:21 by mjeyavat          #+#    #+#             */
-/*   Updated: 2022/05/02 21:32:30 by mjeyavat         ###   ########.fr       */
+/*   Updated: 2022/05/02 22:25:26 by mjeyavat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,7 +66,7 @@ int init_data_info(t_gen_info *info)
 	while (info->info_string[i] != NULL)
 	{
 		printf("%s", info->info_string[i]);
-		init_text_struct(info->info_string[i], info)
+		init_text_struct(info->info_string[i], info);
 		i++;
 	}
 	printf("\n%s\n", info->texture_SO_path);
