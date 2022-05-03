@@ -6,7 +6,7 @@
 /*   By: mjeyavat <mjeyavat@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/02 14:15:59 by mjeyavat          #+#    #+#             */
-/*   Updated: 2022/05/02 21:31:45 by mjeyavat         ###   ########.fr       */
+/*   Updated: 2022/05/03 14:45:20 by mjeyavat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define CUB3D_H
 
 # include "mlx/mlx.h"
+# include "libft/libft.h"
 # include <fcntl.h>
 # include <unistd.h>
 # include <stdio.h>
@@ -44,18 +45,21 @@ typedef struct s_player
 
 typedef struct s_gen_info
 {
-	t_player *player;
-	int		window_x;
-	int		window_y;
-	int		f_color_r;
-	int		f_color_g;
-	int		f_color_b;
-	char 	**map;
-	char	*texture_NO_path;
-	char	*texture_SO_path;
-	char	*texture_WE_path;
-	char	*texture_EA_path;
-	char	**info_string;
+	t_player 	*player;
+	int			window_x;
+	int			window_y;
+	char		*f_color_r;
+	char		*f_color_g;
+	char		*f_color_b;
+	char		*c_color_r;
+	char		*c_color_g;
+	char		*c_color_b;
+	char 		**map;
+	char		*texture_NO_path;
+	char		*texture_SO_path;
+	char		*texture_WE_path;
+	char		*texture_EA_path;
+	char		**info_string;
 }t_gen_info;
 
 typedef struct s_window_data
@@ -74,12 +78,9 @@ void creat_window(void);
 
 
 /********************STIRNG_TOOLS************************/
-int ft_strlen(char *str);
-char *ft_str_calloc(int size);
-char *ft_str_join(char **str1, char *str2, int size);
-char *ft_strdup(char *str);
 char *ft_strchr_nl(char *str);
 char *get_next_line(int fd);
+void split_values(char *str, t_gen_info *info);
 int strcomp(char *str1, const char *str2);
 
 int init_data_info(t_gen_info *info);

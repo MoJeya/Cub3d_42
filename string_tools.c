@@ -6,92 +6,24 @@
 /*   By: mjeyavat <mjeyavat@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/02 17:34:15 by mjeyavat          #+#    #+#             */
-/*   Updated: 2022/05/02 21:28:39 by mjeyavat         ###   ########.fr       */
+/*   Updated: 2022/05/03 14:57:44 by mjeyavat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 # include "cub3d.h"
 
-int ft_strlen(char *str)
+
+void free_str(char **str)
 {
 	int i;
 
-	i = 0;
-	while (*str)
-	{
-		i++;
-		str++;
-	}
-	return (i);
-}
-
-char *ft_str_calloc(int size)
-{
-	char *tmp;
-	int i;
-
-	i = 0;
-	tmp = malloc(size);
-	if (!tmp)
-		return (NULL);
-	while (i < size)
-		tmp[i++] = 0;
-	return (tmp);
-}
-
-char *ft_strchr_nl(char *str)
-{
-	while (*str != '\0')
-	{
-		if (*str == '\n')
-			return (str);
-		str++;
-	}
-	return (NULL);
-}
-
-char *ft_str_join(char **str1, char *str2, int size)
-{
-	int     i;
-	int     j;
-	char    *res_str;
-	
-	i = 0;
-	j = 0;
-	res_str = ft_str_calloc(ft_strlen((*str1) + 1 + size));
-	if (!res_str)
-		return (NULL);
-	while ((*str1)[i])
-	{
-		res_str[i] = (*str1)[i];
-		i++;
-	}
-	while (str2[j])
-	{
-		res_str[i + j] = str2[j];
-		j++;
-	}
-	res_str[i + j] = 0;
-	free(*str1);
-	return (res_str);
-}
-
-char *ft_strdup(char *str)
-{
-	char *newstr;
-	int i;
-	
-	newstr = ft_str_calloc(ft_strlen(str) + 1);
-	if (!newstr)
-		return (NULL);
 	i = 0;
 	while (str[i])
 	{
-		newstr[i] = str[i];
+		free(str[i]);
 		i++;
 	}
-	newstr[i] = 0;
-	return (newstr);
+	free(str);
 }
 
 int strcomp(char *str1, const char *str2)
@@ -114,5 +46,31 @@ int strcomp(char *str1, const char *str2)
 		}
 	}
 	return (0);
+}
 	
+void split_values(char *str, t_gen_info *info)
+{
+	int i;
+	int j;
+	char **tmp;
+	char **tmp2;
+
+	i = 0;
+	j = 0;
+	tmp = ft_split(str, ' ');
+	tmp2 = ft_split(tmp[1], ',');
+	if (strcomp(tmp[0], "F"))
+	{
+		info->f_color_r = ft_strdup(tmp2[0]);
+		info->f_color_g = ft_strdup(tmp2[1]);
+		info->f_color_b = ft_strdup(tmp2[2]);
+	}
+	else if (strcomp(tmp[0], "C"))
+	{
+		info->c_color_r = ft_strdup(tmp2[0]);
+		info->c_color_g = ft_strdup(tmp2[1]);
+		info->c_color_b = ft_strdup(tmp2[2]);
+	}
+	free_str(tmp);
+	free_str(tmp2);
 }
