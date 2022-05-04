@@ -6,7 +6,7 @@
 /*   By: mjeyavat <mjeyavat@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/02 17:50:21 by mjeyavat          #+#    #+#             */
-/*   Updated: 2022/05/04 15:40:13 by mjeyavat         ###   ########.fr       */
+/*   Updated: 2022/05/04 16:58:06 by mjeyavat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,7 +63,7 @@ int init_text_struct(char *str, t_gen_info *info)
 	return (0);
 }
 
-void pars_data_info(t_gen_info *info)
+int pars_data_info(t_gen_info *info)
 {
 	int i;
 	int j;
@@ -80,7 +80,12 @@ void pars_data_info(t_gen_info *info)
 			j++;
 		}	
 		i++;
-	}		
+	}
+	info->map_height = j - 1;
+	if (check_map_valid(info))
+		return (1);
+	printf("\033[31mMAP IS NOT VALID\033[0m\n");
+	return (0);
 }
 
 int init_data_info(t_gen_info *info)
@@ -104,6 +109,7 @@ int init_data_info(t_gen_info *info)
 	info->map = (char **)malloc(sizeof(char *) * 250);
 	if (!info->map)
 		return (0);
-	pars_data_info(info);
+	if (pars_data_info(info))
+		return (1);
 	return (0);
 }

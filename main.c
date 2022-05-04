@@ -6,7 +6,7 @@
 /*   By: mjeyavat <mjeyavat@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/02 14:58:50 by mjeyavat          #+#    #+#             */
-/*   Updated: 2022/05/04 15:50:23 by mjeyavat         ###   ########.fr       */
+/*   Updated: 2022/05/04 18:29:23 by mjeyavat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,11 +22,12 @@ void test_print(t_gen_info *info)
 	printf("F:\nred:%d\nyellow:%d\nblue:%d\n", info->floor.red, info->floor.yellow, info->floor.blue);
 	printf("C:\nred:%d\nyellow:%d\nblue:%d\n", info->celing.red, info->celing.yellow, info->celing.blue);
 	printf("MAP: \n");
+	// printf("%s", info->map[info->map_height - 1]);
 	
 	i = 0;
 	while(info->map[i] != NULL)
 	{
-		printf("%s", info->map[i]);
+	printf("%s", info->map[i]);
 		i++;
 	}
 }
@@ -34,8 +35,8 @@ void test_print(t_gen_info *info)
 int main(void)
 {
 	t_gen_info info;
-	init_data_info(&info);
-	test_print(&info);
+	if (init_data_info(&info))
+		test_print(&info);
 	// system("leaks cube3d");
 	return(0);
 }

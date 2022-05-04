@@ -6,7 +6,7 @@
 /*   By: mjeyavat <mjeyavat@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/02 14:15:59 by mjeyavat          #+#    #+#             */
-/*   Updated: 2022/05/04 15:51:25 by mjeyavat         ###   ########.fr       */
+/*   Updated: 2022/05/04 16:54:30 by mjeyavat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,8 +54,10 @@ typedef struct s_color
 typedef struct s_gen_info
 {
 	t_player 	*player;
-	int			window_x;
-	int			window_y;
+	int			map_x;
+	int			map_y;
+	int			map_height;
+	int			map_widht;
 	t_color		celing;
 	t_color		floor;
 	char 		**map;
@@ -75,17 +77,17 @@ typedef struct s_window_data
 	int endian;
 }t_window_data;
 
+/********************WINDOW_MLX***************************/
 void creat_window(void);
-
-
-
-
 
 /********************STIRNG_TOOLS************************/
 char *ft_strchr_nl(char *str);
-char *get_next_line(int fd);
 void split_values(char *str, t_gen_info *info);
 int strcomp(char *str1, const char *str2);
+/*****************READ_TOOLS****************************/
+char *get_next_line(int fd);
+int check_map_valid(t_gen_info *info);
+
 
 int init_data_info(t_gen_info *info);
 
