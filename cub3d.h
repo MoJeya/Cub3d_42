@@ -6,7 +6,7 @@
 /*   By: mjeyavat <mjeyavat@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/02 14:15:59 by mjeyavat          #+#    #+#             */
-/*   Updated: 2022/05/03 14:45:20 by mjeyavat         ###   ########.fr       */
+/*   Updated: 2022/05/04 15:51:25 by mjeyavat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,17 +43,21 @@ typedef struct s_player
 	int			dis_to_wall;
 }t_player;
 
+typedef struct s_color
+{
+	int red;
+	int yellow;
+	int blue;
+	
+}t_color;
+
 typedef struct s_gen_info
 {
 	t_player 	*player;
 	int			window_x;
 	int			window_y;
-	char		*f_color_r;
-	char		*f_color_g;
-	char		*f_color_b;
-	char		*c_color_r;
-	char		*c_color_g;
-	char		*c_color_b;
+	t_color		celing;
+	t_color		floor;
 	char 		**map;
 	char		*texture_NO_path;
 	char		*texture_SO_path;

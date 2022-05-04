@@ -6,7 +6,7 @@
 /*   By: mjeyavat <mjeyavat@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/02 17:34:15 by mjeyavat          #+#    #+#             */
-/*   Updated: 2022/05/03 14:57:44 by mjeyavat         ###   ########.fr       */
+/*   Updated: 2022/05/04 15:49:45 by mjeyavat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,15 +61,15 @@ void split_values(char *str, t_gen_info *info)
 	tmp2 = ft_split(tmp[1], ',');
 	if (strcomp(tmp[0], "F"))
 	{
-		info->f_color_r = ft_strdup(tmp2[0]);
-		info->f_color_g = ft_strdup(tmp2[1]);
-		info->f_color_b = ft_strdup(tmp2[2]);
+		info->floor.red = ft_atoi((const char *)tmp2[0]);
+		info->floor.yellow = ft_atoi((const char *)tmp2[1]);
+		info->floor.blue = ft_atoi((const char *)tmp2[2]);
 	}
 	else if (strcomp(tmp[0], "C"))
 	{
-		info->c_color_r = ft_strdup(tmp2[0]);
-		info->c_color_g = ft_strdup(tmp2[1]);
-		info->c_color_b = ft_strdup(tmp2[2]);
+		info->celing.red = ft_atoi((const char *)tmp2[0]);
+		info->celing.yellow = ft_atoi((const char *)tmp2[1]);
+		info->celing.blue = ft_atoi((const char *)tmp2[2]);
 	}
 	free_str(tmp);
 	free_str(tmp2);
