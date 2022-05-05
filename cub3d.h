@@ -6,7 +6,7 @@
 /*   By: mjeyavat <mjeyavat@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/02 14:15:59 by mjeyavat          #+#    #+#             */
-/*   Updated: 2022/05/04 16:54:30 by mjeyavat         ###   ########.fr       */
+/*   Updated: 2022/05/05 15:32:04 by mjeyavat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,7 @@ typedef struct s_player
 {
 	t_point		p_pos;
 	int			dis_to_wall;
+	char 		*looking;
 }t_player;
 
 typedef struct s_color

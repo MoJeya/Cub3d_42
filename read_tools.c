@@ -1,6 +1,24 @@
 #include "cub3d.h"
 
 # define BUFFER_SIZE 62
+//TODO: HERE!!!
+// int player_parser(char *str, int i, t_gen_info *info)
+// {
+// 	int i;
+
+// 	i = 0;
+// 	while ()
+// }
+
+int ft_strlen_nl(char *str)
+{
+	int len;
+
+	len = 0;
+	while (str[len] != '\0' && str[len] != 10)
+		len++;
+	return (len - 1);
+}
 
 int check_map_valid(t_gen_info *info)
 {
@@ -27,18 +45,19 @@ int check_map_valid(t_gen_info *info)
 		}
 		j++;
 	}
-	//TODO : HERE side checks have to be done!
+	j = 0;
 	while (info->map[i])
 	{
-		line_size = ft_strlen(info->map[i]) - 3;
-		printf("line: %s\nlast char: %c\nline size: %d\n", info->map[i], info->map[i][line_size], line_size);
+		line_size = ft_strlen_nl(info->map[i]);
 		if (info->map[i][0] != '1' && info->map[i][0] != ' ')
-			return (0);
+			j++;
 		if (info->map[i][line_size] != '1' && info->map[i][line_size] != ' ')
-			return (0);
+			j++;
 		i++;
 	}
-	return (1);
+	if (j == 0)
+		return (1);
+	return (0);
 }
 
 char	*get_next_line(int fd)

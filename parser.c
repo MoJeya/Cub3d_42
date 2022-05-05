@@ -6,7 +6,7 @@
 /*   By: mjeyavat <mjeyavat@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/02 17:50:21 by mjeyavat          #+#    #+#             */
-/*   Updated: 2022/05/04 16:58:06 by mjeyavat         ###   ########.fr       */
+/*   Updated: 2022/05/05 15:56:16 by mjeyavat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,6 +74,9 @@ int pars_data_info(t_gen_info *info)
 	{
 		init_text_struct(info->info_string[i], info);
 		parse_color_settings(info->info_string[i], info);
+		//TODO: Player DIRECTIO PARSER
+		// if (!player_parser(info->info_string[i], info))
+		// 	return (0);
 		if (map_parse_condition(info, i) == 1)
 		{
 			info->map[j] = ft_strdup(info->info_string[i]);
