@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   parser.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mjeyavat <mjeyavat@student.42.fr>          +#+  +:+       +#+        */
+/*   By: rschleic <rschleic@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/02 17:50:21 by mjeyavat          #+#    #+#             */
-/*   Updated: 2022/05/05 15:56:16 by mjeyavat         ###   ########.fr       */
+/*   Updated: 2022/05/06 12:32:05 by rschleic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,7 +81,12 @@ int pars_data_info(t_gen_info *info)
 		{
 			info->map[j] = ft_strdup(info->info_string[i]);
 			j++;
-		}	
+		}
+		//verstehe hier gerade noch nicht, warum wird ds doppelt gemacht?
+		//also 2 x stringarray?
+		//bzw was macht man mit char		**info_string;
+		//wieso hat man 2? vieleicht ist 	char		**info_string eine Rohversion?
+		//alle strdups merken, dass wir die nicht loosen später
 		i++;
 	}
 	info->map_height = j - 1;
@@ -99,6 +104,7 @@ int init_data_info(t_gen_info *info)
 	
 	fd = open("scene.cub", O_RDONLY);
 	info->info_string = (char **)malloc(sizeof(char *) * 250);
+	//warum * 250?
 	if (!info->info_string)
 		return (0);
 	i = 0;
@@ -110,6 +116,7 @@ int init_data_info(t_gen_info *info)
 	}
 	free(line);
 	info->map = (char **)malloc(sizeof(char *) * 250);
+	//warum * 250?
 	if (!info->map)
 		return (0);
 	if (pars_data_info(info))

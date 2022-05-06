@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mjeyavat <mjeyavat@student.42.fr>          +#+  +:+       +#+        */
+/*   By: rschleic <rschleic@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/02 14:58:50 by mjeyavat          #+#    #+#             */
-/*   Updated: 2022/05/04 18:29:23 by mjeyavat         ###   ########.fr       */
+/*   Updated: 2022/05/06 12:16:43 by rschleic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ void test_print(t_gen_info *info)
 	printf("PATH: %s\n", info->texture_WE_path);
 	printf("PATH: %s\n", info->texture_EA_path);
 	printf("F:\nred:%d\nyellow:%d\nblue:%d\n", info->floor.red, info->floor.yellow, info->floor.blue);
-	printf("C:\nred:%d\nyellow:%d\nblue:%d\n", info->celing.red, info->celing.yellow, info->celing.blue);
+	printf("C:\nred:%d\nyellow:%d\nblue:%d\n", info->ceiling.red, info->ceiling.yellow, info->ceiling.blue);
 	printf("MAP: \n");
 	// printf("%s", info->map[info->map_height - 1]);
 	

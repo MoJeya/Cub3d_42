@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   cub3d.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mjeyavat <mjeyavat@student.42.fr>          +#+  +:+       +#+        */
+/*   By: rschleic <rschleic@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/02 14:15:59 by mjeyavat          #+#    #+#             */
-/*   Updated: 2022/05/05 15:32:04 by mjeyavat         ###   ########.fr       */
+/*   Updated: 2022/05/06 12:12:53 by rschleic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,7 @@ typedef struct s_gen_info
 	int			map_y;
 	int			map_height;
 	int			map_widht;
-	t_color		celing;
+	t_color		ceiling;
 	t_color		floor;
 	char 		**map;
 	char		*texture_NO_path;
@@ -79,7 +79,7 @@ typedef struct s_window_data
 }t_window_data;
 
 /********************WINDOW_MLX***************************/
-void creat_window(void);
+void create_window(void);
 
 /********************STIRNG_TOOLS************************/
 char *ft_strchr_nl(char *str);

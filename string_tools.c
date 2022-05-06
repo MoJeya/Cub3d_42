@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   string_tools.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mjeyavat <mjeyavat@student.42.fr>          +#+  +:+       +#+        */
+/*   By: rschleic <rschleic@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/02 17:34:15 by mjeyavat          #+#    #+#             */
-/*   Updated: 2022/05/04 15:49:45 by mjeyavat         ###   ########.fr       */
+/*   Updated: 2022/05/06 12:14:06 by rschleic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,9 +67,9 @@ void split_values(char *str, t_gen_info *info)
 	}
 	else if (strcomp(tmp[0], "C"))
 	{
-		info->celing.red = ft_atoi((const char *)tmp2[0]);
-		info->celing.yellow = ft_atoi((const char *)tmp2[1]);
-		info->celing.blue = ft_atoi((const char *)tmp2[2]);
+		info->ceiling.red = ft_atoi((const char *)tmp2[0]);
+		info->ceiling.yellow = ft_atoi((const char *)tmp2[1]);
+		info->ceiling.blue = ft_atoi((const char *)tmp2[2]);
 	}
 	free_str(tmp);
 	free_str(tmp2);
