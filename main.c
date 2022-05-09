@@ -1,14 +1,3 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: rschleic <rschleic@student.42.fr>          +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/02 14:58:50 by mjeyavat          #+#    #+#             */
-/*   Updated: 2022/05/09 13:22:16 by rschleic         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
 
 #include "cub3d.h"
 
@@ -32,7 +21,7 @@ void test_print(t_gen_info *info)
 	}
 }
 
-int main(void)
+int main(int argc, char *argv[])
 {
 	t_gen_info info;
 	if (init_data_info(&info))
@@ -47,6 +36,7 @@ int main(void)
 		create_window();
 		//macht, dass die letzte Zeile nicht geprinted wird --- YYY?
 	}
+	// create_window();
 	// system("leaks cube3d");
 	return(0);
 }

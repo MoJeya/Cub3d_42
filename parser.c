@@ -1,14 +1,3 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   parser.c                                           :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: rschleic <rschleic@student.42.fr>          +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/02 17:50:21 by mjeyavat          #+#    #+#             */
-/*   Updated: 2022/05/09 14:51:56 by rschleic         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
 
 #include "cub3d.h"
 
@@ -85,9 +74,6 @@ int parse_data_info(t_gen_info *info)
 			error_free_exit("Error\nmalloc", info, -1);
 		}
 		parse_color_settings(info->info_string[i], info);
-		//TODO: Player DIRECTIO PARSER
-		// if (!player_parser(info->info_string[i], info))
-		// 	return (0);
 		if (map_parse_condition(info, i) == 1)
 		{
 			info->map[j] = ft_strdup(info->info_string[i]);
@@ -98,21 +84,39 @@ int parse_data_info(t_gen_info *info)
 		i++;
 	}
 	info->map_height = j - 1;
-	if (check_map_valid(info))
+	if (check_map_valid(info)
+		&& map_base_player_check(info))
 		return (1);
 	error_free_exit("\033[31mMAP IS NOT VALID\033[0m", info, -1);
 	return (0);
 }
 
-int init_data_info(t_gen_info *info)
+int init_data_info(t_gen_info *info, char *argv[], int argc)
 {
 	// int fd;
 	char *line;
 	int i;
 	
-	info->fd = open("scene.cub", O_RDONLY);
-	if (info->fd == -1)
-		error_exit("Error\nfiledescriptor", info);
+	if (argc == 1)
+	{
+		info->fd = open("scene.cub", O_RDONLY);
+    if (info->fd == -1)
+		  error_exit("Error\nfiledescriptor", info);
+	}
+	else if (argc == 2 && check_file_format(argv))
+	{
+		info->path = ft_strdup(argv[1]);
+		printf("%s\n", info->path);
+		info->fd = open(argv[1], O_RDONLY);
+    if (info->fd == -1)
+      error_exit("Error\nfiledescriptor", info);
+		return (0); // muss rausgenommen werden nur zum testen da
+	}
+	else if (argc == 2 && !check_file_format(argv))
+	{
+		error_exit("Error\nfile extension is wrong!\n", info);
+		return (0);
+	}
 	info->info_string = (char **)malloc(sizeof(char *) * 250);
 	//hier noch eine Lösung überlegen, wie man die Größe bestimmt
 	//eine simple zählfunktion, die lediglich die y-Achse der map zählt?

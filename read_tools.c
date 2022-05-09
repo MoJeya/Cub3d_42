@@ -1,14 +1,50 @@
 #include "cub3d.h"
 
 # define BUFFER_SIZE 62
-//TODO: HERE!!!
-// int player_parser(char *str, int i, t_gen_info *info)
-// {
-// 	int i;
 
-// 	i = 0;
-// 	while ()
-// }
+int check_file_format(char *argv[])
+{
+	int i;
+	// int j;
+	const char *tmp;
+	
+	i = 0;
+	tmp = ft_strchr(argv[1], '.');
+	printf("%s\n", tmp);
+	if (!ft_strncmp(tmp, ".cub", ft_strlen(".cub") + 1))
+	{
+		printf("%s\n", tmp);
+		return (1);
+	}
+	return (0);
+}
+
+int map_base_player_check(t_gen_info *info)
+{
+	int i;
+	int j;
+	
+	i = 0;
+	j = 0;
+	while (info->map[i])
+	{
+		j = 0;
+		while (info->map[i][j] != 10)
+		{
+			if (ft_isascii(info->map[i][j]))
+			{
+				// printf("map[%d][%d]: %c\n", i, j, info->map[i][j]);
+				if (ft_strchr("NOSW", info->map[i][j]))
+					return (1);
+				if (!ft_strchr("10 ", info->map[i][j]))
+					return (0);
+			}
+			j++;
+		}
+		i++;
+	}
+	return (1);
+}
 
 int ft_strlen_nl(char *str)
 {
@@ -27,6 +63,7 @@ int check_map_valid(t_gen_info *info)
 	int line_size;
 	i = 0;
 	j = 0;
+
 	if (ft_strlen(info->map[0]) > ft_strlen(info->map[info->map_height]))
 		line_size = ft_strlen(info->map[0]);
 	else

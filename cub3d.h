@@ -1,14 +1,3 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   cub3d.h                                            :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: rschleic <rschleic@student.42.fr>          +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/02 14:15:59 by mjeyavat          #+#    #+#             */
-/*   Updated: 2022/05/09 13:55:06 by rschleic         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
 
 #ifndef CUB3D_H
 # define CUB3D_H
@@ -63,6 +52,7 @@ typedef struct s_gen_info
 	int			fd;
 	t_color		ceiling;
 	t_color		floor;
+	char		*path;
 	char 		**map;
 	char		*texture_NO_path;
 	char		*texture_SO_path;
@@ -90,9 +80,11 @@ int strcomp(char *str1, const char *str2);
 /*****************READ_TOOLS****************************/
 char *get_next_line(int fd);
 int check_map_valid(t_gen_info *info);
+int map_base_player_check(t_gen_info *info);
+int check_file_format(char *argv[]);
+int init_data_info(t_gen_info *info, char *argv[], int argc);
 
 
-int init_data_info(t_gen_info *info);
 void create_window(void);
 
 /*****************ERROR****************************/
