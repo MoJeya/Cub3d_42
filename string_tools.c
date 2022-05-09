@@ -6,7 +6,7 @@
 /*   By: rschleic <rschleic@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/02 17:34:15 by mjeyavat          #+#    #+#             */
-/*   Updated: 2022/05/06 12:14:06 by rschleic         ###   ########.fr       */
+/*   Updated: 2022/05/09 15:12:38 by rschleic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,19 +58,28 @@ void split_values(char *str, t_gen_info *info)
 	i = 0;
 	j = 0;
 	tmp = ft_split(str, ' ');
+	if (tmp == NULL)
+		error_free_exit("ERROR\nsplit", info, -1);	
 	tmp2 = ft_split(tmp[1], ',');
+	if (tmp2 == NULL)
+	{
+		free(tmp);
+		error_free_exit("ERROR\nsplit", info, -1);
+	}
 	if (strcomp(tmp[0], "F"))
 	{
 		info->floor.red = ft_atoi((const char *)tmp2[0]);
 		info->floor.yellow = ft_atoi((const char *)tmp2[1]);
 		info->floor.blue = ft_atoi((const char *)tmp2[2]);
 	}
+	//hier noch auf richtige rgb werte protecten
 	else if (strcomp(tmp[0], "C"))
 	{
 		info->ceiling.red = ft_atoi((const char *)tmp2[0]);
 		info->ceiling.yellow = ft_atoi((const char *)tmp2[1]);
 		info->ceiling.blue = ft_atoi((const char *)tmp2[2]);
 	}
+	//hier noch auf richtige rgb werte protecten
 	free_str(tmp);
 	free_str(tmp2);
 }

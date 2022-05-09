@@ -6,7 +6,7 @@
 /*   By: rschleic <rschleic@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/02 14:58:50 by mjeyavat          #+#    #+#             */
-/*   Updated: 2022/05/09 10:44:22 by rschleic         ###   ########.fr       */
+/*   Updated: 2022/05/09 13:22:16 by rschleic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,14 +36,16 @@ int main(void)
 {
 	t_gen_info info;
 	if (init_data_info(&info))
-	//1)NSEW spieler position
-	//1.1) was wenn keien spieler position angegeben ist?
-	//2)jede zahl/buchstabe in der map durchgehen
-	//3)char *8argv abklären
-	//4) NO/SO/... fail dann exiten
+	//1.1) was wenn keine spieler position angegeben ist
+	//2.2)checken wir wirklich, dass der komplette rahmen aus 1en besteht?
+	//3)char **argv abklären - Your program must take as a first argument a scene description file with the .cub
+	//extension.
+	//4) NO(abc)/SO/... if fail, dann exiten
+	//5)es darf auch nur ein mal N/S/W/E vorkommen oder ?
 	{
 		test_print(&info);
 		create_window();
+		//macht, dass die letzte Zeile nicht geprinted wird --- YYY?
 	}
 	// system("leaks cube3d");
 	return(0);

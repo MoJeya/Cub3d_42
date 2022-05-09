@@ -6,7 +6,7 @@
 /*   By: rschleic <rschleic@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/02 14:15:59 by mjeyavat          #+#    #+#             */
-/*   Updated: 2022/05/09 09:42:17 by rschleic         ###   ########.fr       */
+/*   Updated: 2022/05/09 13:55:06 by rschleic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,8 @@
 # define KEY_D 2
 # define KEY_W 13
 # define KEY_ESC 53
-
+# define RIGHT 124
+# define DOWN 125
 
 
 typedef struct s_point
@@ -59,6 +60,7 @@ typedef struct s_gen_info
 	int			map_y;
 	int			map_height;
 	int			map_widht;
+	int			fd;
 	t_color		ceiling;
 	t_color		floor;
 	char 		**map;
@@ -92,5 +94,10 @@ int check_map_valid(t_gen_info *info);
 
 int init_data_info(t_gen_info *info);
 void create_window(void);
+
+/*****************ERROR****************************/
+void    error_exit(char *str, t_gen_info *info);
+void    error_free_exit(char *str, t_gen_info *info, int i);
+
 
 #endif
