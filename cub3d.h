@@ -21,6 +21,12 @@
 # define RIGHT 124
 # define DOWN 125
 
+typedef enum free_code{
+	INFO_STRING,
+	TEXTURE_PATH,
+	F_C,
+	INFO_MAP,
+}	t_free_code;
 
 typedef struct s_point
 {
