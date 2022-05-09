@@ -9,6 +9,7 @@
 # include <stdio.h>
 # include <stdlib.h>
 # include <math.h>
+# include <stdbool.h>
 
 # define WINDOW_X 850
 # define WINDOW_Y 850
@@ -77,11 +78,13 @@ void create_window(void);
 char *ft_strchr_nl(char *str);
 void split_values(char *str, t_gen_info *info);
 int strcomp(char *str1, const char *str2);
+int	sides_check(t_gen_info *info);
+int	top_bottom_check(t_gen_info *info, int j);
 /*****************READ_TOOLS****************************/
 char *get_next_line(int fd);
 int check_map_valid(t_gen_info *info);
 int map_base_player_check(t_gen_info *info);
-int check_file_format(char *argv[]);
+int check_file_format(char *path);
 int init_data_info(t_gen_info *info, char *argv[], int argc);
 
 
