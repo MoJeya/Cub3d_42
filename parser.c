@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   parser.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rschleic <rschleic@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mjeyavat <mjeyavat@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/02 17:50:21 by mjeyavat          #+#    #+#             */
-/*   Updated: 2022/05/06 12:32:05 by rschleic         ###   ########.fr       */
+/*   Updated: 2022/05/09 14:46:40 by mjeyavat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,9 +74,6 @@ int pars_data_info(t_gen_info *info)
 	{
 		init_text_struct(info->info_string[i], info);
 		parse_color_settings(info->info_string[i], info);
-		//TODO: Player DIRECTIO PARSER
-		// if (!player_parser(info->info_string[i], info))
-		// 	return (0);
 		if (map_parse_condition(info, i) == 1)
 		{
 			info->map[j] = ft_strdup(info->info_string[i]);
@@ -90,19 +87,37 @@ int pars_data_info(t_gen_info *info)
 		i++;
 	}
 	info->map_height = j - 1;
-	if (check_map_valid(info))
+	if (check_map_valid(info)
+		&& map_base_player_check(info))
 		return (1);
 	printf("\033[31mMAP IS NOT VALID\033[0m\n");
 	return (0);
 }
 
-int init_data_info(t_gen_info *info)
+int init_data_info(t_gen_info *info, char *argv[], int argc)
 {
 	int fd;
 	char *line;
 	int i;
 	
-	fd = open("scene.cub", O_RDONLY);
+	if (argc == 1)
+	{
+		fd = open("scene.cub", O_RDONLY);
+	}
+	else if (argc == 2 && check_file_format(argv))
+	{
+		info->path = ft_strdup(argv[1]);
+		printf("%s\n", info->path);
+		fd = open(argv[1], O_RDONLY);
+		return (0); // muss rausgenommen werden nur zum testen da
+	}
+	else if (argc == 2 && !check_file_format(argv))
+	{
+		printf("file extension is wrong!\n");
+		return (0);
+	}
+
+	// if (argc == 2)
 	info->info_string = (char **)malloc(sizeof(char *) * 250);
 	//warum * 250?
 	if (!info->info_string)
@@ -115,8 +130,7 @@ int init_data_info(t_gen_info *info)
 		free(line);
 	}
 	free(line);
-	info->map = (char **)malloc(sizeof(char *) * 250);
-	//warum * 250?
+	info->map = (char **)malloc(sizeof(char *) * 250);//warum * 250?
 	if (!info->map)
 		return (0);
 	if (pars_data_info(info))

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   cub3d.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rschleic <rschleic@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mjeyavat <mjeyavat@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/02 14:15:59 by mjeyavat          #+#    #+#             */
-/*   Updated: 2022/05/09 09:42:17 by rschleic         ###   ########.fr       */
+/*   Updated: 2022/05/09 14:39:00 by mjeyavat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,6 +61,7 @@ typedef struct s_gen_info
 	int			map_widht;
 	t_color		ceiling;
 	t_color		floor;
+	char		*path;
 	char 		**map;
 	char		*texture_NO_path;
 	char		*texture_SO_path;
@@ -88,9 +89,12 @@ int strcomp(char *str1, const char *str2);
 /*****************READ_TOOLS****************************/
 char *get_next_line(int fd);
 int check_map_valid(t_gen_info *info);
+int player_parser(t_gen_info *info);
+int map_base_player_check(t_gen_info *info);
+int check_file_format(char *argv[]);
+int init_data_info(t_gen_info *info, char *argv[], int argc);
 
 
-int init_data_info(t_gen_info *info);
 void create_window(void);
 
 #endif
