@@ -6,7 +6,7 @@
 #    By: rschleic <rschleic@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/02 14:12:49 by mjeyavat          #+#    #+#              #
-#    Updated: 2022/05/09 10:35:49 by rschleic         ###   ########.fr        #
+#    Updated: 2022/05/09 13:55:48 by rschleic         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,7 @@ CC = gcc
 
 CFLAGS = -Wall -Wextra -Werror -g
 
-SRC = main.c window.c parser.c read_tools.c string_tools.c\
+SRC = main.c window.c parser.c read_tools.c string_tools.c error_messages.c\
 
 OBJ = $(SRC:.c=.o);
 

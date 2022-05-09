@@ -82,7 +82,6 @@ int check_map_valid(t_gen_info *info)
 		}
 		j++;
 	}
-	//ist hier dabei, dass auch ganz viele leere stellen drin sein dürfen?
 	j = 0;
 	while (info->map[i])
 	{
@@ -97,8 +96,7 @@ int check_map_valid(t_gen_info *info)
 		return (1);
 	return (0);
 }
-//wie hat mo das gemacht, dass gecheckt wird ob der komplette rand aus 1en besteht?
-//alle stellen abgehen
+//durch jeden Buchstaben einzeln durchgehen und auch leere Stellen erlauben
 
 char	*get_next_line(int fd)
 {

@@ -1,2 +1,10 @@
 projected perpendicular to the plane
 >was heisst das?
+
+soll die wand nach allen seiten hin andere farben haben oder vom spieler aus gesehen in jede richtung andere farben?
+
+wie soll man das window minimizen konnen und was ist damit genau gemeint?
+
+wie haben andere die spaces gehandelt?
+->florian/ersin fragen 
+

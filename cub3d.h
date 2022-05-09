@@ -1,14 +1,3 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   cub3d.h                                            :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: mjeyavat <mjeyavat@student.42.fr>          +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/02 14:15:59 by mjeyavat          #+#    #+#             */
-/*   Updated: 2022/05/09 14:39:00 by mjeyavat         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
 
 #ifndef CUB3D_H
 # define CUB3D_H
@@ -28,7 +17,8 @@
 # define KEY_D 2
 # define KEY_W 13
 # define KEY_ESC 53
-
+# define RIGHT 124
+# define DOWN 125
 
 
 typedef struct s_point
@@ -59,6 +49,7 @@ typedef struct s_gen_info
 	int			map_y;
 	int			map_height;
 	int			map_widht;
+	int			fd;
 	t_color		ceiling;
 	t_color		floor;
 	char		*path;
@@ -89,12 +80,16 @@ int strcomp(char *str1, const char *str2);
 /*****************READ_TOOLS****************************/
 char *get_next_line(int fd);
 int check_map_valid(t_gen_info *info);
-int player_parser(t_gen_info *info);
 int map_base_player_check(t_gen_info *info);
 int check_file_format(char *argv[]);
 int init_data_info(t_gen_info *info, char *argv[], int argc);
 
 
 void create_window(void);
+
+/*****************ERROR****************************/
+void    error_exit(char *str, t_gen_info *info);
+void    error_free_exit(char *str, t_gen_info *info, int i);
+
 
 #endif
