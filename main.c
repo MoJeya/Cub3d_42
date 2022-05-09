@@ -6,7 +6,7 @@
 /*   By: rschleic <rschleic@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/02 14:58:50 by mjeyavat          #+#    #+#             */
-/*   Updated: 2022/05/06 12:16:43 by rschleic         ###   ########.fr       */
+/*   Updated: 2022/05/09 10:44:22 by rschleic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,15 @@ int main(void)
 {
 	t_gen_info info;
 	if (init_data_info(&info))
+	//1)NSEW spieler position
+	//1.1) was wenn keien spieler position angegeben ist?
+	//2)jede zahl/buchstabe in der map durchgehen
+	//3)char *8argv abklären
+	//4) NO/SO/... fail dann exiten
+	{
 		test_print(&info);
+		create_window();
+	}
 	// system("leaks cube3d");
 	return(0);
 }

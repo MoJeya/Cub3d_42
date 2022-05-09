@@ -6,7 +6,7 @@
 /*   By: rschleic <rschleic@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/02 14:15:59 by mjeyavat          #+#    #+#             */
-/*   Updated: 2022/05/06 12:12:53 by rschleic         ###   ########.fr       */
+/*   Updated: 2022/05/09 09:42:17 by rschleic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,5 +91,6 @@ int check_map_valid(t_gen_info *info);
 
 
 int init_data_info(t_gen_info *info);
+void create_window(void);
 
 #endif

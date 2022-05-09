@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   window.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mjeyavat <mjeyavat@student.42.fr>          +#+  +:+       +#+        */
+/*   By: rschleic <rschleic@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/02 14:42:57 by mjeyavat          #+#    #+#             */
-/*   Updated: 2022/05/02 15:10:54 by mjeyavat         ###   ########.fr       */
+/*   Updated: 2022/05/09 09:42:35 by rschleic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3d.h"
 
-void creat_window(void)
+void create_window(void)
 {
     void *mlx;
     void *mlx_win;

@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: mjeyavat <mjeyavat@student.42.fr>          +#+  +:+       +#+         #
+#    By: rschleic <rschleic@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/02 14:12:49 by mjeyavat          #+#    #+#              #
-#    Updated: 2022/05/03 14:08:33 by mjeyavat         ###   ########.fr        #
+#    Updated: 2022/05/09 10:35:49 by rschleic         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -27,8 +27,8 @@ all: linked_objects $(NAME)
 $(NAME): $(OBJ)
 	$(CC) $(SRC) -Llibft -lft -Lmlx -lmlx -framework OpenGL -framework AppKit mlx/libmlx.a -o $(NAME)
 
-objects:
-	$(CC) $(CFLAGS) $(OBJ) $(LINKED_OBJ)
+# objects:
+# 	$(CC) $(CFLAGS) $(OBJ) $(LINKED_OBJ)
 
 linked_objects:
 	make -C ./libft
