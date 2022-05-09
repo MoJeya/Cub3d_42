@@ -24,7 +24,7 @@ void test_print(t_gen_info *info)
 int main(int argc, char *argv[])
 {
 	t_gen_info info;
-	if (init_data_info(&info))
+	if (init_data_info(&info, argv, argc))
 	//1.1) was wenn keine spieler position angegeben ist
 	//2.2)checken wir wirklich, dass der komplette rahmen aus 1en besteht?
 	//3)char **argv abklären - Your program must take as a first argument a scene description file with the .cub
