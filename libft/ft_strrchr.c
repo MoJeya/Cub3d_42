@@ -3,27 +3,27 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mjeyavat <mjeyavat@student.42.fr>          +#+  +:+       +#+        */
+/*   By: rschleic <rschleic@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/07/14 15:40:25 by mjeyavat          #+#    #+#             */
-/*   Updated: 2021/07/15 12:38:06 by mjeyavat         ###   ########.fr       */
+/*   Created: 2021/06/25 15:00:29 by rschleic          #+#    #+#             */
+/*   Updated: 2021/07/27 18:42:38 by rschleic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include"libft.h"
 
 char	*ft_strrchr(const char *s, int c)
 {
-	int	cnt;
+	int	counter;
 
-	cnt = 0;
-	while (s[cnt] != '\0')
-		cnt++;
-	while (cnt >= 0)
-	{
-		if (s[cnt] == (char)c)
-			return ((char *)(s + cnt));
-		cnt--;
-	}
-	return (0);
+	counter = 0;
+	while (s[counter] != '\0')
+		counter++;
+	if (s[counter] == (char)c)
+		return ((char *)&s[counter]);
+	while (s[counter] != (char)c && counter > 0)
+		counter--;
+	if (s[counter] == (char)c)
+		return ((char *)&s[counter]);
+	return (NULL);
 }

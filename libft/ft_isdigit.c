@@ -1,20 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isdigit.c                                       :+:      :+:    :+:   */
+/*   isdigit.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mjeyavat <mjeyavat@student.42.fr>          +#+  +:+       +#+        */
+/*   By: rschleic <rschleic@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/06/23 14:42:20 by mjeyavat          #+#    #+#             */
-/*   Updated: 2021/07/13 17:00:45 by mjeyavat         ###   ########.fr       */
+/*   Created: 2021/06/24 16:45:37 by rschleic          #+#    #+#             */
+/*   Updated: 2021/07/07 12:01:44 by rschleic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include"libft.h"
 
 int	ft_isdigit(int c)
 {
-	if ((c >= '0') && (c <= '9'))
+	if (c > 47 && c < 58)
 		return (1);
 	else
 		return (0);

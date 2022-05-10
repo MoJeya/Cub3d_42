@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lstdelone.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mjeyavat <mjeyavat@student.42.fr>          +#+  +:+       +#+        */
+/*   By: rschleic <rschleic@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/07/08 18:57:11 by mjeyavat          #+#    #+#             */
-/*   Updated: 2021/07/13 18:48:46 by mjeyavat         ###   ########.fr       */
+/*   Created: 2021/07/24 16:26:04 by rschleic          #+#    #+#             */
+/*   Updated: 2021/07/24 16:55:26 by rschleic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include"libft.h"
 
-void	ft_lstdelone(t_list *lst, void (*del)(void *))
+void	ft_lstdelone(t_list *lst, void (*del)(void	*))
 {
 	del(lst->content);
 	free(lst);

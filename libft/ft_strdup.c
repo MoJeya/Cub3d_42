@@ -3,32 +3,24 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mjeyavat <mjeyavat@student.42.fr>          +#+  +:+       +#+        */
+/*   By: rschleic <rschleic@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/06/28 15:14:41 by mjeyavat          #+#    #+#             */
-/*   Updated: 2022/05/09 14:42:24 by mjeyavat         ###   ########.fr       */
+/*   Created: 2021/07/08 18:16:25 by rschleic          #+#    #+#             */
+/*   Updated: 2021/07/18 20:40:11 by rschleic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-#include <stdio.h>
-char *ft_strdup(char *s1)
+#include"libft.h"
+
+char	*ft_strdup(const char *s1)
 {
-	char *newstr;
-	int i;
-	
-	newstr = ft_calloc(ft_strlen(s1) + 1);
-	if (!newstr)
+	size_t	len;
+	char	*ptr;
+
+	len = ft_strlen(s1) + 1;
+	ptr = malloc(len * sizeof(char));
+	if (ptr == NULL)
 		return (NULL);
-	printf("here!\n");
-	i = 0;
-	while (s1[i])
-	{
-		printf("%c\n", s1[i]);
-		newstr[i] = s1[i];
-		i++;
-	}
-	newstr[i] = 0;
-	printf("%s\n", newstr);
-	return (newstr);
+	ft_strlcpy(ptr, s1, len);
+	return (ptr);
 }

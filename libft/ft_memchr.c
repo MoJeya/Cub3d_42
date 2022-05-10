@@ -1,35 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memchr.c                                        :+:      :+:    :+:   */
+/*   memchr.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mjeyavat <mjeyavat@student.42.fr>          +#+  +:+       +#+        */
+/*   By: rschleic <rschleic@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/06/17 15:09:40 by mjeyavat          #+#    #+#             */
-/*   Updated: 2021/07/12 16:18:31 by mjeyavat         ###   ########.fr       */
+/*   Created: 2021/06/18 20:22:01 by rschleic          #+#    #+#             */
+/*   Updated: 2021/07/07 12:24:55 by rschleic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include"libft.h"
 
 void	*ft_memchr(const void *s, int c, size_t n)
 {
-	unsigned long	cnt;
-	unsigned char	*src;
-	unsigned char	ch;
+	size_t	counter;
 
-	src = (unsigned char *)s;
-	ch = (char)c;
-	cnt = 0;
-	while (n)
+	counter = 0;
+	while (counter < n && ((unsigned char *)s)[counter] != ((unsigned char) c))
 	{
-		if (*src == ch)
-			break ;
-		src++;
-		--n;
+		counter++;
 	}
-	if (n != 0)
-		return (src);
-	else
+	if (counter == n)
+	{
 		return (NULL);
+	}
+	return (((void *)(s + counter)));
 }

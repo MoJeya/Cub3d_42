@@ -69,74 +69,62 @@ int parse_data_info(t_gen_info *info)
 	//evtl while (info->info_string[i][0] != '\0')?
 	{
 		if(init_text_struct(info->info_string[i], info))
-		{
-			//bis hier hin alle info strings und double pointer
-			//und texture paths
 			error_free_exit("Error\nmalloc", info, TEXTURE_PATH);
-		}
 		parse_color_settings(info->info_string[i], info);
 		if (map_parse_condition(info, i) == 1)
 		{
 			info->map[j] = ft_strdup(info->info_string[i]);
 			if (!info->map[j])
-			//alle info->maps bis dahin
-			//bis hier hin alle info strings und double pointer
-			//und texture paths
-			//F C werte
 				error_free_exit("Error\nmalloc", info, INFO_MAP);	
 			j++;
 		}
 		i++;
 	}
 	info->map_height = j - 1;
-	if (check_map_valid(info)
-		&& map_base_player_check(info))
+	if (check_map_valid(info) && map_base_player_check(info))
 		return (1);
-	//alle info->maps bis dahin
-	//bis hier hin alle info strings und double pointer
-	//und texture paths
-	//F C werte
 	error_free_exit("\033[31mMAP IS NOT VALID\033[0m", info, INFO_MAP);
 	return (0);
 }
 
 int init_data_info(t_gen_info *info, char *argv[], int argc)
 {
-	// int fd;
 	char *line;
 	int i;
 	
 	if (argc == 1)
 	{
 		info->fd = open("scene.cub", O_RDONLY);
-    if (info->fd == -1)
-		  error_exit("Error\nfiledescriptor", info);
+    	if (info->fd == -1)
+			error_exit("Error\nfiledescriptor", info);
 	}
 	else if (argc == 2 && check_file_format(argv))
 	{
 		info->path = ft_strdup(argv[1]);
 		printf("%s\n", info->path);
 		info->fd = open(argv[1], O_RDONLY);
-    if (info->fd == -1)
-      error_exit("Error\nfiledescriptor", info);
-		return (0); // muss rausgenommen werden nur zum testen da
+    	if (info->fd == -1)
+     		error_exit("Error\nfiledescriptor", info);
 	}
+	//den Block in eine eigene function
 	else if (argc == 2 && !check_file_format(argv))
-		error_exit("Error\nfile extension is wrong!\n", info);
+		error_exit("Error\nfile extension is wrong!", info);
 	info->info_string = (char **)malloc(sizeof(char *) * 250);
 	//hier noch eine Lösung überlegen, wie man die Größe bestimmt
 	//eine simple zählfunktion, die lediglich die y-Achse der map zählt?
 	if (!info->info_string)
 		error_exit("Error\nmalloc", info);
+		//mit ft_aclloc wird das hier unnotig... aber dann fehlt fd
 	i = 0;
 	while ((line = get_next_line(info->fd)))
+	//kann man so ein while statement schreiben ???
 	//was passiert wenn gnl failed?
 	{
 		info->info_string[i] = ft_strdup(line);
 		if(!info->info_string[i])
 			error_free_exit("Error\nmalloc",info, INFO_STRING);
 			//oder simple variante und nur error_exit?
-			//bis heir hin [i] info strings &&double pointer
+			//wenn wir mein ft_calloc hernehmen dann wird da schon ne message geprinted
 		i++;
 		free(line);
 	}
@@ -146,7 +134,6 @@ int init_data_info(t_gen_info *info, char *argv[], int argc)
 	//eine simple zählfunktion, die lediglich die y-Achse der map zählt?
 	if (!info->map)
 		error_free_exit("Error\nmalloc",info, INFO_STRING);
-		//bis hier hin alle info strings und double pointer
 	if (parse_data_info(info))
 		return (1);
 	return (0);

@@ -6,7 +6,7 @@
 /*   By: rschleic <rschleic@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/02 17:34:15 by mjeyavat          #+#    #+#             */
-/*   Updated: 2022/05/09 16:49:14 by rschleic         ###   ########.fr       */
+/*   Updated: 2022/05/10 09:50:02 by rschleic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,18 +59,12 @@ void split_values(char *str, t_gen_info *info)
 	j = 0;
 	tmp = ft_split(str, ' ');
 	if (tmp == NULL)
-		//bis hier hin alle info strings und double pointer
-		//und texture paths
-		//und evtl F || C werte
-		error_free_exit("ERROR\nsplit", info, FC);	
+		error_free_exit("ERROR\nsplit", info, TEXTURE_PATH);	
 	tmp2 = ft_split(tmp[1], ',');
 	if (tmp2 == NULL)
 	{
-		//bis hier hin alle info strings und double pointer
-		//und texture paths
-		//und evtl F || C werte
 		free(tmp);
-		error_free_exit("ERROR\nsplit", info, FC);
+		error_free_exit("ERROR\nsplit", info, TEXTURE_PATH);
 	}
 	if (strcomp(tmp[0], "F"))
 	{

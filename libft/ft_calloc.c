@@ -3,25 +3,32 @@
 /*                                                        :::      ::::::::   */
 /*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mjeyavat <mjeyavat@student.42.fr>          +#+  +:+       +#+        */
+/*   By: rschleic <rschleic@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/06/28 15:09:23 by mjeyavat          #+#    #+#             */
-/*   Updated: 2022/05/03 13:59:47 by mjeyavat         ###   ########.fr       */
+/*   Created: 2021/07/05 18:45:48 by rschleic          #+#    #+#             */
+/*   Updated: 2022/05/10 09:37:48 by rschleic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include"libft.h"
+#include <stdlib.h>
 
-void *ft_calloc(int size)
+void	*ft_calloc(size_t count, size_t size)
 {
-	char *tmp;
-	int i;
+	size_t	counter;
+	void	*ptr;
 
-	i = 0;
-	tmp = malloc(size);
-	if (!tmp)
-		return (NULL);
-	while (i < size)
-		tmp[i++] = 0;
-	return (tmp);
+	counter = 0;
+	ptr = malloc(count * size);
+	if (ptr == NULL)
+	{
+		ft_putendl_fd("ERROR\n: malloc failed", 2);
+		exit(1);
+	}
+	while (counter < count * size)
+	{
+		((char *)ptr)[counter] = 0;
+		counter++;
+	}
+	return (ptr);
 }

@@ -1,20 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isprint.c                                       :+:      :+:    :+:   */
+/*   isprint.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mjeyavat <mjeyavat@student.42.fr>          +#+  +:+       +#+        */
+/*   By: rschleic <rschleic@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/06/23 15:56:20 by mjeyavat          #+#    #+#             */
-/*   Updated: 2021/07/13 17:04:05 by mjeyavat         ###   ########.fr       */
+/*   Created: 2021/06/24 17:27:23 by rschleic          #+#    #+#             */
+/*   Updated: 2021/07/07 12:02:28 by rschleic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include"libft.h"
 
 int	ft_isprint(int c)
 {
-	if ((c >= 32) && (c <= 126))
+	if (c >= 32 && c <= 126)
 		return (1);
 	else
 		return (0);
