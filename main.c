@@ -23,6 +23,7 @@ void test_print(t_gen_info *info)
 int main(int argc, char *argv[])
 {
 	t_gen_info info;
+	// t_window_data data;
 	if (init_data_info(&info, argv, argc))
 	//1.1) was wenn keine spieler position angegeben ist
 	//2.2)checken wir wirklich, dass der komplette rahmen aus 1en besteht?
@@ -32,9 +33,9 @@ int main(int argc, char *argv[])
 	//5)es darf auch nur ein mal N/S/W/E vorkommen oder ?
 	{
 		test_print(&info);
-		create_window();
 		//macht, dass die letzte Zeile nicht geprinted wird --- YYY?
 	}
+	create_window();
 	// create_window();
 	// system("leaks cube3d");
 	return(0);

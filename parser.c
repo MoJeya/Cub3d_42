@@ -18,15 +18,17 @@ int	parse_color_settings(char *str, t_gen_info *info)
 {
 	if (!ft_strncmp(str, "F ", ft_strlen("F ")))
 	{
-		split_values(str, info);
+		if (!split_values(str, info))
+			return (0);
 		return (1);
 	}
 	else if (!ft_strncmp(str, "C ", ft_strlen("C ")))
 	{
-		split_values(str, info);
+		if (!split_values(str, info))
+			return (0);
 		return (1);
 	}
-	return (0);
+	return (1);
 }
 
 int	init_text_struct(char *str, t_gen_info *info)
@@ -74,7 +76,8 @@ int	parse_data_info(t_gen_info *info)
 			//und texture paths
 			error_free_exit("Error\nmalloc", info, TEXTURE_PATH);
 		}
-		parse_color_settings(info->info_string[i], info);
+		if (!parse_color_settings(info->info_string[i], info))
+			return (0);
 		if (map_parse_condition(info, i) == 1)
 		{
 			info->map[j] = ft_strdup(info->info_string[i]);

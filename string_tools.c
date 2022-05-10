@@ -1,6 +1,44 @@
 
 #include "cub3d.h"
 
+int check_color_val(const char **str)
+{
+	int	tmp_num;
+	int	i;
+	int	j;
+
+	i = 0;
+	tmp_num = 0;
+	while (str[i])
+	{
+		tmp_num = ft_atoi(str[i]);
+		// printf("num: %d\nstr: %s\n", tmp_num, tmp_str[i]);
+		j = 0;
+		if (tmp_num < 0)
+		{
+			perror("NO NEGATIVE VALUES ALLOWED!\n");
+			return (0);
+		}
+		while (str[i][j] != 10 && str[i][j] != '\0')
+		{
+			// printf("digit: %c\n", tmp_str[i][j]);
+			if (ft_isdigit(str[i][j]) == 0)
+			{
+				printf("ERROR: NOT A NUMBER\n");
+				return (0);
+			}
+			j++;
+		}
+		i++;
+	}
+	if (i != 3)
+	{
+		printf("ERROR: NOT ENOUGH VALUES\n");
+		return (0);
+	}
+	return (1);
+}
+
 int	ft_strlen_nl(char *str)
 {
 	int	len;
@@ -78,7 +116,7 @@ int	strcomp(char *str1, const char *str2)
 	return (0);
 }
 
-void	split_values(char *str, t_gen_info *info)
+int	split_values(char *str, t_gen_info *info)
 {
 	int		i;
 	int		j;
@@ -89,21 +127,18 @@ void	split_values(char *str, t_gen_info *info)
 	j = 0;
 	tmp = ft_split(str, ' ');
 	if (tmp == NULL)
-		//bis hier hin alle info strings und double pointer
-		//und texture paths
-		//und evtl F || C werte
-		error_free_exit("ERROR\nsplit", info, FC);	
+		return (0);
 	tmp2 = ft_split(tmp[1], ',');
 	if (tmp2 == NULL)
-	{
-		//bis hier hin alle info strings und double pointer
-		//und texture paths
-		//und evtl F || C werte
 		free(tmp);
-		error_free_exit("ERROR\nsplit", info, FC);
-	}
 	if (strcomp(tmp[0], "F"))
 	{
+		if (check_color_val((const char **)tmp2) == 0)
+		{
+			free_str(tmp);
+			free_str(tmp2);
+			return (0);
+		}
 		info->floor.red = ft_atoi((const char *)tmp2[0]);
 		info->floor.yellow = ft_atoi((const char *)tmp2[1]);
 		info->floor.blue = ft_atoi((const char *)tmp2[2]);
@@ -111,11 +146,19 @@ void	split_values(char *str, t_gen_info *info)
 	//hier noch auf richtige rgb werte protecten
 	else if (strcomp(tmp[0], "C"))
 	{
+		if (check_color_val((const char **)tmp2) == 0)
+		{
+			free_str(tmp);
+			free_str(tmp2);
+			return (0);
+		}
 		info->ceiling.red = ft_atoi((const char *)tmp2[0]);
 		info->ceiling.yellow = ft_atoi((const char *)tmp2[1]);
 		info->ceiling.blue = ft_atoi((const char *)tmp2[2]);
 	}
+
 	//hier noch auf richtige rgb werte protecten
 	free_str(tmp);
 	free_str(tmp2);
+	return (1);
 }
