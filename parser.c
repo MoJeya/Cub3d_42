@@ -14,19 +14,21 @@ int map_parse_condition(t_gen_info *info, int i)
 //hier könte man die 0 gleich weg lassen?
 //da am Anfnag ja nur leer oder 1 sein darf?
 
-int parse_color_settings(char *str, t_gen_info *info)
+int	parse_color_settings(char *str, t_gen_info *info)
 {
 	if (!ft_strncmp(str, "F ", ft_strlen("F ")))
 	{
-		split_values(str, info);
+		if (!split_values(str, info))
+			return (0);
 		return (1);
 	}
 	else if (!ft_strncmp(str, "C ", ft_strlen("C ")))
 	{
-		split_values(str, info);
+		if (!split_values(str, info))
+			return (0);
 		return (1);
 	}
-	return (0);
+	return (1);
 }
 /*TODO:
 *	Farbwerte mussen durch Komma getrennt sein
@@ -34,15 +36,15 @@ int parse_color_settings(char *str, t_gen_info *info)
 *	mussen auf jeden fall 2 angegeben werden
 *	dürfen nicht in einer reihe sein. */
 
-int init_text_struct(char *str, t_gen_info *info)
+int	init_text_struct(char *str, t_gen_info *info)
 {
 	if (strcomp(str,"NO ") == 1)
 	{
 		info->texture_NO_path = ft_strdup(str + ft_strlen("NO "));
 		if (!info->texture_NO_path)
-				return (1);
+			return (1);
 	}
-	else if(strcomp(str, "SO "))
+	else if (strcomp(str, "SO "))
 	{
 		info->texture_SO_path = ft_strdup(str + ft_strlen("SO "));
 		if (!info->texture_SO_path)
@@ -63,7 +65,7 @@ int init_text_struct(char *str, t_gen_info *info)
 	return (0);
 }
 
-int parse_data_info(t_gen_info *info)
+int	parse_data_info(t_gen_info *info)
 {
 	int i;
 	int j;
@@ -79,7 +81,8 @@ int parse_data_info(t_gen_info *info)
 			//schau auf null um nicht insizialized texture path zu vermeiden
 			error_free_exit("Error\nmalloc", info, TEXTURE_PATH);
 		}
-		parse_color_settings(info->info_string[i], info);
+		if (!parse_color_settings(info->info_string[i], info))
+			return (0);
 		if (map_parse_condition(info, i) == 1)
 		{
 			info->map[j] = ft_strdup(info->info_string[i]);
@@ -99,28 +102,30 @@ int parse_data_info(t_gen_info *info)
 	return (0);
 }
 
-int init_data_info(t_gen_info *info, char *argv[], int argc)
+int	init_data_info(t_gen_info *info, char *argv[], int argc)
 {
-	char *line;
-	int i;
+	char	*line;
+	int		i;
 	
 	if (argc == 1)
 	{
 		info->fd = open("scene.cub", O_RDONLY);
-    	if (info->fd == -1)
+		if (info->fd == -1)
 			error_exit("Error\nfiledescriptor", info);
 	}
-	else if (argc == 2 && check_file_format(argv))
+	else if (argc == 2 && check_file_format(argv[1]))
 	{
 		info->path = ft_strdup(argv[1]);
-		printf("%s\n", info->path);
-		info->fd = open(argv[1], O_RDONLY);
-    	if (info->fd == -1)
-     		error_exit("Error\nfiledescriptor", info);
+		info->fd = open(info->path, O_RDONLY);
+		if (info->fd == -1)
+			error_exit("Error\nfiledescriptor", info);
+		return (0);// muss rausgenommen werden nur zum testen da
 	}
-	//den Block in eine eigene function
-	else if (argc == 2 && !check_file_format(argv))
-		error_exit("Error\nfile extension is wrong!", info);
+	else if (argc == 2 && !check_file_format(argv[1]))
+	{
+		error_exit("Error\nfile extension is wrong!\n", info);
+    return (0);
+  }
 	info->info_string = (char **)malloc(sizeof(char *) * 250);
 	//hier noch eine Lösung überlegen, wie man die Größe bestimmt
 	//eine simple zählfunktion, die lediglich die y-Achse der map zählt?

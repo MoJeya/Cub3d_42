@@ -2,16 +2,19 @@
 #ifndef CUB3D_H
 # define CUB3D_H
 
-
+# include "NEW_MLX42/include/MLX42/MLX42.h"
 # include "libft/libft.h"
 # include <fcntl.h>
 # include <unistd.h>
 # include <stdio.h>
 # include <stdlib.h>
 # include <math.h>
+# include <stdbool.h>
 
-# define WINDOW_X 850
-# define WINDOW_Y 850
+# define WINDOW_X 256
+# define WINDOW_Y 256
+# define IMG_WIDHT 36
+# define IMG_HEIGHT 36
 # define KEY_A 0
 # define KEY_S 1
 # define KEY_D 2
@@ -67,31 +70,29 @@ typedef struct s_gen_info
 	char		**info_string;
 }t_gen_info;
 
-typedef struct s_window_data
-{
-	void *img;
-	char *addr;
-	int bits_per_pixel;
-	int line_lenght;
-	int endian;
-}t_window_data;
+// typedef struct s_window_data
+// {
+// 	mlx_t mlx;
+// 	mlx_image_t g_img;
+
+
+// }t_window_data;
 
 /********************WINDOW_MLX***************************/
-void create_window(void);
+int32_t create_window(void);
 
 /********************STIRNG_TOOLS************************/
-char *ft_strchr_nl(char *str);
-void split_values(char *str, t_gen_info *info);
-int strcomp(char *str1, const char *str2);
+char	*ft_strchr_nl(char *str);
+int		split_values(char *str, t_gen_info *info);
+int		strcomp(char *str1, const char *str2);
+int		sides_check(t_gen_info *info);
+int		top_bottom_check(t_gen_info *info, int j);
 /*****************READ_TOOLS****************************/
 char *get_next_line(int fd);
 int check_map_valid(t_gen_info *info);
 int map_base_player_check(t_gen_info *info);
-int check_file_format(char *argv[]);
+int check_file_format(char *path);
 int init_data_info(t_gen_info *info, char *argv[], int argc);
-
-
-void create_window(void);
 
 /*****************ERROR****************************/
 void    error_exit(char *str, t_gen_info *info);

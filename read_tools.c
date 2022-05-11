@@ -1,16 +1,15 @@
 #include "cub3d.h"
+#define BUFFER_SIZE 62
 
-# define BUFFER_SIZE 62
-
-int check_file_format(char *argv[])
+int	check_file_format(char *path)
 {
-	int i;
-	// int j;
-	const char *tmp;
-	
-	i = 0;
-	tmp = ft_strchr(argv[1], '.');
-	printf("%s\n", tmp);
+	int			i;
+	const char	*tmp;
+
+	i = ft_strlen(path);
+	if (i <= 4)
+		return (0);
+	tmp = (const char *)&path[(i - 4)];
 	if (!ft_strncmp(tmp, ".cub", ft_strlen(".cub") + 1))
 	{
 		printf("%s\n", tmp);
@@ -19,80 +18,58 @@ int check_file_format(char *argv[])
 	return (0);
 }
 
-int map_base_player_check(t_gen_info *info)
+int	map_base_player_check(t_gen_info *info)
 {
-	int i;
-	int j;
-	
+	int		i;
+	int		j;
+	int		player_cnt;
+	bool	right_type;
+
 	i = 0;
 	j = 0;
+	player_cnt = 0;
+	right_type = true;
 	while (info->map[i])
 	{
 		j = 0;
-		while (info->map[i][j] != 10)
+		while (info->map[i][j] != 10 && info->map[i][j] != '\0')
 		{
 			if (ft_isascii(info->map[i][j]))
 			{
-				// printf("map[%d][%d]: %c\n", i, j, info->map[i][j]);
 				if (ft_strchr("NOSW", info->map[i][j]))
-					return (1);
-				if (!ft_strchr("10 ", info->map[i][j]))
-					return (0);
+					player_cnt++;
+				if (!ft_strchr("10 ", info->map[i][j]) && player_cnt != 1)
+				{
+					right_type = false;
+					break ;
+				}
 			}
 			j++;
 		}
 		i++;
 	}
-	return (1);
+	if (player_cnt == 1 && right_type == true)
+		return (1);
+	return (0);
 }
 
-int ft_strlen_nl(char *str)
+int	check_map_valid(t_gen_info *info)
 {
-	int len;
+	int		j;
+	int		line_size;
 
-	len = 0;
-	while (str[len] != '\0' && str[len] != 10)
-		len++;
-	return (len - 1);
-}
-
-int check_map_valid(t_gen_info *info)
-{
-	int i;
-	int j;
-	int line_size;
-	i = 0;
 	j = 0;
-
 	if (ft_strlen(info->map[0]) > ft_strlen(info->map[info->map_height]))
 		line_size = ft_strlen(info->map[0]);
 	else
 		line_size = ft_strlen(info->map[info->map_height]);
 	while (j < line_size)
 	{
-		if (info->map[0][j] != '\n')
-		{
-			if ((info->map[0][j] != ' ' && info->map[0][j] != '1'))
-				return (0);	
-		}
-		if (info->map[info->map_height][j] != '\0')
-		{
-			if ((info->map[info->map_height][j] != '1' && info->map[info->map_height][j] != ' '))
-				return (0);
-		}
+		if (top_bottom_check(info, j) == 0)
+			return (0);
 		j++;
 	}
-	j = 0;
-	while (info->map[i])
-	{
-		line_size = ft_strlen_nl(info->map[i]);
-		if (info->map[i][0] != '1' && info->map[i][0] != ' ')
-			j++;
-		if (info->map[i][line_size] != '1' && info->map[i][line_size] != ' ')
-			j++;
-		i++;
-	}
-	if (j == 0)
+	if (sides_check(info) == 0)
 		return (1);
 	return (0);
 }
