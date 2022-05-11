@@ -28,6 +28,11 @@ int parse_color_settings(char *str, t_gen_info *info)
 	}
 	return (0);
 }
+/*TODO:
+*	Farbwerte mussen durch Komma getrennt sein
+*	es darf nur 1 wert fuer F und C bestimmt werden
+*	mussen auf jeden fall 2 angegeben werden
+*	dürfen nicht in einer reihe sein. */
 
 int init_text_struct(char *str, t_gen_info *info)
 {
@@ -69,7 +74,11 @@ int parse_data_info(t_gen_info *info)
 	//evtl while (info->info_string[i][0] != '\0')?
 	{
 		if(init_text_struct(info->info_string[i], info))
+		{
+
+			//schau auf null um nicht insizialized texture path zu vermeiden
 			error_free_exit("Error\nmalloc", info, TEXTURE_PATH);
+		}
 		parse_color_settings(info->info_string[i], info);
 		if (map_parse_condition(info, i) == 1)
 		{
@@ -80,6 +89,9 @@ int parse_data_info(t_gen_info *info)
 		}
 		i++;
 	}
+	//wie macht der code hier, dass genau bei der map angefangen wird??
+	//also z.b. in zeile 10 erst
+	//was z.b. wenn vor den texture und color paths n leerzeichen ist? wird das abgeklart?
 	info->map_height = j - 1;
 	if (check_map_valid(info) && map_base_player_check(info))
 		return (1);

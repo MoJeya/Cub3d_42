@@ -6,7 +6,7 @@
 /*   By: rschleic <rschleic@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/09 12:50:16 by rschleic          #+#    #+#             */
-/*   Updated: 2022/05/10 09:54:58 by rschleic         ###   ########.fr       */
+/*   Updated: 2022/05/11 09:21:14 by rschleic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,53 +23,71 @@ void    error_exit(char *str, t_gen_info *info)
 {
     if (info->fd != -1)
         close(info->fd);
+    free(info->path);
     ft_putendl_fd(str, 2);
     exit(1);
 }
 
 void    error_free_exit(char *str, t_gen_info *info, int state)
 {
+    int i;
+
+    i = 0;
     close(info->fd);
+    free(info->path);
     ft_putendl_fd(str, 2);
-    //free everything up til then according to enum
-    //in jedem Fall muss man nochmal double check machen ob auch wirklich schon etwas allociert wurde...
     if (state == INFO_STRING)
     {
-        //MOs doule pointer free function
-        //hier checken ob in den einzelnen info strings uberhaupt etwas drin steht
+        if (info->info_string)
+        {
+            while (info->info_string[i])
+            {
+                free(info->info_string[i]);
+                i++;
+            }
+            free (info->info_string);
+        }
     }
     else if (state == TEXTURE_PATH)
     {
-        //MOs doule pointer free function fur die INFO_STRIGS
-        /* ->free diese falls vorhanden
-        char		*texture_NO_path;
-	    char		*texture_SO_path;
-	    char		*texture_WE_path;
-	    char		*texture_EA_path;
-        */
+        if (info->texture_NO_path)
+            free(info->texture_NO_path);
+        if (info->texture_SO_path)
+            free(info->texture_SO_path);
+        if (info->texture_WE_path)
+            free(info->texture_WE_path);
+        if (info->texture_EA_path)
+            free(info->texture_EA_path);
     }
-    else if (state == F_C)
-    {
-        //MOs doule pointer free function fur die INFO_STRIGS
-        /* 
-        char		*texture_NO_path;
-	    char		*texture_SO_path;
-	    char		*texture_WE_path;
-	    char		*texture_EA_path;
-        --> that all for sure  */    
-          
-    }//denn fall brauch es dann gar nicht, habe das in der split selbst gehandelt
     else if (state == INFO_MAP)
     {
-        //MOs doule pointer free function fur info_strings
-        /* 
-        char		*texture_NO_path;
-	    char		*texture_SO_path;
-	    char		*texture_WE_path;
-	    char		*texture_EA_path;
-        --> that all for sure  */
-         //MOs doule pointer free function fur map->info
+        if (info->info_string)
+        {
+            while (info->info_string[i])
+            {
+                free(info->info_string[i]);
+                i++;
+            }
+            free (info->info_string);
+        }
+        if (info->texture_NO_path)
+            free(info->texture_NO_path);
+        if (info->texture_SO_path)
+            free(info->texture_SO_path);
+        if (info->texture_WE_path)
+            free(info->texture_WE_path);
+        if (info->texture_EA_path)
+            free(info->texture_EA_path);
+        if (info->map)
+        {
+            while (info->map[i])
+            {
+                free(info->map[i]);
+                i++;
+            }
+            free (info->map);
+        }
     }
+    ft_putendl_fd(str, 2);
     exit(1);   
 }
-//also 3 teilige free function

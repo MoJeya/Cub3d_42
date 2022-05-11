@@ -2,7 +2,7 @@
 #ifndef CUB3D_H
 # define CUB3D_H
 
-# include "mlx/mlx.h"
+
 # include "libft/libft.h"
 # include <fcntl.h>
 # include <unistd.h>
@@ -23,7 +23,6 @@
 typedef enum free_code{
 	INFO_STRING,
 	TEXTURE_PATH,
-	F_C,
 	INFO_MAP,
 }	t_free_code;
 
