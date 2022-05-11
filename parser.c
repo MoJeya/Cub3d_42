@@ -150,4 +150,4 @@ int init_data_info(t_gen_info *info, char *argv[], int argc)
 		return (1);
 	return (0);
 }
-//comments
+//merge

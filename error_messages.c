@@ -6,7 +6,7 @@
 /*   By: rschleic <rschleic@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/09 12:50:16 by rschleic          #+#    #+#             */
-/*   Updated: 2022/05/11 11:27:22 by rschleic         ###   ########.fr       */
+/*   Updated: 2022/05/11 11:31:14 by rschleic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,4 +91,4 @@ void    error_free_exit(char *str, t_gen_info *info, int state)
     ft_putendl_fd(str, 2);
     exit(1);   
 }
-//comments
+//merge
