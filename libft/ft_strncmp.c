@@ -3,25 +3,27 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strncmp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mjeyavat <mjeyavat@student.42.fr>          +#+  +:+       +#+        */
+/*   By: rschleic <rschleic@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/07/15 12:46:11 by mjeyavat          #+#    #+#             */
-/*   Updated: 2021/07/16 13:12:57 by mjeyavat         ###   ########.fr       */
+/*   Created: 2021/06/25 16:15:52 by rschleic          #+#    #+#             */
+/*   Updated: 2021/07/08 21:25:48 by rschleic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include"libft.h"
 
-int	ft_strncmp(const char *str1, const char *str2, size_t num)
+int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
-	int	i;
+	size_t			counter;
+	unsigned char	*a;
+	unsigned char	*b;
 
-	i = 0;
-	while ((str1[i] || str2[i]) && (i < (int)num))
-	{
-		if (str1[i] != str2[i])
-			return ((unsigned char)str1[i] - (unsigned char)str2[i]);
-		i++;
-	}
-	return (0);
+	a = (unsigned char *)s1;
+	b = (unsigned char *)s2;
+	counter = 0;
+	if (n == 0)
+		return (0);
+	while (counter + 1 < n && a[counter] != '\0' && a[counter] == b[counter])
+		counter++;
+	return (a[counter] - b[counter]);
 }

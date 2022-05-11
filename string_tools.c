@@ -127,10 +127,13 @@ int	split_values(char *str, t_gen_info *info)
 	j = 0;
 	tmp = ft_split(str, ' ');
 	if (tmp == NULL)
-		return (0);
+		error_free_exit("ERROR\nsplit", info, TEXTURE_PATH);	
 	tmp2 = ft_split(tmp[1], ',');
 	if (tmp2 == NULL)
+	{
 		free(tmp);
+		error_free_exit("ERROR\nsplit", info, TEXTURE_PATH);
+	}
 	if (strcomp(tmp[0], "F"))
 	{
 		if (check_color_val((const char **)tmp2) == 0)

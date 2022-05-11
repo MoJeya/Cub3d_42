@@ -3,38 +3,27 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mjeyavat <mjeyavat@student.42.fr>          +#+  +:+       +#+        */
+/*   By: rschleic <rschleic@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/07/14 18:25:35 by mjeyavat          #+#    #+#             */
-/*   Updated: 2022/05/03 16:16:36 by mjeyavat         ###   ########.fr       */
+/*   Created: 2021/06/27 15:24:01 by rschleic          #+#    #+#             */
+/*   Updated: 2021/07/27 18:42:03 by rschleic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include"libft.h"
 
-char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
+char	*ft_strnstr(const char *str, const char *substr, size_t len)
 {
-	size_t	i;
-	size_t	j;
+	size_t	counter;
 
-	i = 0;
-	j = 0;
-	if (ft_strlen((char *)needle) == 0)
-		return ((char *)haystack);
-	while (haystack[i] != '\0' && i < len)
+	counter = 0;
+	if (*substr == '\0')
+		return ((char *)str);
+	while (str[counter] != '\0' && (ft_strlen(substr) <= len - counter))
 	{
-		if (haystack[i] == needle[j])
-		{
-			j++;
-			if (needle[j] == '\0')
-				return ((char *)&haystack[i - j + 1]);
-		}
-		else if (j != 0)
-		{
-			i = i - j;
-			j = 0;
-		}
-		i++;
+		if (ft_strncmp(&str[counter], substr, ft_strlen(substr)) == 0)
+			return ((char *)&str[counter]);
+		counter++;
 	}
 	return (NULL);
 }

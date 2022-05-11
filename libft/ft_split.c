@@ -3,80 +3,59 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mjeyavat <mjeyavat@student.42.fr>          +#+  +:+       +#+        */
+/*   By: rschleic <rschleic@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/06/30 15:25:43 by mjeyavat          #+#    #+#             */
-/*   Updated: 2021/07/19 13:07:59 by mjeyavat         ###   ########.fr       */
+/*   Created: 2021/07/18 10:39:46 by rschleic          #+#    #+#             */
+/*   Updated: 2022/01/20 20:03:56 by rschleic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include"libft.h"
 
-static size_t	ft_findW_cnt(char const *s, char c)
-{
-	int		i;
-	size_t	cnt;
-
-	i = 0;
-	cnt = 0;
-	while (s[i] != '\0')
-	{
-		if (s[i] == c)
-			i++;
-		else if (s[i] != c)
-		{
-			cnt++;
-			while (s[i] != '\0' && s[i] != c)
-				i++;
-		}
-	}
-	return (cnt);
-}
-
-static int	ft_cnt(int cnt, char const *str, char c)
-{
-	int	i;
-
-	i = cnt;
-	while ((str[i] == c) && (str[i] != '\0'))
-		i++;
-	cnt = i;
-	return (cnt);
-}
-
-static int	ft_cnt_toNext(int cnt, char const *str, char c)
-{
-	int	i;
-
-	i = cnt;
-	while ((str[i] != c) && (str[i] != '\0'))
-		i++;
-	cnt = i;
-	return (cnt);
-}
+size_t	ft_ptr_quantity(char const *s, char c);
 
 char	**ft_split(char const *s, char c)
 {
-	char	**result;
-	size_t	cnt;
-	size_t	cnt_2;
-	int		i;
+	t_split	split;
 
-	if (!s)
+	split.index = 0;
+	split.start = 0;
+	if (s == NULL)
 		return (NULL);
-	cnt = 0;
-	i = 0;
-	result = (char **)malloc((ft_findW_cnt(s, c) + 1) * sizeof(char *));
-	if (!result)
+	split.ptr_quanity = ft_ptr_quantity(s, c);
+	split.ptrptr = ft_calloc((split.ptr_quanity + 1), sizeof(char *));
+	if (split.ptrptr == NULL)
 		return (NULL);
-	while (i < (int)ft_findW_cnt(s, c) && ft_findW_cnt(s, c) != 0)
+	while (split.index != split.ptr_quanity)
 	{
-		cnt = ft_cnt(cnt, s, c);
-		cnt_2 = ft_cnt_toNext(cnt, s, c);
-		result[i] = ft_substr(s, cnt, cnt_2 - cnt);
-		i++;
-		cnt = cnt_2;
+		while (s[split.start] != '\0' && s[split.start] == c)
+			split.start++;
+		split.end = split.start;
+		while (s[split.end] != '\0' && s[split.end] != c)
+			split.end++;
+		split.ptrptr[split.index] = ft_substr(s, split.start,
+				(split.end - split.start));
+		split.start = split.end;
+		split.index++;
 	}
-	result[i] = NULL;
-	return (result);
+	split.ptrptr[split.index] = NULL;
+	return (split.ptrptr);
+}
+
+size_t	ft_ptr_quantity(char const *s, char c)
+{
+	size_t	counter;
+	size_t	quantity;
+
+	counter = 0;
+	quantity = 0;
+	if (s[0] == '\0')
+		return (0);
+	while (s[counter] != '\0')
+	{
+		if (s[counter] != c && (s[counter + 1] == c || s[counter + 1] == '\0'))
+			quantity++;
+		counter++;
+	}
+	return (quantity);
 }

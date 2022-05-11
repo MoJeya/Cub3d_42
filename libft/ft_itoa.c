@@ -3,76 +3,60 @@
 /*                                                        :::      ::::::::   */
 /*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mjeyavat <mjeyavat@student.42.fr>          +#+  +:+       +#+        */
+/*   By: rschleic <rschleic@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/07/06 17:35:03 by mjeyavat          #+#    #+#             */
-/*   Updated: 2021/07/21 11:32:52 by mjeyavat         ###   ########.fr       */
+/*   Created: 2021/07/20 16:02:10 by rschleic          #+#    #+#             */
+/*   Updated: 2021/07/21 22:34:31 by rschleic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	number_lenght (int n)
+static size_t	ft_count(long n)
 {
-	int	len;
+	long	counter;
 
-	len = 0;
+	counter = 0;
+	if (n == 0)
+		return (1);
 	if (n < 0)
 	{
-		n = n * (-1);
-		len++;
+		n *= -1;
+		counter++;
 	}
 	while (n > 0)
 	{
-		n = n / 10;
-		len++;
+		n /= 10;
+		counter++;
 	}
-	return (len);
-}
-
-static char	*ft_setToNegativ(char *result, int f)
-{
-	if (f)
-	{
-		result[0] = '-';
-		return (result);
-	}
-	else
-		return (result);
-}
-
-static char	*ft_fill(char *result, int len, int n)
-{
-	while (len > 0)
-	{
-		result[len - 1] = (n % 10) + '0';
-		n = n / 10;
-		len--;
-	}
-	return (result);
+	return (counter);
 }
 
 char	*ft_itoa(int n)
 {
-	char	*result;
-	int		len;
-	int		f;
+	char	*str;
+	size_t	i;
+	size_t	end;
+	long	number;
 
-	f = 0;
-	if (n == -2147483648)
-		return (ft_strdup("-2147483648"));
-	if (n == 0)
-		return (ft_strdup("0"));
-	len = number_lenght(n);
-	if (n < 0)
+	i = 0;
+	end = ft_count(n);
+	number = n;
+	str = ft_calloc((ft_count(number) + 1), sizeof(char));
+	if (str == NULL)
+		return (NULL);
+	if (number < 0)
 	{
-		f = 1;
-		n = -n;
+		str[0] = '-';
+		i++;
 	}
-	result = (char *)malloc((len + 1) * sizeof(char));
-	if (!result)
-		return (result);
-	result[len] = '\0';
-	result = ft_fill(result, len, n);
-	return (ft_setToNegativ(result, f));
+	while (i < end)
+	{
+		if (number < 0)
+			number *= -1;
+		str[end - 1] = number % 10 + 48;
+		number /= 10;
+		end--;
+	}
+	return (str);
 }

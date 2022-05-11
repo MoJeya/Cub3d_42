@@ -30,6 +30,11 @@ int	parse_color_settings(char *str, t_gen_info *info)
 	}
 	return (1);
 }
+/*TODO:
+*	Farbwerte mussen durch Komma getrennt sein
+*	es darf nur 1 wert fuer F und C bestimmt werden
+*	mussen auf jeden fall 2 angegeben werden
+*	dürfen nicht in einer reihe sein. */
 
 int	init_text_struct(char *str, t_gen_info *info)
 {
@@ -72,8 +77,8 @@ int	parse_data_info(t_gen_info *info)
 	{
 		if(init_text_struct(info->info_string[i], info))
 		{
-			//bis hier hin alle info strings und double pointer
-			//und texture paths
+
+			//schau auf null um nicht insizialized texture path zu vermeiden
 			error_free_exit("Error\nmalloc", info, TEXTURE_PATH);
 		}
 		if (!parse_color_settings(info->info_string[i], info))
@@ -82,23 +87,17 @@ int	parse_data_info(t_gen_info *info)
 		{
 			info->map[j] = ft_strdup(info->info_string[i]);
 			if (!info->map[j])
-			//alle info->maps bis dahin
-			//bis hier hin alle info strings und double pointer
-			//und texture paths
-			//F C werte
 				error_free_exit("Error\nmalloc", info, INFO_MAP);	
 			j++;
 		}
 		i++;
 	}
+	//wie macht der code hier, dass genau bei der map angefangen wird??
+	//also z.b. in zeile 10 erst
+	//was z.b. wenn vor den texture und color paths n leerzeichen ist? wird das abgeklart?
 	info->map_height = j - 1;
-	if (check_map_valid(info)
-		&& map_base_player_check(info))
+	if (check_map_valid(info) && map_base_player_check(info))
 		return (1);
-	//alle info->maps bis dahin
-	//bis hier hin alle info strings und double pointer
-	//und texture paths
-	//F C werte
 	error_free_exit("\033[31mMAP IS NOT VALID\033[0m", info, INFO_MAP);
 	return (0);
 }
@@ -132,15 +131,17 @@ int	init_data_info(t_gen_info *info, char *argv[], int argc)
 	//eine simple zählfunktion, die lediglich die y-Achse der map zählt?
 	if (!info->info_string)
 		error_exit("Error\nmalloc", info);
+		//mit ft_aclloc wird das hier unnotig... aber dann fehlt fd
 	i = 0;
 	while ((line = get_next_line(info->fd)))
+	//kann man so ein while statement schreiben ???
 	//was passiert wenn gnl failed?
 	{
 		info->info_string[i] = ft_strdup(line);
 		if(!info->info_string[i])
 			error_free_exit("Error\nmalloc",info, INFO_STRING);
 			//oder simple variante und nur error_exit?
-			//bis heir hin [i] info strings &&double pointer
+			//wenn wir mein ft_calloc hernehmen dann wird da schon ne message geprinted
 		i++;
 		free(line);
 	}
@@ -150,9 +151,8 @@ int	init_data_info(t_gen_info *info, char *argv[], int argc)
 	//eine simple zählfunktion, die lediglich die y-Achse der map zählt?
 	if (!info->map)
 		error_free_exit("Error\nmalloc",info, INFO_STRING);
-		//bis hier hin alle info strings und double pointer
 	if (parse_data_info(info))
 		return (1);
 	return (0);
 }
-//stimmt das jetzt alles mit den return values?
+//merge

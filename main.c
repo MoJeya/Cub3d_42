@@ -27,10 +27,8 @@ int main(int argc, char *argv[])
 	if (init_data_info(&info, argv, argc))
 	//1.1) was wenn keine spieler position angegeben ist
 	//2.2)checken wir wirklich, dass der komplette rahmen aus 1en besteht?
-	//3)char **argv abklären - Your program must take as a first argument a scene description file with the .cub
-	//extension.
 	//4) NO(abc)/SO/... if fail, dann exiten
-	//5)es darf auch nur ein mal N/S/W/E vorkommen oder ?
+	//5) es darf auch nur ein mal N/S/W/E vorkommen oder ?
 	{
 		test_print(&info);
 		//macht, dass die letzte Zeile nicht geprinted wird --- YYY?

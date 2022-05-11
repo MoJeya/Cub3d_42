@@ -26,9 +26,9 @@
 typedef enum free_code{
 	INFO_STRING,
 	TEXTURE_PATH,
-	F_C,
 	INFO_MAP,
 }	t_free_code;
+//new
 
 typedef struct s_point
 {

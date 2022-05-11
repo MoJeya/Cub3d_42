@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mjeyavat <mjeyavat@student.42.fr>          +#+  +:+       +#+        */
+/*   By: rschleic <rschleic@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/07/15 15:12:59 by mjeyavat          #+#    #+#             */
-/*   Updated: 2021/07/15 16:12:13 by mjeyavat         ###   ########.fr       */
+/*   Created: 2021/06/28 13:48:34 by rschleic          #+#    #+#             */
+/*   Updated: 2021/07/08 21:32:14 by rschleic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,26 +14,29 @@
 
 int	ft_atoi(const char *str)
 {
-	int	i;
-	int	result;
-	int	negativ;
+	int		counter;
+	long	output;
+	int		sign;
 
-	result = 0;
-	negativ = 1;
-	i = 0;
-	while (((str[i] >= 9) && (str[i] <= 13)) || (str[i] == 32))
-		i++;
-	if (str[i] == '-')
+	counter = 0;
+	output = 0;
+	sign = 1;
+	while (str[counter] == 32 || (str[counter] <= 13 && str[counter] >= 9))
+		counter++;
+	if (str[counter] == '-')
 	{
-		negativ = -1;
-		i++;
+		sign = -1;
+		counter++;
 	}
-	else if (str[i] == '+')
-		i++;
-	while (str[i] >= '0' && str[i] <= '9')
+	else if (str[counter] == '+')
+		counter++;
+	while (str[counter] >= '0' && str[counter] <= '9')
 	{
-		result = result * 10 + (str[i] - '0');
-		i++;
+		output = output * 10 + str[counter++] - '0';
+		if (sign == -1 && output > (long) INT_MAX + 1)
+			return (0);
+		else if (sign == 1 && output > INT_MAX)
+			return (-1);
 	}
-	return (result * negativ);
+	return (sign * output);
 }

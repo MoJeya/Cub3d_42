@@ -3,34 +3,25 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lstmap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mjeyavat <mjeyavat@student.42.fr>          +#+  +:+       +#+        */
+/*   By: rschleic <rschleic@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/07/09 10:00:28 by mjeyavat          #+#    #+#             */
-/*   Updated: 2021/07/13 18:55:52 by mjeyavat         ###   ########.fr       */
+/*   Created: 2021/07/24 18:23:58 by rschleic          #+#    #+#             */
+/*   Updated: 2021/07/24 19:34:06 by rschleic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include"libft.h"
 
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
-	t_list	*nl;
-	t_list	*ne_l;
+	t_list	*new_list;
 
-	if (!lst)
-		return (NULL);
-	nl = NULL;
-	while (lst)
+	(void)del;
+	new_list = NULL;
+	while (lst != NULL)
 	{
-		ne_l = ft_lstnew((*f)(lst->content));
-		if (!ne_l)
-		{
-			ft_lstclear(&nl, del);
-			return (NULL);
-		}
-		ft_lstadd_back(&nl, ne_l);
-		ne_l = ne_l->next;
+		ft_lstadd_back(&new_list, ft_lstnew(f(lst->content)));
 		lst = lst->next;
 	}
-	return (nl);
+	return (new_list);
 }
