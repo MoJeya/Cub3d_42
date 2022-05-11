@@ -6,7 +6,7 @@
 /*   By: rschleic <rschleic@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/02 17:34:15 by mjeyavat          #+#    #+#             */
-/*   Updated: 2022/05/10 09:50:02 by rschleic         ###   ########.fr       */
+/*   Updated: 2022/05/11 11:26:53 by rschleic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,3 +83,4 @@ void split_values(char *str, t_gen_info *info)
 	free_str(tmp);
 	free_str(tmp2);
 }
+//comments
