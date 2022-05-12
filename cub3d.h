@@ -11,8 +11,8 @@
 # include <math.h>
 # include <stdbool.h>
 
-# define WINDOW_X 256
-# define WINDOW_Y 256
+# define WINDOW_X 400
+# define WINDOW_Y 400
 # define IMG_WIDHT 36
 # define IMG_HEIGHT 36
 # define KEY_A 0

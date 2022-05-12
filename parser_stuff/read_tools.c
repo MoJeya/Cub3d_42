@@ -72,10 +72,18 @@ int	check_map_valid(t_gen_info *info)
 	int		line_size;
 
 	j = 0;
+	printf("HERE\n");
 	if (ft_strlen(info->map[0]) > ft_strlen(info->map[info->map_height]))
+	{
+		printf("HERE1\n");
 		line_size = ft_strlen(info->map[0]);
+	}
 	else
+	{
+		printf("HERE2\n");
 		line_size = ft_strlen(info->map[info->map_height]);
+
+	}
 	while (j < line_size)
 	{
 		if (top_bottom_check(info, j) == 0)

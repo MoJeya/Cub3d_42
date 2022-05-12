@@ -40,24 +40,33 @@
 // }
 
 
-mlx_image_t	*g_img;
+// mlx_image_t	*g_img;
+mlx_image_t *static_img;
+// void	hook(void *param)
+// {
+// 	mlx_t	*mlx;
 
-void	hook(void *param)
-{
-	mlx_t	*mlx;
+// 	mlx = param;
+// 	if (mlx_is_key_down(param, MLX_KEY_ESCAPE))
+// 		mlx_close_window(param);
+// 	if (mlx_is_key_down(param, MLX_KEY_W))
+// 		g_img->instances[0].y -= 5;
+// 	if (mlx_is_key_down(param, MLX_KEY_S))
+// 		g_img->instances[0].y += 5;
+// 	if (mlx_is_key_down(param, MLX_KEY_A))
+// 		g_img->instances[0].x -= 5;
+// 	if (mlx_is_key_down(param, MLX_KEY_D))
+// 		g_img->instances[0].x += 5;
+// }
 
-	mlx = param;
-	if (mlx_is_key_down(param, MLX_KEY_ESCAPE))
-		mlx_close_window(param);
-	if (mlx_is_key_down(param, MLX_KEY_W))
-		g_img->instances[0].y -= 5;
-	if (mlx_is_key_down(param, MLX_KEY_S))
-		g_img->instances[0].y += 5;
-	if (mlx_is_key_down(param, MLX_KEY_A))
-		g_img->instances[0].x -= 5;
-	if (mlx_is_key_down(param, MLX_KEY_D))
-		g_img->instances[0].x += 5;
-}
+// void creat_block(void)
+// {
+// 	int i;
+
+// 	i = 0;
+
+// 	w
+// }
 
 int32_t	create_window(void)
 {
@@ -66,11 +75,18 @@ int32_t	create_window(void)
 	mlx = mlx_init(WINDOW_X, WINDOW_Y, "CUBE3D", true);
 	if (!mlx)
 		exit(EXIT_FAILURE);
-	g_img = mlx_new_image(mlx, 50, 50);
-	memset(g_img->pixels, 100, g_img->width * g_img->height * sizeof(int));
-	mlx_image_to_window(mlx, g_img, 0, 0);
-	mlx_loop_hook(mlx, &hook, mlx);
+	// g_img = mlx_new_image(mlx, 50, 50);
+	static_img = mlx_new_image(mlx, WINDOW_X, WINDOW_Y);//dass canvas für denn pixel
+	mlx_image_to_window(mlx, static_img, 0, 0); //adds render quoe
+	mlx_image_to_window(mlx, static_img, 1, 0); //adds render quoe gibt die n
+	mlx_image_to_window(mlx, static_img, 2, 0); //adds render quoe gibt die n
+	// memset(g_img->pixels, 100, g_img->width * g_img->height * sizeof(int));
+	memset(static_img->pixels, 0, static_img->width * static_img->height * sizeof(int));
+	mlx_put_pixel(static_img, 200, 200, 0xFFFFFFFF); // Single white pixel in the middle.
+	// mlx_image_to_window(mlx, g_img, 0, 0);
+	// mlx_loop_hook(mlx, &hook, mlx);
 	mlx_loop(mlx);
 	mlx_terminate(mlx);
 	return (EXIT_SUCCESS);
 }
+

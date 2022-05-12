@@ -22,6 +22,7 @@ void test_print(t_gen_info *info)
 
 void	init_genaral_info(t_gen_info *info)
 {
+	printf("here2\n");
 	info->map_x = 0;
 	info->map_y = 0;
 	info->map_height = 0;
@@ -45,6 +46,7 @@ int	main(int argc, char *argv[])
 	if (init_data_info(&info, argv, argc))
 	//1.1) was wenn keine spieler position angegeben ist
 	{
+		printf("here main\n");
 		test_print(&info);
 		create_window();
 	}

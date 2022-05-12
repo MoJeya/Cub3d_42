@@ -130,11 +130,12 @@ int	init_data_info(t_gen_info *info, char *argv[], int argc)
 	line = get_next_line(info->fd);
 	while (line)
 	{
-		free(line);
-		line = get_next_line(info->fd);
 		info->info_string[i] = ft_strdup(line);
 		if (!info->info_string[i])
 			error_free_exit("Error\nmalloc",info, INFO_STRING);
+		free(line);
+		line = get_next_line(info->fd);
+		// free(line);
 		i++;
 	}
 	free(line);
