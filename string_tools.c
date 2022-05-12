@@ -12,7 +12,7 @@ int check_color_val(const char **str)
 	while (str[i])
 	{
 		tmp_num = ft_atoi(str[i]);
-		// printf("num: %d\nstr: %s\n", tmp_num, tmp_str[i]);
+		// printf("num: %d\nstr: %s\n", tmp_num, str[i]);
 		j = 0;
 		if (tmp_num < 0)
 		{
@@ -21,7 +21,7 @@ int check_color_val(const char **str)
 		}
 		while (str[i][j] != 10 && str[i][j] != '\0')
 		{
-			// printf("digit: %c\n", tmp_str[i][j]);
+			// printf("digit: %c\n", str[i][j]);
 			if (ft_isdigit(str[i][j]) == 0)
 			{
 				printf("ERROR: NOT A NUMBER\n");
@@ -125,9 +125,10 @@ int	split_values(char *str, t_gen_info *info)
 
 	i = 0;
 	j = 0;
+	printf("str: %s\n", str);
 	tmp = ft_split(str, ' ');
 	if (tmp == NULL)
-		error_free_exit("ERROR\nsplit", info, TEXTURE_PATH);	
+		error_free_exit("ERROR\nsplit", info, TEXTURE_PATH);
 	tmp2 = ft_split(tmp[1], ',');
 	if (tmp2 == NULL)
 	{
@@ -136,28 +137,61 @@ int	split_values(char *str, t_gen_info *info)
 	}
 	if (strcomp(tmp[0], "F"))
 	{
+		printf("len of tmp: %d\n", d_len_str(tmp));
+		printf("len of tmp2: %d\n", d_len_str(tmp2));
+		if (d_len_str(tmp2) != 3 || d_len_str(tmp) != 2) 
+		{
+			free(tmp);
+			free(tmp2);
+			printf("COLOR FORMAT IS NOT RIGHT\n");
+			return (0);
+		}
 		if (check_color_val((const char **)tmp2) == 0)
 		{
 			free_str(tmp);
 			free_str(tmp2);
 			return (0);
 		}
-		info->floor.red = ft_atoi((const char *)tmp2[0]);
-		info->floor.yellow = ft_atoi((const char *)tmp2[1]);
-		info->floor.blue = ft_atoi((const char *)tmp2[2]);
+		if (!info->floor.set)
+		{
+			info->floor.red = ft_atoi((const char *)tmp2[0]);
+			info->floor.yellow = ft_atoi((const char *)tmp2[1]);
+			info->floor.blue = ft_atoi((const char *)tmp2[2]);
+			info->floor.set = true;
+		}
+		else
+		{
+			printf("TO MANY COLOR VALUES\n");
+			return (0);
+		}
 	}
-	//hier noch auf richtige rgb werte protecten
 	else if (strcomp(tmp[0], "C"))
 	{
+		if (d_len_str(tmp2) != 3 || d_len_str(tmp) != 2)
+		{
+			free(tmp);
+			free(tmp2);
+			printf("COLOR FORMAT IS NOT RIGHT\n");
+			return (0);
+		}
 		if (check_color_val((const char **)tmp2) == 0)
 		{
 			free_str(tmp);
 			free_str(tmp2);
 			return (0);
 		}
-		info->ceiling.red = ft_atoi((const char *)tmp2[0]);
-		info->ceiling.yellow = ft_atoi((const char *)tmp2[1]);
-		info->ceiling.blue = ft_atoi((const char *)tmp2[2]);
+		if (!info->ceiling.set)
+		{
+			info->ceiling.red = ft_atoi((const char *)tmp2[0]);
+			info->ceiling.yellow = ft_atoi((const char *)tmp2[1]);
+			info->ceiling.blue = ft_atoi((const char *)tmp2[2]);
+			info->ceiling.set = true;
+		}
+		else
+		{
+			printf("TO MANY COLOR VALES\n");
+			return (0);
+		}
 	}
 
 	//hier noch auf richtige rgb werte protecten

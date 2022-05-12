@@ -45,6 +45,7 @@ typedef struct s_player
 
 typedef struct s_color
 {
+	bool set;
 	int red;
 	int yellow;
 	int blue;
@@ -97,6 +98,9 @@ int init_data_info(t_gen_info *info, char *argv[], int argc);
 /*****************ERROR****************************/
 void    error_exit(char *str, t_gen_info *info);
 void    error_free_exit(char *str, t_gen_info *info, int i);
+
+/****************HELPER FUNCTIONS**********************/
+int d_len_str(char **str);
 
 
 #endif

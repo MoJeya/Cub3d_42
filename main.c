@@ -20,6 +20,22 @@ void test_print(t_gen_info *info)
 	}
 }
 
+void init_genaral_info(t_gen_info *info)
+{
+	info->map_x = 0;
+	info->map_y = 0;
+	info->map_height = 0;
+	info->map_widht = 0;
+	info->ceiling.set = false;
+	info->ceiling.red = 0;
+	info->ceiling.yellow = 0;
+	info->ceiling.blue = 0;
+	info->floor.set = false;
+	info->floor.red = 0;
+	info->floor.yellow = 0;
+	info->floor.blue = 0;
+}
+
 int main(int argc, char *argv[])
 {
 	t_gen_info info;
@@ -32,8 +48,8 @@ int main(int argc, char *argv[])
 	{
 		test_print(&info);
 		//macht, dass die letzte Zeile nicht geprinted wird --- YYY?
+		create_window();
 	}
-	create_window();
 	// create_window();
 	// system("leaks cube3d");
 	return(0);
