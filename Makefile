@@ -5,11 +5,11 @@ CC = gcc
 
 CFLAGS = -Wall -Wextra -Werror -g
 
-SRC = main.c window.c parser.c read_tools.c string_tools.c error_messages.c\
+SRC = $(shell find *.c ./parser_stuff/*.c)
 
 OBJ = $(SRC:.c=.o);
 
-LINKED_OBJ = ./NEW_MLX42/*.o ./libft/*.o
+LINKED_OBJ = ./NEW_MLX42/*.o ./libft/*.o parser_stuff/*.o
 
 all: linked_objects $(NAME)
 
@@ -27,6 +27,6 @@ clean:
 	rm -f ./libft/*.a ./NEW_MLX42/*.a 
 
 fclean: clean
-	rm -f $(NAME) ./libft/obj/*.o ./NEW_MLX42/*/*.o *.o
+	rm -f $(NAME) *.o ./parser_stuff/*.o ./libft/obj/*.o $(shell find ./NEW_MLX42/*/ -iname "*.o")
 
 re: fclean all

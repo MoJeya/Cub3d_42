@@ -1,4 +1,4 @@
-#include "cub3d.h"
+#include "../cub3d.h"
 #define BUFFER_SIZE 62
 
 int d_len_str(char **str)
