@@ -1,5 +1,5 @@
 
-#include "cub3d.h"
+#include "../cub3d.h"
 
 int map_parse_condition(t_gen_info *info, int i)
 {
@@ -30,11 +30,6 @@ int	parse_color_settings(char *str, t_gen_info *info)
 	}
 	return (1);
 }
-/*TODO:
-*	Farbwerte mussen durch Komma getrennt sein (done)
-*	es darf nur 1 wert fuer F und C bestimmt werden (done)
-*	mussen auf jeden fall 2 angegeben werden (done)
-*	dürfen nicht in einer reihe sein. (done)*/
 
 int	init_text_struct(char *str, t_gen_info *info)
 {
@@ -67,18 +62,16 @@ int	init_text_struct(char *str, t_gen_info *info)
 
 int	parse_data_info(t_gen_info *info)
 {
-	int i;
-	int j;
+	int	i;
+	int	j;
 	
 	i = 0;
 	j = 0;
 	while (info->info_string[i] != NULL)
 	//evtl while (info->info_string[i][0] != '\0')?
 	{
-		if(init_text_struct(info->info_string[i], info))
+		if (init_text_struct(info->info_string[i], info))
 		{
-
-			//schau auf null um nicht insizialized texture path zu vermeiden
 			error_free_exit("Error\nmalloc", info, TEXTURE_PATH);
 		}
 		if (!parse_color_settings(info->info_string[i], info))
@@ -97,13 +90,10 @@ int	parse_data_info(t_gen_info *info)
 		printf("COLOR SETTING IS MISSING\n");
 		return (0);
 	}
-	//wie macht der code hier, dass genau bei der map angefangen wird??
-	//also z.b. in zeile 10 erst
-	//was z.b. wenn vor den texture und color paths n leerzeichen ist? wird das abgeklart?
 	info->map_height = j - 1;
 	if (check_map_valid(info) && map_base_player_check(info))
 		return (1);
-	error_free_exit("\033[31mMAP IS NOT VALID\033[0m", info, INFO_MAP); //malloc error wenn map falsch ist.
+	error_free_exit("\033[31mMAP IS NOT VALID\033[0m", info, INFO_MAP);
 	return (0);
 }
 
@@ -111,7 +101,7 @@ int	init_data_info(t_gen_info *info, char *argv[], int argc)
 {
 	char	*line;
 	int		i;
-	
+
 	if (argc == 1)
 	{
 		info->fd = open("scene.cub", O_RDONLY);
@@ -136,19 +126,16 @@ int	init_data_info(t_gen_info *info, char *argv[], int argc)
 	//eine simple zählfunktion, die lediglich die y-Achse der map zählt?
 	if (!info->info_string)
 		error_exit("Error\nmalloc", info);
-		//mit ft_aclloc wird das hier unnotig... aber dann fehlt fd
 	i = 0;
-	while ((line = get_next_line(info->fd)))
-	//kann man so ein while statement schreiben ???
-	//was passiert wenn gnl failed?
+	line = get_next_line(info->fd);
+	while (line)
 	{
-		info->info_string[i] = ft_strdup(line);
-		if(!info->info_string[i])
-			error_free_exit("Error\nmalloc",info, INFO_STRING);
-			//oder simple variante und nur error_exit?
-			//wenn wir mein ft_calloc hernehmen dann wird da schon ne message geprinted
-		i++;
 		free(line);
+		line = get_next_line(info->fd);
+		info->info_string[i] = ft_strdup(line);
+		if (!info->info_string[i])
+			error_free_exit("Error\nmalloc",info, INFO_STRING);
+		i++;
 	}
 	free(line);
 	info->map = (char **)malloc(sizeof(char *) * 250);

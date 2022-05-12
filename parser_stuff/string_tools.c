@@ -1,5 +1,5 @@
 
-#include "cub3d.h"
+#include "../cub3d.h"
 
 int check_color_val(const char **str)
 {
@@ -12,7 +12,6 @@ int check_color_val(const char **str)
 	while (str[i])
 	{
 		tmp_num = ft_atoi(str[i]);
-		// printf("num: %d\nstr: %s\n", tmp_num, str[i]);
 		j = 0;
 		if (tmp_num < 0)
 		{
@@ -21,7 +20,6 @@ int check_color_val(const char **str)
 		}
 		while (str[i][j] != 10 && str[i][j] != '\0')
 		{
-			// printf("digit: %c\n", str[i][j]);
 			if (ft_isdigit(str[i][j]) == 0)
 			{
 				printf("ERROR: NOT A NUMBER\n");
@@ -193,8 +191,6 @@ int	split_values(char *str, t_gen_info *info)
 			return (0);
 		}
 	}
-
-	//hier noch auf richtige rgb werte protecten
 	free_str(tmp);
 	free_str(tmp2);
 	return (1);
