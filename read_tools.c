@@ -1,6 +1,19 @@
 #include "cub3d.h"
 #define BUFFER_SIZE 62
 
+int d_len_str(char **str)
+{
+	int i;
+
+	i = 0;
+	while (str[i] != NULL)
+	{
+		printf("str[%d]: %s\n", i, str[i]);
+		i++;
+	}
+	return (i);
+}
+
 int	check_file_format(char *path)
 {
 	int			i;

@@ -31,10 +31,10 @@ int	parse_color_settings(char *str, t_gen_info *info)
 	return (1);
 }
 /*TODO:
-*	Farbwerte mussen durch Komma getrennt sein
-*	es darf nur 1 wert fuer F und C bestimmt werden
-*	mussen auf jeden fall 2 angegeben werden
-*	dürfen nicht in einer reihe sein. */
+*	Farbwerte mussen durch Komma getrennt sein (done)
+*	es darf nur 1 wert fuer F und C bestimmt werden (done)
+*	mussen auf jeden fall 2 angegeben werden (done)
+*	dürfen nicht in einer reihe sein. (done)*/
 
 int	init_text_struct(char *str, t_gen_info *info)
 {
@@ -92,13 +92,18 @@ int	parse_data_info(t_gen_info *info)
 		}
 		i++;
 	}
+	if (!info->floor.set || !info->ceiling.set)
+	{
+		printf("COLOR SETTING IS MISSING\n");
+		return (0);
+	}
 	//wie macht der code hier, dass genau bei der map angefangen wird??
 	//also z.b. in zeile 10 erst
 	//was z.b. wenn vor den texture und color paths n leerzeichen ist? wird das abgeklart?
 	info->map_height = j - 1;
 	if (check_map_valid(info) && map_base_player_check(info))
 		return (1);
-	error_free_exit("\033[31mMAP IS NOT VALID\033[0m", info, INFO_MAP);
+	error_free_exit("\033[31mMAP IS NOT VALID\033[0m", info, INFO_MAP); //malloc error wenn map falsch ist.
 	return (0);
 }
 
@@ -124,8 +129,8 @@ int	init_data_info(t_gen_info *info, char *argv[], int argc)
 	else if (argc == 2 && !check_file_format(argv[1]))
 	{
 		error_exit("Error\nfile extension is wrong!\n", info);
-    return (0);
-  }
+    	return (0);
+  	}
 	info->info_string = (char **)malloc(sizeof(char *) * 250);
 	//hier noch eine Lösung überlegen, wie man die Größe bestimmt
 	//eine simple zählfunktion, die lediglich die y-Achse der map zählt?
