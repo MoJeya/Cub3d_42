@@ -23,7 +23,6 @@ void    error_exit(char *str, t_gen_info *info)
 {
     if (info->fd != -1)
         close(info->fd);
-    free(info->path);
     ft_putendl_fd(str, 2);
     exit(1);
 }
@@ -34,8 +33,8 @@ void    error_free_exit(char *str, t_gen_info *info, int state)
 
     i = 0;
     close(info->fd);
-    free(info->path);
-    ft_putendl_fd(str, 2);
+    if (info->path == NULL)
+        free(info->path);
     if (state == INFO_STRING)
     {
         if (info->info_string)
@@ -61,6 +60,7 @@ void    error_free_exit(char *str, t_gen_info *info, int state)
     }
     else if (state == INFO_MAP)
     {
+        i = 0;
         if (info->info_string)
         {
             while (info->info_string[i])
@@ -78,6 +78,7 @@ void    error_free_exit(char *str, t_gen_info *info, int state)
             free(info->texture_WE_path);
         if (info->texture_EA_path)
             free(info->texture_EA_path);
+        i = 0;
         if (info->map)
         {
             while (info->map[i])
