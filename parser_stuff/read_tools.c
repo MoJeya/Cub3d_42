@@ -7,10 +7,7 @@ int d_len_str(char **str)
 
 	i = 0;
 	while (str[i] != NULL)
-	{
-		printf("str[%d]: %s\n", i, str[i]);
 		i++;
-	}
 	return (i);
 }
 
@@ -24,10 +21,7 @@ int	check_file_format(char *path)
 		return (0);
 	tmp = (const char *)&path[(i - 4)];
 	if (!ft_strncmp(tmp, ".cub", ft_strlen(".cub") + 1))
-	{
-		printf("%s\n", tmp);
 		return (1);
-	}
 	return (0);
 }
 
@@ -72,10 +66,19 @@ int	check_map_valid(t_gen_info *info)
 	int		line_size;
 
 	j = 0;
-	if (ft_strlen(info->map[0]) > ft_strlen(info->map[info->map_height]))
+	// printf("HERE\n");
+	if (ft_strlen(info->map[0]) > ft_strlen(info->map[info->map_y]))
+	{
 		line_size = ft_strlen(info->map[0]);
+		printf("line size TOP: %d\n", line_size);
+		printf("line size DOWN: %zu\n", ft_strlen(info->map[info->map_y]));
+		info->map_x = line_size;
+	}
 	else
-		line_size = ft_strlen(info->map[info->map_height]);
+	{
+		line_size = ft_strlen(info->map[info->map_y]);
+		info->map_x = line_size;
+	}
 	while (j < line_size)
 	{
 		if (top_bottom_check(info, j) == 0)
@@ -83,7 +86,11 @@ int	check_map_valid(t_gen_info *info)
 		j++;
 	}
 	if (sides_check(info) == 0)
+	{
+		info->win_x = info->map_x * 25;
+		info->win_y = info->map_y * 25;
 		return (1);
+	}
 	return (0);
 }
 //durch jeden Buchstaben einzeln durchgehen und auch leere Stellen erlauben

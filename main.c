@@ -22,9 +22,11 @@ void test_print(t_gen_info *info)
 
 void	init_genaral_info(t_gen_info *info)
 {
+
 	info->map_x = 0;
 	info->map_y = 0;
-	info->map_height = 0;
+	info->win_x = 0;
+	info->win_y = 0;
 	info->map_widht = 0;
 	info->ceiling.set = false;
 	info->ceiling.red = 0;
@@ -40,13 +42,14 @@ void	init_genaral_info(t_gen_info *info)
 int	main(int argc, char *argv[])
 {
 	t_gen_info info;
+	t_window_data window;
 
 	init_genaral_info(&info);
 	if (init_data_info(&info, argv, argc))
 	//1.1) was wenn keine spieler position angegeben ist
 	{
 		test_print(&info);
-		create_window();
+		create_window(window.mlx, window.panel, &info);
 	}
 	// create_window();
 	// system("leaks cube3d");

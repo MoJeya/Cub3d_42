@@ -90,7 +90,7 @@ int	parse_data_info(t_gen_info *info)
 		printf("COLOR SETTING IS MISSING\n");
 		return (0);
 	}
-	info->map_height = j - 1;
+	info->map_y = (j - 1);
 	if (check_map_valid(info) && map_base_player_check(info))
 		return (1);
 	error_free_exit("\033[31mMAP IS NOT VALID\033[0m", info, INFO_MAP);
@@ -130,11 +130,12 @@ int	init_data_info(t_gen_info *info, char *argv[], int argc)
 	line = get_next_line(info->fd);
 	while (line)
 	{
-		free(line);
-		line = get_next_line(info->fd);
 		info->info_string[i] = ft_strdup(line);
 		if (!info->info_string[i])
 			error_free_exit("Error\nmalloc",info, INFO_STRING);
+		free(line);
+		line = get_next_line(info->fd);
+		// free(line);
 		i++;
 	}
 	free(line);
