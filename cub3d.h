@@ -11,10 +11,9 @@
 # include <math.h>
 # include <stdbool.h>
 
-# define WINDOW_X 400
-# define WINDOW_Y 400
-# define IMG_WIDHT 36
-# define IMG_HEIGHT 36
+
+# define TILES_W 25
+# define TILES_H 25
 # define KEY_A 0
 # define KEY_S 1
 # define KEY_D 2
@@ -57,6 +56,8 @@ typedef struct s_gen_info
 	t_player 	*player;
 	int			map_x;
 	int			map_y;
+	int			win_x;
+	int			win_y;
 	int			map_height;
 	int			map_widht;
 	int			fd;
@@ -71,16 +72,16 @@ typedef struct s_gen_info
 	char		**info_string;
 }t_gen_info;
 
-// typedef struct s_window_data
-// {
-// 	mlx_t mlx;
-// 	mlx_image_t g_img;
+typedef struct s_window_data
+{
+	mlx_t *mlx;
+	mlx_image_t *panel;
+	mlx_image_t *player;
 
-
-// }t_window_data;
+}t_window_data;
 
 /********************WINDOW_MLX***************************/
-int32_t create_window(void);
+int32_t	create_window(mlx_t *mlx, mlx_image_t *panel, t_gen_info *info);
 
 /********************STIRNG_TOOLS************************/
 char	*ft_strchr_nl(char *str);

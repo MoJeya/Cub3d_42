@@ -54,10 +54,10 @@ int	top_bottom_check(t_gen_info *info, int j)
 		if ((info->map[0][j] != ' ' && info->map[0][j] != '1'))
 			return (0);
 	}
-	if (info->map[info->map_height][j] != '\0')
+	if (info->map[info->map_y][j] != '\0')
 	{
-		if ((info->map[info->map_height][j] != '1'
-			&& info->map[info->map_height][j] != ' '))
+		if ((info->map[info->map_y][j] != '1'
+			&& info->map[info->map_y][j] != ' '))
 			return (0);
 	}
 	return (1);
@@ -123,7 +123,6 @@ int	split_values(char *str, t_gen_info *info)
 
 	i = 0;
 	j = 0;
-	printf("str: %s\n", str);
 	tmp = ft_split(str, ' ');
 	if (tmp == NULL)
 		error_free_exit("ERROR\nsplit", info, TEXTURE_PATH);
@@ -135,8 +134,6 @@ int	split_values(char *str, t_gen_info *info)
 	}
 	if (strcomp(tmp[0], "F"))
 	{
-		printf("len of tmp: %d\n", d_len_str(tmp));
-		printf("len of tmp2: %d\n", d_len_str(tmp2));
 		if (d_len_str(tmp2) != 3 || d_len_str(tmp) != 2) 
 		{
 			free(tmp);
