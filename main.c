@@ -18,6 +18,7 @@ void test_print(t_gen_info *info)
 		printf("%s", info->map[i]);
 		i++;
 	}
+	printf("\n");
 }
 
 void	init_genaral_info(t_gen_info *info)

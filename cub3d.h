@@ -11,7 +11,6 @@
 # include <math.h>
 # include <stdbool.h>
 
-
 # define TILES_W 25
 # define TILES_H 25
 # define KEY_A 0

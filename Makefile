@@ -3,7 +3,7 @@ NAME = cube3d
 
 CC = gcc
 
-CFLAGS = -Wall -Wextra -Werror -g
+CFLAGS = -Wall -Wextra -Werror -g -fsanitize=address
 
 SRC = $(shell find *.c ./parser_stuff/*.c)
 
