@@ -49,13 +49,15 @@ int	ft_strlen_nl(char *str)
 
 int	top_bottom_check(t_gen_info *info, int j)
 {
-	if (info->map[0][j] != '\n')
+	if (info->map[0][j] != '\0')
 	{
+		// printf("map[0][%d]: %c\n", j, info->map[0][j]);
 		if ((info->map[0][j] != ' ' && info->map[0][j] != '1'))
 			return (0);
 	}
 	if (info->map[info->map_y][j] != '\0')
 	{
+		// printf("map[%d][%d]: %c\n",info->map_y, j, info->map[info->map_y][j]);
 		if ((info->map[info->map_y][j] != '1'
 			&& info->map[info->map_y][j] != ' '))
 			return (0);
@@ -67,19 +69,20 @@ int	sides_check(t_gen_info *info)
 {
 	int	i;
 	int	j;
-	int	line_size;
 
 	i = 0;
 	j = 0;
-	while (info->map[i])
+	while (info->map[i] != NULL && i < info->map_y)
 	{
-		line_size = ft_strlen_nl(info->map[i]);
+		// printf("map[%d][0]: %s\n", i, info->map[i]);
 		if (info->map[i][0] != '1' && info->map[i][0] != ' ')
 			j++;
-		if (info->map[i][line_size] != '1' && info->map[i][line_size] != ' ')
+		if (info->map[i][info->map_x-1] != '1' && info->map[i][info->map_x-1] != ' ')
 			j++;
 		i++;
+	// printf("map[%d][%d]: %c\n",i-1, info->map_x, info->map[i-1][info->map_x]);
 	}
+	printf("map[%d][%d]: %c and return: %d\n", 0, info->map_x-1, info->map[0][info->map_x-1], j);
 	return (j);
 }
 

@@ -80,6 +80,8 @@ void creat_map(__unused mlx_t *mlx, t_gen_info *info, mlx_image_t *tiles)
 			// printf("map: %s\n[%d]: %c\n", info->map[y], y, info->map[y][x]);
 			if (info->map[y][x] != ' ')
 				creat_tile(tiles, x*25, y*25, info->map[y][x] - '0');
+			if (info->map[y][x] == '\0')
+				break;
 			x++;
 			// right += 25;
 		}

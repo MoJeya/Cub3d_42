@@ -15,7 +15,7 @@ void test_print(t_gen_info *info)
 	i = 0;
 	while (info->map[i] != NULL)
 	{
-		printf("%s", info->map[i]);
+		printf("%s\n", info->map[i]);
 		i++;
 	}
 	printf("\n");

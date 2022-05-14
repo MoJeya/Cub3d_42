@@ -60,11 +60,83 @@ int	init_text_struct(char *str, t_gen_info *info)
 	return (0);
 }
 
+int get_max_len(char **str, t_gen_info *info)
+{
+	int len;
+	int	i;
+
+	i = 1;
+	len = (int)ft_strlen(str[0]);
+	while (str[i] != NULL)
+	{ 
+		if (len < (int)ft_strlen(str[i]))
+			len = (int)ft_strlen(str[i]);
+		i++;
+	}
+	info->map_y = i - 1;
+	// printf("y: %d, str: %s\n", info->map_y, str[info->map_y]);
+	return (len);
+}
+
+int set_to_map(t_gen_info *info, char **str)
+{
+	int	i;
+	int	j;
+	int	x;
+	int	y;
+
+	i = 0;
+	j = 0;
+	x = 0;
+	y = 0;
+	printf("x length: %d\n", info->map_x);
+	info->map = ft_calloc(info->map_y + 2, sizeof(char *));
+	if (!info->map)
+		error_free_exit("Error\nmalloc", info, INFO_STRING);
+	while (str[i] != NULL)
+	{
+		j = 0;
+		x = 0;
+		info->map[y] = ft_calloc(info->map_x + 1, sizeof(char));
+		if (!info->map[y])
+			return (0);
+		while (str[i][j] != 0 && str[i][j] != 10 && j < info->map_x)
+		{
+			ft_memset(&info->map[y][x], str[i][j], 1);
+			// printf("x: %d: (%d -> %c) ", x, info->map[y][x], info->map[y][x]);
+			// info->map[y][x] = str[i][j];
+			j++;
+			x++;
+		}
+		while (x < info->map_x)
+		{
+
+			info->map[y][x] = '1';
+			// printf("x: %d: %c ", x, info->map[y][x]);
+			x++;
+		}
+		info->map[y][x] = '\0';
+		// info->map[y][x] = '1';
+		// printf("map line: %s: size: %d index: %d\n", info->map[y], (int)ft_strlen(info->map[y]), y);
+		// printf("%d\n", info->map_x);
+		// info->map[y][info->map_x] = 0;
+		
+		// printf("size: %d\n: %s\n", (int)ft_strlen(info->map[y]), info->map[y]);
+		// printf("%s\n", info->map[y]);
+		i++;
+		y++;
+	}
+	info->map[y] = NULL;
+	printf("\n");
+	return (1);
+}
+
 int	parse_data_info(t_gen_info *info)
 {
 	int	i;
 	int	j;
-	
+	// int size;
+
 	i = 0;
 	j = 0;
 	while (info->info_string[i] != NULL)
@@ -78,21 +150,28 @@ int	parse_data_info(t_gen_info *info)
 			return (0);
 		if (map_parse_condition(info, i) == 1)
 		{
-			info->map[j] = ft_strdup(info->info_string[i]);
-			if (!info->map[j])
-				error_free_exit("Error\nmalloc", info, INFO_MAP);	
-			j++;
+			info->map_x = get_max_len(&info->info_string[i], info);		
+			set_to_map(info, &info->info_string[i]);
+			// set_to_map(info, &info->info_string[i]);
+			// printf("max size: %d\n", info->map_x);
+			break;
 		}
 		i++;
 	}
+	// while (info->map[j] != NULL)
+	// {
+	// 	printf("%s\n", info->map[j]);
+	// 	j++;
+	// }
 	if (!info->floor.set || !info->ceiling.set)
 	{
 		printf("COLOR SETTING IS MISSING\n");
 		return (0);
 	}
-	info->map_y = (j - 1);
+	// printf("y: %d, map: %s\n", info->map_y, info->map[info->map_y]);
 	if (check_map_valid(info) && map_base_player_check(info))
 		return (1);
+	// exit(0);
 	error_free_exit("\033[31mMAP IS NOT VALID\033[0m", info, INFO_MAP);
 	return (0);
 }
@@ -139,11 +218,8 @@ int	init_data_info(t_gen_info *info, char *argv[], int argc)
 		i++;
 	}
 	free(line);
-	info->map = (char **)malloc(sizeof(char *) * 250);
 	//hier noch eine Lösung überlegen, wie man die Größe bestimmt
 	//eine simple zählfunktion, die lediglich die y-Achse der map zählt?
-	if (!info->map)
-		error_free_exit("Error\nmalloc",info, INFO_STRING);
 	if (parse_data_info(info))
 		return (1);
 	return (0);

@@ -36,7 +36,7 @@ int	map_base_player_check(t_gen_info *info)
 	j = 0;
 	player_cnt = 0;
 	right_type = true;
-	while (info->map[i])
+	while (info->map[i] != NULL)
 	{
 		j = 0;
 		while (info->map[i][j] != 10 && info->map[i][j] != '\0')
@@ -50,36 +50,28 @@ int	map_base_player_check(t_gen_info *info)
 					right_type = false;
 					break ;
 				}
+				if (info->map[i][j] == ' ')
+					info->map[i][j] = '1';
 			}
 			j++;
 		}
+		printf("info map: %s\n", info->map[i]);
 		i++;
 	}
+	printf("player cnt: %d, type: %d\n", player_cnt, right_type);
 	if (player_cnt == 1 && right_type == true)
+	{
 		return (1);
+	}
 	return (0);
 }
 
 int	check_map_valid(t_gen_info *info)
 {
 	int		j;
-	int		line_size;
 
 	j = 0;
-	// printf("HERE\n");
-	if (ft_strlen(info->map[0]) > ft_strlen(info->map[info->map_y]))
-	{
-		line_size = ft_strlen(info->map[0]);
-		printf("line size TOP: %d\n", line_size);
-		printf("line size DOWN: %zu\n", ft_strlen(info->map[info->map_y]));
-		info->map_x = line_size;
-	}
-	else
-	{
-		line_size = ft_strlen(info->map[info->map_y]);
-		info->map_x = line_size;
-	}
-	while (j < line_size)
+	while (j < info->map_x)
 	{
 		if (top_bottom_check(info, j) == 0)
 			return (0);
@@ -88,7 +80,7 @@ int	check_map_valid(t_gen_info *info)
 	if (sides_check(info) == 0)
 	{
 		info->win_x = info->map_x * 25;
-		info->win_y = info->map_y * 25;
+		info->win_y = (info->map_y + 1) * 25;
 		return (1);
 	}
 	return (0);
