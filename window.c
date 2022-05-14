@@ -28,7 +28,12 @@
 
 // }
 
-void creat_tile(mlx_image_t *tile)
+int	create_trgb(int t, int r, int g, int b)
+{
+	return (t << 24 | r << 16 | g << 8 | b);
+}
+
+void creat_tile(mlx_image_t *tile, int x_tile, int y_tile, int color)
 {
 	int x;
 	int y;
@@ -41,14 +46,18 @@ void creat_tile(mlx_image_t *tile)
 		y = 0;
 		while (y < TILES_H)
 		{
-			mlx_put_pixel(tile, x, y, 0xFFFFFFFF);
+			if (color == 1)
+				mlx_put_pixel(tile, x + x_tile, y + y_tile, 0xFFFFFFFF);
+			if (color == 0)
+				mlx_put_pixel(tile, x + x_tile, y + y_tile, 0x444444);
+
 			y++;
 		}
 		x++;
 	}
 }
 
-void creat_map(mlx_t *mlx, t_gen_info *info, mlx_image_t *tiles)
+void creat_map(__unused mlx_t *mlx, t_gen_info *info, mlx_image_t *tiles)
 {
 	int x;
 	int y;
@@ -60,22 +69,24 @@ void creat_map(mlx_t *mlx, t_gen_info *info, mlx_image_t *tiles)
 	// (void)mlx;
 	right = 0;
 	down = y;
-	while (y < info->map_y)
+	while (y <= info->map_y)
 	{
-		x = -1;
+		x = 0;
+		right = 0;
+		// printf("y: %d\nrigth: %d\n", y, right);
 		while(x <= info->map_x)
 		{
-			if (info->map[y][x] == '1')
-			{
-				creat_tile(tiles);
-				mlx_image_to_window(mlx, tiles, right, down);
-				// mlx_image_to_window(mlx, img, y+25, x+25);
-			}
+			// printf("x: %d\nright: %d\n", x, right);
+			// printf("map: %s\n[%d]: %c\n", info->map[y], y, info->map[y][x]);
+			if (info->map[y][x] != ' ')
+				creat_tile(tiles, x*25, y*25, info->map[y][x] - '0');
+			if (info->map[y][x] == '\0')
+				break;
 			x++;
-			right += 25;
+			// right += 25;
 		}
 		y++;
-		down += 25;
+		// down += 25;
 	}
 }
 
@@ -89,14 +100,14 @@ int32_t	create_window(mlx_t *mlx, mlx_image_t *panel, t_gen_info *info)
 	if (!mlx)
 		exit(EXIT_FAILURE);
 	// panel = mlx_new_image(mlx, info->win_x, info->win_y);//dass canvas für denn pixel in der grösse vom window - noch unsichtbar
-	tiles = mlx_new_image(mlx, TILES_W, TILES_H);//canvas in der grösse von 25x25
+	tiles = mlx_new_image(mlx, /* TILES_W */1500, /* TILES_H */ 1500);//canvas in der grösse von 25x25
 	// memset(panel->pixels, 200, panel->width * panel->height * sizeof(int));//panel sichtbar machen, sozusagen eine pixel put
 	// memset(tiles->pixels, 250, tiles->width * tiles->height * sizeof(int));
 	creat_map(mlx, info, tiles);
 	// creat_tile(tiles);
 	// printf("%d\n", tiles->width);
 	// mlx_image_to_window(mlx, panel, 0, 0); //adds render quoe//zieht das panel auf das window
-	// mlx_image_to_window(mlx, tiles, 0, 0);
+	mlx_image_to_window(mlx, tiles, 0, 0);
 	// mlx_image_to_window(mlx, tiles, 25, 0);
 	// mlx_put_pixel(tiles, WINDOW_X/2, WINDOW_Y/2, 0xFFFFFFFF);
 	// mlx_delete_image(mlx, tiles);
