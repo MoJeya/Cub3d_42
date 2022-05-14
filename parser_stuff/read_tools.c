@@ -55,16 +55,13 @@ int	map_base_player_check(t_gen_info *info)
 			}
 			j++;
 		}
-		printf("info map: %s\n", info->map[i]);
 		i++;
 	}
-	printf("player cnt: %d, type: %d\n", player_cnt, right_type);
 	if (player_cnt == 1 && right_type == true)
-	{
 		return (1);
-	}
 	return (0);
 }
+//to long
 
 int	check_map_valid(t_gen_info *info)
 {
@@ -80,12 +77,12 @@ int	check_map_valid(t_gen_info *info)
 	if (sides_check(info) == 0)
 	{
 		info->win_x = info->map_x * 25;
-		info->win_y = (info->map_y + 1) * 25;
+		info->win_y = info->map_y * 25;
 		return (1);
 	}
 	return (0);
 }
-//durch jeden Buchstaben einzeln durchgehen und auch leere Stellen erlauben
+
 
 char	*get_next_line(int fd)
 {

@@ -6,7 +6,7 @@
 /*   By: rschleic <rschleic@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/02 14:42:57 by mjeyavat          #+#    #+#             */
-/*   Updated: 2022/05/13 18:04:48 by rschleic         ###   ########.fr       */
+/*   Updated: 2022/05/14 20:57:04 by rschleic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,7 @@ int	create_trgb(int t, int r, int g, int b)
 {
 	return (t << 24 | r << 16 | g << 8 | b);
 }
+//wtf was ist das?
 
 void creat_tile(mlx_image_t *tile, int x_tile, int y_tile, int color)
 {
@@ -40,7 +41,6 @@ void creat_tile(mlx_image_t *tile, int x_tile, int y_tile, int color)
 
 	x = 0;
 	y = 0;
-	// (void)tile;
 	while (x < TILES_W)
 	{
 		y = 0;
@@ -64,29 +64,22 @@ void creat_map(__unused mlx_t *mlx, t_gen_info *info, mlx_image_t *tiles)
 	int	right;
 	int	down;
 
-	// x = 0;
 	y = 0;
-	// (void)mlx;
 	right = 0;
 	down = y;
-	while (y <= info->map_y)
+	while (y < info->map_y)
 	{
 		x = 0;
 		right = 0;
-		// printf("y: %d\nrigth: %d\n", y, right);
 		while(x <= info->map_x)
 		{
-			// printf("x: %d\nright: %d\n", x, right);
-			// printf("map: %s\n[%d]: %c\n", info->map[y], y, info->map[y][x]);
 			if (info->map[y][x] != ' ')
 				creat_tile(tiles, x*25, y*25, info->map[y][x] - '0');
 			if (info->map[y][x] == '\0')
 				break;
 			x++;
-			// right += 25;
 		}
 		y++;
-		// down += 25;
 	}
 }
 
@@ -96,29 +89,15 @@ int32_t	create_window(mlx_t *mlx, mlx_image_t *panel, t_gen_info *info)
 
 	(void)panel;
 	tiles = NULL;
-	mlx = mlx_init(info->win_x, info->win_y, "CUBE3D", true);//blank window
+	mlx = mlx_init(info->win_x, info->win_y, "CUBE3D", true);
 	if (!mlx)
 		exit(EXIT_FAILURE);
-	// panel = mlx_new_image(mlx, info->win_x, info->win_y);//dass canvas für denn pixel in der grösse vom window - noch unsichtbar
-	tiles = mlx_new_image(mlx, /* TILES_W */1500, /* TILES_H */ 1500);//canvas in der grösse von 25x25
-	// memset(panel->pixels, 200, panel->width * panel->height * sizeof(int));//panel sichtbar machen, sozusagen eine pixel put
-	// memset(tiles->pixels, 250, tiles->width * tiles->height * sizeof(int));
+	tiles = mlx_new_image(mlx, TILES_W * info->map_x, TILES_H * info->map_y);
 	creat_map(mlx, info, tiles);
-	// creat_tile(tiles);
-	// printf("%d\n", tiles->width);
-	// mlx_image_to_window(mlx, panel, 0, 0); //adds render quoe//zieht das panel auf das window
 	mlx_image_to_window(mlx, tiles, 0, 0);
-	// mlx_image_to_window(mlx, tiles, 25, 0);
-	// mlx_put_pixel(tiles, WINDOW_X/2, WINDOW_Y/2, 0xFFFFFFFF);
 	// mlx_delete_image(mlx, tiles);
-	// mlx_image_to_window(mlx, g_img, 0, 0);
 	// mlx_loop_hook(mlx, &hook, mlx);
 	mlx_loop(mlx);
 	mlx_terminate(mlx);
 	return (EXIT_SUCCESS);
 }
-//wir brauchen gar kein panel auf das wir extra zeichnen, die tiles reichen
-// ohne mlx_image_to_window(mlx, tiles, 36, 0) gibt es nur die komische form von create tile()
-// mit mlx_image_to_window(mlx, tiles, 36, 0) gibt es ein 25x25 tile
-//so without create_map kein tile
-//unser window ist eins zu lang in x richtung

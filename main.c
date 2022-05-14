@@ -11,7 +11,6 @@ void test_print(t_gen_info *info)
 	printf("F:\nred:%d\nyellow:%d\nblue:%d\n", info->floor.red, info->floor.yellow, info->floor.blue);
 	printf("C:\nred:%d\nyellow:%d\nblue:%d\n", info->ceiling.red, info->ceiling.yellow, info->ceiling.blue);
 	printf("MAP: \n");
-	// printf("%s", info->map[info->map_height - 1]);
 	i = 0;
 	while (info->map[i] != NULL)
 	{
@@ -50,6 +49,7 @@ int	main(int argc, char *argv[])
 	//1.1) was wenn keine spieler position angegeben ist
 	{
 		test_print(&info);
+
 		create_window(window.mlx, window.panel, &info);
 	}
 	// create_window();
