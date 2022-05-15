@@ -76,7 +76,7 @@ int	check_map_valid(t_gen_info *info)
 	}
 	if (sides_check(info) == 0)
 	{
-		info->win_x = info->map_x * 25;
+		info->win_x = (info->map_x - 1) * 25;
 		info->win_y = info->map_y * 25;
 		return (1);
 	}
