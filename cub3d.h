@@ -20,6 +20,8 @@
 # define KEY_ESC 53
 # define RIGHT 124
 # define DOWN 125
+# define BUFFER_SIZE 42
+
 
 typedef enum free_code{
 	INFO_STRING,
@@ -53,8 +55,8 @@ typedef struct s_color
 
 typedef struct s_gen_info
 {
-	t_player 		player;
-	mlx_t			*mlx;
+	t_player 	player;
+	mlx_t		*mlx;
 	int			map_x;
 	int			map_y;
 	int			win_x;
@@ -65,7 +67,7 @@ typedef struct s_gen_info
 	t_color		ceiling;
 	t_color		floor;
 	char		*path;
-	char 		**map;
+	char		**map;
 	char		*texture_NO_path;
 	char		*texture_SO_path;
 	char		*texture_WE_path;
@@ -74,28 +76,44 @@ typedef struct s_gen_info
 }t_gen_info;
 
 
+/********************PARSER***************************/
+int		parse_data_info(t_gen_info *info);
+int		init_map(t_gen_info *info, char **str);
+int		set_values_to_map(t_gen_info *info, char **str, int *y);
+int		get_max_len(char **str, t_gen_info *info);
+int		init_text_struct(char *str, t_gen_info *info);
+int		parse_color_settings(char *str, t_gen_info *info);
+int		map_parse_condition(t_gen_info *info, int i);
+
+
+
+
+
 /********************WINDOW_MLX***************************/
 int32_t	create_window(t_gen_info *info);
 
-/********************STIRNG_TOOLS************************/
+/********************TOOLS************************/
 char	*ft_strchr_nl(char *str);
 int		split_values(char *str, t_gen_info *info);
 int		strcomp(char *str1, const char *str2);
 int		sides_check(t_gen_info *info);
 int		top_bottom_check(t_gen_info *info, int j);
-/*****************READ_TOOLS****************************/
-char *get_next_line(int fd);
-int check_map_valid(t_gen_info *info);
-int map_base_player_check(t_gen_info *info);
-int check_file_format(char *path);
-int init_data_info(t_gen_info *info, char *argv[], int argc);
+char	*get_next_line(int fd);
+int		check_map_valid(t_gen_info *info);
+int		map_base_player_check(t_gen_info *info);
+int		check_file_format(char *path);
+int		init_data_info(t_gen_info *info, char *argv[], int argc);
+int		get_max_len(char **str, t_gen_info *info);
+
 
 /*****************ERROR****************************/
-void    error_exit(char *str, t_gen_info *info);
-void    error_free_exit(char *str, t_gen_info *info, int i);
+void	error_exit(char *str, t_gen_info *info);
+void	error_free_exit(char *str, t_gen_info *info, int i);
+void	*my_calloc(size_t count, size_t size, t_gen_info *info, int state);
+
 
 /****************HELPER FUNCTIONS**********************/
-int d_len_str(char **str);
+int		d_len_str(char **str);
 
 
 #endif
