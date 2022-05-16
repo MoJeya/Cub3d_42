@@ -104,10 +104,8 @@ int set_to_map(t_gen_info *info, char **str)
 			j++;
 			x++;
 		}
-		printf("xxx	%d", x);
-		printf("info->map_x	%d\n", info->map_x);
 		// x -= 5;
-		while (x < info->map_x)
+		while (x < (info->map_x - 1))
 		{
 
 			info->map[y][x] = '1';
@@ -174,6 +172,25 @@ void	open_cub_fd(t_gen_info *info, int argc, char *argv[])
 		error_exit("Error\nfile extension is wrong!\n", info);
 
 }
+int	count_infostring_y(int tmp)
+{
+	int i;
+	char *line;
+
+
+	i = 0;
+	line = get_next_line(tmp);
+	while (line)
+	{
+		i++;
+		free(line);
+		line = get_next_line(tmp);
+	}
+	i++;
+	free(line);
+	close(tmp);
+	return (i);
+}
 
 int	init_data_info(t_gen_info *info, char *argv[], int argc)
 {
@@ -181,10 +198,10 @@ int	init_data_info(t_gen_info *info, char *argv[], int argc)
 	int		i;
 
 	open_cub_fd(info, argc, argv);
-	info->info_string = (char **)malloc(sizeof(char *) * 250);
-	//romys filedescriptor variante segfaultet, weil das fd nimma erreichbar ist...
+	info->info_string = (char **)malloc(sizeof(char *) * count_infostring_y(info->fd));
 	if (!info->info_string)
 		error_exit("Error\nmalloc", info);
+	open_cub_fd(info, argc, argv);
 	i = 0;
 	line = get_next_line(info->fd);
 	while (line)
@@ -196,7 +213,7 @@ int	init_data_info(t_gen_info *info, char *argv[], int argc)
 		line = get_next_line(info->fd);
 		i++;
 	}
-	free(line);
+	info->info_string[i] = NULL;
 	if (parse_data_info(info))
 		return (1);
 	return (0);

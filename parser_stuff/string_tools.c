@@ -76,7 +76,7 @@ int	sides_check(t_gen_info *info)
 	{
 		if (info->map[i][0] != '1' && info->map[i][0] != ' ')
 			j++;
-		if (info->map[i][info->map_x-1] != '1' && info->map[i][info->map_x-1] != ' ')
+		if (info->map[i][info->map_x-2] != '1' && info->map[i][info->map_x-2] != ' ')
 			j++;
 		i++;
 	}
