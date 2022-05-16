@@ -20,6 +20,7 @@
 # define KEY_ESC 53
 # define RIGHT 124
 # define DOWN 125
+# define PI 3.1415926535
 
 typedef enum free_code{
 	INFO_STRING,
@@ -30,16 +31,19 @@ typedef enum free_code{
 
 typedef struct s_point
 {
-	int		x;
-	int		y;
+	float		x;
+	float		y;
+	float		delta_x;
+	float		delta_y;
+	float		angle;
 }t_point;
 
 typedef struct s_player
 {
-	t_point		p_pos;
-	int			dis_to_wall;
-	mlx_image_t *p_img;
-	char 		looking;
+	t_point			pos;
+	double			dis_to_wall;
+	mlx_image_t		*p_img;
+	char			looking;
 }t_player;
 
 typedef struct s_color
@@ -55,6 +59,7 @@ typedef struct s_gen_info
 {
 	t_player 		player;
 	mlx_t			*mlx;
+	int			map_size_total;
 	int			map_x;
 	int			map_y;
 	int			win_x;

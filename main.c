@@ -18,7 +18,7 @@ void test_print(t_gen_info *info)
 		i++;
 	}
 	printf("player is looking: %c\n", info->player.looking);
-	printf("Player pos x: %d\nplayer pos y: %d\n", info->player.p_pos.x, info->player.p_pos.y);
+	printf("Player pos x: %f\nplayer pos y: %f\n", info->player.pos.x, info->player.pos.y);
 	printf("\n");
 }
 
@@ -39,6 +39,9 @@ void	init_genaral_info(t_gen_info *info)
 	info->floor.yellow = 0;
 	info->floor.blue = 0;
 	info->path = NULL;
+	info->player.pos.delta_x = 0;
+	info->player.pos.delta_y = 0;
+	info->player.pos.angle += 2 * PI;
 }
 
 int	main(int argc, char *argv[])
