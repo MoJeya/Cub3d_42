@@ -38,7 +38,8 @@ typedef struct s_player
 {
 	t_point		p_pos;
 	int			dis_to_wall;
-	char 		*looking;
+	mlx_image_t *p_img;
+	char 		looking;
 }t_player;
 
 typedef struct s_color
@@ -52,7 +53,8 @@ typedef struct s_color
 
 typedef struct s_gen_info
 {
-	t_player 	*player;
+	t_player 		player;
+	mlx_t			*mlx;
 	int			map_x;
 	int			map_y;
 	int			win_x;
@@ -71,16 +73,9 @@ typedef struct s_gen_info
 	char		**info_string;
 }t_gen_info;
 
-typedef struct s_window_data
-{
-	mlx_t *mlx;
-	mlx_image_t *panel;
-	mlx_image_t *player;
-
-}t_window_data;
 
 /********************WINDOW_MLX***************************/
-int32_t	create_window(mlx_t *mlx, mlx_image_t *panel, t_gen_info *info);
+int32_t	create_window(t_gen_info *info);
 
 /********************STIRNG_TOOLS************************/
 char	*ft_strchr_nl(char *str);

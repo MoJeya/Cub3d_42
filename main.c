@@ -17,6 +17,8 @@ void test_print(t_gen_info *info)
 		printf("%s\n", info->map[i]);
 		i++;
 	}
+	printf("player is looking: %c\n", info->player.looking);
+	printf("Player pos x: %d\nplayer pos y: %d\n", info->player.p_pos.x, info->player.p_pos.y);
 	printf("\n");
 }
 
@@ -42,7 +44,6 @@ void	init_genaral_info(t_gen_info *info)
 int	main(int argc, char *argv[])
 {
 	t_gen_info info;
-	t_window_data window;
 
 	init_genaral_info(&info);
 	if (init_data_info(&info, argv, argc))
@@ -50,7 +51,7 @@ int	main(int argc, char *argv[])
 	{
 		test_print(&info);
 
-		create_window(window.mlx, window.panel, &info);
+		create_window(&info);
 	}
 	// create_window();
 	// system("leaks cube3d");
