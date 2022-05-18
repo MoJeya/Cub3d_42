@@ -45,8 +45,8 @@ int	map_base_player_check(t_gen_info *info)
 				if (ft_strchr("NOSW", info->map[i][j]))
 				{
 					info->player.looking = info->map[i][j];
-					info->player.p_pos.y = i; 
-					info->player.p_pos.x = j; 
+					info->player.pos.y = (float)i; 
+					info->player.pos.x = (float)j; 
 					player_cnt++;
 				}
 				if (!ft_strchr("10 ", info->map[i][j]) && player_cnt != 1)
