@@ -1,0 +1,5100 @@
+PATH: ./texture/stonewall_texture.xpm
+
+PATH: ./texture/stonewall_texture.xpm
+
+PATH: ./texture/stonewall_texture.xpm
+
+PATH: ./texture/stonewall_texture.xpm
+
+F:
+red:220
+yellow:100
+blue:0
+C:
+red:225
+yellow:30
+blue:0
+MAP: 
+111111111111111111111111
+100000000000000000000001
+100000000000000000000001
+100000000000000000000001
+100001111100001010100001
+100001000100000000000001
+100001000100001000100001
+100001000100000000000001
+100001111100001010100001
+100000000000000000000001
+100000000000000000000001
+100000000000000000000001
+100000000000000000000001
+100000000000000000000001
+100000000000000000000001
+100000000000000000000001
+111111111100000000000001
+110000000100000000000001
+110111100100000000000001
+110100000100000000000001
+110111111100000000000001
+110000000000000000000001
+111111111000N00000000001
+111111111111111111111111
+Player pos x: 12.000000
+player pos y: 22.000000
+
+raycast cam:	-1.000000
+raycast dir x:	-1.000000
+raycast dir y:	-0.660000
+raycast_delta
+x:	1.000000
+y:	1.515152
+lineHEIGHT:	-64
+map[21][12]: 0
+raycast cam:	-0.996875
+raycast dir x:	-1.000000
+raycast dir y:	-0.657937
+raycast_delta
+x:	1.000000
+y:	1.519901
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	-0.993750
+raycast dir x:	-1.000000
+raycast dir y:	-0.655875
+raycast_delta
+x:	1.000000
+y:	1.524681
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	-0.990625
+raycast dir x:	-1.000000
+raycast dir y:	-0.653813
+raycast_delta
+x:	1.000000
+y:	1.529490
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	-0.987500
+raycast dir x:	-1.000000
+raycast dir y:	-0.651750
+raycast_delta
+x:	1.000000
+y:	1.534331
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	-0.984375
+raycast dir x:	-1.000000
+raycast dir y:	-0.649688
+raycast_delta
+x:	1.000000
+y:	1.539202
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	-0.981250
+raycast dir x:	-1.000000
+raycast dir y:	-0.647625
+raycast_delta
+x:	1.000000
+y:	1.544103
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	-0.978125
+raycast dir x:	-1.000000
+raycast dir y:	-0.645563
+raycast_delta
+x:	1.000000
+y:	1.549037
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	-0.975000
+raycast dir x:	-1.000000
+raycast dir y:	-0.643500
+raycast_delta
+x:	1.000000
+y:	1.554002
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	-0.971875
+raycast dir x:	-1.000000
+raycast dir y:	-0.641438
+raycast_delta
+x:	1.000000
+y:	1.558998
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	-0.968750
+raycast dir x:	-1.000000
+raycast dir y:	-0.639375
+raycast_delta
+x:	1.000000
+y:	1.564027
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	-0.965625
+raycast dir x:	-1.000000
+raycast dir y:	-0.637312
+raycast_delta
+x:	1.000000
+y:	1.569089
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	-0.962500
+raycast dir x:	-1.000000
+raycast dir y:	-0.635250
+raycast_delta
+x:	1.000000
+y:	1.574183
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	-0.959375
+raycast dir x:	-1.000000
+raycast dir y:	-0.633188
+raycast_delta
+x:	1.000000
+y:	1.579311
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	-0.956250
+raycast dir x:	-1.000000
+raycast dir y:	-0.631125
+raycast_delta
+x:	1.000000
+y:	1.584472
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	-0.953125
+raycast dir x:	-1.000000
+raycast dir y:	-0.629063
+raycast_delta
+x:	1.000000
+y:	1.589667
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	-0.950000
+raycast dir x:	-1.000000
+raycast dir y:	-0.627000
+raycast_delta
+x:	1.000000
+y:	1.594896
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	-0.946875
+raycast dir x:	-1.000000
+raycast dir y:	-0.624938
+raycast_delta
+x:	1.000000
+y:	1.600160
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	-0.943750
+raycast dir x:	-1.000000
+raycast dir y:	-0.622875
+raycast_delta
+x:	1.000000
+y:	1.605459
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	-0.940625
+raycast dir x:	-1.000000
+raycast dir y:	-0.620813
+raycast_delta
+x:	1.000000
+y:	1.610792
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	-0.937500
+raycast dir x:	-1.000000
+raycast dir y:	-0.618750
+raycast_delta
+x:	1.000000
+y:	1.616162
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	-0.934375
+raycast dir x:	-1.000000
+raycast dir y:	-0.616688
+raycast_delta
+x:	1.000000
+y:	1.621567
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	-0.931250
+raycast dir x:	-1.000000
+raycast dir y:	-0.614625
+raycast_delta
+x:	1.000000
+y:	1.627008
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	-0.928125
+raycast dir x:	-1.000000
+raycast dir y:	-0.612563
+raycast_delta
+x:	1.000000
+y:	1.632486
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	-0.925000
+raycast dir x:	-1.000000
+raycast dir y:	-0.610500
+raycast_delta
+x:	1.000000
+y:	1.638002
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	-0.921875
+raycast dir x:	-1.000000
+raycast dir y:	-0.608438
+raycast_delta
+x:	1.000000
+y:	1.643554
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	-0.918750
+raycast dir x:	-1.000000
+raycast dir y:	-0.606375
+raycast_delta
+x:	1.000000
+y:	1.649145
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	-0.915625
+raycast dir x:	-1.000000
+raycast dir y:	-0.604313
+raycast_delta
+x:	1.000000
+y:	1.654773
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	-0.912500
+raycast dir x:	-1.000000
+raycast dir y:	-0.602250
+raycast_delta
+x:	1.000000
+y:	1.660440
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	-0.909375
+raycast dir x:	-1.000000
+raycast dir y:	-0.600188
+raycast_delta
+x:	1.000000
+y:	1.666146
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	-0.906250
+raycast dir x:	-1.000000
+raycast dir y:	-0.598125
+raycast_delta
+x:	1.000000
+y:	1.671891
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	-0.903125
+raycast dir x:	-1.000000
+raycast dir y:	-0.596063
+raycast_delta
+x:	1.000000
+y:	1.677676
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	-0.900000
+raycast dir x:	-1.000000
+raycast dir y:	-0.594000
+raycast_delta
+x:	1.000000
+y:	1.683502
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	-0.896875
+raycast dir x:	-1.000000
+raycast dir y:	-0.591938
+raycast_delta
+x:	1.000000
+y:	1.689368
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	-0.893750
+raycast dir x:	-1.000000
+raycast dir y:	-0.589875
+raycast_delta
+x:	1.000000
+y:	1.695274
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	-0.890625
+raycast dir x:	-1.000000
+raycast dir y:	-0.587813
+raycast_delta
+x:	1.000000
+y:	1.701223
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	-0.887500
+raycast dir x:	-1.000000
+raycast dir y:	-0.585750
+raycast_delta
+x:	1.000000
+y:	1.707213
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	-0.884375
+raycast dir x:	-1.000000
+raycast dir y:	-0.583688
+raycast_delta
+x:	1.000000
+y:	1.713246
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	-0.881250
+raycast dir x:	-1.000000
+raycast dir y:	-0.581625
+raycast_delta
+x:	1.000000
+y:	1.719321
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	-0.878125
+raycast dir x:	-1.000000
+raycast dir y:	-0.579563
+raycast_delta
+x:	1.000000
+y:	1.725439
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	-0.875000
+raycast dir x:	-1.000000
+raycast dir y:	-0.577500
+raycast_delta
+x:	1.000000
+y:	1.731602
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	-0.871875
+raycast dir x:	-1.000000
+raycast dir y:	-0.575438
+raycast_delta
+x:	1.000000
+y:	1.737808
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	-0.868750
+raycast dir x:	-1.000000
+raycast dir y:	-0.573375
+raycast_delta
+x:	1.000000
+y:	1.744059
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	-0.865625
+raycast dir x:	-1.000000
+raycast dir y:	-0.571313
+raycast_delta
+x:	1.000000
+y:	1.750356
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	-0.862500
+raycast dir x:	-1.000000
+raycast dir y:	-0.569250
+raycast_delta
+x:	1.000000
+y:	1.756697
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	-0.859375
+raycast dir x:	-1.000000
+raycast dir y:	-0.567188
+raycast_delta
+x:	1.000000
+y:	1.763085
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	-0.856250
+raycast dir x:	-1.000000
+raycast dir y:	-0.565125
+raycast_delta
+x:	1.000000
+y:	1.769520
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	-0.853125
+raycast dir x:	-1.000000
+raycast dir y:	-0.563063
+raycast_delta
+x:	1.000000
+y:	1.776002
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	-0.850000
+raycast dir x:	-1.000000
+raycast dir y:	-0.561000
+raycast_delta
+x:	1.000000
+y:	1.782531
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	-0.846875
+raycast dir x:	-1.000000
+raycast dir y:	-0.558938
+raycast_delta
+x:	1.000000
+y:	1.789109
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	-0.843750
+raycast dir x:	-1.000000
+raycast dir y:	-0.556875
+raycast_delta
+x:	1.000000
+y:	1.795735
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	-0.840625
+raycast dir x:	-1.000000
+raycast dir y:	-0.554813
+raycast_delta
+x:	1.000000
+y:	1.802411
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	-0.837500
+raycast dir x:	-1.000000
+raycast dir y:	-0.552750
+raycast_delta
+x:	1.000000
+y:	1.809136
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	-0.834375
+raycast dir x:	-1.000000
+raycast dir y:	-0.550687
+raycast_delta
+x:	1.000000
+y:	1.815912
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	-0.831250
+raycast dir x:	-1.000000
+raycast dir y:	-0.548625
+raycast_delta
+x:	1.000000
+y:	1.822739
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	-0.828125
+raycast dir x:	-1.000000
+raycast dir y:	-0.546563
+raycast_delta
+x:	1.000000
+y:	1.829617
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	-0.825000
+raycast dir x:	-1.000000
+raycast dir y:	-0.544500
+raycast_delta
+x:	1.000000
+y:	1.836547
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	-0.821875
+raycast dir x:	-1.000000
+raycast dir y:	-0.542438
+raycast_delta
+x:	1.000000
+y:	1.843530
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	-0.818750
+raycast dir x:	-1.000000
+raycast dir y:	-0.540375
+raycast_delta
+x:	1.000000
+y:	1.850567
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	-0.815625
+raycast dir x:	-1.000000
+raycast dir y:	-0.538313
+raycast_delta
+x:	1.000000
+y:	1.857657
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	-0.812500
+raycast dir x:	-1.000000
+raycast dir y:	-0.536250
+raycast_delta
+x:	1.000000
+y:	1.864802
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	-0.809375
+raycast dir x:	-1.000000
+raycast dir y:	-0.534188
+raycast_delta
+x:	1.000000
+y:	1.872002
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	-0.806250
+raycast dir x:	-1.000000
+raycast dir y:	-0.532125
+raycast_delta
+x:	1.000000
+y:	1.879258
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	-0.803125
+raycast dir x:	-1.000000
+raycast dir y:	-0.530062
+raycast_delta
+x:	1.000000
+y:	1.886570
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	-0.800000
+raycast dir x:	-1.000000
+raycast dir y:	-0.528000
+raycast_delta
+x:	1.000000
+y:	1.893939
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	-0.796875
+raycast dir x:	-1.000000
+raycast dir y:	-0.525938
+raycast_delta
+x:	1.000000
+y:	1.901367
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	-0.793750
+raycast dir x:	-1.000000
+raycast dir y:	-0.523875
+raycast_delta
+x:	1.000000
+y:	1.908852
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	-0.790625
+raycast dir x:	-1.000000
+raycast dir y:	-0.521813
+raycast_delta
+x:	1.000000
+y:	1.916397
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	-0.787500
+raycast dir x:	-1.000000
+raycast dir y:	-0.519750
+raycast_delta
+x:	1.000000
+y:	1.924002
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	-0.784375
+raycast dir x:	-1.000000
+raycast dir y:	-0.517688
+raycast_delta
+x:	1.000000
+y:	1.931667
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	-0.781250
+raycast dir x:	-1.000000
+raycast dir y:	-0.515625
+raycast_delta
+x:	1.000000
+y:	1.939394
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	-0.778125
+raycast dir x:	-1.000000
+raycast dir y:	-0.513563
+raycast_delta
+x:	1.000000
+y:	1.947183
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	-0.775000
+raycast dir x:	-1.000000
+raycast dir y:	-0.511500
+raycast_delta
+x:	1.000000
+y:	1.955034
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	-0.771875
+raycast dir x:	-1.000000
+raycast dir y:	-0.509437
+raycast_delta
+x:	1.000000
+y:	1.962949
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	-0.768750
+raycast dir x:	-1.000000
+raycast dir y:	-0.507375
+raycast_delta
+x:	1.000000
+y:	1.970929
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	-0.765625
+raycast dir x:	-1.000000
+raycast dir y:	-0.505313
+raycast_delta
+x:	1.000000
+y:	1.978973
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	-0.762500
+raycast dir x:	-1.000000
+raycast dir y:	-0.503250
+raycast_delta
+x:	1.000000
+y:	1.987084
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	-0.759375
+raycast dir x:	-1.000000
+raycast dir y:	-0.501188
+raycast_delta
+x:	1.000000
+y:	1.995261
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	-0.756250
+raycast dir x:	-1.000000
+raycast dir y:	-0.499125
+raycast_delta
+x:	1.000000
+y:	2.003506
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	-0.753125
+raycast dir x:	-1.000000
+raycast dir y:	-0.497063
+raycast_delta
+x:	1.000000
+y:	2.011819
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	-0.750000
+raycast dir x:	-1.000000
+raycast dir y:	-0.495000
+raycast_delta
+x:	1.000000
+y:	2.020202
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	-0.746875
+raycast dir x:	-1.000000
+raycast dir y:	-0.492937
+raycast_delta
+x:	1.000000
+y:	2.028655
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	-0.743750
+raycast dir x:	-1.000000
+raycast dir y:	-0.490875
+raycast_delta
+x:	1.000000
+y:	2.037179
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	-0.740625
+raycast dir x:	-1.000000
+raycast dir y:	-0.488812
+raycast_delta
+x:	1.000000
+y:	2.045774
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	-0.737500
+raycast dir x:	-1.000000
+raycast dir y:	-0.486750
+raycast_delta
+x:	1.000000
+y:	2.054443
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	-0.734375
+raycast dir x:	-1.000000
+raycast dir y:	-0.484688
+raycast_delta
+x:	1.000000
+y:	2.063185
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	-0.731250
+raycast dir x:	-1.000000
+raycast dir y:	-0.482625
+raycast_delta
+x:	1.000000
+y:	2.072002
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	-0.728125
+raycast dir x:	-1.000000
+raycast dir y:	-0.480563
+raycast_delta
+x:	1.000000
+y:	2.080895
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	-0.725000
+raycast dir x:	-1.000000
+raycast dir y:	-0.478500
+raycast_delta
+x:	1.000000
+y:	2.089864
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	-0.721875
+raycast dir x:	-1.000000
+raycast dir y:	-0.476438
+raycast_delta
+x:	1.000000
+y:	2.098911
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	-0.718750
+raycast dir x:	-1.000000
+raycast dir y:	-0.474375
+raycast_delta
+x:	1.000000
+y:	2.108037
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	-0.715625
+raycast dir x:	-1.000000
+raycast dir y:	-0.472312
+raycast_delta
+x:	1.000000
+y:	2.117242
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	-0.712500
+raycast dir x:	-1.000000
+raycast dir y:	-0.470250
+raycast_delta
+x:	1.000000
+y:	2.126528
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	-0.709375
+raycast dir x:	-1.000000
+raycast dir y:	-0.468188
+raycast_delta
+x:	1.000000
+y:	2.135896
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	-0.706250
+raycast dir x:	-1.000000
+raycast dir y:	-0.466125
+raycast_delta
+x:	1.000000
+y:	2.145347
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	-0.703125
+raycast dir x:	-1.000000
+raycast dir y:	-0.464063
+raycast_delta
+x:	1.000000
+y:	2.154882
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	-0.700000
+raycast dir x:	-1.000000
+raycast dir y:	-0.462000
+raycast_delta
+x:	1.000000
+y:	2.164502
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	-0.696875
+raycast dir x:	-1.000000
+raycast dir y:	-0.459938
+raycast_delta
+x:	1.000000
+y:	2.174208
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	-0.693750
+raycast dir x:	-1.000000
+raycast dir y:	-0.457875
+raycast_delta
+x:	1.000000
+y:	2.184002
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	-0.690625
+raycast dir x:	-1.000000
+raycast dir y:	-0.455813
+raycast_delta
+x:	1.000000
+y:	2.193885
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	-0.687500
+raycast dir x:	-1.000000
+raycast dir y:	-0.453750
+raycast_delta
+x:	1.000000
+y:	2.203857
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	-0.684375
+raycast dir x:	-1.000000
+raycast dir y:	-0.451688
+raycast_delta
+x:	1.000000
+y:	2.213920
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	-0.681250
+raycast dir x:	-1.000000
+raycast dir y:	-0.449625
+raycast_delta
+x:	1.000000
+y:	2.224076
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	-0.678125
+raycast dir x:	-1.000000
+raycast dir y:	-0.447563
+raycast_delta
+x:	1.000000
+y:	2.234325
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	-0.675000
+raycast dir x:	-1.000000
+raycast dir y:	-0.445500
+raycast_delta
+x:	1.000000
+y:	2.244669
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	-0.671875
+raycast dir x:	-1.000000
+raycast dir y:	-0.443438
+raycast_delta
+x:	1.000000
+y:	2.255109
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	-0.668750
+raycast dir x:	-1.000000
+raycast dir y:	-0.441375
+raycast_delta
+x:	1.000000
+y:	2.265647
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	-0.665625
+raycast dir x:	-1.000000
+raycast dir y:	-0.439313
+raycast_delta
+x:	1.000000
+y:	2.276284
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	-0.662500
+raycast dir x:	-1.000000
+raycast dir y:	-0.437250
+raycast_delta
+x:	1.000000
+y:	2.287021
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	-0.659375
+raycast dir x:	-1.000000
+raycast dir y:	-0.435188
+raycast_delta
+x:	1.000000
+y:	2.297860
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	-0.656250
+raycast dir x:	-1.000000
+raycast dir y:	-0.433125
+raycast_delta
+x:	1.000000
+y:	2.308802
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	-0.653125
+raycast dir x:	-1.000000
+raycast dir y:	-0.431063
+raycast_delta
+x:	1.000000
+y:	2.319849
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	-0.650000
+raycast dir x:	-1.000000
+raycast dir y:	-0.429000
+raycast_delta
+x:	1.000000
+y:	2.331002
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	-0.646875
+raycast dir x:	-1.000000
+raycast dir y:	-0.426938
+raycast_delta
+x:	1.000000
+y:	2.342263
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	-0.643750
+raycast dir x:	-1.000000
+raycast dir y:	-0.424875
+raycast_delta
+x:	1.000000
+y:	2.353633
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	-0.640625
+raycast dir x:	-1.000000
+raycast dir y:	-0.422813
+raycast_delta
+x:	1.000000
+y:	2.365115
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	-0.637500
+raycast dir x:	-1.000000
+raycast dir y:	-0.420750
+raycast_delta
+x:	1.000000
+y:	2.376708
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	-0.634375
+raycast dir x:	-1.000000
+raycast dir y:	-0.418688
+raycast_delta
+x:	1.000000
+y:	2.388416
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	-0.631250
+raycast dir x:	-1.000000
+raycast dir y:	-0.416625
+raycast_delta
+x:	1.000000
+y:	2.400240
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	-0.628125
+raycast dir x:	-1.000000
+raycast dir y:	-0.414563
+raycast_delta
+x:	1.000000
+y:	2.412182
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	-0.625000
+raycast dir x:	-1.000000
+raycast dir y:	-0.412500
+raycast_delta
+x:	1.000000
+y:	2.424242
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	-0.621875
+raycast dir x:	-1.000000
+raycast dir y:	-0.410438
+raycast_delta
+x:	1.000000
+y:	2.436425
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	-0.618750
+raycast dir x:	-1.000000
+raycast dir y:	-0.408375
+raycast_delta
+x:	1.000000
+y:	2.448730
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	-0.615625
+raycast dir x:	-1.000000
+raycast dir y:	-0.406313
+raycast_delta
+x:	1.000000
+y:	2.461160
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	-0.612500
+raycast dir x:	-1.000000
+raycast dir y:	-0.404250
+raycast_delta
+x:	1.000000
+y:	2.473717
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	-0.609375
+raycast dir x:	-1.000000
+raycast dir y:	-0.402188
+raycast_delta
+x:	1.000000
+y:	2.486402
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	-0.606250
+raycast dir x:	-1.000000
+raycast dir y:	-0.400125
+raycast_delta
+x:	1.000000
+y:	2.499219
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	-0.603125
+raycast dir x:	-1.000000
+raycast dir y:	-0.398063
+raycast_delta
+x:	1.000000
+y:	2.512168
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	-0.600000
+raycast dir x:	-1.000000
+raycast dir y:	-0.396000
+raycast_delta
+x:	1.000000
+y:	2.525253
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	-0.596875
+raycast dir x:	-1.000000
+raycast dir y:	-0.393938
+raycast_delta
+x:	1.000000
+y:	2.538474
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	-0.593750
+raycast dir x:	-1.000000
+raycast dir y:	-0.391875
+raycast_delta
+x:	1.000000
+y:	2.551834
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	-0.590625
+raycast dir x:	-1.000000
+raycast dir y:	-0.389813
+raycast_delta
+x:	1.000000
+y:	2.565336
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	-0.587500
+raycast dir x:	-1.000000
+raycast dir y:	-0.387750
+raycast_delta
+x:	1.000000
+y:	2.578981
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	-0.584375
+raycast dir x:	-1.000000
+raycast dir y:	-0.385688
+raycast_delta
+x:	1.000000
+y:	2.592773
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	-0.581250
+raycast dir x:	-1.000000
+raycast dir y:	-0.383625
+raycast_delta
+x:	1.000000
+y:	2.606712
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	-0.578125
+raycast dir x:	-1.000000
+raycast dir y:	-0.381563
+raycast_delta
+x:	1.000000
+y:	2.620803
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	-0.575000
+raycast dir x:	-1.000000
+raycast dir y:	-0.379500
+raycast_delta
+x:	1.000000
+y:	2.635046
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	-0.571875
+raycast dir x:	-1.000000
+raycast dir y:	-0.377438
+raycast_delta
+x:	1.000000
+y:	2.649445
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	-0.568750
+raycast dir x:	-1.000000
+raycast dir y:	-0.375375
+raycast_delta
+x:	1.000000
+y:	2.664003
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	-0.565625
+raycast dir x:	-1.000000
+raycast dir y:	-0.373313
+raycast_delta
+x:	1.000000
+y:	2.678721
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	-0.562500
+raycast dir x:	-1.000000
+raycast dir y:	-0.371250
+raycast_delta
+x:	1.000000
+y:	2.693603
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	-0.559375
+raycast dir x:	-1.000000
+raycast dir y:	-0.369188
+raycast_delta
+x:	1.000000
+y:	2.708651
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	-0.556250
+raycast dir x:	-1.000000
+raycast dir y:	-0.367125
+raycast_delta
+x:	1.000000
+y:	2.723868
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	-0.553125
+raycast dir x:	-1.000000
+raycast dir y:	-0.365063
+raycast_delta
+x:	1.000000
+y:	2.739257
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	-0.550000
+raycast dir x:	-1.000000
+raycast dir y:	-0.363000
+raycast_delta
+x:	1.000000
+y:	2.754821
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	-0.546875
+raycast dir x:	-1.000000
+raycast dir y:	-0.360938
+raycast_delta
+x:	1.000000
+y:	2.770563
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	-0.543750
+raycast dir x:	-1.000000
+raycast dir y:	-0.358875
+raycast_delta
+x:	1.000000
+y:	2.786486
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	-0.540625
+raycast dir x:	-1.000000
+raycast dir y:	-0.356813
+raycast_delta
+x:	1.000000
+y:	2.802592
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	-0.537500
+raycast dir x:	-1.000000
+raycast dir y:	-0.354750
+raycast_delta
+x:	1.000000
+y:	2.818887
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	-0.534375
+raycast dir x:	-1.000000
+raycast dir y:	-0.352688
+raycast_delta
+x:	1.000000
+y:	2.835371
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	-0.531250
+raycast dir x:	-1.000000
+raycast dir y:	-0.350625
+raycast_delta
+x:	1.000000
+y:	2.852050
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	-0.528125
+raycast dir x:	-1.000000
+raycast dir y:	-0.348562
+raycast_delta
+x:	1.000000
+y:	2.868926
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	-0.525000
+raycast dir x:	-1.000000
+raycast dir y:	-0.346500
+raycast_delta
+x:	1.000000
+y:	2.886003
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	-0.521875
+raycast dir x:	-1.000000
+raycast dir y:	-0.344438
+raycast_delta
+x:	1.000000
+y:	2.903284
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	-0.518750
+raycast dir x:	-1.000000
+raycast dir y:	-0.342375
+raycast_delta
+x:	1.000000
+y:	2.920774
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	-0.515625
+raycast dir x:	-1.000000
+raycast dir y:	-0.340313
+raycast_delta
+x:	1.000000
+y:	2.938476
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	-0.512500
+raycast dir x:	-1.000000
+raycast dir y:	-0.338250
+raycast_delta
+x:	1.000000
+y:	2.956393
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	-0.509375
+raycast dir x:	-1.000000
+raycast dir y:	-0.336188
+raycast_delta
+x:	1.000000
+y:	2.974531
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	-0.506250
+raycast dir x:	-1.000000
+raycast dir y:	-0.334125
+raycast_delta
+x:	1.000000
+y:	2.992892
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	-0.503125
+raycast dir x:	-1.000000
+raycast dir y:	-0.332063
+raycast_delta
+x:	1.000000
+y:	3.011481
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	-0.500000
+raycast dir x:	-1.000000
+raycast dir y:	-0.330000
+raycast_delta
+x:	1.000000
+y:	3.030303
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	-0.496875
+raycast dir x:	-1.000000
+raycast dir y:	-0.327937
+raycast_delta
+x:	1.000000
+y:	3.049362
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	-0.493750
+raycast dir x:	-1.000000
+raycast dir y:	-0.325875
+raycast_delta
+x:	1.000000
+y:	3.068661
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	-0.490625
+raycast dir x:	-1.000000
+raycast dir y:	-0.323813
+raycast_delta
+x:	1.000000
+y:	3.088207
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	-0.487500
+raycast dir x:	-1.000000
+raycast dir y:	-0.321750
+raycast_delta
+x:	1.000000
+y:	3.108003
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	-0.484375
+raycast dir x:	-1.000000
+raycast dir y:	-0.319688
+raycast_delta
+x:	1.000000
+y:	3.128055
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	-0.481250
+raycast dir x:	-1.000000
+raycast dir y:	-0.317625
+raycast_delta
+x:	1.000000
+y:	3.148367
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	-0.478125
+raycast dir x:	-1.000000
+raycast dir y:	-0.315563
+raycast_delta
+x:	1.000000
+y:	3.168944
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	-0.475000
+raycast dir x:	-1.000000
+raycast dir y:	-0.313500
+raycast_delta
+x:	1.000000
+y:	3.189793
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	-0.471875
+raycast dir x:	-1.000000
+raycast dir y:	-0.311438
+raycast_delta
+x:	1.000000
+y:	3.210917
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	-0.468750
+raycast dir x:	-1.000000
+raycast dir y:	-0.309375
+raycast_delta
+x:	1.000000
+y:	3.232323
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	-0.465625
+raycast dir x:	-1.000000
+raycast dir y:	-0.307312
+raycast_delta
+x:	1.000000
+y:	3.254017
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	-0.462500
+raycast dir x:	-1.000000
+raycast dir y:	-0.305250
+raycast_delta
+x:	1.000000
+y:	3.276003
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	-0.459375
+raycast dir x:	-1.000000
+raycast dir y:	-0.303187
+raycast_delta
+x:	1.000000
+y:	3.298289
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	-0.456250
+raycast dir x:	-1.000000
+raycast dir y:	-0.301125
+raycast_delta
+x:	1.000000
+y:	3.320880
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	-0.453125
+raycast dir x:	-1.000000
+raycast dir y:	-0.299063
+raycast_delta
+x:	1.000000
+y:	3.343783
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	-0.450000
+raycast dir x:	-1.000000
+raycast dir y:	-0.297000
+raycast_delta
+x:	1.000000
+y:	3.367003
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	-0.446875
+raycast dir x:	-1.000000
+raycast dir y:	-0.294938
+raycast_delta
+x:	1.000000
+y:	3.390549
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	-0.443750
+raycast dir x:	-1.000000
+raycast dir y:	-0.292875
+raycast_delta
+x:	1.000000
+y:	3.414426
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	-0.440625
+raycast dir x:	-1.000000
+raycast dir y:	-0.290813
+raycast_delta
+x:	1.000000
+y:	3.438642
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	-0.437500
+raycast dir x:	-1.000000
+raycast dir y:	-0.288750
+raycast_delta
+x:	1.000000
+y:	3.463203
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	-0.434375
+raycast dir x:	-1.000000
+raycast dir y:	-0.286687
+raycast_delta
+x:	1.000000
+y:	3.488119
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	-0.431250
+raycast dir x:	-1.000000
+raycast dir y:	-0.284625
+raycast_delta
+x:	1.000000
+y:	3.513395
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	-0.428125
+raycast dir x:	-1.000000
+raycast dir y:	-0.282562
+raycast_delta
+x:	1.000000
+y:	3.539040
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	-0.425000
+raycast dir x:	-1.000000
+raycast dir y:	-0.280500
+raycast_delta
+x:	1.000000
+y:	3.565062
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	-0.421875
+raycast dir x:	-1.000000
+raycast dir y:	-0.278438
+raycast_delta
+x:	1.000000
+y:	3.591470
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	-0.418750
+raycast dir x:	-1.000000
+raycast dir y:	-0.276375
+raycast_delta
+x:	1.000000
+y:	3.618272
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	-0.415625
+raycast dir x:	-1.000000
+raycast dir y:	-0.274313
+raycast_delta
+x:	1.000000
+y:	3.645477
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	-0.412500
+raycast dir x:	-1.000000
+raycast dir y:	-0.272250
+raycast_delta
+x:	1.000000
+y:	3.673095
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	-0.409375
+raycast dir x:	-1.000000
+raycast dir y:	-0.270188
+raycast_delta
+x:	1.000000
+y:	3.701133
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	-0.406250
+raycast dir x:	-1.000000
+raycast dir y:	-0.268125
+raycast_delta
+x:	1.000000
+y:	3.729604
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	-0.403125
+raycast dir x:	-1.000000
+raycast dir y:	-0.266062
+raycast_delta
+x:	1.000000
+y:	3.758515
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	-0.400000
+raycast dir x:	-1.000000
+raycast dir y:	-0.264000
+raycast_delta
+x:	1.000000
+y:	3.787879
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	-0.396875
+raycast dir x:	-1.000000
+raycast dir y:	-0.261937
+raycast_delta
+x:	1.000000
+y:	3.817705
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	-0.393750
+raycast dir x:	-1.000000
+raycast dir y:	-0.259875
+raycast_delta
+x:	1.000000
+y:	3.848004
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	-0.390625
+raycast dir x:	-1.000000
+raycast dir y:	-0.257812
+raycast_delta
+x:	1.000000
+y:	3.878788
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	-0.387500
+raycast dir x:	-1.000000
+raycast dir y:	-0.255750
+raycast_delta
+x:	1.000000
+y:	3.910068
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	-0.384375
+raycast dir x:	-1.000000
+raycast dir y:	-0.253688
+raycast_delta
+x:	1.000000
+y:	3.941858
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	-0.381250
+raycast dir x:	-1.000000
+raycast dir y:	-0.251625
+raycast_delta
+x:	1.000000
+y:	3.974168
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	-0.378125
+raycast dir x:	-1.000000
+raycast dir y:	-0.249563
+raycast_delta
+x:	1.000000
+y:	4.007012
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	-0.375000
+raycast dir x:	-1.000000
+raycast dir y:	-0.247500
+raycast_delta
+x:	1.000000
+y:	4.040404
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	-0.371875
+raycast dir x:	-1.000000
+raycast dir y:	-0.245437
+raycast_delta
+x:	1.000000
+y:	4.074357
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	-0.368750
+raycast dir x:	-1.000000
+raycast dir y:	-0.243375
+raycast_delta
+x:	1.000000
+y:	4.108885
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	-0.365625
+raycast dir x:	-1.000000
+raycast dir y:	-0.241312
+raycast_delta
+x:	1.000000
+y:	4.144004
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	-0.362500
+raycast dir x:	-1.000000
+raycast dir y:	-0.239250
+raycast_delta
+x:	1.000000
+y:	4.179728
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	-0.359375
+raycast dir x:	-1.000000
+raycast dir y:	-0.237188
+raycast_delta
+x:	1.000000
+y:	4.216074
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	-0.356250
+raycast dir x:	-1.000000
+raycast dir y:	-0.235125
+raycast_delta
+x:	1.000000
+y:	4.253057
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	-0.353125
+raycast dir x:	-1.000000
+raycast dir y:	-0.233063
+raycast_delta
+x:	1.000000
+y:	4.290695
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	-0.350000
+raycast dir x:	-1.000000
+raycast dir y:	-0.231000
+raycast_delta
+x:	1.000000
+y:	4.329004
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	-0.346875
+raycast dir x:	-1.000000
+raycast dir y:	-0.228938
+raycast_delta
+x:	1.000000
+y:	4.368004
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	-0.343750
+raycast dir x:	-1.000000
+raycast dir y:	-0.226875
+raycast_delta
+x:	1.000000
+y:	4.407713
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	-0.340625
+raycast dir x:	-1.000000
+raycast dir y:	-0.224812
+raycast_delta
+x:	1.000000
+y:	4.448151
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	-0.337500
+raycast dir x:	-1.000000
+raycast dir y:	-0.222750
+raycast_delta
+x:	1.000000
+y:	4.489338
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	-0.334375
+raycast dir x:	-1.000000
+raycast dir y:	-0.220688
+raycast_delta
+x:	1.000000
+y:	4.531294
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	-0.331250
+raycast dir x:	-1.000000
+raycast dir y:	-0.218625
+raycast_delta
+x:	1.000000
+y:	4.574042
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	-0.328125
+raycast dir x:	-1.000000
+raycast dir y:	-0.216563
+raycast_delta
+x:	1.000000
+y:	4.617605
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	-0.325000
+raycast dir x:	-1.000000
+raycast dir y:	-0.214500
+raycast_delta
+x:	1.000000
+y:	4.662005
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	-0.321875
+raycast dir x:	-1.000000
+raycast dir y:	-0.212438
+raycast_delta
+x:	1.000000
+y:	4.707267
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	-0.318750
+raycast dir x:	-1.000000
+raycast dir y:	-0.210375
+raycast_delta
+x:	1.000000
+y:	4.753417
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	-0.315625
+raycast dir x:	-1.000000
+raycast dir y:	-0.208313
+raycast_delta
+x:	1.000000
+y:	4.800480
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	-0.312500
+raycast dir x:	-1.000000
+raycast dir y:	-0.206250
+raycast_delta
+x:	1.000000
+y:	4.848485
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	-0.309375
+raycast dir x:	-1.000000
+raycast dir y:	-0.204187
+raycast_delta
+x:	1.000000
+y:	4.897459
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	-0.306250
+raycast dir x:	-1.000000
+raycast dir y:	-0.202125
+raycast_delta
+x:	1.000000
+y:	4.947434
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	-0.303125
+raycast dir x:	-1.000000
+raycast dir y:	-0.200063
+raycast_delta
+x:	1.000000
+y:	4.998438
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	-0.300000
+raycast dir x:	-1.000000
+raycast dir y:	-0.198000
+raycast_delta
+x:	1.000000
+y:	5.050505
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	-0.296875
+raycast dir x:	-1.000000
+raycast dir y:	-0.195938
+raycast_delta
+x:	1.000000
+y:	5.103668
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	-0.293750
+raycast dir x:	-1.000000
+raycast dir y:	-0.193875
+raycast_delta
+x:	1.000000
+y:	5.157963
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	-0.290625
+raycast dir x:	-1.000000
+raycast dir y:	-0.191813
+raycast_delta
+x:	1.000000
+y:	5.213425
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	-0.287500
+raycast dir x:	-1.000000
+raycast dir y:	-0.189750
+raycast_delta
+x:	1.000000
+y:	5.270092
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	-0.284375
+raycast dir x:	-1.000000
+raycast dir y:	-0.187688
+raycast_delta
+x:	1.000000
+y:	5.328005
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	-0.281250
+raycast dir x:	-1.000000
+raycast dir y:	-0.185625
+raycast_delta
+x:	1.000000
+y:	5.387205
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	-0.278125
+raycast dir x:	-1.000000
+raycast dir y:	-0.183562
+raycast_delta
+x:	1.000000
+y:	5.447736
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	-0.275000
+raycast dir x:	-1.000000
+raycast dir y:	-0.181500
+raycast_delta
+x:	1.000000
+y:	5.509642
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	-0.271875
+raycast dir x:	-1.000000
+raycast dir y:	-0.179437
+raycast_delta
+x:	1.000000
+y:	5.572971
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	-0.268750
+raycast dir x:	-1.000000
+raycast dir y:	-0.177375
+raycast_delta
+x:	1.000000
+y:	5.637773
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	-0.265625
+raycast dir x:	-1.000000
+raycast dir y:	-0.175313
+raycast_delta
+x:	1.000000
+y:	5.704100
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	-0.262500
+raycast dir x:	-1.000000
+raycast dir y:	-0.173250
+raycast_delta
+x:	1.000000
+y:	5.772006
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	-0.259375
+raycast dir x:	-1.000000
+raycast dir y:	-0.171188
+raycast_delta
+x:	1.000000
+y:	5.841548
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	-0.256250
+raycast dir x:	-1.000000
+raycast dir y:	-0.169125
+raycast_delta
+x:	1.000000
+y:	5.912786
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	-0.253125
+raycast dir x:	-1.000000
+raycast dir y:	-0.167063
+raycast_delta
+x:	1.000000
+y:	5.985784
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	-0.250000
+raycast dir x:	-1.000000
+raycast dir y:	-0.165000
+raycast_delta
+x:	1.000000
+y:	6.060606
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	-0.246875
+raycast dir x:	-1.000000
+raycast dir y:	-0.162937
+raycast_delta
+x:	1.000000
+y:	6.137323
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	-0.243750
+raycast dir x:	-1.000000
+raycast dir y:	-0.160875
+raycast_delta
+x:	1.000000
+y:	6.216006
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	-0.240625
+raycast dir x:	-1.000000
+raycast dir y:	-0.158812
+raycast_delta
+x:	1.000000
+y:	6.296734
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	-0.237500
+raycast dir x:	-1.000000
+raycast dir y:	-0.156750
+raycast_delta
+x:	1.000000
+y:	6.379585
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	-0.234375
+raycast dir x:	-1.000000
+raycast dir y:	-0.154688
+raycast_delta
+x:	1.000000
+y:	6.464646
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	-0.231250
+raycast dir x:	-1.000000
+raycast dir y:	-0.152625
+raycast_delta
+x:	1.000000
+y:	6.552007
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	-0.228125
+raycast dir x:	-1.000000
+raycast dir y:	-0.150563
+raycast_delta
+x:	1.000000
+y:	6.641760
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	-0.225000
+raycast dir x:	-1.000000
+raycast dir y:	-0.148500
+raycast_delta
+x:	1.000000
+y:	6.734007
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	-0.221875
+raycast dir x:	-1.000000
+raycast dir y:	-0.146438
+raycast_delta
+x:	1.000000
+y:	6.828852
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	-0.218750
+raycast dir x:	-1.000000
+raycast dir y:	-0.144375
+raycast_delta
+x:	1.000000
+y:	6.926407
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	-0.215625
+raycast dir x:	-1.000000
+raycast dir y:	-0.142312
+raycast_delta
+x:	1.000000
+y:	7.026790
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	-0.212500
+raycast dir x:	-1.000000
+raycast dir y:	-0.140250
+raycast_delta
+x:	1.000000
+y:	7.130125
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	-0.209375
+raycast dir x:	-1.000000
+raycast dir y:	-0.138187
+raycast_delta
+x:	1.000000
+y:	7.236545
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	-0.206250
+raycast dir x:	-1.000000
+raycast dir y:	-0.136125
+raycast_delta
+x:	1.000000
+y:	7.346189
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	-0.203125
+raycast dir x:	-1.000000
+raycast dir y:	-0.134063
+raycast_delta
+x:	1.000000
+y:	7.459207
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	-0.200000
+raycast dir x:	-1.000000
+raycast dir y:	-0.132000
+raycast_delta
+x:	1.000000
+y:	7.575758
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	-0.196875
+raycast dir x:	-1.000000
+raycast dir y:	-0.129938
+raycast_delta
+x:	1.000000
+y:	7.696008
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	-0.193750
+raycast dir x:	-1.000000
+raycast dir y:	-0.127875
+raycast_delta
+x:	1.000000
+y:	7.820137
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	-0.190625
+raycast dir x:	-1.000000
+raycast dir y:	-0.125813
+raycast_delta
+x:	1.000000
+y:	7.948336
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	-0.187500
+raycast dir x:	-1.000000
+raycast dir y:	-0.123750
+raycast_delta
+x:	1.000000
+y:	8.080808
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	-0.184375
+raycast dir x:	-1.000000
+raycast dir y:	-0.121687
+raycast_delta
+x:	1.000000
+y:	8.217771
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	-0.181250
+raycast dir x:	-1.000000
+raycast dir y:	-0.119625
+raycast_delta
+x:	1.000000
+y:	8.359457
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	-0.178125
+raycast dir x:	-1.000000
+raycast dir y:	-0.117562
+raycast_delta
+x:	1.000000
+y:	8.506114
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	-0.175000
+raycast dir x:	-1.000000
+raycast dir y:	-0.115500
+raycast_delta
+x:	1.000000
+y:	8.658009
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	-0.171875
+raycast dir x:	-1.000000
+raycast dir y:	-0.113438
+raycast_delta
+x:	1.000000
+y:	8.815427
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	-0.168750
+raycast dir x:	-1.000000
+raycast dir y:	-0.111375
+raycast_delta
+x:	1.000000
+y:	8.978676
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	-0.165625
+raycast dir x:	-1.000000
+raycast dir y:	-0.109313
+raycast_delta
+x:	1.000000
+y:	9.148085
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	-0.162500
+raycast dir x:	-1.000000
+raycast dir y:	-0.107250
+raycast_delta
+x:	1.000000
+y:	9.324009
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	-0.159375
+raycast dir x:	-1.000000
+raycast dir y:	-0.105188
+raycast_delta
+x:	1.000000
+y:	9.506833
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	-0.156250
+raycast dir x:	-1.000000
+raycast dir y:	-0.103125
+raycast_delta
+x:	1.000000
+y:	9.696970
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	-0.153125
+raycast dir x:	-1.000000
+raycast dir y:	-0.101062
+raycast_delta
+x:	1.000000
+y:	9.894867
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	-0.150000
+raycast dir x:	-1.000000
+raycast dir y:	-0.099000
+raycast_delta
+x:	1.000000
+y:	10.101010
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	-0.146875
+raycast dir x:	-1.000000
+raycast dir y:	-0.096937
+raycast_delta
+x:	1.000000
+y:	10.315925
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	-0.143750
+raycast dir x:	-1.000000
+raycast dir y:	-0.094875
+raycast_delta
+x:	1.000000
+y:	10.540184
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	-0.140625
+raycast dir x:	-1.000000
+raycast dir y:	-0.092813
+raycast_delta
+x:	1.000000
+y:	10.774411
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	-0.137500
+raycast dir x:	-1.000000
+raycast dir y:	-0.090750
+raycast_delta
+x:	1.000000
+y:	11.019284
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	-0.134375
+raycast dir x:	-1.000000
+raycast dir y:	-0.088688
+raycast_delta
+x:	1.000000
+y:	11.275546
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	-0.131250
+raycast dir x:	-1.000000
+raycast dir y:	-0.086625
+raycast_delta
+x:	1.000000
+y:	11.544012
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	-0.128125
+raycast dir x:	-1.000000
+raycast dir y:	-0.084563
+raycast_delta
+x:	1.000000
+y:	11.825573
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	-0.125000
+raycast dir x:	-1.000000
+raycast dir y:	-0.082500
+raycast_delta
+x:	1.000000
+y:	12.121212
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	-0.121875
+raycast dir x:	-1.000000
+raycast dir y:	-0.080437
+raycast_delta
+x:	1.000000
+y:	12.432012
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	-0.118750
+raycast dir x:	-1.000000
+raycast dir y:	-0.078375
+raycast_delta
+x:	1.000000
+y:	12.759171
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	-0.115625
+raycast dir x:	-1.000000
+raycast dir y:	-0.076312
+raycast_delta
+x:	1.000000
+y:	13.104013
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	-0.112500
+raycast dir x:	-1.000000
+raycast dir y:	-0.074250
+raycast_delta
+x:	1.000000
+y:	13.468013
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	-0.109375
+raycast dir x:	-1.000000
+raycast dir y:	-0.072188
+raycast_delta
+x:	1.000000
+y:	13.852814
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	-0.106250
+raycast dir x:	-1.000000
+raycast dir y:	-0.070125
+raycast_delta
+x:	1.000000
+y:	14.260250
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	-0.103125
+raycast dir x:	-1.000000
+raycast dir y:	-0.068063
+raycast_delta
+x:	1.000000
+y:	14.692378
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	-0.100000
+raycast dir x:	-1.000000
+raycast dir y:	-0.066000
+raycast_delta
+x:	1.000000
+y:	15.151515
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	-0.096875
+raycast dir x:	-1.000000
+raycast dir y:	-0.063938
+raycast_delta
+x:	1.000000
+y:	15.640274
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	-0.093750
+raycast dir x:	-1.000000
+raycast dir y:	-0.061875
+raycast_delta
+x:	1.000000
+y:	16.161616
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	-0.090625
+raycast dir x:	-1.000000
+raycast dir y:	-0.059812
+raycast_delta
+x:	1.000000
+y:	16.718913
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	-0.087500
+raycast dir x:	-1.000000
+raycast dir y:	-0.057750
+raycast_delta
+x:	1.000000
+y:	17.316017
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	-0.084375
+raycast dir x:	-1.000000
+raycast dir y:	-0.055687
+raycast_delta
+x:	1.000000
+y:	17.957351
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	-0.081250
+raycast dir x:	-1.000000
+raycast dir y:	-0.053625
+raycast_delta
+x:	1.000000
+y:	18.648019
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	-0.078125
+raycast dir x:	-1.000000
+raycast dir y:	-0.051563
+raycast_delta
+x:	1.000000
+y:	19.393939
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	-0.075000
+raycast dir x:	-1.000000
+raycast dir y:	-0.049500
+raycast_delta
+x:	1.000000
+y:	20.202020
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	-0.071875
+raycast dir x:	-1.000000
+raycast dir y:	-0.047438
+raycast_delta
+x:	1.000000
+y:	21.080369
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	-0.068750
+raycast dir x:	-1.000000
+raycast dir y:	-0.045375
+raycast_delta
+x:	1.000000
+y:	22.038567
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	-0.065625
+raycast dir x:	-1.000000
+raycast dir y:	-0.043313
+raycast_delta
+x:	1.000000
+y:	23.088023
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	-0.062500
+raycast dir x:	-1.000000
+raycast dir y:	-0.041250
+raycast_delta
+x:	1.000000
+y:	24.242424
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	-0.059375
+raycast dir x:	-1.000000
+raycast dir y:	-0.039187
+raycast_delta
+x:	1.000000
+y:	25.518341
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	-0.056250
+raycast dir x:	-1.000000
+raycast dir y:	-0.037125
+raycast_delta
+x:	1.000000
+y:	26.936027
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	-0.053125
+raycast dir x:	-1.000000
+raycast dir y:	-0.035062
+raycast_delta
+x:	1.000000
+y:	28.520499
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	-0.050000
+raycast dir x:	-1.000000
+raycast dir y:	-0.033000
+raycast_delta
+x:	1.000000
+y:	30.303030
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	-0.046875
+raycast dir x:	-1.000000
+raycast dir y:	-0.030937
+raycast_delta
+x:	1.000000
+y:	32.323232
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	-0.043750
+raycast dir x:	-1.000000
+raycast dir y:	-0.028875
+raycast_delta
+x:	1.000000
+y:	34.632035
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	-0.040625
+raycast dir x:	-1.000000
+raycast dir y:	-0.026813
+raycast_delta
+x:	1.000000
+y:	37.296037
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	-0.037500
+raycast dir x:	-1.000000
+raycast dir y:	-0.024750
+raycast_delta
+x:	1.000000
+y:	40.404040
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	-0.034375
+raycast dir x:	-1.000000
+raycast dir y:	-0.022688
+raycast_delta
+x:	1.000000
+y:	44.077135
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	-0.031250
+raycast dir x:	-1.000000
+raycast dir y:	-0.020625
+raycast_delta
+x:	1.000000
+y:	48.484848
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	-0.028125
+raycast dir x:	-1.000000
+raycast dir y:	-0.018562
+raycast_delta
+x:	1.000000
+y:	53.872054
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	-0.025000
+raycast dir x:	-1.000000
+raycast dir y:	-0.016500
+raycast_delta
+x:	1.000000
+y:	60.606061
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	-0.021875
+raycast dir x:	-1.000000
+raycast dir y:	-0.014437
+raycast_delta
+x:	1.000000
+y:	69.264069
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	-0.018750
+raycast dir x:	-1.000000
+raycast dir y:	-0.012375
+raycast_delta
+x:	1.000000
+y:	80.808081
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	-0.015625
+raycast dir x:	-1.000000
+raycast dir y:	-0.010313
+raycast_delta
+x:	1.000000
+y:	96.969697
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	-0.012500
+raycast dir x:	-1.000000
+raycast dir y:	-0.008250
+raycast_delta
+x:	1.000000
+y:	121.212121
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	-0.009375
+raycast dir x:	-1.000000
+raycast dir y:	-0.006188
+raycast_delta
+x:	1.000000
+y:	161.616162
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	-0.006250
+raycast dir x:	-1.000000
+raycast dir y:	-0.004125
+raycast_delta
+x:	1.000000
+y:	242.424242
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	-0.003125
+raycast dir x:	-1.000000
+raycast dir y:	-0.002063
+raycast_delta
+x:	1.000000
+y:	484.848485
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	0.000000
+raycast dir x:	-1.000000
+raycast dir y:	0.000000
+raycast_delta
+x:	1.000000
+y:	1000000000000000019884624838656.000000
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	0.003125
+raycast dir x:	-1.000000
+raycast dir y:	0.002063
+raycast_delta
+x:	1.000000
+y:	484.848485
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	0.006250
+raycast dir x:	-1.000000
+raycast dir y:	0.004125
+raycast_delta
+x:	1.000000
+y:	242.424242
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	0.009375
+raycast dir x:	-1.000000
+raycast dir y:	0.006187
+raycast_delta
+x:	1.000000
+y:	161.616162
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	0.012500
+raycast dir x:	-1.000000
+raycast dir y:	0.008250
+raycast_delta
+x:	1.000000
+y:	121.212121
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	0.015625
+raycast dir x:	-1.000000
+raycast dir y:	0.010313
+raycast_delta
+x:	1.000000
+y:	96.969697
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	0.018750
+raycast dir x:	-1.000000
+raycast dir y:	0.012375
+raycast_delta
+x:	1.000000
+y:	80.808081
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	0.021875
+raycast dir x:	-1.000000
+raycast dir y:	0.014438
+raycast_delta
+x:	1.000000
+y:	69.264069
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	0.025000
+raycast dir x:	-1.000000
+raycast dir y:	0.016500
+raycast_delta
+x:	1.000000
+y:	60.606061
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	0.028125
+raycast dir x:	-1.000000
+raycast dir y:	0.018562
+raycast_delta
+x:	1.000000
+y:	53.872054
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	0.031250
+raycast dir x:	-1.000000
+raycast dir y:	0.020625
+raycast_delta
+x:	1.000000
+y:	48.484848
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	0.034375
+raycast dir x:	-1.000000
+raycast dir y:	0.022688
+raycast_delta
+x:	1.000000
+y:	44.077135
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	0.037500
+raycast dir x:	-1.000000
+raycast dir y:	0.024750
+raycast_delta
+x:	1.000000
+y:	40.404040
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	0.040625
+raycast dir x:	-1.000000
+raycast dir y:	0.026812
+raycast_delta
+x:	1.000000
+y:	37.296037
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	0.043750
+raycast dir x:	-1.000000
+raycast dir y:	0.028875
+raycast_delta
+x:	1.000000
+y:	34.632035
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	0.046875
+raycast dir x:	-1.000000
+raycast dir y:	0.030937
+raycast_delta
+x:	1.000000
+y:	32.323232
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	0.050000
+raycast dir x:	-1.000000
+raycast dir y:	0.033000
+raycast_delta
+x:	1.000000
+y:	30.303030
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	0.053125
+raycast dir x:	-1.000000
+raycast dir y:	0.035063
+raycast_delta
+x:	1.000000
+y:	28.520499
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	0.056250
+raycast dir x:	-1.000000
+raycast dir y:	0.037125
+raycast_delta
+x:	1.000000
+y:	26.936027
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	0.059375
+raycast dir x:	-1.000000
+raycast dir y:	0.039187
+raycast_delta
+x:	1.000000
+y:	25.518341
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	0.062500
+raycast dir x:	-1.000000
+raycast dir y:	0.041250
+raycast_delta
+x:	1.000000
+y:	24.242424
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	0.065625
+raycast dir x:	-1.000000
+raycast dir y:	0.043313
+raycast_delta
+x:	1.000000
+y:	23.088023
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	0.068750
+raycast dir x:	-1.000000
+raycast dir y:	0.045375
+raycast_delta
+x:	1.000000
+y:	22.038567
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	0.071875
+raycast dir x:	-1.000000
+raycast dir y:	0.047437
+raycast_delta
+x:	1.000000
+y:	21.080369
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	0.075000
+raycast dir x:	-1.000000
+raycast dir y:	0.049500
+raycast_delta
+x:	1.000000
+y:	20.202020
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	0.078125
+raycast dir x:	-1.000000
+raycast dir y:	0.051563
+raycast_delta
+x:	1.000000
+y:	19.393939
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	0.081250
+raycast dir x:	-1.000000
+raycast dir y:	0.053625
+raycast_delta
+x:	1.000000
+y:	18.648019
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	0.084375
+raycast dir x:	-1.000000
+raycast dir y:	0.055688
+raycast_delta
+x:	1.000000
+y:	17.957351
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	0.087500
+raycast dir x:	-1.000000
+raycast dir y:	0.057750
+raycast_delta
+x:	1.000000
+y:	17.316017
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	0.090625
+raycast dir x:	-1.000000
+raycast dir y:	0.059812
+raycast_delta
+x:	1.000000
+y:	16.718913
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	0.093750
+raycast dir x:	-1.000000
+raycast dir y:	0.061875
+raycast_delta
+x:	1.000000
+y:	16.161616
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	0.096875
+raycast dir x:	-1.000000
+raycast dir y:	0.063938
+raycast_delta
+x:	1.000000
+y:	15.640274
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	0.100000
+raycast dir x:	-1.000000
+raycast dir y:	0.066000
+raycast_delta
+x:	1.000000
+y:	15.151515
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	0.103125
+raycast dir x:	-1.000000
+raycast dir y:	0.068062
+raycast_delta
+x:	1.000000
+y:	14.692378
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	0.106250
+raycast dir x:	-1.000000
+raycast dir y:	0.070125
+raycast_delta
+x:	1.000000
+y:	14.260250
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	0.109375
+raycast dir x:	-1.000000
+raycast dir y:	0.072188
+raycast_delta
+x:	1.000000
+y:	13.852814
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	0.112500
+raycast dir x:	-1.000000
+raycast dir y:	0.074250
+raycast_delta
+x:	1.000000
+y:	13.468013
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	0.115625
+raycast dir x:	-1.000000
+raycast dir y:	0.076313
+raycast_delta
+x:	1.000000
+y:	13.104013
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	0.118750
+raycast dir x:	-1.000000
+raycast dir y:	0.078375
+raycast_delta
+x:	1.000000
+y:	12.759171
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	0.121875
+raycast dir x:	-1.000000
+raycast dir y:	0.080437
+raycast_delta
+x:	1.000000
+y:	12.432012
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	0.125000
+raycast dir x:	-1.000000
+raycast dir y:	0.082500
+raycast_delta
+x:	1.000000
+y:	12.121212
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	0.128125
+raycast dir x:	-1.000000
+raycast dir y:	0.084563
+raycast_delta
+x:	1.000000
+y:	11.825573
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	0.131250
+raycast dir x:	-1.000000
+raycast dir y:	0.086625
+raycast_delta
+x:	1.000000
+y:	11.544012
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	0.134375
+raycast dir x:	-1.000000
+raycast dir y:	0.088687
+raycast_delta
+x:	1.000000
+y:	11.275546
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	0.137500
+raycast dir x:	-1.000000
+raycast dir y:	0.090750
+raycast_delta
+x:	1.000000
+y:	11.019284
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	0.140625
+raycast dir x:	-1.000000
+raycast dir y:	0.092813
+raycast_delta
+x:	1.000000
+y:	10.774411
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	0.143750
+raycast dir x:	-1.000000
+raycast dir y:	0.094875
+raycast_delta
+x:	1.000000
+y:	10.540184
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	0.146875
+raycast dir x:	-1.000000
+raycast dir y:	0.096938
+raycast_delta
+x:	1.000000
+y:	10.315925
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	0.150000
+raycast dir x:	-1.000000
+raycast dir y:	0.099000
+raycast_delta
+x:	1.000000
+y:	10.101010
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	0.153125
+raycast dir x:	-1.000000
+raycast dir y:	0.101062
+raycast_delta
+x:	1.000000
+y:	9.894867
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	0.156250
+raycast dir x:	-1.000000
+raycast dir y:	0.103125
+raycast_delta
+x:	1.000000
+y:	9.696970
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	0.159375
+raycast dir x:	-1.000000
+raycast dir y:	0.105188
+raycast_delta
+x:	1.000000
+y:	9.506833
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	0.162500
+raycast dir x:	-1.000000
+raycast dir y:	0.107250
+raycast_delta
+x:	1.000000
+y:	9.324009
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	0.165625
+raycast dir x:	-1.000000
+raycast dir y:	0.109312
+raycast_delta
+x:	1.000000
+y:	9.148085
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	0.168750
+raycast dir x:	-1.000000
+raycast dir y:	0.111375
+raycast_delta
+x:	1.000000
+y:	8.978676
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	0.171875
+raycast dir x:	-1.000000
+raycast dir y:	0.113438
+raycast_delta
+x:	1.000000
+y:	8.815427
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	0.175000
+raycast dir x:	-1.000000
+raycast dir y:	0.115500
+raycast_delta
+x:	1.000000
+y:	8.658009
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	0.178125
+raycast dir x:	-1.000000
+raycast dir y:	0.117563
+raycast_delta
+x:	1.000000
+y:	8.506114
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	0.181250
+raycast dir x:	-1.000000
+raycast dir y:	0.119625
+raycast_delta
+x:	1.000000
+y:	8.359457
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	0.184375
+raycast dir x:	-1.000000
+raycast dir y:	0.121687
+raycast_delta
+x:	1.000000
+y:	8.217771
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	0.187500
+raycast dir x:	-1.000000
+raycast dir y:	0.123750
+raycast_delta
+x:	1.000000
+y:	8.080808
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	0.190625
+raycast dir x:	-1.000000
+raycast dir y:	0.125813
+raycast_delta
+x:	1.000000
+y:	7.948336
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	0.193750
+raycast dir x:	-1.000000
+raycast dir y:	0.127875
+raycast_delta
+x:	1.000000
+y:	7.820137
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	0.196875
+raycast dir x:	-1.000000
+raycast dir y:	0.129937
+raycast_delta
+x:	1.000000
+y:	7.696008
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	0.200000
+raycast dir x:	-1.000000
+raycast dir y:	0.132000
+raycast_delta
+x:	1.000000
+y:	7.575758
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	0.203125
+raycast dir x:	-1.000000
+raycast dir y:	0.134063
+raycast_delta
+x:	1.000000
+y:	7.459207
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	0.206250
+raycast dir x:	-1.000000
+raycast dir y:	0.136125
+raycast_delta
+x:	1.000000
+y:	7.346189
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	0.209375
+raycast dir x:	-1.000000
+raycast dir y:	0.138188
+raycast_delta
+x:	1.000000
+y:	7.236545
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	0.212500
+raycast dir x:	-1.000000
+raycast dir y:	0.140250
+raycast_delta
+x:	1.000000
+y:	7.130125
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	0.215625
+raycast dir x:	-1.000000
+raycast dir y:	0.142312
+raycast_delta
+x:	1.000000
+y:	7.026790
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	0.218750
+raycast dir x:	-1.000000
+raycast dir y:	0.144375
+raycast_delta
+x:	1.000000
+y:	6.926407
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	0.221875
+raycast dir x:	-1.000000
+raycast dir y:	0.146438
+raycast_delta
+x:	1.000000
+y:	6.828852
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	0.225000
+raycast dir x:	-1.000000
+raycast dir y:	0.148500
+raycast_delta
+x:	1.000000
+y:	6.734007
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	0.228125
+raycast dir x:	-1.000000
+raycast dir y:	0.150562
+raycast_delta
+x:	1.000000
+y:	6.641760
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	0.231250
+raycast dir x:	-1.000000
+raycast dir y:	0.152625
+raycast_delta
+x:	1.000000
+y:	6.552007
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	0.234375
+raycast dir x:	-1.000000
+raycast dir y:	0.154688
+raycast_delta
+x:	1.000000
+y:	6.464646
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	0.237500
+raycast dir x:	-1.000000
+raycast dir y:	0.156750
+raycast_delta
+x:	1.000000
+y:	6.379585
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	0.240625
+raycast dir x:	-1.000000
+raycast dir y:	0.158813
+raycast_delta
+x:	1.000000
+y:	6.296734
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	0.243750
+raycast dir x:	-1.000000
+raycast dir y:	0.160875
+raycast_delta
+x:	1.000000
+y:	6.216006
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	0.246875
+raycast dir x:	-1.000000
+raycast dir y:	0.162937
+raycast_delta
+x:	1.000000
+y:	6.137323
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	0.250000
+raycast dir x:	-1.000000
+raycast dir y:	0.165000
+raycast_delta
+x:	1.000000
+y:	6.060606
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	0.253125
+raycast dir x:	-1.000000
+raycast dir y:	0.167063
+raycast_delta
+x:	1.000000
+y:	5.985784
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	0.256250
+raycast dir x:	-1.000000
+raycast dir y:	0.169125
+raycast_delta
+x:	1.000000
+y:	5.912786
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	0.259375
+raycast dir x:	-1.000000
+raycast dir y:	0.171187
+raycast_delta
+x:	1.000000
+y:	5.841548
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	0.262500
+raycast dir x:	-1.000000
+raycast dir y:	0.173250
+raycast_delta
+x:	1.000000
+y:	5.772006
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	0.265625
+raycast dir x:	-1.000000
+raycast dir y:	0.175313
+raycast_delta
+x:	1.000000
+y:	5.704100
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	0.268750
+raycast dir x:	-1.000000
+raycast dir y:	0.177375
+raycast_delta
+x:	1.000000
+y:	5.637773
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	0.271875
+raycast dir x:	-1.000000
+raycast dir y:	0.179438
+raycast_delta
+x:	1.000000
+y:	5.572971
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	0.275000
+raycast dir x:	-1.000000
+raycast dir y:	0.181500
+raycast_delta
+x:	1.000000
+y:	5.509642
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	0.278125
+raycast dir x:	-1.000000
+raycast dir y:	0.183562
+raycast_delta
+x:	1.000000
+y:	5.447736
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	0.281250
+raycast dir x:	-1.000000
+raycast dir y:	0.185625
+raycast_delta
+x:	1.000000
+y:	5.387205
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	0.284375
+raycast dir x:	-1.000000
+raycast dir y:	0.187688
+raycast_delta
+x:	1.000000
+y:	5.328005
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	0.287500
+raycast dir x:	-1.000000
+raycast dir y:	0.189750
+raycast_delta
+x:	1.000000
+y:	5.270092
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	0.290625
+raycast dir x:	-1.000000
+raycast dir y:	0.191812
+raycast_delta
+x:	1.000000
+y:	5.213425
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	0.293750
+raycast dir x:	-1.000000
+raycast dir y:	0.193875
+raycast_delta
+x:	1.000000
+y:	5.157963
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	0.296875
+raycast dir x:	-1.000000
+raycast dir y:	0.195938
+raycast_delta
+x:	1.000000
+y:	5.103668
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	0.300000
+raycast dir x:	-1.000000
+raycast dir y:	0.198000
+raycast_delta
+x:	1.000000
+y:	5.050505
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	0.303125
+raycast dir x:	-1.000000
+raycast dir y:	0.200063
+raycast_delta
+x:	1.000000
+y:	4.998438
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	0.306250
+raycast dir x:	-1.000000
+raycast dir y:	0.202125
+raycast_delta
+x:	1.000000
+y:	4.947434
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	0.309375
+raycast dir x:	-1.000000
+raycast dir y:	0.204187
+raycast_delta
+x:	1.000000
+y:	4.897459
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	0.312500
+raycast dir x:	-1.000000
+raycast dir y:	0.206250
+raycast_delta
+x:	1.000000
+y:	4.848485
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	0.315625
+raycast dir x:	-1.000000
+raycast dir y:	0.208313
+raycast_delta
+x:	1.000000
+y:	4.800480
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	0.318750
+raycast dir x:	-1.000000
+raycast dir y:	0.210375
+raycast_delta
+x:	1.000000
+y:	4.753417
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	0.321875
+raycast dir x:	-1.000000
+raycast dir y:	0.212437
+raycast_delta
+x:	1.000000
+y:	4.707267
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	0.325000
+raycast dir x:	-1.000000
+raycast dir y:	0.214500
+raycast_delta
+x:	1.000000
+y:	4.662005
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	0.328125
+raycast dir x:	-1.000000
+raycast dir y:	0.216563
+raycast_delta
+x:	1.000000
+y:	4.617605
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	0.331250
+raycast dir x:	-1.000000
+raycast dir y:	0.218625
+raycast_delta
+x:	1.000000
+y:	4.574042
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	0.334375
+raycast dir x:	-1.000000
+raycast dir y:	0.220688
+raycast_delta
+x:	1.000000
+y:	4.531294
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	0.337500
+raycast dir x:	-1.000000
+raycast dir y:	0.222750
+raycast_delta
+x:	1.000000
+y:	4.489338
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	0.340625
+raycast dir x:	-1.000000
+raycast dir y:	0.224812
+raycast_delta
+x:	1.000000
+y:	4.448151
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	0.343750
+raycast dir x:	-1.000000
+raycast dir y:	0.226875
+raycast_delta
+x:	1.000000
+y:	4.407713
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	0.346875
+raycast dir x:	-1.000000
+raycast dir y:	0.228938
+raycast_delta
+x:	1.000000
+y:	4.368004
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	0.350000
+raycast dir x:	-1.000000
+raycast dir y:	0.231000
+raycast_delta
+x:	1.000000
+y:	4.329004
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	0.353125
+raycast dir x:	-1.000000
+raycast dir y:	0.233062
+raycast_delta
+x:	1.000000
+y:	4.290695
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	0.356250
+raycast dir x:	-1.000000
+raycast dir y:	0.235125
+raycast_delta
+x:	1.000000
+y:	4.253057
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	0.359375
+raycast dir x:	-1.000000
+raycast dir y:	0.237188
+raycast_delta
+x:	1.000000
+y:	4.216074
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	0.362500
+raycast dir x:	-1.000000
+raycast dir y:	0.239250
+raycast_delta
+x:	1.000000
+y:	4.179728
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	0.365625
+raycast dir x:	-1.000000
+raycast dir y:	0.241313
+raycast_delta
+x:	1.000000
+y:	4.144004
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	0.368750
+raycast dir x:	-1.000000
+raycast dir y:	0.243375
+raycast_delta
+x:	1.000000
+y:	4.108885
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	0.371875
+raycast dir x:	-1.000000
+raycast dir y:	0.245437
+raycast_delta
+x:	1.000000
+y:	4.074357
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	0.375000
+raycast dir x:	-1.000000
+raycast dir y:	0.247500
+raycast_delta
+x:	1.000000
+y:	4.040404
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	0.378125
+raycast dir x:	-1.000000
+raycast dir y:	0.249563
+raycast_delta
+x:	1.000000
+y:	4.007012
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	0.381250
+raycast dir x:	-1.000000
+raycast dir y:	0.251625
+raycast_delta
+x:	1.000000
+y:	3.974168
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	0.384375
+raycast dir x:	-1.000000
+raycast dir y:	0.253687
+raycast_delta
+x:	1.000000
+y:	3.941858
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	0.387500
+raycast dir x:	-1.000000
+raycast dir y:	0.255750
+raycast_delta
+x:	1.000000
+y:	3.910068
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	0.390625
+raycast dir x:	-1.000000
+raycast dir y:	0.257812
+raycast_delta
+x:	1.000000
+y:	3.878788
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	0.393750
+raycast dir x:	-1.000000
+raycast dir y:	0.259875
+raycast_delta
+x:	1.000000
+y:	3.848004
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	0.396875
+raycast dir x:	-1.000000
+raycast dir y:	0.261938
+raycast_delta
+x:	1.000000
+y:	3.817705
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	0.400000
+raycast dir x:	-1.000000
+raycast dir y:	0.264000
+raycast_delta
+x:	1.000000
+y:	3.787879
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	0.403125
+raycast dir x:	-1.000000
+raycast dir y:	0.266062
+raycast_delta
+x:	1.000000
+y:	3.758515
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	0.406250
+raycast dir x:	-1.000000
+raycast dir y:	0.268125
+raycast_delta
+x:	1.000000
+y:	3.729604
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	0.409375
+raycast dir x:	-1.000000
+raycast dir y:	0.270188
+raycast_delta
+x:	1.000000
+y:	3.701133
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	0.412500
+raycast dir x:	-1.000000
+raycast dir y:	0.272250
+raycast_delta
+x:	1.000000
+y:	3.673095
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	0.415625
+raycast dir x:	-1.000000
+raycast dir y:	0.274312
+raycast_delta
+x:	1.000000
+y:	3.645477
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	0.418750
+raycast dir x:	-1.000000
+raycast dir y:	0.276375
+raycast_delta
+x:	1.000000
+y:	3.618272
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	0.421875
+raycast dir x:	-1.000000
+raycast dir y:	0.278438
+raycast_delta
+x:	1.000000
+y:	3.591470
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	0.425000
+raycast dir x:	-1.000000
+raycast dir y:	0.280500
+raycast_delta
+x:	1.000000
+y:	3.565062
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	0.428125
+raycast dir x:	-1.000000
+raycast dir y:	0.282563
+raycast_delta
+x:	1.000000
+y:	3.539040
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	0.431250
+raycast dir x:	-1.000000
+raycast dir y:	0.284625
+raycast_delta
+x:	1.000000
+y:	3.513395
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	0.434375
+raycast dir x:	-1.000000
+raycast dir y:	0.286687
+raycast_delta
+x:	1.000000
+y:	3.488119
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	0.437500
+raycast dir x:	-1.000000
+raycast dir y:	0.288750
+raycast_delta
+x:	1.000000
+y:	3.463203
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	0.440625
+raycast dir x:	-1.000000
+raycast dir y:	0.290813
+raycast_delta
+x:	1.000000
+y:	3.438642
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	0.443750
+raycast dir x:	-1.000000
+raycast dir y:	0.292875
+raycast_delta
+x:	1.000000
+y:	3.414426
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	0.446875
+raycast dir x:	-1.000000
+raycast dir y:	0.294937
+raycast_delta
+x:	1.000000
+y:	3.390549
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	0.450000
+raycast dir x:	-1.000000
+raycast dir y:	0.297000
+raycast_delta
+x:	1.000000
+y:	3.367003
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	0.453125
+raycast dir x:	-1.000000
+raycast dir y:	0.299063
+raycast_delta
+x:	1.000000
+y:	3.343783
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	0.456250
+raycast dir x:	-1.000000
+raycast dir y:	0.301125
+raycast_delta
+x:	1.000000
+y:	3.320880
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	0.459375
+raycast dir x:	-1.000000
+raycast dir y:	0.303188
+raycast_delta
+x:	1.000000
+y:	3.298289
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	0.462500
+raycast dir x:	-1.000000
+raycast dir y:	0.305250
+raycast_delta
+x:	1.000000
+y:	3.276003
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	0.465625
+raycast dir x:	-1.000000
+raycast dir y:	0.307312
+raycast_delta
+x:	1.000000
+y:	3.254017
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	0.468750
+raycast dir x:	-1.000000
+raycast dir y:	0.309375
+raycast_delta
+x:	1.000000
+y:	3.232323
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	0.471875
+raycast dir x:	-1.000000
+raycast dir y:	0.311438
+raycast_delta
+x:	1.000000
+y:	3.210917
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	0.475000
+raycast dir x:	-1.000000
+raycast dir y:	0.313500
+raycast_delta
+x:	1.000000
+y:	3.189793
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	0.478125
+raycast dir x:	-1.000000
+raycast dir y:	0.315562
+raycast_delta
+x:	1.000000
+y:	3.168944
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	0.481250
+raycast dir x:	-1.000000
+raycast dir y:	0.317625
+raycast_delta
+x:	1.000000
+y:	3.148367
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	0.484375
+raycast dir x:	-1.000000
+raycast dir y:	0.319688
+raycast_delta
+x:	1.000000
+y:	3.128055
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	0.487500
+raycast dir x:	-1.000000
+raycast dir y:	0.321750
+raycast_delta
+x:	1.000000
+y:	3.108003
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	0.490625
+raycast dir x:	-1.000000
+raycast dir y:	0.323813
+raycast_delta
+x:	1.000000
+y:	3.088207
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	0.493750
+raycast dir x:	-1.000000
+raycast dir y:	0.325875
+raycast_delta
+x:	1.000000
+y:	3.068661
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	0.496875
+raycast dir x:	-1.000000
+raycast dir y:	0.327937
+raycast_delta
+x:	1.000000
+y:	3.049362
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	0.500000
+raycast dir x:	-1.000000
+raycast dir y:	0.330000
+raycast_delta
+x:	1.000000
+y:	3.030303
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	0.503125
+raycast dir x:	-1.000000
+raycast dir y:	0.332063
+raycast_delta
+x:	1.000000
+y:	3.011481
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	0.506250
+raycast dir x:	-1.000000
+raycast dir y:	0.334125
+raycast_delta
+x:	1.000000
+y:	2.992892
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	0.509375
+raycast dir x:	-1.000000
+raycast dir y:	0.336187
+raycast_delta
+x:	1.000000
+y:	2.974531
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	0.512500
+raycast dir x:	-1.000000
+raycast dir y:	0.338250
+raycast_delta
+x:	1.000000
+y:	2.956393
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	0.515625
+raycast dir x:	-1.000000
+raycast dir y:	0.340313
+raycast_delta
+x:	1.000000
+y:	2.938476
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	0.518750
+raycast dir x:	-1.000000
+raycast dir y:	0.342375
+raycast_delta
+x:	1.000000
+y:	2.920774
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	0.521875
+raycast dir x:	-1.000000
+raycast dir y:	0.344438
+raycast_delta
+x:	1.000000
+y:	2.903284
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	0.525000
+raycast dir x:	-1.000000
+raycast dir y:	0.346500
+raycast_delta
+x:	1.000000
+y:	2.886003
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	0.528125
+raycast dir x:	-1.000000
+raycast dir y:	0.348562
+raycast_delta
+x:	1.000000
+y:	2.868926
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	0.531250
+raycast dir x:	-1.000000
+raycast dir y:	0.350625
+raycast_delta
+x:	1.000000
+y:	2.852050
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	0.534375
+raycast dir x:	-1.000000
+raycast dir y:	0.352688
+raycast_delta
+x:	1.000000
+y:	2.835371
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	0.537500
+raycast dir x:	-1.000000
+raycast dir y:	0.354750
+raycast_delta
+x:	1.000000
+y:	2.818887
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	0.540625
+raycast dir x:	-1.000000
+raycast dir y:	0.356812
+raycast_delta
+x:	1.000000
+y:	2.802592
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	0.543750
+raycast dir x:	-1.000000
+raycast dir y:	0.358875
+raycast_delta
+x:	1.000000
+y:	2.786486
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	0.546875
+raycast dir x:	-1.000000
+raycast dir y:	0.360938
+raycast_delta
+x:	1.000000
+y:	2.770563
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	0.550000
+raycast dir x:	-1.000000
+raycast dir y:	0.363000
+raycast_delta
+x:	1.000000
+y:	2.754821
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	0.553125
+raycast dir x:	-1.000000
+raycast dir y:	0.365063
+raycast_delta
+x:	1.000000
+y:	2.739257
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	0.556250
+raycast dir x:	-1.000000
+raycast dir y:	0.367125
+raycast_delta
+x:	1.000000
+y:	2.723868
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	0.559375
+raycast dir x:	-1.000000
+raycast dir y:	0.369188
+raycast_delta
+x:	1.000000
+y:	2.708651
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	0.562500
+raycast dir x:	-1.000000
+raycast dir y:	0.371250
+raycast_delta
+x:	1.000000
+y:	2.693603
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	0.565625
+raycast dir x:	-1.000000
+raycast dir y:	0.373313
+raycast_delta
+x:	1.000000
+y:	2.678721
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	0.568750
+raycast dir x:	-1.000000
+raycast dir y:	0.375375
+raycast_delta
+x:	1.000000
+y:	2.664003
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	0.571875
+raycast dir x:	-1.000000
+raycast dir y:	0.377437
+raycast_delta
+x:	1.000000
+y:	2.649445
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	0.575000
+raycast dir x:	-1.000000
+raycast dir y:	0.379500
+raycast_delta
+x:	1.000000
+y:	2.635046
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	0.578125
+raycast dir x:	-1.000000
+raycast dir y:	0.381563
+raycast_delta
+x:	1.000000
+y:	2.620803
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	0.581250
+raycast dir x:	-1.000000
+raycast dir y:	0.383625
+raycast_delta
+x:	1.000000
+y:	2.606712
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	0.584375
+raycast dir x:	-1.000000
+raycast dir y:	0.385688
+raycast_delta
+x:	1.000000
+y:	2.592773
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	0.587500
+raycast dir x:	-1.000000
+raycast dir y:	0.387750
+raycast_delta
+x:	1.000000
+y:	2.578981
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	0.590625
+raycast dir x:	-1.000000
+raycast dir y:	0.389813
+raycast_delta
+x:	1.000000
+y:	2.565336
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	0.593750
+raycast dir x:	-1.000000
+raycast dir y:	0.391875
+raycast_delta
+x:	1.000000
+y:	2.551834
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	0.596875
+raycast dir x:	-1.000000
+raycast dir y:	0.393938
+raycast_delta
+x:	1.000000
+y:	2.538474
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	0.600000
+raycast dir x:	-1.000000
+raycast dir y:	0.396000
+raycast_delta
+x:	1.000000
+y:	2.525253
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	0.603125
+raycast dir x:	-1.000000
+raycast dir y:	0.398062
+raycast_delta
+x:	1.000000
+y:	2.512168
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	0.606250
+raycast dir x:	-1.000000
+raycast dir y:	0.400125
+raycast_delta
+x:	1.000000
+y:	2.499219
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	0.609375
+raycast dir x:	-1.000000
+raycast dir y:	0.402188
+raycast_delta
+x:	1.000000
+y:	2.486402
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	0.612500
+raycast dir x:	-1.000000
+raycast dir y:	0.404250
+raycast_delta
+x:	1.000000
+y:	2.473717
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	0.615625
+raycast dir x:	-1.000000
+raycast dir y:	0.406313
+raycast_delta
+x:	1.000000
+y:	2.461160
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	0.618750
+raycast dir x:	-1.000000
+raycast dir y:	0.408375
+raycast_delta
+x:	1.000000
+y:	2.448730
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	0.621875
+raycast dir x:	-1.000000
+raycast dir y:	0.410438
+raycast_delta
+x:	1.000000
+y:	2.436425
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	0.625000
+raycast dir x:	-1.000000
+raycast dir y:	0.412500
+raycast_delta
+x:	1.000000
+y:	2.424242
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	0.628125
+raycast dir x:	-1.000000
+raycast dir y:	0.414563
+raycast_delta
+x:	1.000000
+y:	2.412182
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	0.631250
+raycast dir x:	-1.000000
+raycast dir y:	0.416625
+raycast_delta
+x:	1.000000
+y:	2.400240
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	0.634375
+raycast dir x:	-1.000000
+raycast dir y:	0.418687
+raycast_delta
+x:	1.000000
+y:	2.388416
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	0.637500
+raycast dir x:	-1.000000
+raycast dir y:	0.420750
+raycast_delta
+x:	1.000000
+y:	2.376708
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	0.640625
+raycast dir x:	-1.000000
+raycast dir y:	0.422813
+raycast_delta
+x:	1.000000
+y:	2.365115
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	0.643750
+raycast dir x:	-1.000000
+raycast dir y:	0.424875
+raycast_delta
+x:	1.000000
+y:	2.353633
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	0.646875
+raycast dir x:	-1.000000
+raycast dir y:	0.426938
+raycast_delta
+x:	1.000000
+y:	2.342263
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	0.650000
+raycast dir x:	-1.000000
+raycast dir y:	0.429000
+raycast_delta
+x:	1.000000
+y:	2.331002
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	0.653125
+raycast dir x:	-1.000000
+raycast dir y:	0.431063
+raycast_delta
+x:	1.000000
+y:	2.319849
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	0.656250
+raycast dir x:	-1.000000
+raycast dir y:	0.433125
+raycast_delta
+x:	1.000000
+y:	2.308802
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	0.659375
+raycast dir x:	-1.000000
+raycast dir y:	0.435188
+raycast_delta
+x:	1.000000
+y:	2.297860
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	0.662500
+raycast dir x:	-1.000000
+raycast dir y:	0.437250
+raycast_delta
+x:	1.000000
+y:	2.287021
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	0.665625
+raycast dir x:	-1.000000
+raycast dir y:	0.439312
+raycast_delta
+x:	1.000000
+y:	2.276284
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	0.668750
+raycast dir x:	-1.000000
+raycast dir y:	0.441375
+raycast_delta
+x:	1.000000
+y:	2.265647
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	0.671875
+raycast dir x:	-1.000000
+raycast dir y:	0.443438
+raycast_delta
+x:	1.000000
+y:	2.255109
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	0.675000
+raycast dir x:	-1.000000
+raycast dir y:	0.445500
+raycast_delta
+x:	1.000000
+y:	2.244669
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	0.678125
+raycast dir x:	-1.000000
+raycast dir y:	0.447563
+raycast_delta
+x:	1.000000
+y:	2.234325
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	0.681250
+raycast dir x:	-1.000000
+raycast dir y:	0.449625
+raycast_delta
+x:	1.000000
+y:	2.224076
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	0.684375
+raycast dir x:	-1.000000
+raycast dir y:	0.451688
+raycast_delta
+x:	1.000000
+y:	2.213920
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	0.687500
+raycast dir x:	-1.000000
+raycast dir y:	0.453750
+raycast_delta
+x:	1.000000
+y:	2.203857
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	0.690625
+raycast dir x:	-1.000000
+raycast dir y:	0.455813
+raycast_delta
+x:	1.000000
+y:	2.193885
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	0.693750
+raycast dir x:	-1.000000
+raycast dir y:	0.457875
+raycast_delta
+x:	1.000000
+y:	2.184002
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	0.696875
+raycast dir x:	-1.000000
+raycast dir y:	0.459937
+raycast_delta
+x:	1.000000
+y:	2.174208
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	0.700000
+raycast dir x:	-1.000000
+raycast dir y:	0.462000
+raycast_delta
+x:	1.000000
+y:	2.164502
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	0.703125
+raycast dir x:	-1.000000
+raycast dir y:	0.464063
+raycast_delta
+x:	1.000000
+y:	2.154882
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	0.706250
+raycast dir x:	-1.000000
+raycast dir y:	0.466125
+raycast_delta
+x:	1.000000
+y:	2.145347
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	0.709375
+raycast dir x:	-1.000000
+raycast dir y:	0.468188
+raycast_delta
+x:	1.000000
+y:	2.135896
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	0.712500
+raycast dir x:	-1.000000
+raycast dir y:	0.470250
+raycast_delta
+x:	1.000000
+y:	2.126528
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	0.715625
+raycast dir x:	-1.000000
+raycast dir y:	0.472312
+raycast_delta
+x:	1.000000
+y:	2.117242
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	0.718750
+raycast dir x:	-1.000000
+raycast dir y:	0.474375
+raycast_delta
+x:	1.000000
+y:	2.108037
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	0.721875
+raycast dir x:	-1.000000
+raycast dir y:	0.476438
+raycast_delta
+x:	1.000000
+y:	2.098911
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	0.725000
+raycast dir x:	-1.000000
+raycast dir y:	0.478500
+raycast_delta
+x:	1.000000
+y:	2.089864
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	0.728125
+raycast dir x:	-1.000000
+raycast dir y:	0.480562
+raycast_delta
+x:	1.000000
+y:	2.080895
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	0.731250
+raycast dir x:	-1.000000
+raycast dir y:	0.482625
+raycast_delta
+x:	1.000000
+y:	2.072002
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	0.734375
+raycast dir x:	-1.000000
+raycast dir y:	0.484688
+raycast_delta
+x:	1.000000
+y:	2.063185
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	0.737500
+raycast dir x:	-1.000000
+raycast dir y:	0.486750
+raycast_delta
+x:	1.000000
+y:	2.054443
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	0.740625
+raycast dir x:	-1.000000
+raycast dir y:	0.488813
+raycast_delta
+x:	1.000000
+y:	2.045774
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	0.743750
+raycast dir x:	-1.000000
+raycast dir y:	0.490875
+raycast_delta
+x:	1.000000
+y:	2.037179
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	0.746875
+raycast dir x:	-1.000000
+raycast dir y:	0.492937
+raycast_delta
+x:	1.000000
+y:	2.028655
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	0.750000
+raycast dir x:	-1.000000
+raycast dir y:	0.495000
+raycast_delta
+x:	1.000000
+y:	2.020202
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	0.753125
+raycast dir x:	-1.000000
+raycast dir y:	0.497063
+raycast_delta
+x:	1.000000
+y:	2.011819
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	0.756250
+raycast dir x:	-1.000000
+raycast dir y:	0.499125
+raycast_delta
+x:	1.000000
+y:	2.003506
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	0.759375
+raycast dir x:	-1.000000
+raycast dir y:	0.501188
+raycast_delta
+x:	1.000000
+y:	1.995261
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	0.762500
+raycast dir x:	-1.000000
+raycast dir y:	0.503250
+raycast_delta
+x:	1.000000
+y:	1.987084
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	0.765625
+raycast dir x:	-1.000000
+raycast dir y:	0.505313
+raycast_delta
+x:	1.000000
+y:	1.978973
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	0.768750
+raycast dir x:	-1.000000
+raycast dir y:	0.507375
+raycast_delta
+x:	1.000000
+y:	1.970929
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	0.771875
+raycast dir x:	-1.000000
+raycast dir y:	0.509438
+raycast_delta
+x:	1.000000
+y:	1.962949
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	0.775000
+raycast dir x:	-1.000000
+raycast dir y:	0.511500
+raycast_delta
+x:	1.000000
+y:	1.955034
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	0.778125
+raycast dir x:	-1.000000
+raycast dir y:	0.513563
+raycast_delta
+x:	1.000000
+y:	1.947183
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	0.781250
+raycast dir x:	-1.000000
+raycast dir y:	0.515625
+raycast_delta
+x:	1.000000
+y:	1.939394
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	0.784375
+raycast dir x:	-1.000000
+raycast dir y:	0.517688
+raycast_delta
+x:	1.000000
+y:	1.931667
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	0.787500
+raycast dir x:	-1.000000
+raycast dir y:	0.519750
+raycast_delta
+x:	1.000000
+y:	1.924002
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	0.790625
+raycast dir x:	-1.000000
+raycast dir y:	0.521813
+raycast_delta
+x:	1.000000
+y:	1.916397
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	0.793750
+raycast dir x:	-1.000000
+raycast dir y:	0.523875
+raycast_delta
+x:	1.000000
+y:	1.908852
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	0.796875
+raycast dir x:	-1.000000
+raycast dir y:	0.525938
+raycast_delta
+x:	1.000000
+y:	1.901367
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	0.800000
+raycast dir x:	-1.000000
+raycast dir y:	0.528000
+raycast_delta
+x:	1.000000
+y:	1.893939
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	0.803125
+raycast dir x:	-1.000000
+raycast dir y:	0.530063
+raycast_delta
+x:	1.000000
+y:	1.886570
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	0.806250
+raycast dir x:	-1.000000
+raycast dir y:	0.532125
+raycast_delta
+x:	1.000000
+y:	1.879258
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	0.809375
+raycast dir x:	-1.000000
+raycast dir y:	0.534188
+raycast_delta
+x:	1.000000
+y:	1.872002
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	0.812500
+raycast dir x:	-1.000000
+raycast dir y:	0.536250
+raycast_delta
+x:	1.000000
+y:	1.864802
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	0.815625
+raycast dir x:	-1.000000
+raycast dir y:	0.538313
+raycast_delta
+x:	1.000000
+y:	1.857657
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	0.818750
+raycast dir x:	-1.000000
+raycast dir y:	0.540375
+raycast_delta
+x:	1.000000
+y:	1.850567
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	0.821875
+raycast dir x:	-1.000000
+raycast dir y:	0.542438
+raycast_delta
+x:	1.000000
+y:	1.843530
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	0.825000
+raycast dir x:	-1.000000
+raycast dir y:	0.544500
+raycast_delta
+x:	1.000000
+y:	1.836547
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	0.828125
+raycast dir x:	-1.000000
+raycast dir y:	0.546563
+raycast_delta
+x:	1.000000
+y:	1.829617
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	0.831250
+raycast dir x:	-1.000000
+raycast dir y:	0.548625
+raycast_delta
+x:	1.000000
+y:	1.822739
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	0.834375
+raycast dir x:	-1.000000
+raycast dir y:	0.550688
+raycast_delta
+x:	1.000000
+y:	1.815912
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	0.837500
+raycast dir x:	-1.000000
+raycast dir y:	0.552750
+raycast_delta
+x:	1.000000
+y:	1.809136
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	0.840625
+raycast dir x:	-1.000000
+raycast dir y:	0.554813
+raycast_delta
+x:	1.000000
+y:	1.802411
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	0.843750
+raycast dir x:	-1.000000
+raycast dir y:	0.556875
+raycast_delta
+x:	1.000000
+y:	1.795735
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	0.846875
+raycast dir x:	-1.000000
+raycast dir y:	0.558938
+raycast_delta
+x:	1.000000
+y:	1.789109
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	0.850000
+raycast dir x:	-1.000000
+raycast dir y:	0.561000
+raycast_delta
+x:	1.000000
+y:	1.782531
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	0.853125
+raycast dir x:	-1.000000
+raycast dir y:	0.563063
+raycast_delta
+x:	1.000000
+y:	1.776002
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	0.856250
+raycast dir x:	-1.000000
+raycast dir y:	0.565125
+raycast_delta
+x:	1.000000
+y:	1.769520
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	0.859375
+raycast dir x:	-1.000000
+raycast dir y:	0.567188
+raycast_delta
+x:	1.000000
+y:	1.763085
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	0.862500
+raycast dir x:	-1.000000
+raycast dir y:	0.569250
+raycast_delta
+x:	1.000000
+y:	1.756697
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	0.865625
+raycast dir x:	-1.000000
+raycast dir y:	0.571313
+raycast_delta
+x:	1.000000
+y:	1.750356
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	0.868750
+raycast dir x:	-1.000000
+raycast dir y:	0.573375
+raycast_delta
+x:	1.000000
+y:	1.744059
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	0.871875
+raycast dir x:	-1.000000
+raycast dir y:	0.575438
+raycast_delta
+x:	1.000000
+y:	1.737808
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	0.875000
+raycast dir x:	-1.000000
+raycast dir y:	0.577500
+raycast_delta
+x:	1.000000
+y:	1.731602
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	0.878125
+raycast dir x:	-1.000000
+raycast dir y:	0.579563
+raycast_delta
+x:	1.000000
+y:	1.725439
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	0.881250
+raycast dir x:	-1.000000
+raycast dir y:	0.581625
+raycast_delta
+x:	1.000000
+y:	1.719321
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	0.884375
+raycast dir x:	-1.000000
+raycast dir y:	0.583687
+raycast_delta
+x:	1.000000
+y:	1.713246
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	0.887500
+raycast dir x:	-1.000000
+raycast dir y:	0.585750
+raycast_delta
+x:	1.000000
+y:	1.707213
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	0.890625
+raycast dir x:	-1.000000
+raycast dir y:	0.587813
+raycast_delta
+x:	1.000000
+y:	1.701223
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	0.893750
+raycast dir x:	-1.000000
+raycast dir y:	0.589875
+raycast_delta
+x:	1.000000
+y:	1.695274
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	0.896875
+raycast dir x:	-1.000000
+raycast dir y:	0.591938
+raycast_delta
+x:	1.000000
+y:	1.689368
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	0.900000
+raycast dir x:	-1.000000
+raycast dir y:	0.594000
+raycast_delta
+x:	1.000000
+y:	1.683502
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	0.903125
+raycast dir x:	-1.000000
+raycast dir y:	0.596063
+raycast_delta
+x:	1.000000
+y:	1.677676
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	0.906250
+raycast dir x:	-1.000000
+raycast dir y:	0.598125
+raycast_delta
+x:	1.000000
+y:	1.671891
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	0.909375
+raycast dir x:	-1.000000
+raycast dir y:	0.600188
+raycast_delta
+x:	1.000000
+y:	1.666146
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	0.912500
+raycast dir x:	-1.000000
+raycast dir y:	0.602250
+raycast_delta
+x:	1.000000
+y:	1.660440
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	0.915625
+raycast dir x:	-1.000000
+raycast dir y:	0.604312
+raycast_delta
+x:	1.000000
+y:	1.654773
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	0.918750
+raycast dir x:	-1.000000
+raycast dir y:	0.606375
+raycast_delta
+x:	1.000000
+y:	1.649145
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	0.921875
+raycast dir x:	-1.000000
+raycast dir y:	0.608438
+raycast_delta
+x:	1.000000
+y:	1.643554
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	0.925000
+raycast dir x:	-1.000000
+raycast dir y:	0.610500
+raycast_delta
+x:	1.000000
+y:	1.638002
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	0.928125
+raycast dir x:	-1.000000
+raycast dir y:	0.612563
+raycast_delta
+x:	1.000000
+y:	1.632486
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	0.931250
+raycast dir x:	-1.000000
+raycast dir y:	0.614625
+raycast_delta
+x:	1.000000
+y:	1.627008
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	0.934375
+raycast dir x:	-1.000000
+raycast dir y:	0.616688
+raycast_delta
+x:	1.000000
+y:	1.621567
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	0.937500
+raycast dir x:	-1.000000
+raycast dir y:	0.618750
+raycast_delta
+x:	1.000000
+y:	1.616162
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	0.940625
+raycast dir x:	-1.000000
+raycast dir y:	0.620813
+raycast_delta
+x:	1.000000
+y:	1.610792
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	0.943750
+raycast dir x:	-1.000000
+raycast dir y:	0.622875
+raycast_delta
+x:	1.000000
+y:	1.605459
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	0.946875
+raycast dir x:	-1.000000
+raycast dir y:	0.624937
+raycast_delta
+x:	1.000000
+y:	1.600160
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	0.950000
+raycast dir x:	-1.000000
+raycast dir y:	0.627000
+raycast_delta
+x:	1.000000
+y:	1.594896
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	0.953125
+raycast dir x:	-1.000000
+raycast dir y:	0.629063
+raycast_delta
+x:	1.000000
+y:	1.589667
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	0.956250
+raycast dir x:	-1.000000
+raycast dir y:	0.631125
+raycast_delta
+x:	1.000000
+y:	1.584472
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	0.959375
+raycast dir x:	-1.000000
+raycast dir y:	0.633188
+raycast_delta
+x:	1.000000
+y:	1.579311
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	0.962500
+raycast dir x:	-1.000000
+raycast dir y:	0.635250
+raycast_delta
+x:	1.000000
+y:	1.574183
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	0.965625
+raycast dir x:	-1.000000
+raycast dir y:	0.637312
+raycast_delta
+x:	1.000000
+y:	1.569089
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	0.968750
+raycast dir x:	-1.000000
+raycast dir y:	0.639375
+raycast_delta
+x:	1.000000
+y:	1.564027
+lineHEIGHT:	-58
+map[22][12]: N
+raycast cam:	0.971875
+raycast dir x:	-1.000000
+raycast dir y:	0.641438
+raycast_delta
+x:	1.000000
+y:	1.558998
+lineHEIGHT:	-58
+map[2

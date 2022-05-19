@@ -85,10 +85,10 @@ void creat_map(t_gen_info *info, mlx_image_t *tiles)
 	while (y < info->map_y)
 	{
 		x = 0;
-		printf("	y: %d -> map y: %d!\n", y, info->map_y);
+		// printf("	y: %d -> map y: %d!\n", y, info->map_y);
 		while(x < info->map_x)
 		{
-			printf("x: %d -> map x: %d\n", x, info->map_x);
+			// printf("x: %d -> map x: %d\n", x, info->map_x);
 			xo = x * TILES_W;
 			yo = y * TILES_H;
 			if (info->map[y][x] != ' ')
@@ -104,7 +104,6 @@ void creat_map(t_gen_info *info, mlx_image_t *tiles)
 bool wall_checker(double x, double y, t_gen_info *info)
 {
 	
-	printf("char: %c\n", info->map[(int)y][(int)x]);
 	if (info->map[(int)y][(int)x] == '1')
 	{
 		return (false);
@@ -118,63 +117,17 @@ bool wall_checker(double x, double y, t_gen_info *info)
 
 void ft_move_vert(t_gen_info *info, int dir)
 {
-	// double x;
-	// double y;
-
-	// x = info->player.p_pos.x;
-	// y = info->player.p_pos.y + (1 * dir);
-	// if (dir < 0)
-	// {
-	// 	info->player.p_img->instances[0].x += info->player.pos.delta_x;
-	// 	info->player.p_img->instances[0].y += info->player.pos.delta_y;
-	// }
-	// else
-	// {
-	// 	info->player.p_img->instances[0].x -= info->player.pos.delta_x;
-	// 	info->player.p_img->instances[0].y -= info->player.pos.delta_y;
-	// }
-	// if (wall_checker(x, y, info))
-	// {
-		// if (info->player.p_pos.x*)
-		info->player.p_img->instances[0].y += (5 * dir);
-		printf("player pos: x = %d | y = %d\n", info->player.p_img->instances[0].x, info->player.p_img->instances[0].y);
-		// info->player.p_pos.y = y;
-	// }
+	info->player.p_img->instances[0].y += (5 * dir);
+	printf("player pos: x = %d | y = %d\n", info->player.p_img->instances[0].x, info->player.p_img->instances[0].y);
 	(void)dir;
 
 }
 
 void ft_move_horizontal(t_gen_info *info, int dir)
 {
-	// double	x;
-	// double	y;
-
-	// x = info->player.p_pos.x + (1 * dir);
-	// y = info->player.p_pos.y;
-	// if (wall_check/er(x, y, info) && ((x * TILES_W) > info->player.p_img->instances[0].x))
-	// {
-		// if (dir < 0)
-		// {
-		// 	info->player.pos.angle -= 0.1;
-		// 	info->player.p_img->instances[0].x -= cos(info->player.pos.angle) * 0.1;
-		// 	info->player.p_img->instances[0].y -= sin(info->player.pos.angle) * 0.1;
-		// }
-		// else
-		// {
-		// 	info->player.pos.angle += 0.1;
-		// 	info->player.p_img->instances[0].x += cos(info->player.pos.angle) * 0.1;
-		// 	info->player.p_img->instances[0].y += sin(info->player.pos.angle) * 0.1;
-		// }
-		// if (info->player.pos.angle < 0)
-		// {
-		// 	info->player.pos.angle += 2 * PI;
-		// }
-		// }
-		info->player.p_img->instances[0].x += (5 * dir);
-		printf("player pos: x = %d | y = %d\n", info->player.p_img->instances[0].x, info->player.p_img->instances[0].y);
-		// info->player.p_pos.x  = x;
-		(void)dir;
-	// }
+	info->player.p_img->instances[0].x += (5 * dir);
+	printf("player pos: x = %d | y = %d\n", info->player.p_img->instances[0].x, info->player.p_img->instances[0].y);
+	(void)dir;
 }
 
 void player_movment(void *param)
@@ -185,7 +138,6 @@ void player_movment(void *param)
 	int tmp;
 
 	tmp = 0;
-	// printf("start value player pos:(%d | %d)\n", info->player.p_pos.x, info->player.p_pos.y);
 	if (mlx_is_key_down(info->mlx, MLX_KEY_ESCAPE))
 		mlx_close_window(info->mlx);
 	if (mlx_is_key_down(info->mlx, MLX_KEY_W))
@@ -198,51 +150,40 @@ void player_movment(void *param)
 	}
 	if (mlx_is_key_down(info->mlx, MLX_KEY_A))
 	{
-		// info->player.pos.angle -= 0.1;
-		// if (info->player.pos.angle < 0)
-		// {
-		// 	info->player.pos.angle += 2 * PI;
-		// }
 		ft_move_horizontal(info, -1);
-		// info->player.p_img->instances[0].x = cos(info->player.pos.angle) * 5;
-		// info->player.p_img->instances[0].y = sin(info->player.pos.angle) * 5;
 	}
 	if (mlx_is_key_down(info->mlx, MLX_KEY_D))
 	{
-		// info->player.pos.angle += 0.1;
-		// if (info->player.pos.angle > 2*PI)
-		// {
-		// 	info->player.pos.angle -= 2 * PI;
-		// }
-		// info->player.p_img->instances[0].x = cos(info->player.pos.angle) * 5;
-		// info->player.p_img->instances[0].y = sin(info->player.pos.angle) * 5;
 		ft_move_horizontal(info, 1);
 	}
-	// printf("end value player pos:(%d | %d)\n", info->player.p_pos.x, info->player.p_pos.y);
 }
 
 int32_t	create_window(t_gen_info *info)
 {
-	mlx_image_t *tiles;
+	mlx_image_t *map;
 
-	tiles = NULL;
-	info->map_size_total = info->map_x * info->map_y;
-	info->mlx = mlx_init(1024, 512, "CUBE3D", true);
+	map = NULL;
+	info->mlx = mlx_init(SCREEN_WIDHT, SCREEN_HEIGHT, "CUBE3D", true);
 	if (!info->mlx)
 		exit(EXIT_FAILURE);
-	tiles = mlx_new_image(info->mlx, info->map_x * TILES_W, info->map_y * TILES_H);
-	info->player.p_img = mlx_new_image(info->mlx, info->win_x, info->win_y);
-	creat_map(info, tiles);
-	creat_player(info->player.p_img, info->player.pos.x * TILES_W, info->player.pos.y * TILES_H);
-	mlx_image_to_window(info->mlx, tiles, 0, 0);
-	mlx_image_to_window(info->mlx, info->player.p_img, 0, 0);
-	// mlx_delete_image(mlx, tiles);
-	mlx_loop_hook(info->mlx, &player_movment, info);
+	map = mlx_new_image(info->mlx, SCREEN_WIDHT, SCREEN_HEIGHT);
+	main_loop(info, map);
+	mlx_image_to_window(info->mlx, map, 0, 0);
 	mlx_loop(info->mlx);
 	mlx_terminate(info->mlx);
 	return (EXIT_SUCCESS);
 }
 
+/**BONUS PART ACTIVATE LATER
+	// tiles = mlx_new_image(info->mlx, info->map_x * TILES_W, info->map_y * TILES_H);
+	// info->player.p_img = mlx_new_image(info->mlx, info->win_x, info->win_y);
+	// creat_map(info, tiles);
+	// creat_player(info->player.p_img, info->player.pos.x * TILES_W, info->player.pos.y * TILES_H);
+	// mlx_image_to_window(info->mlx, tiles, 0, 0);
+	// mlx_image_to_window(info->mlx, info->player.p_img, 0, 0);
+	// mlx_delete_image(mlx, tiles);
+	// mlx_loop_hook(info->mlx, &player_movment, info);
+*/
 
 /*
 * if(map[y*mapX+x]== 1)
