@@ -13,8 +13,8 @@
 
 # define TILES_W 25
 # define TILES_H 25
-# define SCREEN_WIDHT 640
-# define SCREEN_HEIGHT 480
+#define screenWidth 640
+#define screenHeight 480
 # define KEY_A 0
 # define KEY_S 1
 # define KEY_D 2
@@ -120,6 +120,7 @@ int d_len_str(char **str);
 
 /****************3D************************************/
 void    main_loop(t_gen_info *info, mlx_image_t *map);
+// void main_loop(mlx_image_t *map);
 
 
 #endif

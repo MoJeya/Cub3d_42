@@ -49,7 +49,7 @@ int	main(int argc, char *argv[])
 	if (init_data_info(&info, argv, argc))
 	//1.1) was wenn keine spieler position angegeben ist
 	{
-		test_print(&info);
+		// test_print(&info);
 
 		create_window(&info);
 	}
