@@ -163,11 +163,11 @@ int32_t	create_window(t_gen_info *info)
 	mlx_image_t *map;
 
 	map = NULL;
-	info->mlx = mlx_init(SCREEN_WIDHT, SCREEN_HEIGHT, "CUBE3D", true);
+	info->mlx = mlx_init(screenWidth, screenHeight, "CUBE3D", true);
 	if (!info->mlx)
 		exit(EXIT_FAILURE);
-	map = mlx_new_image(info->mlx, SCREEN_WIDHT, SCREEN_HEIGHT);
-	main_loop(info, map);
+	map = mlx_new_image(info->mlx, screenWidth, screenHeight);
+	main_loop(info,map);
 	mlx_image_to_window(info->mlx, map, 0, 0);
 	mlx_loop(info->mlx);
 	mlx_terminate(info->mlx);
