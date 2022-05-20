@@ -10,6 +10,7 @@
 # include <stdlib.h>
 # include <math.h>
 # include <stdbool.h>
+#include <sys/time.h>
 
 # define TILES_W 25
 # define TILES_H 25
@@ -43,6 +44,8 @@ typedef struct s_raycast
 	t_point		dir;
 	t_point		side_dist;
 	t_point		delta_dist;
+	int			draw_start;
+	int			draw_end;
 }t_raycast;
 
 typedef struct s_player
@@ -68,12 +71,22 @@ typedef struct s_color
 	
 }t_color;
 
+typedef struct s_frames
+{
+	double	time;
+	double	old_time;
+	double	frame_time;
+	double	movment_speed;
+	double	rotation_speed;
+}t_frames;
+
 typedef struct s_gen_info
 {
 	t_player 		player;
 	t_raycast		raycast;
 	mlx_t			*mlx;
-	int			map_size_total;
+	mlx_image_t		*m_img;
+	t_frames		frame;
 	int			hit; // was there a wallhit;
 	int			side; // was there a NS or a EW wall hit?
 	int			line_h;
@@ -119,7 +132,8 @@ void    error_free_exit(char *str, t_gen_info *info, int i);
 int d_len_str(char **str);
 
 /****************3D************************************/
-void    main_loop(t_gen_info *info, mlx_image_t *map);
+void    main_loop(t_gen_info *info);
+void	player_movment(void *param);
 // void main_loop(mlx_image_t *map);
 
 
