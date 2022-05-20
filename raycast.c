@@ -25,7 +25,40 @@
 //     }
 // }
 
-void    main_loop(t_gen_info *info, mlx_image_t *map)
+void draw_lines(t_gen_info *info, int x)
+{
+    int i;
+
+    i = 0;
+    while (i < screenHeight)
+	{
+	    if (i >= info->raycast.draw_start && i <= info->raycast.draw_end)
+	    {
+		    mlx_put_pixel(info->m_img, x, i, 0x00000000);
+		    if (info->side == 0)
+			    mlx_put_pixel(info->m_img, x, info->raycast.draw_start++, 0xFFFFFFFF);
+		    else
+			    mlx_put_pixel(info->m_img, x, info->raycast.draw_start++, 0xAAFFFFFF);
+	    }
+	    else if (i < info->raycast.draw_start)
+		    mlx_put_pixel(info->m_img, x, i, 0xDDAAFFFF);
+	    else
+		    mlx_put_pixel(info->m_img, x, i, 0x00000000);
+	    i++;
+	}
+}
+
+long time_stamp()
+{
+    struct timeval current_time;
+    
+    gettimeofday(&current_time, NULL);
+    return (current_time.tv_usec/1000);
+
+}
+
+
+void    main_loop(t_gen_info *info)
 {
     info->player.dir.x = -1;
     info->player.dir.y = 0;
@@ -35,7 +68,6 @@ void    main_loop(t_gen_info *info, mlx_image_t *map)
     info->player.step_y = 0;
     info->raycast.camera_x = 0;
   
-
     int x;
     int y;
     int map_pos_x; //which box of the map we're in
@@ -46,6 +78,11 @@ void    main_loop(t_gen_info *info, mlx_image_t *map)
     x = 0;
     y = 0;
     info->side = 0; //was a NS or a EW wall hit?
+    info->frame.time = time_stamp();
+    info->frame.old_time = 0;
+    info->frame.frame_time = 0;
+    info->frame.movment_speed = 0;
+    info->frame.rotation_speed = 0;
     screen_w = screenWidth;
     screen_h = screenHeight;
 // printf("Player pos x: %f\nplayer pos y: %f\n", info->player.pos.x, info->player.pos.y);
@@ -55,7 +92,7 @@ void    main_loop(t_gen_info *info, mlx_image_t *map)
         info->raycast.camera_x = 2 * x / (double)screen_w - 1;
         info->raycast.dir.x = info->player.dir.x + info->player.plane.x * info->raycast.camera_x;
         info->raycast.dir.y = info->player.dir.y  + info->player.plane.y * info->raycast.camera_x;
-        printf("%d....\nraycast cam:\t%f\nraycast dir x:\t%f\nraycast dir y:\t%f\n",x, info->raycast.camera_x, info->raycast.dir.x, info->raycast.dir.y);
+        // printf("%d....\nraycast cam:\t%f\nraycast dir x:\t%f\nraycast dir y:\t%f\n",x, info->raycast.camera_x, info->raycast.dir.x, info->raycast.dir.y);
         map_pos_x = (int)info->player.pos.x;
         map_pos_y = (int)info->player.pos.y;
 
@@ -90,7 +127,7 @@ void    main_loop(t_gen_info *info, mlx_image_t *map)
             info->raycast.side_dist.y = (map_pos_y + 1.0 - info->player.pos.y) * info->raycast.delta_dist.y;
         }
         //DDA CALCUTALTION PERFORMED
-        printf("hit:\t%d\n", info->hit);
+        // printf("hit:\t%d\n", info->hit);
         while(info->hit == 0)
         {
             if (info->raycast.side_dist.x < info->raycast.side_dist.y)
@@ -109,54 +146,82 @@ void    main_loop(t_gen_info *info, mlx_image_t *map)
             }
             if (info->map[map_pos_y][map_pos_x] > '0')
             {
-                printf("map:\nx:\t%d\ny:\t%d\n", map_pos_x, map_pos_y);
+                // printf("map:\nx:\t%d\ny:\t%d\n", map_pos_x, map_pos_y);
                 info->hit = 1;
             }
         }
         //calculated distance projected on the camera direction
-        printf("side:\t%d\n", info->side);
-        printf("\n");
+        // printf("side:\t%d\n", info->side);
+        // printf("\n");
         if (info->side == 0)
-        {
-     // printf("first option side == 0\n");
             info->player.prep_wall_dist = (info->raycast.side_dist.x - info->raycast.delta_dist.x);
-        }
         else
-        {
             info->player.prep_wall_dist = (info->raycast.side_dist.y - info->raycast.delta_dist.y);
         // printf("(side dist y - raycast delta dist y): %f - %f = %f\n", info->raycast.side_dist.y, info->raycast.delta_dist.y, info->player.prep_wall_dist);
-        }
         // printf("prepWallDist:\t%f\nsideDistX:\t%f\ndeltaDistX:\t%f\n",info->player.prep_wall_dist, info->raycast.side_dist.x, info->raycast.delta_dist.x);
         //line height calculation
         info->line_h = (int)(screen_h / info->player.prep_wall_dist);
-        printf("lineHEIGHT:\t%d\n", info->line_h);
+        // printf("lineHEIGHT:\t%d\n", info->line_h);
         //calculate min and max pixel to fill current stripe
-        int draw_start = -info->line_h / 2 + screen_h / 2;
-        if (draw_start < 0)
-            draw_start = 0;
-        int draw_end = info->line_h / 2 + screen_h / 2;
-        if (draw_end >= screen_h)
-            draw_end = screen_h - 1;
-        // int color = 0xFFFFFFFF;
+        info->raycast.draw_start = -info->line_h / 2 + screen_h / 2;
+        if (info->raycast.draw_start < 0)
+            info->raycast.draw_start = 0;
+        info->raycast.draw_end = info->line_h / 2 + screen_h / 2;
+        if (info->raycast.draw_end >= screen_h)
+            info->raycast.draw_end = screen_h - 1;
         // printf("map[%d][%d]: %c\n", map_pos_x, map_pos_y, info->map[map_pos_x][map_pos_y]);
-        int i = 0;
-	    while (i < screenHeight)
-	    {
-		    if (i >= draw_start && i <= draw_end)
-		    {
-			    mlx_put_pixel(map, x, i, 0x00000000);
-			    if (info->side == 0)
-				    mlx_put_pixel(map, x, draw_start++, 0xFFFFFFFF);
-			    else
-				    mlx_put_pixel(map, x, draw_start++, 0xAAFFFFFF);
-
-		    }
-		    else if (i < draw_start)
-			    mlx_put_pixel(map, x, i, 0xDDAAFFFF);
-		    else
-			    mlx_put_pixel(map, x, i, 0x00000000);
-		    i++;
-	    }
+        draw_lines(info, x);
+        //AUSLAGERN
         x++;
     }
+    //should be put in to a new Image
+    info->frame.old_time = info->frame.time;
+    info->frame.time = time_stamp();
+    // printf("time:\t%f\nold time:\t%f\n", info->frame.time, info->frame.old_time);
+    info->frame.frame_time = (info->frame.time - info->frame.old_time) / 10.0;
+    // printf("frame time: %f\n", info->frame.frame_time);
+    info->frame.movment_speed = info->frame.frame_time * 0.05;
+    // printf("movment speed:\t%f\n", info->frame.movment_speed);
+    info->frame.rotation_speed = info->frame.rotation_speed * 3.0;
+    // printf("calculations are finished!\n");
+}
+
+void player_movment(void *param)
+{
+	t_gen_info *info;
+
+	info = param;
+
+	if (mlx_is_key_down(info->mlx, MLX_KEY_ESCAPE))
+    {
+        mlx_delete_image(info->mlx, info->m_img);
+		mlx_close_window(info->mlx);
+    }
+	if (mlx_is_key_down(info->mlx, MLX_KEY_W))
+	{
+        if (info->map[(int)(info->player.pos.x + info->player.dir.x * info->frame.movment_speed)][(int)info->player.pos.y] == '0')
+        {
+            info->player.pos.x += info->player.dir.x * info->frame.movment_speed;
+            // printf("new info->player pos:\t%f\n", info->player.pos.x);
+        }
+        if (info->map[(int)info->player.pos.x][(int)(info->player.pos.y + info->player.dir.y * info->frame.movment_speed)] == '0')
+            info->player.pos.y += info->player.dir.y + info->frame.movment_speed;
+        // main_loop(info);
+	}
+	if (mlx_is_key_down(info->mlx, MLX_KEY_S))
+	{
+        if (info->map[(int)(info->player.pos.x + info->player.dir.x * info->frame.movment_speed)][(int)info->player.pos.y] == '0')
+            info->player.pos.x -= info->player.dir.x * info->frame.movment_speed;
+        if (info->map[(int)info->player.pos.x][(int)(info->player.pos.y + info->player.dir.y * info->frame.movment_speed)] == '0')
+            info->player.pos.y -= info->player.dir.y + info->frame.movment_speed;
+	}
+    main_loop(info);
+	// if (mlx_is_key_down(info->mlx, MLX_KEY_A))
+	// {
+	// 	ft_move_horizontal(info, -1);
+	// }
+	// if (mlx_is_key_down(info->mlx, MLX_KEY_D))
+	// {
+	// 	ft_move_horizontal(info, 1);
+	// }
 }

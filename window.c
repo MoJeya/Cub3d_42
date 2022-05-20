@@ -130,45 +130,19 @@ void ft_move_horizontal(t_gen_info *info, int dir)
 	(void)dir;
 }
 
-void player_movment(void *param)
-{
-	t_gen_info *info;
-
-	info = param;
-	int tmp;
-
-	tmp = 0;
-	if (mlx_is_key_down(info->mlx, MLX_KEY_ESCAPE))
-		mlx_close_window(info->mlx);
-	if (mlx_is_key_down(info->mlx, MLX_KEY_W))
-	{
-		ft_move_vert(info, -1);
-	}
-	if (mlx_is_key_down(info->mlx, MLX_KEY_S))
-	{
-		ft_move_vert(info, 1);
-	}
-	if (mlx_is_key_down(info->mlx, MLX_KEY_A))
-	{
-		ft_move_horizontal(info, -1);
-	}
-	if (mlx_is_key_down(info->mlx, MLX_KEY_D))
-	{
-		ft_move_horizontal(info, 1);
-	}
-}
 
 int32_t	create_window(t_gen_info *info)
 {
-	mlx_image_t *map;
+	// mlx_image_t *map;
 
-	map = NULL;
+	// map = NULL;
 	info->mlx = mlx_init(screenWidth, screenHeight, "CUBE3D", true);
 	if (!info->mlx)
 		exit(EXIT_FAILURE);
-	map = mlx_new_image(info->mlx, screenWidth, screenHeight);
-	main_loop(info,map);
-	mlx_image_to_window(info->mlx, map, 0, 0);
+	info->m_img = mlx_new_image(info->mlx, screenWidth, screenHeight);
+	main_loop(info);
+	mlx_image_to_window(info->mlx, info->m_img, 0, 0);
+	mlx_loop_hook(info->mlx, &player_movment, info);
 	mlx_loop(info->mlx);
 	mlx_terminate(info->mlx);
 	return (EXIT_SUCCESS);
