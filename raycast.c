@@ -170,7 +170,7 @@ void    main_loop(t_gen_info *info)
     info->frame.old_time = info->frame.time;
     info->frame.time = time_stamp();
     // printf("time:\t%f\nold time:\t%f\n", info->frame.time, info->frame.old_time);
-    info->frame.frame_time = (info->frame.time - info->frame.old_time) / 5.0;
+    info->frame.frame_time = (info->frame.time - info->frame.old_time) / 10.0;
     // printf("frame time: %f\n", info->frame.frame_time);
     info->frame.movment_speed = info->frame.frame_time * 0.10;
     // printf("movment speed:\t%f\n", info->frame.movment_speed);
@@ -184,8 +184,10 @@ void player_movment(void *param)
 
 	info = param;
 
-    printf("map:\t%c", info->map[(int)(info->player.pos.y + info->player.dir.y * info->frame.movment_speed)][(int)info->player.pos.x]);
-    printf("\tplayer pos x:\t%f y\t%f\n", info->player.pos.x, info->player.pos.y);
+    // printf("case y dir:\t%f\n", info->player.dir.y);
+    // printf("case x dir:\t%f\n", info->player.dir.x);
+    // printf("case 2 map:\t%c\n", info->map[(int)info->player.pos.y][(int)(info->player.pos.x + info->player.dir.x * info->frame.movment_speed)]);
+    // printf("\tplayer pos x:\t%d y\t%d\n", (int)(info->player.pos.x + info->player.dir.x * info->frame.movment_speed), (int)(info->player.pos.y + info->player.dir.y * info->frame.movment_speed));
 	if (mlx_is_key_down(info->mlx, MLX_KEY_ESCAPE))
     {
         mlx_delete_image(info->mlx, info->m_img);
@@ -193,21 +195,35 @@ void player_movment(void *param)
     }
 	if (mlx_is_key_down(info->mlx, MLX_KEY_W))
 	{
-        if (info->map[(int)(info->player.pos.y + info->player.dir.y * info->frame.movment_speed)][(int)info->player.pos.x] == '0')
+        printf("SEGFAULT w\n");
+        if (((int)(info->player.pos.y + info->player.dir.y * info->frame.movment_speed) >=0
+            && (int)(info->player.pos.x + info->player.dir.x * info->frame.movment_speed) >=0)
+            && ((int)(info->player.pos.y + info->player.dir.y * info->frame.movment_speed) < info->map_y)
+            && (int)(info->player.pos.x + info->player.dir.x * info->frame.movment_speed) < info->map_x)
         {
-            info->player.pos.x += info->player.dir.x * info->frame.movment_speed;
-        }
-        if (info->map[(int)info->player.pos.y][(int)(info->player.pos.x + info->player.dir.x * info->frame.movment_speed)] == '0')
-        {
-            info->player.pos.y += info->player.dir.y * info->frame.movment_speed;
+            if (info->map[(int)(info->player.pos.y + info->player.dir.y * info->frame.movment_speed)][(int)info->player.pos.x] == '0')
+            {
+                info->player.pos.y += info->player.dir.y * info->frame.movment_speed;
+            }
+            if (info->map[(int)info->player.pos.y][(int)(info->player.pos.x + info->player.dir.x * info->frame.movment_speed)] == '0')
+            {
+                info->player.pos.x += info->player.dir.x * info->frame.movment_speed;
+            }
         }
 	}
 	if (mlx_is_key_down(info->mlx, MLX_KEY_S))
 	{
-        if (info->map[(int)(info->player.pos.y - info->player.dir.y * info->frame.movment_speed)][(int)info->player.pos.x] == '0')
-            info->player.pos.y -= info->player.dir.y * info->frame.movment_speed;
-        if (info->map[(int)info->player.pos.y][(int)(info->player.pos.x - info->player.dir.x * info->frame.movment_speed)] == '0')
-            info->player.pos.x -= info->player.dir.x * info->frame.movment_speed;
+        if (((int)(info->player.pos.y + info->player.dir.y * info->frame.movment_speed) >=0
+            && (int)(info->player.pos.x + info->player.dir.x * info->frame.movment_speed) >=0)
+            && ((int)(info->player.pos.y + info->player.dir.y * info->frame.movment_speed) < info->map_y)
+            && (int)(info->player.pos.x + info->player.dir.x * info->frame.movment_speed) < info->map_x)
+        {
+            if (info->map[(int)(info->player.pos.y - info->player.dir.y * info->frame.movment_speed)][(int)info->player.pos.x] == '0')
+                info->player.pos.y -= info->player.dir.y * info->frame.movment_speed;
+            if (info->map[(int)info->player.pos.y][(int)(info->player.pos.x - info->player.dir.x * info->frame.movment_speed)] == '0')
+                info->player.pos.x -= info->player.dir.x * info->frame.movment_speed;
+            
+        }
 	}
     //rotation
 	if (mlx_is_key_down(info->mlx, MLX_KEY_A))
