@@ -60,14 +60,6 @@ long time_stamp()
 
 void    main_loop(t_gen_info *info)
 {
-    info->player.dir.x = -1;
-    info->player.dir.y = 0;
-    info->player.plane.x = 0;
-    info->player.plane.y = 0.66;
-    info->player.step_x = 0;
-    info->player.step_y = 0;
-    info->raycast.camera_x = 0;
-  
     int x;
     int y;
     int map_pos_x; //which box of the map we're in
@@ -146,7 +138,7 @@ void    main_loop(t_gen_info *info)
             }
             if (info->map[map_pos_y][map_pos_x] > '0')
             {
-                // printf("map:\nx:\t%d\ny:\t%d\n", map_pos_x, map_pos_y);
+                // printf("map hit:\nx:\t%d\ny:\t%d\n", map_pos_x, map_pos_y);
                 info->hit = 1;
             }
         }
@@ -178,11 +170,11 @@ void    main_loop(t_gen_info *info)
     info->frame.old_time = info->frame.time;
     info->frame.time = time_stamp();
     // printf("time:\t%f\nold time:\t%f\n", info->frame.time, info->frame.old_time);
-    info->frame.frame_time = (info->frame.time - info->frame.old_time) / 10.0;
+    info->frame.frame_time = (info->frame.time - info->frame.old_time) / 5.0;
     // printf("frame time: %f\n", info->frame.frame_time);
-    info->frame.movment_speed = info->frame.frame_time * 0.05;
+    info->frame.movment_speed = info->frame.frame_time * 0.10;
     // printf("movment speed:\t%f\n", info->frame.movment_speed);
-    info->frame.rotation_speed = info->frame.rotation_speed * 3.0;
+    info->frame.rotation_speed = info->frame.frame_time * 0.10;
     // printf("calculations are finished!\n");
 }
 
@@ -192,6 +184,8 @@ void player_movment(void *param)
 
 	info = param;
 
+    printf("map:\t%c", info->map[(int)(info->player.pos.y + info->player.dir.y * info->frame.movment_speed)][(int)info->player.pos.x]);
+    printf("\tplayer pos x:\t%f y\t%f\n", info->player.pos.x, info->player.pos.y);
 	if (mlx_is_key_down(info->mlx, MLX_KEY_ESCAPE))
     {
         mlx_delete_image(info->mlx, info->m_img);
@@ -199,29 +193,43 @@ void player_movment(void *param)
     }
 	if (mlx_is_key_down(info->mlx, MLX_KEY_W))
 	{
-        if (info->map[(int)(info->player.pos.x + info->player.dir.x * info->frame.movment_speed)][(int)info->player.pos.y] == '0')
+        if (info->map[(int)(info->player.pos.y + info->player.dir.y * info->frame.movment_speed)][(int)info->player.pos.x] == '0')
         {
             info->player.pos.x += info->player.dir.x * info->frame.movment_speed;
-            // printf("new info->player pos:\t%f\n", info->player.pos.x);
         }
-        if (info->map[(int)info->player.pos.x][(int)(info->player.pos.y + info->player.dir.y * info->frame.movment_speed)] == '0')
-            info->player.pos.y += info->player.dir.y + info->frame.movment_speed;
-        // main_loop(info);
+        if (info->map[(int)info->player.pos.y][(int)(info->player.pos.x + info->player.dir.x * info->frame.movment_speed)] == '0')
+        {
+            info->player.pos.y += info->player.dir.y * info->frame.movment_speed;
+        }
 	}
 	if (mlx_is_key_down(info->mlx, MLX_KEY_S))
 	{
-        if (info->map[(int)(info->player.pos.x + info->player.dir.x * info->frame.movment_speed)][(int)info->player.pos.y] == '0')
+        if (info->map[(int)(info->player.pos.y - info->player.dir.y * info->frame.movment_speed)][(int)info->player.pos.x] == '0')
+            info->player.pos.y -= info->player.dir.y * info->frame.movment_speed;
+        if (info->map[(int)info->player.pos.y][(int)(info->player.pos.x - info->player.dir.x * info->frame.movment_speed)] == '0')
             info->player.pos.x -= info->player.dir.x * info->frame.movment_speed;
-        if (info->map[(int)info->player.pos.x][(int)(info->player.pos.y + info->player.dir.y * info->frame.movment_speed)] == '0')
-            info->player.pos.y -= info->player.dir.y + info->frame.movment_speed;
+	}
+    //rotation
+	if (mlx_is_key_down(info->mlx, MLX_KEY_A))
+	{
+        //both camera directions must be rotated
+        // printf("rotation speed:\t%f\nplayer dir\nx:\t%f\ny:\t%f\n", info->frame.rotation_speed, info->player.dir.x, info->player.dir.y);
+        double old_dir_x = info->player.dir.x;
+        info->player.dir.x = info->player.dir.x * cos(info->frame.rotation_speed) - info->player.dir.y * sin(info->frame.rotation_speed);
+        info->player.dir.y = old_dir_x * sin(info->frame.rotation_speed) + info->player.dir.y * cos(info->frame.rotation_speed);
+        double old_plane_x = info->player.plane.x;
+        info->player.plane.x = info->player.plane.x * cos(info->frame.rotation_speed) - info->player.plane.y * sin(info->frame.rotation_speed);
+        info->player.plane.y = old_plane_x * sin(info->frame.rotation_speed) + info->player.plane.y * cos(info->frame.rotation_speed);
+	}   
+	if (mlx_is_key_down(info->mlx, MLX_KEY_D))
+	{
+        // printf("rotation speed:\t%f\nplayer dir\nx:\t%f\ny:\t%f\n", info->frame.rotation_speed, info->player.dir.x, info->player.dir.y);
+        double old_dir_x = info->player.dir.x;
+        info->player.dir.x = info->player.dir.x * cos(-info->frame.rotation_speed) - info->player.dir.y * sin(-info->frame.rotation_speed);
+        info->player.dir.y = old_dir_x * sin(-info->frame.rotation_speed) + info->player.dir.y * cos(-info->frame.rotation_speed);
+        double old_plane_x = info->player.plane.x;
+        info->player.plane.x = info->player.plane.x * cos(-info->frame.rotation_speed) - info->player.plane.y * sin(-info->frame.rotation_speed);
+        info->player.plane.y = old_plane_x * sin(-info->frame.rotation_speed) + info->player.plane.y * cos(-info->frame.rotation_speed);
 	}
     main_loop(info);
-	// if (mlx_is_key_down(info->mlx, MLX_KEY_A))
-	// {
-	// 	ft_move_horizontal(info, -1);
-	// }
-	// if (mlx_is_key_down(info->mlx, MLX_KEY_D))
-	// {
-	// 	ft_move_horizontal(info, 1);
-	// }
 }

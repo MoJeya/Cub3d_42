@@ -41,15 +41,27 @@ void	init_genaral_info(t_gen_info *info)
 	info->path = NULL;
 }
 
+void	init_raycast_info(t_gen_info *info)
+{
+	info->player.dir.x = -1;
+    info->player.dir.y = 0;
+    info->player.plane.x = 0;
+    info->player.plane.y = 0.66;
+    info->player.step_x = 0;
+    info->player.step_y = 0;
+    info->raycast.camera_x = 0;
+}
+
 int	main(int argc, char *argv[])
 {
 	t_gen_info info;
 
 	init_genaral_info(&info);
+	init_raycast_info(&info);
 	if (init_data_info(&info, argv, argc))
 	//1.1) was wenn keine spieler position angegeben ist
 	{
-		// test_print(&info);
+		test_print(&info);
 
 		create_window(&info);
 	}

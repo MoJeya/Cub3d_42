@@ -101,20 +101,6 @@ void creat_map(t_gen_info *info, mlx_image_t *tiles)
 	}
 }
 
-bool wall_checker(double x, double y, t_gen_info *info)
-{
-	
-	if (info->map[(int)y][(int)x] == '1')
-	{
-		return (false);
-	}
-	if (info->map[(int)y][(int)x] == ' ')
-		return (false);
-	else
-		return (true);
-
-}
-
 void ft_move_vert(t_gen_info *info, int dir)
 {
 	info->player.p_img->instances[0].y += (5 * dir);
@@ -140,7 +126,8 @@ int32_t	create_window(t_gen_info *info)
 	if (!info->mlx)
 		exit(EXIT_FAILURE);
 	info->m_img = mlx_new_image(info->mlx, screenWidth, screenHeight);
-	main_loop(info);
+	printf("map size:\nx\t%d\ny:\t%d\n", info->map_x, info->map_y);
+	// main_loop(info);
 	mlx_image_to_window(info->mlx, info->m_img, 0, 0);
 	mlx_loop_hook(info->mlx, &player_movment, info);
 	mlx_loop(info->mlx);
