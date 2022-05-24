@@ -24,6 +24,8 @@
 # define RIGHT 124
 # define DOWN 125
 # define PI 3.1415926535
+# define BUFFER_SIZE 42
+
 
 typedef enum free_code{
 	INFO_STRING,
@@ -98,7 +100,7 @@ typedef struct s_gen_info
 	t_color		ceiling;
 	t_color		floor;
 	char		*path;
-	char 		**map;
+	char		**map;
 	char		*texture_NO_path;
 	char		*texture_SO_path;
 	char		*texture_WE_path;
@@ -107,10 +109,23 @@ typedef struct s_gen_info
 }t_gen_info;
 
 
+/********************PARSER***************************/
+int		parse_data_info(t_gen_info *info);
+int		init_map(t_gen_info *info, char **str);
+int		set_values_to_map(t_gen_info *info, char **str, int *y);
+int		get_max_len(char **str, t_gen_info *info);
+int		init_text_struct(char *str, t_gen_info *info);
+int		parse_color_settings(char *str, t_gen_info *info);
+int		map_parse_condition(t_gen_info *info, int i);
+
+
+
+
+
 /********************WINDOW_MLX***************************/
 int32_t	create_window(t_gen_info *info);
 
-/********************STIRNG_TOOLS************************/
+/********************TOOLS************************/
 char	*ft_strchr_nl(char *str);
 int		split_values(char *str, t_gen_info *info);
 int		strcomp(char *str1, const char *str2);
@@ -126,11 +141,13 @@ void set_direction_player(t_gen_info *info);
 // void player_dir_init(t_gen_info *info);
 
 /*****************ERROR****************************/
-void    error_exit(char *str, t_gen_info *info);
-void    error_free_exit(char *str, t_gen_info *info, int i);
+void	error_exit(char *str, t_gen_info *info);
+void	error_free_exit(char *str, t_gen_info *info, int i);
+void	*my_calloc(size_t count, size_t size, t_gen_info *info, int state);
+
 
 /****************HELPER FUNCTIONS**********************/
-int d_len_str(char **str);
+int		d_len_str(char **str);
 
 /****************3D************************************/
 void    render_wrld(t_gen_info *info);
