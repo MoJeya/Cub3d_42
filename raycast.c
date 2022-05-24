@@ -1,29 +1,6 @@
 
 #include "cub3d.h"
 
-// char    **shift_map(t_gen_info *info)
-// {
-//     char **tmp_map;
-//     int x;
-//     int x_tmp;
-//     int y;
-
-//     x = 0;
-//     x_tmp = 0;
-//     y = 0;
-//     tmp_map = (char **)malloc(info->map_x, sizeof(char *));
-//     if (!tmp_map)
-//         return (NULL);
-//     while (info->map[y])
-//     {
-//         x = 0;
-//         tmp_map[y] = ft_calloc()
-//         while (info->map[x][y] != '\0')
-//         {
-            
-//         }
-//     }
-// }
 
 void draw_lines(t_gen_info *info, int x)
 {
@@ -34,7 +11,7 @@ void draw_lines(t_gen_info *info, int x)
 	{
 	    if (i >= info->raycast.draw_start && i <= info->raycast.draw_end)
 	    {
-		    mlx_put_pixel(info->m_img, x, i, 0x00000000);
+		    // mlx_put_pixel(info->m_img, x, i, 0x00000000);
 		    if (info->side == 0)
 			    mlx_put_pixel(info->m_img, x, info->raycast.draw_start++, 0xFFFFFFFF);
 		    else
@@ -54,11 +31,10 @@ long time_stamp()
     
     gettimeofday(&current_time, NULL);
     return (current_time.tv_usec/1000);
-
 }
 
 
-void    main_loop(t_gen_info *info)
+void    render_wrld(t_gen_info *info)
 {
     int x;
     int y;
@@ -170,7 +146,7 @@ void    main_loop(t_gen_info *info)
     info->frame.old_time = info->frame.time;
     info->frame.time = time_stamp();
     // printf("time:\t%f\nold time:\t%f\n", info->frame.time, info->frame.old_time);
-    info->frame.frame_time = (info->frame.time - info->frame.old_time) / 5.0;
+    info->frame.frame_time = (info->frame.time - info->frame.old_time) / 10.0;
     // printf("frame time: %f\n", info->frame.frame_time);
     info->frame.movment_speed = info->frame.frame_time * 0.10;
     // printf("movment speed:\t%f\n", info->frame.movment_speed);
@@ -184,33 +160,86 @@ void player_movment(void *param)
 
 	info = param;
 
-    printf("map:\t%c", info->map[(int)(info->player.pos.y + info->player.dir.y * info->frame.movment_speed)][(int)info->player.pos.x]);
-    printf("\tplayer pos x:\t%f y\t%f\n", info->player.pos.x, info->player.pos.y);
 	if (mlx_is_key_down(info->mlx, MLX_KEY_ESCAPE))
     {
         mlx_delete_image(info->mlx, info->m_img);
 		mlx_close_window(info->mlx);
+        return ;
     }
 	if (mlx_is_key_down(info->mlx, MLX_KEY_W))
 	{
-        if (info->map[(int)(info->player.pos.y + info->player.dir.y * info->frame.movment_speed)][(int)info->player.pos.x] == '0')
+        if (((int)(info->player.pos.y + info->player.dir.y * info->frame.movment_speed) >= 0
+            && (int)(info->player.pos.x + info->player.dir.x * info->frame.movment_speed) >= 0)
+            && ((int)(info->player.pos.y + info->player.dir.y * info->frame.movment_speed) < info->map_y)
+            && (int)(info->player.pos.x + info->player.dir.x * info->frame.movment_speed) < info->map_x)
         {
-            info->player.pos.x += info->player.dir.x * info->frame.movment_speed;
-        }
-        if (info->map[(int)info->player.pos.y][(int)(info->player.pos.x + info->player.dir.x * info->frame.movment_speed)] == '0')
-        {
-            info->player.pos.y += info->player.dir.y * info->frame.movment_speed;
+            if (info->map[(int)(info->player.pos.y + info->player.dir.y * info->frame.movment_speed)][(int)info->player.pos.x] == '0')
+            {
+                info->player.pos.y += info->player.dir.y * info->frame.movment_speed;
+            }
+            if (info->map[(int)info->player.pos.y][(int)(info->player.pos.x + info->player.dir.x * info->frame.movment_speed)] == '0')
+            {
+                info->player.pos.x += info->player.dir.x * info->frame.movment_speed;
+            }
         }
 	}
 	if (mlx_is_key_down(info->mlx, MLX_KEY_S))
 	{
-        if (info->map[(int)(info->player.pos.y - info->player.dir.y * info->frame.movment_speed)][(int)info->player.pos.x] == '0')
-            info->player.pos.y -= info->player.dir.y * info->frame.movment_speed;
-        if (info->map[(int)info->player.pos.y][(int)(info->player.pos.x - info->player.dir.x * info->frame.movment_speed)] == '0')
-            info->player.pos.x -= info->player.dir.x * info->frame.movment_speed;
+        if (((int)(info->player.pos.y + info->player.dir.y * info->frame.movment_speed) >=0
+            && (int)(info->player.pos.x + info->player.dir.x * info->frame.movment_speed) >=0)
+            && ((int)(info->player.pos.y + info->player.dir.y * info->frame.movment_speed) < info->map_y)
+            && (int)(info->player.pos.x + info->player.dir.x * info->frame.movment_speed) < info->map_x)
+        {
+            if (info->map[(int)(info->player.pos.y - info->player.dir.y * info->frame.movment_speed)][(int)info->player.pos.x] == '0')
+            {
+
+                info->player.pos.y -= info->player.dir.y * info->frame.movment_speed;
+            }
+            if (info->map[(int)info->player.pos.y][(int)(info->player.pos.x - info->player.dir.x * info->frame.movment_speed)] == '0')
+            {
+
+                info->player.pos.x -= info->player.dir.x * info->frame.movment_speed;
+            }
+            
+        }
 	}
+    if (mlx_is_key_down(info->mlx, MLX_KEY_D))
+    {
+          if (((int)(info->player.pos.y + info->player.plane.y * info->frame.movment_speed) >= 0
+            && (int)(info->player.pos.x + info->player.plane.x * info->frame.movment_speed) >= 0)
+            && ((int)(info->player.pos.y + info->player.plane.y * info->frame.movment_speed) < info->map_y)
+            && (int)(info->player.pos.x + info->player.plane.x * info->frame.movment_speed) < info->map_x)
+        {
+            if (info->map[(int)(info->player.pos.y + info->player.plane.y * info->frame.movment_speed)][(int)info->player.pos.x] == '0')
+            {
+                info->player.pos.y += info->player.plane.y * info->frame.movment_speed;
+            }
+            if (info->map[(int)info->player.pos.y][(int)(info->player.pos.x + info->player.plane.x * info->frame.movment_speed)] == '0')
+            {
+                info->player.pos.x += info->player.plane.x * info->frame.movment_speed;
+            }
+        }
+    }
+    if (mlx_is_key_down(info->mlx, MLX_KEY_A))
+    {
+         if (((int)(info->player.pos.y - info->player.plane.y * info->frame.movment_speed) >= 0
+            && (int)(info->player.pos.x - info->player.plane.x * info->frame.movment_speed) >= 0)
+            && ((int)(info->player.pos.y - info->player.plane.y * info->frame.movment_speed) < info->map_y)
+            && (int)(info->player.pos.x - info->player.plane.x * info->frame.movment_speed) < info->map_x)
+        {
+            if (info->map[(int)(info->player.pos.y - info->player.plane.y * info->frame.movment_speed)][(int)info->player.pos.x] == '0')
+            {
+                info->player.pos.y -= info->player.plane.y * info->frame.movment_speed;
+            }
+            if (info->map[(int)info->player.pos.y][(int)(info->player.pos.x - info->player.plane.x * info->frame.movment_speed)] == '0')
+            {
+                info->player.pos.x -= info->player.plane.x * info->frame.movment_speed;
+            }
+        }
+    }
     //rotation
-	if (mlx_is_key_down(info->mlx, MLX_KEY_A))
+    // printf("plane:\nx:\t%d\ny\t:%d\ndirection:\nx:\t%d\ny:\t%d\n", (int)info->player.plane.x, (int)info->player.plane.y, (int)info->player.dir.x, (int)info->player.dir.y);
+	if (mlx_is_key_down(info->mlx, MLX_KEY_LEFT))
 	{
         //both camera directions must be rotated
         // printf("rotation speed:\t%f\nplayer dir\nx:\t%f\ny:\t%f\n", info->frame.rotation_speed, info->player.dir.x, info->player.dir.y);
@@ -220,8 +249,9 @@ void player_movment(void *param)
         double old_plane_x = info->player.plane.x;
         info->player.plane.x = info->player.plane.x * cos(info->frame.rotation_speed) - info->player.plane.y * sin(info->frame.rotation_speed);
         info->player.plane.y = old_plane_x * sin(info->frame.rotation_speed) + info->player.plane.y * cos(info->frame.rotation_speed);
+        printf("plane:\nx:\t%f\ny\t:%f\ndirection:\nx:\t%f\ny:\t%f\n", info->player.plane.x, info->player.plane.y, info->player.dir.x, info->player.dir.y);
 	}   
-	if (mlx_is_key_down(info->mlx, MLX_KEY_D))
+	if (mlx_is_key_down(info->mlx, MLX_KEY_RIGHT))
 	{
         // printf("rotation speed:\t%f\nplayer dir\nx:\t%f\ny:\t%f\n", info->frame.rotation_speed, info->player.dir.x, info->player.dir.y);
         double old_dir_x = info->player.dir.x;
@@ -230,6 +260,7 @@ void player_movment(void *param)
         double old_plane_x = info->player.plane.x;
         info->player.plane.x = info->player.plane.x * cos(-info->frame.rotation_speed) - info->player.plane.y * sin(-info->frame.rotation_speed);
         info->player.plane.y = old_plane_x * sin(-info->frame.rotation_speed) + info->player.plane.y * cos(-info->frame.rotation_speed);
+        printf("plane:\nx:\t%f\ny\t:%f\ndirection:\nx:\t%f\ny:\t%f\n", info->player.plane.x, info->player.plane.y, info->player.dir.x, info->player.dir.y);
 	}
-    main_loop(info);
+    render_wrld(info);
 }

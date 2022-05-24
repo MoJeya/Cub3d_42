@@ -53,7 +53,7 @@ typedef struct s_raycast
 typedef struct s_player
 {
 	t_point			pos;
-	t_point			start_pos;
+	// t_point			start_pos;
 	t_point			dir;
 	t_point			plane;
 	char			looking;
@@ -132,12 +132,13 @@ int		strcomp(char *str1, const char *str2);
 int		sides_check(t_gen_info *info);
 int		top_bottom_check(t_gen_info *info, int j);
 /*****************READ_TOOLS****************************/
-char	*get_next_line(int fd);
-int		check_map_valid(t_gen_info *info);
-int		map_base_player_check(t_gen_info *info);
-int		check_file_format(char *path);
-int		init_data_info(t_gen_info *info, char *argv[], int argc);
-int		get_max_len(char **str, t_gen_info *info);
+char *get_next_line(int fd);
+int check_map_valid(t_gen_info *info);
+int map_base_player_check(t_gen_info *info);
+int check_file_format(char *path);
+int init_data_info(t_gen_info *info, char *argv[], int argc);
+void set_direction_player(t_gen_info *info);
+// void player_dir_init(t_gen_info *info);
 
 /*****************ERROR****************************/
 void	error_exit(char *str, t_gen_info *info);
@@ -149,7 +150,7 @@ void	*my_calloc(size_t count, size_t size, t_gen_info *info, int state);
 int		d_len_str(char **str);
 
 /****************3D************************************/
-void    main_loop(t_gen_info *info);
+void    render_wrld(t_gen_info *info);
 void	player_movment(void *param);
 // void main_loop(mlx_image_t *map);
 
