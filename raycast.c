@@ -238,7 +238,7 @@ void player_movment(void *param)
         }
     }
     //rotation
-    printf("plane:\nx:\t%d\ny\t:%d\ndirection:\nx:\t%d\ny:\t%d\n", (int)info->player.plane.x, (int)info->player.plane.y, (int)info->player.dir.x, (int)info->player.dir.y);
+    // printf("plane:\nx:\t%d\ny\t:%d\ndirection:\nx:\t%d\ny:\t%d\n", (int)info->player.plane.x, (int)info->player.plane.y, (int)info->player.dir.x, (int)info->player.dir.y);
 	if (mlx_is_key_down(info->mlx, MLX_KEY_LEFT))
 	{
         //both camera directions must be rotated

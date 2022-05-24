@@ -45,13 +45,38 @@ void	init_raycast_info(t_gen_info *info)
 {
 	// set_direction_player(info);
 	//cos(0) = w;
+	printf("player directio: %c", info->player.looking);
+	if (info->player.looking == 'W')
+	{
+		info->player.dir.x = -1 * cos(0) - 0 * sin(0);
+    	info->player.dir.y = -1 * sin(0) + 0 * cos(0);
+    	info->player.plane.x = 0 * cos(0) - 0.66 * sin(0);
+    	info->player.plane.y = 0 * sin(0) + 0.66 * cos(0);
+	}
 	//cos(180) = s;
+	else if (info->player.looking == 'S')
+	{
+		info->player.dir.x = -1 * cos(180) - 0 * sin(180);
+    	info->player.dir.y = -1 * sin(180) + 0 * cos(180);
+    	info->player.plane.x = 0 * cos(180) - 0.66 * sin(180);
+    	info->player.plane.y = 0 * sin(180) + 0.66 * cos(180);
+	}
 	//cos(90) = n;
+	else if (info->player.looking == 'N')
+	{
+		info->player.dir.x = -1 * cos(90) - 0 * sin(90);
+    	info->player.dir.y = -1 * sin(90) + 0 * cos(90);
+    	info->player.plane.x = 0 * cos(90) - 0.66 * sin(90);
+    	info->player.plane.y = 0 * sin(90) + 0.66 * cos(90);
+	}
 	//-cos(0) = e;
-	info->player.dir.x = -1 * -cos(0) - 0 * -sin(0);
-    info->player.dir.y = -1 * -sin(0) + 0 * -cos(0);
-    info->player.plane.x = 0 * -cos(0) - 0.66 * -sin(0);
-    info->player.plane.y = 0 * -sin(0) + 0.66 * -cos(0);
+	else if (info->player.looking == 'E')
+	{
+		info->player.dir.x = -1 * -cos(0) - 0 * -sin(0);
+    	info->player.dir.y = -1 * -sin(0) + 0 * -cos(0);
+    	info->player.plane.x = 0 * -cos(0) - 0.66 * -sin(0);
+    	info->player.plane.y = 0 * -sin(0) + 0.66 * -cos(0);
+	}
 	// info->player.dir.x = -1;
 	// info->player.dir.y = 0;
 	// info->player.plane.x = 0;
@@ -66,11 +91,11 @@ int	main(int argc, char *argv[])
 	t_gen_info info;
 
 	init_genaral_info(&info);
-	init_raycast_info(&info);
 	if (init_data_info(&info, argv, argc))
 	//1.1) was wenn keine spieler position angegeben ist
 	{
-		test_print(&info);
+		init_raycast_info(&info);
+		// test_print(&info);
 
 		create_window(&info);
 	}
