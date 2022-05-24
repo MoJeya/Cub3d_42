@@ -43,10 +43,19 @@ void	init_genaral_info(t_gen_info *info)
 
 void	init_raycast_info(t_gen_info *info)
 {
-	info->player.dir.x = -1;
-    info->player.dir.y = 0;
-    info->player.plane.x = 0;
-    info->player.plane.y = 0.66;
+	// set_direction_player(info);
+	//cos(0) = w;
+	//cos(180) = s;
+	//cos(90) = n;
+	//-cos(0) = e;
+	info->player.dir.x = -1 * -cos(0) - 0 * -sin(0);
+    info->player.dir.y = -1 * -sin(0) + 0 * -cos(0);
+    info->player.plane.x = 0 * -cos(0) - 0.66 * -sin(0);
+    info->player.plane.y = 0 * -sin(0) + 0.66 * -cos(0);
+	// info->player.dir.x = -1;
+	// info->player.dir.y = 0;
+	// info->player.plane.x = 0;
+	// info->player.plane.y = 0.66;
     info->player.step_x = 0;
     info->player.step_y = 0;
     info->raycast.camera_x = 0;

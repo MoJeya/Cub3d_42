@@ -101,22 +101,6 @@ void creat_map(t_gen_info *info, mlx_image_t *tiles)
 	}
 }
 
-void ft_move_vert(t_gen_info *info, int dir)
-{
-	info->player.p_img->instances[0].y += (5 * dir);
-	printf("player pos: x = %d | y = %d\n", info->player.p_img->instances[0].x, info->player.p_img->instances[0].y);
-	(void)dir;
-
-}
-
-void ft_move_horizontal(t_gen_info *info, int dir)
-{
-	info->player.p_img->instances[0].x += (5 * dir);
-	printf("player pos: x = %d | y = %d\n", info->player.p_img->instances[0].x, info->player.p_img->instances[0].y);
-	(void)dir;
-}
-
-
 int32_t	create_window(t_gen_info *info)
 {
 	// mlx_image_t *map;
@@ -127,7 +111,6 @@ int32_t	create_window(t_gen_info *info)
 		exit(EXIT_FAILURE);
 	info->m_img = mlx_new_image(info->mlx, screenWidth, screenHeight);
 	printf("map size:\nx\t%d\ny:\t%d\n", info->map_x, info->map_y);
-	// main_loop(info);
 	mlx_image_to_window(info->mlx, info->m_img, 0, 0);
 	mlx_loop_hook(info->mlx, &player_movment, info);
 	mlx_loop(info->mlx);
