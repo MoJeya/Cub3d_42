@@ -1,7 +1,7 @@
-NO ./texture/stonewall_texture.xpm
-SO ./texture/stonewall_texture.xpm
-WE ./texture/stonewall_texture.xpm
-EA ./texture/stonewall_texture.xpm
+NO ./texture/pngfind.com-stone-wall-png-103835.png
+SO ./texture/pngfind.com-stone-wall-png-103835.png
+WE ./texture/pngfind.com-stone-wall-png-103835.png
+EA ./texture/pngfind.com-stone-wall-png-103835.png
 
 F 220,100,0
 C 225,30,0
