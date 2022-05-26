@@ -1,9 +1,8 @@
 #include "../cub3d.h"
-#define BUFFER_SIZE 62
 
 int d_len_str(char **str)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (str[i] != NULL)
@@ -89,7 +88,6 @@ int	check_map_valid(t_gen_info *info)
 	}
 	return (0);
 }
-
 
 char	*get_next_line(int fd)
 {

@@ -99,20 +99,32 @@ void creat_map(t_gen_info *info, mlx_image_t *tiles)
 
 int32_t	create_window(t_gen_info *info)
 {
-	// mlx_image_t *map;
+	mlx_image_t *text;
+	// mlx_texture_t *texture;
+	xpm_t *xpm;
 
 	// map = NULL;
-	info->mlx = mlx_init(screenWidth, screenHeight, "CUBE3D", true);
+	info->mlx = mlx_init(screenWidth, screenHeight, "CUBE3D", true);//wie wurde des berechnet, bzw warum passt es genau so von der grösse???
 	if (!info->mlx)
 		exit(EXIT_FAILURE);
+	xpm = mlx_load_xpm42(info->texture_NO_path);
 	info->m_img = mlx_new_image(info->mlx, screenWidth, screenHeight);
 	printf("map size:\nx\t%d\ny:\t%d\n", info->map_x, info->map_y);
+	// printf("tex_width	%u	", xpm->texture.width);
+	// printf("tex_height/	%u	", xpm->texture.height);
+	// printf("tex_width	%u	", xpm->texture.width);
+//load xpm to an image
+//go to taht image
+	// printf("%d pixel\n", xpm->pixels[5]);
+	text = mlx_texture_to_image(info->mlx, &xpm->texture);
 	mlx_image_to_window(info->mlx, info->m_img, 0, 0);
-	mlx_loop_hook(info->mlx, &player_movment, info);
+	mlx_loop_hook(info->mlx, &player_movment, info);//nach dem fpointer kommen die values
 	mlx_loop(info->mlx);
 	mlx_terminate(info->mlx);
 	return (EXIT_SUCCESS);
 }
+//wie greifen die functions ineinander, welche kommt zuerst, etc... 
+//würde gerne erklären können, was da genau passiert
 
 /**BONUS PART ACTIVATE LATER
 	// tiles = mlx_new_image(info->mlx, info->map_x * TILES_W, info->map_y * TILES_H);
