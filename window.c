@@ -13,10 +13,6 @@
 #include "cub3d.h"
 #include <string.h>
 
-int	create_trgb(int t, int r, int g, int b)
-{
-	return (t << 24 | r << 16 | g << 8 | b);
-}
 //wtf was ist das?
 //A: Funcrion um farbwerte zu setten, von der alten MLX
 //TODO: IMAGE ROTTION HERAUSFINDEN
@@ -148,11 +144,3 @@ int32_t	create_window(t_gen_info *info)
 	// mlx_loop_hook(info->mlx, &player_movment, info);
 */
 
-/*
-* if(map[y*mapX+x]== 1)
-	{
-		//farbe_1
-	}
-	else
-		//farbe_2
-*/
