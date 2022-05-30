@@ -56,18 +56,20 @@ void	free_infostring(t_gen_info *info)
 
 void	free_texturepath(t_gen_info *info)
 {
-	if (info->texture_NO_path)
-		free(info->texture_NO_path);
-	if (info->texture_SO_path)
-		free(info->texture_SO_path);
-	if (info->texture_WE_path)
-		free(info->texture_WE_path);
-	if (info->texture_EA_path)
-		free(info->texture_EA_path);
+	if (info->texture_no_path)
+		free(info->texture_no_path);
+	if (info->texture_so_path)
+		free(info->texture_so_path);
+	if (info->texture_we_path)
+		free(info->texture_we_path);
+	if (info->texture_ea_path)
+		free(info->texture_ea_path);
 }
 
 void	error_free_exit(char *str, t_gen_info *info, int state)
 {
+	printf("\nhallo\n");
+
 	int	i;
 
 	i = 0;

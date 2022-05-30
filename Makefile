@@ -18,7 +18,7 @@ LINKED_OBJ = ./NEW_MLX42/*.o ./libft/*.o parser_stuff/*.o
 all: linked_objects $(NAME)
 
 $(NAME): $(OBJ)
-	@$(CC) $(SRC) -Llibft -lft NEW_MLX42/libmlx42.a -I include -lglfw -L "/Users/$(USER)/.brew/opt/glfw/lib/" -fsanitize=address -o $(NAME)
+	@$(CC) $(SRC) -Llibft -lft NEW_MLX42/libmlx42.a -I include -lglfw -L "/Users/$(USER)/.brew/opt/glfw/lib/" -o $(NAME)
 
 # objects:
 # 	$(CC) $(CFLAGS) $(OBJ) $(LINKED_OBJ)

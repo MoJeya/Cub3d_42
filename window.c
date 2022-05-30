@@ -97,27 +97,34 @@ void creat_map(t_gen_info *info, mlx_image_t *tiles)
 	}
 }
 
+void	get_textures(t_gen_info *info)
+{
+	int i;
+
+	i = 0;
+
+		info->xpm[0] = mlx_load_xpm42(info->texture_no_path);
+		info->xpm[1] = mlx_load_xpm42(info->texture_so_path);
+		info->xpm[2] = mlx_load_xpm42(info->texture_we_path);
+		info->xpm[3] = mlx_load_xpm42(info->texture_ea_path);
+
+		// info->text_img[i] = mlx_texture_to_image(info->mlx, &info->xpm[i]->texture);
+}
+
 int32_t	create_window(t_gen_info *info)
 {
-	mlx_image_t *text;
-	// mlx_texture_t *texture;
-	xpm_t *xpm;
-
-	// map = NULL;
+	mlx_image_t *txt_img = NULL;
+	
 	info->mlx = mlx_init(screenWidth, screenHeight, "CUBE3D", true);//wie wurde des berechnet, bzw warum passt es genau so von der grösse???
 	if (!info->mlx)
 		exit(EXIT_FAILURE);
-	xpm = mlx_load_xpm42(info->texture_NO_path);
+	get_textures(info);
+	txt_img = mlx_texture_to_image(info->mlx, &info->xpm[0]->texture);
 	info->m_img = mlx_new_image(info->mlx, screenWidth, screenHeight);
 	printf("map size:\nx\t%d\ny:\t%d\n", info->map_x, info->map_y);
-	// printf("tex_width	%u	", xpm->texture.width);
-	// printf("tex_height/	%u	", xpm->texture.height);
-	// printf("tex_width	%u	", xpm->texture.width);
-//load xpm to an image
+// load xpm to an image
 //go to taht image
-	// printf("%d pixel\n", xpm->pixels[5]);
-	text = mlx_texture_to_image(info->mlx, &xpm->texture);
-	mlx_image_to_window(info->mlx, info->m_img, 0, 0);
+	mlx_image_to_window(info->mlx, txt_img, 0, 0);
 	mlx_loop_hook(info->mlx, &player_movment, info);//nach dem fpointer kommen die values
 	mlx_loop(info->mlx);
 	mlx_terminate(info->mlx);

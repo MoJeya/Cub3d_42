@@ -32,28 +32,41 @@ int	parse_color_settings(char *str, t_gen_info *info)
 
 int	init_text_struct(char *str, t_gen_info *info)
 {
+	char *tmp;
 	if (strcomp(str, "NO ") == 1)
 	{
-		info->texture_NO_path = ft_strdup(str + ft_strlen("NO "));
-		if (!info->texture_NO_path)
+		info->texture_no_path = ft_strdup(str + ft_strlen("NO "));
+		tmp = info->texture_no_path;
+		free (info->texture_no_path);
+		info->texture_no_path = ft_strtrim(tmp, "\n");
+		if (!info->texture_no_path)
 			return (1);
 	}
 	else if (strcomp(str, "SO "))
 	{
-		info->texture_SO_path = ft_strdup(str + ft_strlen("SO "));
-		if (!info->texture_SO_path)
+		info->texture_so_path = ft_strdup(str + ft_strlen("SO "));
+		tmp = info->texture_so_path;
+		free (info->texture_so_path);
+		info->texture_so_path = ft_strtrim(tmp, "\n");
+		if (!info->texture_so_path)
 			return (1);
 	}
 	else if (strcomp(str, "WE "))
 	{
-		info->texture_WE_path = ft_strdup(str + ft_strlen("WE "));
-		if (!info->texture_WE_path)
+		info->texture_we_path = ft_strdup(str + ft_strlen("WE "));
+		tmp = info->texture_we_path;
+		free (info->texture_we_path);
+		info->texture_we_path = ft_strtrim(tmp, "\n");
+		if (!info->texture_we_path)
 			return (1);
 	}
 	else if (strcomp(str, "EA "))
 	{
-		info->texture_EA_path = ft_strdup(str + ft_strlen("EA "));
-		if (!info->texture_EA_path)
+		info->texture_ea_path = ft_strdup(str + ft_strlen("EA "));
+		tmp = info->texture_ea_path;
+		free (info->texture_ea_path);
+		info->texture_ea_path = ft_strtrim(tmp, "\n");
+		if (!info->texture_ea_path)
 			return (1);
 	}
 	return (0);
