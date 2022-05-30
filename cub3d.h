@@ -14,8 +14,8 @@
 
 # define TILES_W 25
 # define TILES_H 25
-#define screenWidth 640
-#define screenHeight 480
+#define screenWidth 820
+#define screenHeight 570
 # define KEY_A 0
 # define KEY_S 1
 # define KEY_D 2
@@ -101,11 +101,13 @@ typedef struct s_gen_info
 	t_color		floor;
 	char		*path;
 	char		**map;
-	char		*texture_NO_path;
-	char		*texture_SO_path;
-	char		*texture_WE_path;
-	char		*texture_EA_path;
+	char		*texture_no_path;
+	char		*texture_so_path;
+	char		*texture_we_path;
+	char		*texture_ea_path;
 	char		**info_string;
+	xpm_t		*xpm[4];
+	// mlx_image_t *text_img[4];
 }t_gen_info;
 
 

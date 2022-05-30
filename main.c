@@ -4,10 +4,10 @@
 void test_print(t_gen_info *info)
 {
 	int	i;
-	printf("PATH: %s\n", info->texture_SO_path);
-	printf("PATH: %s\n", info->texture_NO_path);
-	printf("PATH: %s\n", info->texture_WE_path);
-	printf("PATH: %s\n", info->texture_EA_path);
+	printf("PATH: %s\n", info->texture_so_path);
+	printf("PATH: %s\n", info->texture_no_path);
+	printf("PATH: %s\n", info->texture_we_path);
+	printf("PATH: %s\n", info->texture_ea_path);
 	printf("F:\nred:%d\nyellow:%d\nblue:%d\n", info->floor.red, info->floor.yellow, info->floor.blue);
 	printf("C:\nred:%d\nyellow:%d\nblue:%d\n", info->ceiling.red, info->ceiling.yellow, info->ceiling.blue);
 	printf("MAP: \n");
@@ -96,7 +96,6 @@ int	main(int argc, char *argv[])
 	{
 		init_raycast_info(&info);
 		// test_print(&info);
-
 		create_window(&info);
 	}
 	// create_window();

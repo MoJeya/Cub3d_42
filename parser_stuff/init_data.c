@@ -21,6 +21,7 @@ int	parse_data_info(t_gen_info *info)
 		}
 		i++;
 	}
+
 	if (!info->floor.set || !info->ceiling.set)
 		error_free_exit("ERROR\ncolor setting is missing", info, INFO_MAP);
 	if (check_map_valid(info) && map_base_player_check(info))

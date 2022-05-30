@@ -2,7 +2,7 @@
 #include "cub3d.h"
 
 
-void draw_lines(t_gen_info *info, int x)
+void draw_vertical_line(t_gen_info *info, int x)
 {
     int i;
 
@@ -13,10 +13,11 @@ void draw_lines(t_gen_info *info, int x)
 	    {
 		    // mlx_put_pixel(info->m_img, x, i, 0x00000000);
 		    if (info->side == 0)
-			    mlx_put_pixel(info->m_img, x, info->raycast.draw_start++, 0xFFFFFFFF);
+			    mlx_put_pixel(info->m_img, x, info->raycast.draw_start++, 0xFFCCFFFF);//wori unetrscheiden die sich hier? also welche  wand farbe bekommt was ?
 		    else
-			    mlx_put_pixel(info->m_img, x, info->raycast.draw_start++, 0xAAFFFFFF);
+			    mlx_put_pixel(info->m_img, x, info->raycast.draw_start++, 0xDDFFFFFF);//ob es seite oder frontal ist?
 	    }
+        //wände
 	    else if (i < info->raycast.draw_start)
 		    mlx_put_pixel(info->m_img, x, i, 0xDDAAFFFF);
 	    else
@@ -138,7 +139,7 @@ void    render_wrld(t_gen_info *info)
         if (info->raycast.draw_end >= screen_h)
             info->raycast.draw_end = screen_h - 1;
         // printf("map[%d][%d]: %c\n", map_pos_x, map_pos_y, info->map[map_pos_x][map_pos_y]);
-        draw_lines(info, x);
+        draw_vertical_line(info, x);
         //AUSLAGERN
         x++;
     }

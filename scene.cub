@@ -1,7 +1,7 @@
-NO ./texture/pngfind.com-stone-wall-png-103835.png
-SO ./texture/pngfind.com-stone-wall-png-103835.png
-WE ./texture/pngfind.com-stone-wall-png-103835.png
-EA ./texture/pngfind.com-stone-wall-png-103835.png
+NO ./texture/brick_romy.xpm42
+SO ./texture/pngfind.png
+WE ./texture/pngfind.png
+EA ./texture/pngfind.png
 
 F 220,100,0
 C 225,30,0
