@@ -43,7 +43,7 @@ void	init_genaral_info(t_gen_info *info)
 
 void	init_raycast_info(t_gen_info *info)
 {
-	printf("player directio: %c", info->player.looking);
+	// printf("player directio: %c", info->player.looking);
 	if (info->player.looking == 'W')
 	{
 		info->player.dir.x = -1 * cos(0) - 0 * sin(0);
@@ -86,7 +86,7 @@ int	main(int argc, char *argv[])
 	t_gen_info info;
 
 	init_genaral_info(&info);
-	printf("Hex color: 125 155 200 in decimal: %X, %X, %X\n", 125, 155, 200);
+	// printf("Hex color: 125 155 200 in decimal: %X, %X, %X\n", 125, 155, 200);
 	if (init_data_info(&info, argv, argc))
 	//1.1) was wenn keine spieler position angegeben ist
 	{
