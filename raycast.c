@@ -1,6 +1,10 @@
 
 #include "cub3d.h"
 
+int	create_trgb(int t, int r, int g, int b)
+{
+	return (t << 24 | r << 16 | g << 8 | b);
+}
 
 /*
 void	get_textures(t_gen_info *info)
@@ -277,6 +281,10 @@ void player_movment(void *param)
                 info->player.pos.x += info->player.dir.x * info->frame.movment_speed;
             }
         }
+        else
+        {
+            printf("player pos:\n\tx:\t%f\n\ty:\t%f\n", info->player.pos.x, info->player.pos.y);
+        }
 	}
 	if (mlx_is_key_down(info->mlx, MLX_KEY_S))
 	{
@@ -287,15 +295,16 @@ void player_movment(void *param)
         {
             if (info->map[(int)(info->player.pos.y - info->player.dir.y * info->frame.movment_speed)][(int)info->player.pos.x] == '0')
             {
-
                 info->player.pos.y -= info->player.dir.y * info->frame.movment_speed;
             }
             if (info->map[(int)info->player.pos.y][(int)(info->player.pos.x - info->player.dir.x * info->frame.movment_speed)] == '0')
             {
-
                 info->player.pos.x -= info->player.dir.x * info->frame.movment_speed;
             }
-            
+        }
+        else
+        {
+            printf("player pos:\n\tx:\t%f\n\ty:\t%f\n", info->player.pos.x, info->player.pos.y);    
         }
 	}
     if (mlx_is_key_down(info->mlx, MLX_KEY_D))
@@ -344,7 +353,6 @@ void player_movment(void *param)
         double old_plane_x = info->player.plane.x;
         info->player.plane.x = info->player.plane.x * cos(info->frame.rotation_speed) - info->player.plane.y * sin(info->frame.rotation_speed);
         info->player.plane.y = old_plane_x * sin(info->frame.rotation_speed) + info->player.plane.y * cos(info->frame.rotation_speed);
-        printf("plane:\nx:\t%f\ny\t:%f\ndirection:\nx:\t%f\ny:\t%f\n", info->player.plane.x, info->player.plane.y, info->player.dir.x, info->player.dir.y);
 	}   
 	if (mlx_is_key_down(info->mlx, MLX_KEY_RIGHT))
 	{
@@ -355,7 +363,6 @@ void player_movment(void *param)
         double old_plane_x = info->player.plane.x;
         info->player.plane.x = info->player.plane.x * cos(-info->frame.rotation_speed) - info->player.plane.y * sin(-info->frame.rotation_speed);
         info->player.plane.y = old_plane_x * sin(-info->frame.rotation_speed) + info->player.plane.y * cos(-info->frame.rotation_speed);
-        printf("plane:\nx:\t%f\ny\t:%f\ndirection:\nx:\t%f\ny:\t%f\n", info->player.plane.x, info->player.plane.y, info->player.dir.x, info->player.dir.y);
 	}
     //das heisst ei tam move?move_player
     //da berechnen sie move udn rotation

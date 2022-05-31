@@ -13,10 +13,6 @@
 #include "cub3d.h"
 #include <string.h>
 
-int	create_trgb(int t, int r, int g, int b)
-{
-	return (t << 24 | r << 16 | g << 8 | b);
-}
 //wtf was ist das?
 //A: Funcrion um farbwerte zu setten, von der alten MLX
 //TODO: IMAGE ROTTION HERAUSFINDEN
@@ -131,10 +127,6 @@ int32_t	create_window(t_gen_info *info)
 // load xpm to an image
 //go to taht image
 	mlx_image_to_window(info->mlx, info->m_img, 0, 0);
-	//presste ntweder cub3d der die etxture ins window
-	//check
-	//	mlx_close_hook(data->window.mlx, &cursor_close, data);
-	//die function gibts beid en anderen noch...aber das geht ja eigent.ich schon bei uns mit dem red cross/
 	mlx_loop_hook(info->mlx, &player_movment, info);//nach dem fpointer kommen die values
 	mlx_loop(info->mlx);
 	//check
@@ -154,11 +146,3 @@ int32_t	create_window(t_gen_info *info)
 	// mlx_loop_hook(info->mlx, &player_movment, info);
 */
 
-/*
-* if(map[y*mapX+x]== 1)
-	{
-		//farbe_1
-	}
-	else
-		//farbe_2
-*/

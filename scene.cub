@@ -3,8 +3,8 @@ SO ./textures/SO.xpm42
 WE ./textures/WE.xpm42
 EA ./textures/EA.xpm42
 
-F 220,100,0
-C 225,30,0
+F 125,155,200
+C 68,207,169
 
 111111111111111
 100000000010001

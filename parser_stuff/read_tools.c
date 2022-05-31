@@ -1,35 +1,6 @@
 #include "../cub3d.h"
 
-// void set_direction_player(t_gen_info *info)
-// {
-// 	if (info->player.looking == 'N')
-// 	{
-// 		info->player.dir.x = -1;
-// 		info->player.dir.y = 0;
-// 	}
-// 	if (info->player.looking == 'E')
-// 	{
-// 		info->player.dir.x = -1 * cos(-90) - 0 * sin(-90);
-//     	info->player.dir.y = -1 * sin(-90) + 0 * cos(-90);
-//     	info->player.plane.x = 0 * cos(-90) - 0.66 * sin(-90);
-//     	info->player.plane.y = 0 * sin(-90) + 0.66 * cos(-90);
-// 	}
-// 	if (info->player.looking == 'S')
-// 	{
-// 		info->player.dir.x = -1 * cos(180) - 0 * sin(180);
-//     	info->player.dir.y = -1 * sin(180) + 0 * cos(180);
-//     	info->player.plane.x = 0 * cos(180) - 0.66 * sin(180);
-//     	info->player.plane.y = 0 * sin(180) + 0.66 * cos(180);
-// 	}
-// 	if (info->player.looking == 'W')
-// 	{
-// 		info->player.dir.x = -1 * cos(90) - 0 * sin(90);
-//     	info->player.dir.y = -1 * sin(90) + 0 * cos(90);
-//     	info->player.plane.x = 0 * cos(90) - 0.66 * sin(90);
-//     	info->player.plane.y = 0 * sin(90) + 0.66 * cos(90);
-// 	}
-// }
-int	d_len_str(char **str)
+int d_len_str(char **str)
 {
 	int	i;
 
