@@ -111,8 +111,7 @@ void	get_textures(t_gen_info *info)
 		info->xpm[1] = mlx_load_xpm42(info->texture_so_path);
 		info->xpm[2] = mlx_load_xpm42(info->texture_we_path);
 		info->xpm[3] = mlx_load_xpm42(info->texture_ea_path);
-
-		// info->text_img[i] = mlx_texture_to_image(info->mlx, &info->xpm[i]->texture);
+	//muss hier noch irgendeine delete function hin??
 }
 
 int32_t	create_window(t_gen_info *info)
@@ -122,20 +121,27 @@ int32_t	create_window(t_gen_info *info)
 	info->mlx = mlx_init(screenWidth, screenHeight, "CUBE3D", true);//wie wurde des berechnet, bzw warum passt es genau so von der grösse???
 	if (!info->mlx)
 		exit(EXIT_FAILURE);
+		//check
 	get_textures(info);
 	txt_img = mlx_texture_to_image(info->mlx, &info->xpm[0]->texture);
+	//gibts nicht bei Tam
 	info->m_img = mlx_new_image(info->mlx, screenWidth, screenHeight);
+	//check
 	printf("map size:\nx\t%d\ny:\t%d\n", info->map_x, info->map_y);
 // load xpm to an image
 //go to taht image
-	mlx_image_to_window(info->mlx, txt_img, 0, 0);
+	mlx_image_to_window(info->mlx, info->m_img, 0, 0);
+	//presste ntweder cub3d der die etxture ins window
+	//check
+	//	mlx_close_hook(data->window.mlx, &cursor_close, data);
+	//die function gibts beid en anderen noch...aber das geht ja eigent.ich schon bei uns mit dem red cross/
 	mlx_loop_hook(info->mlx, &player_movment, info);//nach dem fpointer kommen die values
 	mlx_loop(info->mlx);
+	//check
+	//bis hierhin ist der Aufabu korrekt
 	mlx_terminate(info->mlx);
 	return (EXIT_SUCCESS);
 }
-//wie greifen die functions ineinander, welche kommt zuerst, etc... 
-//würde gerne erklären können, was da genau passiert
 
 /**BONUS PART ACTIVATE LATER
 	// tiles = mlx_new_image(info->mlx, info->map_x * TILES_W, info->map_y * TILES_H);

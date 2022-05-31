@@ -2,29 +2,116 @@
 #include "cub3d.h"
 
 
+/*
+void	get_textures(t_gen_info *info)
+{
+	int i;
+
+	i = 0;
+
+		info->xpm[0] = mlx_load_xpm42(info->texture_no_path);
+		info->xpm[1] = mlx_load_xpm42(info->texture_so_path);
+		info->xpm[2] = mlx_load_xpm42(info->texture_we_path);
+		info->xpm[3] = mlx_load_xpm42(info->texture_ea_path);
+	//muss hier noch irgendeine delete function hin??
+}
+*/
+
+static double find_wall_x(t_gen_info *info)
+{
+    double wall_x;
+
+
+    if (info->side == 0 || info->side == 1)
+        wall_x = info->player.pos.y + info->player.prep_wall_dist * info->raycast.dir.y;
+    else
+        wall_x = info->player.pos.x + info->player.prep_wall_dist * info->raycast.dir.x;
+    
+    wall_x -= floor((wall_x));
+    return (wall_x);
+}
+//hier fehlen dann noch die anderen 2 Wände
+
+static int find_texture_x(t_gen_info *info, mlx_texture_t * texture)
+{
+    int tex_x;
+
+    tex_x = (int)(find_wall_x(info) * (double)texture->width);
+    if ((info->side == 0 && info->raycast.dir.x > 0) || (info->side == 1 && info->raycast.dir.y < 0))
+        tex_x = texture->width - tex_x - 1;
+    return (tex_x);
+}
+//warum benutzt man nochmal statics???
+
+void    insert_textures(t_gen_info *info, int x, int draw_start, int draw_end)
+{
+    mlx_texture_t   *texture;
+    int             tex_x;
+    int             tex_y;
+    int             line_h;
+    double          step;
+    double          texture_pos;
+
+
+    //je nachdem welche seite wir haben
+    //und da wir immer nur auf einen vertikalen strich gucken
+    //wird individuell die wand texture hier ausgesucht
+    //dafur braucht es info->side
+    texture = &info->xpm[info->side]->texture;
+    tex_x = find_texture_x(info, texture);
+    line_h = draw_end - draw_start;
+    step = 1.0 * texture->height / line_h;
+    texture_pos = (draw_start - screenHeight / 2 + line_h / 2) * step;
+    while (draw_start < draw_end)
+    {
+        tex_y = (int)texture_pos & (texture->height - 1);
+        texture_pos += step;
+        if (draw_start >= 0 && draw_start <= screenHeight)
+        {
+            ft_memcpy(&info->m_img->pixels[(draw_start * info->m_img->width + x) * 4/*BPP*/], &texture->pixels[(tex_y * texture->height + tex_x * 4) /*BPP*/], 4 /*BPP*/);
+            draw_start++;
+            //vielleicht fehlen hier noch Klammern
+        }
+    }
+    //die haben hier noch ne protection, falls des window halt geclosed wurde
+    //vielleicht muss heir auch alles wieder x und y vertauscht werden
+}
+
 void draw_vertical_line(t_gen_info *info, int x)
 {
     int i;
 
-    i = 0;
-    while (i < screenHeight)
+    i = -1;
+    //heirvor kommt der texturize part
+    //fur die calculation fehlen aber noch zwei seitenbestimmungen
+    //bis jetzt haben wir nur 2 seitfarben, wir bracuhen aber 4 unterscheidungen
+    insert_textures(info, x, info->raycast.draw_start, info->raycast.draw_end);
+
+    while (++i < screenHeight)
 	{
-	    if (i >= info->raycast.draw_start && i <= info->raycast.draw_end)
-	    {
-		    // mlx_put_pixel(info->m_img, x, i, 0x00000000);
-		    if (info->side == 0)
-			    mlx_put_pixel(info->m_img, x, info->raycast.draw_start++, 0xFFCCFFFF);//wori unetrscheiden die sich hier? also welche  wand farbe bekommt was ?
-		    else
-			    mlx_put_pixel(info->m_img, x, info->raycast.draw_start++, 0xDDFFFFFF);//ob es seite oder frontal ist?
-	    }
-        //wände
-	    else if (i < info->raycast.draw_start)
+	    // if (i >= info->raycast.draw_start && i <= info->raycast.draw_end)
+	    // {
+		//     // mlx_put_pixel(info->m_img, x, i, 0x00000000);
+		//     if (info->side == 0)
+		// 	    mlx_put_pixel(info->m_img, x, info->raycast.draw_start++, 0xFFCCFFFF);//wori unetrscheiden die sich hier? also welche  wand farbe bekommt was ?
+		//     else
+		// 	    mlx_put_pixel(info->m_img, x, info->raycast.draw_start++, 0xDDFFFFFF);//ob es seite oder frontal ist?
+	    // }
+        // //wände
+//nur noch da bleibt dann e stehn fur boden und ceiling
+	    if (i < info->raycast.draw_start)
 		    mlx_put_pixel(info->m_img, x, i, 0xDDAAFFFF);
-	    else
-		    mlx_put_pixel(info->m_img, x, i, 0x00000000);
-	    i++;
+	    if (i > info->raycast.draw_end)
+		    mlx_put_pixel(info->m_img, x, i, 0xAAFFFF00);
+	    // i++;
 	}
 }
+//den Himmel malt unsers noch 
+//aber der rest wird dann verschluckt
+//todo 1) alle min werte einfügen
+//todo 2) die beiden anderen walls einfügen
+//todo 3) evtl müssen die x/y werte umgedreht werden
+
 
 long time_stamp()
 {
@@ -54,7 +141,8 @@ void    render_wrld(t_gen_info *info)
     info->frame.rotation_speed = 0;
     screen_w = screenWidth;
     screen_h = screenHeight;
-// printf("Player pos x: %f\nplayer pos y: %f\n", info->player.pos.x, info->player.pos.y);
+    //bis hier hin haben wir auch alles
+    //jetzt kommt bei tam wie bei uns der WidthWhileLoop
     while (x < screenWidth)
     {
         info->hit = 0; // was the a wall?
@@ -74,7 +162,7 @@ void    render_wrld(t_gen_info *info)
         else
             info->raycast.delta_dist.y = fabs(1/ info->raycast.dir.y);
         // printf("raycast side\nx:\t%f\ny:\t%f\nraycast_delta\nx:\t%f\ny:\t%f\n",info->raycast.side_dist.x, info->raycast.side_dist.y, info->raycast.delta_dist.x, info->raycast.delta_dist.y);
-        
+        //tams set_loop
         if (info->raycast.dir.x < 0)
         {
             info->player.step_x = -1;
@@ -95,6 +183,7 @@ void    render_wrld(t_gen_info *info)
             info->player.step_y = 1;
             info->raycast.side_dist.y = (map_pos_y + 1.0 - info->player.pos.y) * info->raycast.delta_dist.y;
         }
+        //tams calc_step_and_side_dist
         //DDA CALCUTALTION PERFORMED
         // printf("hit:\t%d\n", info->hit);
         while(info->hit == 0)
@@ -103,7 +192,7 @@ void    render_wrld(t_gen_info *info)
             {
                 info->raycast.side_dist.x += info->raycast.delta_dist.x;
                 map_pos_x += info->player.step_x;
-                info->side = 0;
+                info->side = 0;//north
             }
             else
             {
@@ -111,8 +200,9 @@ void    render_wrld(t_gen_info *info)
                info->raycast.side_dist.y += info->raycast.delta_dist.y;
             // printf("side dist y:\t%f\n", info->raycast.side_dist.y);
                map_pos_y += info->player.step_y;
-               info->side = 1; 
+               info->side = 1; //south
             }
+            //check dda_case first part
             if (info->map[map_pos_y][map_pos_x] > '0')
             {
                 // printf("map hit:\nx:\t%d\ny:\t%d\n", map_pos_x, map_pos_y);
@@ -126,6 +216,8 @@ void    render_wrld(t_gen_info *info)
             info->player.prep_wall_dist = (info->raycast.side_dist.x - info->raycast.delta_dist.x);
         else
             info->player.prep_wall_dist = (info->raycast.side_dist.y - info->raycast.delta_dist.y);
+        //TODO:tam und jakob haben hier noch zwei weitere wall unterscheidungen west east
+        //check
         // printf("(side dist y - raycast delta dist y): %f - %f = %f\n", info->raycast.side_dist.y, info->raycast.delta_dist.y, info->player.prep_wall_dist);
         // printf("prepWallDist:\t%f\nsideDistX:\t%f\ndeltaDistX:\t%f\n",info->player.prep_wall_dist, info->raycast.side_dist.x, info->raycast.delta_dist.x);
         //line height calculation
@@ -138,6 +230,7 @@ void    render_wrld(t_gen_info *info)
         info->raycast.draw_end = info->line_h / 2 + screen_h / 2;
         if (info->raycast.draw_end >= screen_h)
             info->raycast.draw_end = screen_h - 1;
+        //des haben wir auch
         // printf("map[%d][%d]: %c\n", map_pos_x, map_pos_y, info->map[map_pos_x][map_pos_y]);
         draw_vertical_line(info, x);
         //AUSLAGERN
@@ -157,6 +250,7 @@ void    render_wrld(t_gen_info *info)
 
 void player_movment(void *param)
 {
+    //bis hier hin wurde alles mit dem window erledigt 
 	t_gen_info *info;
 
 	info = param;
@@ -263,5 +357,8 @@ void player_movment(void *param)
         info->player.plane.y = old_plane_x * sin(-info->frame.rotation_speed) + info->player.plane.y * cos(-info->frame.rotation_speed);
         printf("plane:\nx:\t%f\ny\t:%f\ndirection:\nx:\t%f\ny:\t%f\n", info->player.plane.x, info->player.plane.y, info->player.dir.x, info->player.dir.y);
 	}
+    //das heisst ei tam move?move_player
+    //da berechnen sie move udn rotation
+    //da passiert glaube ich alles hier
     render_wrld(info);
 }

@@ -1,7 +1,7 @@
-NO ./texture/brick_romy.xpm42
-SO ./texture/pngfind.png
-WE ./texture/pngfind.png
-EA ./texture/pngfind.png
+NO ./textures/NO.xpm42
+SO ./textures/SO.xpm42
+WE ./textures/WE.xpm42
+EA ./textures/EA.xpm42
 
 F 220,100,0
 C 225,30,0
