@@ -62,7 +62,9 @@ void    insert_textures(t_gen_info *info, int x, int draw_start, int draw_end)
     //wird individuell die wand texture hier ausgesucht
     //dafur braucht es info->side
     texture = &info->xpm[info->side]->texture;
+
     tex_x = find_texture_x(info, texture);
+
     line_h = draw_end - draw_start;
     step = 1.0 * texture->height / line_h;
     texture_pos = (draw_start - screenHeight / 2 + line_h / 2) * step;
@@ -106,7 +108,7 @@ void draw_vertical_line(t_gen_info *info, int x)
 	    if (i < info->raycast.draw_start)
 		    mlx_put_pixel(info->m_img, x, i, 0xDDAAFFFF);
 	    if (i > info->raycast.draw_end)
-		    mlx_put_pixel(info->m_img, x, i, 0xAAFFFF00);
+		    mlx_put_pixel(info->m_img, x, i, 0xDDAAFFFF);
 	    // i++;
 	}
 }
@@ -196,15 +198,21 @@ void    render_wrld(t_gen_info *info)
             {
                 info->raycast.side_dist.x += info->raycast.delta_dist.x;
                 map_pos_x += info->player.step_x;
-                info->side = 0;//north
+                if (info->raycast.dir.x < 0)//stimmen die werte heir???
+                    info->side = 0;//north
+                else 
+                    info->side = 1;//south
             }
             else
             {
             // printf("side dist y:\t%f\n", info->raycast.side_dist.y);
-               info->raycast.side_dist.y += info->raycast.delta_dist.y;
+                info->raycast.side_dist.y += info->raycast.delta_dist.y;
             // printf("side dist y:\t%f\n", info->raycast.side_dist.y);
-               map_pos_y += info->player.step_y;
-               info->side = 1; //south
+                map_pos_y += info->player.step_y;
+                if (info->raycast.dir.y < 0)
+                    info->side = 2; //west
+                else
+                    info->side = 3; //east
             }
             //check dda_case first part
             if (info->map[map_pos_y][map_pos_x] > '0')
@@ -216,7 +224,7 @@ void    render_wrld(t_gen_info *info)
         //calculated distance projected on the camera direction
         // printf("side:\t%d\n", info->side);
         // printf("\n");
-        if (info->side == 0)
+        if (info->side == 0 || info->side == 1)
             info->player.prep_wall_dist = (info->raycast.side_dist.x - info->raycast.delta_dist.x);
         else
             info->player.prep_wall_dist = (info->raycast.side_dist.y - info->raycast.delta_dist.y);
