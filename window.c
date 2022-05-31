@@ -123,7 +123,7 @@ int32_t	create_window(t_gen_info *info)
 	//gibts nicht bei Tam
 	info->m_img = mlx_new_image(info->mlx, screenWidth, screenHeight);
 	//check
-	printf("map size:\nx\t%d\ny:\t%d\n", info->map_x, info->map_y);
+	// printf("map size:\nx\t%d\ny:\t%d\n", info->map_x, info->map_y);
 // load xpm to an image
 //go to taht image
 	mlx_image_to_window(info->mlx, info->m_img, 0, 0);

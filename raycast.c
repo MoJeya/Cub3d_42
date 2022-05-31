@@ -25,7 +25,6 @@ static double find_wall_x(t_gen_info *info)
 {
     double wall_x;
 
-
     if (info->side == 0 || info->side == 1)
         wall_x = info->player.pos.y + info->player.prep_wall_dist * info->raycast.dir.y;
     else
@@ -36,12 +35,13 @@ static double find_wall_x(t_gen_info *info)
 }
 //hier fehlen dann noch die anderen 2 Wände
 
-static int find_texture_x(t_gen_info *info, mlx_texture_t * texture)
+static int find_texture_x(t_gen_info *info, mlx_texture_t *texture)
 {
     int tex_x;
 
     tex_x = (int)(find_wall_x(info) * (double)texture->width);
-    if ((info->side == 0 && info->raycast.dir.x > 0) || (info->side == 1 && info->raycast.dir.y < 0))
+    if ((info->side == 0 && info->raycast.dir.x > 0)
+	|| (info->side == 1 && info->raycast.dir.y < 0))
         tex_x = texture->width - tex_x - 1;
     return (tex_x);
 }
@@ -65,7 +65,8 @@ void    insert_textures(t_gen_info *info, int x, int draw_start, int draw_end)
 
     tex_x = find_texture_x(info, texture);
 
-    line_h = draw_end - draw_start;
+    // line_h = (int)(screenHeight / info->player.prep_wall_dist);
+	line_h = draw_end - draw_start;
     step = 1.0 * texture->height / line_h;
     texture_pos = (draw_start - screenHeight / 2 + line_h / 2) * step;
     while (draw_start < draw_end)
@@ -74,10 +75,11 @@ void    insert_textures(t_gen_info *info, int x, int draw_start, int draw_end)
         texture_pos += step;
         if (draw_start >= 0 && draw_start <= screenHeight)
         {
-            ft_memcpy(&info->m_img->pixels[(draw_start * info->m_img->width + x) * 4/*BPP*/], &texture->pixels[(tex_y * texture->height + tex_x * 4) /*BPP*/], 4 /*BPP*/);
-            draw_start++;
+            ft_memcpy(&info->m_img->pixels[(draw_start * info->m_img->width + x) * 4],
+				&texture->pixels[(tex_y * texture->height + tex_x) * 4], 4);
             //vielleicht fehlen hier noch Klammern
         }
+        draw_start++;
     }
     //die haben hier noch ne protection, falls des window halt geclosed wurde
     //vielleicht muss heir auch alles wieder x und y vertauscht werden
@@ -87,29 +89,20 @@ void draw_vertical_line(t_gen_info *info, int x)
 {
     int i;
 
-    i = -1;
+    i = 0;
     //heirvor kommt der texturize part
     //fur die calculation fehlen aber noch zwei seitenbestimmungen
     //bis jetzt haben wir nur 2 seitfarben, wir bracuhen aber 4 unterscheidungen
     insert_textures(info, x, info->raycast.draw_start, info->raycast.draw_end);
 
-    while (++i < screenHeight)
+    while (i < screenHeight)
 	{
-	    // if (i >= info->raycast.draw_start && i <= info->raycast.draw_end)
-	    // {
-		//     // mlx_put_pixel(info->m_img, x, i, 0x00000000);
-		//     if (info->side == 0)
-		// 	    mlx_put_pixel(info->m_img, x, info->raycast.draw_start++, 0xFFCCFFFF);//wori unetrscheiden die sich hier? also welche  wand farbe bekommt was ?
-		//     else
-		// 	    mlx_put_pixel(info->m_img, x, info->raycast.draw_start++, 0xDDFFFFFF);//ob es seite oder frontal ist?
-	    // }
-        // //wände
 //nur noch da bleibt dann e stehn fur boden und ceiling
 	    if (i < info->raycast.draw_start)
 		    mlx_put_pixel(info->m_img, x, i, create_trgb(info->ceiling.red, info->ceiling.yellow, info->ceiling.blue, 150));
 	    if (i > info->raycast.draw_end)
 		    mlx_put_pixel(info->m_img, x, i, create_trgb(info->floor.red, info->ceiling.yellow, info->floor.blue, 150));
-	    // i++;
+		i++;
 	}
 }
 //den Himmel malt unsers noch 
@@ -237,8 +230,8 @@ void    render_wrld(t_gen_info *info)
         // printf("lineHEIGHT:\t%d\n", info->line_h);
         //calculate min and max pixel to fill current stripe
         info->raycast.draw_start = -info->line_h / 2 + screen_h / 2;
-        if (info->raycast.draw_start < 0)
-            info->raycast.draw_start = 0;
+        // if (info->raycast.draw_start < 0)
+            // info->raycast.draw_start = 0;
         info->raycast.draw_end = info->line_h / 2 + screen_h / 2;
         if (info->raycast.draw_end >= screen_h)
             info->raycast.draw_end = screen_h - 1;
@@ -289,10 +282,10 @@ void player_movment(void *param)
                 info->player.pos.x += info->player.dir.x * info->frame.movment_speed;
             }
         }
-        else
-        {
-            printf("player pos:\n\tx:\t%f\n\ty:\t%f\n", info->player.pos.x, info->player.pos.y);
-        }
+        // else
+        // {
+        //     printf("player pos:\n\tx:\t%f\n\ty:\t%f\n", info->player.pos.x, info->player.pos.y);
+        // }
 	}
 	if (mlx_is_key_down(info->mlx, MLX_KEY_S))
 	{

@@ -53,7 +53,6 @@ typedef struct s_raycast
 typedef struct s_player
 {
 	t_point			pos;
-	// t_point			start_pos;
 	t_point			dir;
 	t_point			plane;
 	char			looking;
