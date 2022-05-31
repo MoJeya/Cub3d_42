@@ -106,9 +106,9 @@ void draw_vertical_line(t_gen_info *info, int x)
         // //wände
 //nur noch da bleibt dann e stehn fur boden und ceiling
 	    if (i < info->raycast.draw_start)
-		    mlx_put_pixel(info->m_img, x, i, 0xDDAAFFFF);
+		    mlx_put_pixel(info->m_img, x, i, create_trgb(info->ceiling.red, info->ceiling.yellow, info->ceiling.blue, 150));
 	    if (i > info->raycast.draw_end)
-		    mlx_put_pixel(info->m_img, x, i, 0xDDAAFFFF);
+		    mlx_put_pixel(info->m_img, x, i, create_trgb(info->floor.red, info->ceiling.yellow, info->floor.blue, 150));
 	    // i++;
 	}
 }
@@ -310,10 +310,10 @@ void player_movment(void *param)
                 info->player.pos.x -= info->player.dir.x * info->frame.movment_speed;
             }
         }
-        else
-        {
-            printf("player pos:\n\tx:\t%f\n\ty:\t%f\n", info->player.pos.x, info->player.pos.y);    
-        }
+        // else
+        // {
+        //     printf("player pos:\n\tx:\t%f\n\ty:\t%f\n", info->player.pos.x, info->player.pos.y);    
+        // }
 	}
     if (mlx_is_key_down(info->mlx, MLX_KEY_D))
     {
