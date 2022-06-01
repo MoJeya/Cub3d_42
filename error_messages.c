@@ -68,8 +68,6 @@ void	free_texturepath(t_gen_info *info)
 
 void	error_free_exit(char *str, t_gen_info *info, int state)
 {
-	printf("\nhallo\n");
-
 	int	i;
 
 	i = 0;
