@@ -103,10 +103,13 @@ void	get_textures(t_gen_info *info)
 
 	i = 0;
 
-		info->xpm[0] = mlx_load_xpm42(info->texture_no_path);
-		info->xpm[1] = mlx_load_xpm42(info->texture_so_path);
-		info->xpm[2] = mlx_load_xpm42(info->texture_we_path);
-		info->xpm[3] = mlx_load_xpm42(info->texture_ea_path);
+	info->xpm[0] = mlx_load_xpm42(info->texture_no_path);
+	info->xpm[1] = mlx_load_xpm42(info->texture_so_path);
+	info->xpm[2] = mlx_load_xpm42(info->texture_we_path);
+	info->xpm[3] = mlx_load_xpm42(info->texture_ea_path);
+	info->m_wall = mlx_load_png("./minimap/img/walls.png");
+	info->player_img = mlx_load_png("./minimap/img/player.png");
+	info->back_g = mlx_load_png("./minimap/img/backgrounde.png");
 	//muss hier noch irgendeine delete function hin??
 }
 
@@ -124,6 +127,7 @@ int32_t	create_window(t_gen_info *info)
 	info->m_img = mlx_new_image(info->mlx, screenWidth, screenHeight);
 	//check
 	// printf("map size:\nx\t%d\ny:\t%d\n", info->map_x, info->map_y);
+	// printf("Player pos x: %f\nplayer pos y: %f\n", info->player.pos.x, info->player.pos.y);
 // load xpm to an image
 //go to taht image
 	mlx_image_to_window(info->mlx, info->m_img, 0, 0);
