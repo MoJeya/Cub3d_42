@@ -12,10 +12,10 @@
 # include <stdbool.h>
 #include <sys/time.h>
 
-# define TILES_W 25
-# define TILES_H 25
-#define screenWidth 820
-#define screenHeight 570
+# define TILES_W 8
+# define TILES_H 8
+#define screenWidth 800
+#define screenHeight 600
 # define KEY_A 0
 # define KEY_S 1
 # define KEY_D 2
@@ -83,10 +83,14 @@ typedef struct s_frames
 
 typedef struct s_gen_info
 {
+	mlx_t				*mlx;
+	mlx_image_t			*m_img;
+	mlx_texture_t		*m_wall;
+	mlx_texture_t		*player_img;
+	mlx_texture_t		*back_g;
+	xpm_t			*xpm[4];
 	t_player 		player;
 	t_raycast		raycast;
-	mlx_t			*mlx;
-	mlx_image_t		*m_img;
 	t_frames		frame;
 	int			hit; // was there a wallhit;
 	int			side; // was there a NS or a EW wall hit?
@@ -105,7 +109,6 @@ typedef struct s_gen_info
 	char		*texture_we_path;
 	char		*texture_ea_path;
 	char		**info_string;
-	xpm_t		*xpm[4];
 	int			mouse_x;
 	int			mouse_y;
 	// mlx_image_t *text_img[4];
@@ -153,9 +156,11 @@ void	*my_calloc(size_t count, size_t size, t_gen_info *info, int state);
 int		d_len_str(char **str);
 
 /****************3D************************************/
+void    rotate_mouse(t_gen_info *info);
 void    render_wrld(t_gen_info *info);
 void	player_movment(void *param);
 // void main_loop(mlx_image_t *map);
 
+void draw_minimap(t_gen_info *info);
 
 #endif

@@ -1,0 +1,254 @@
+Player pos x: 9.500000
+player pos y: 10.500000
+player pos:
+ x:	9.421398
+y:	10.485110
+map: 0
+player pos:
+ x:	9.342796
+y:	10.470219
+map: 0
+player pos:
+ x:	9.259281
+y:	10.454398
+map: 0
+player pos:
+ x:	9.175767
+y:	10.438578
+map: 0
+player pos:
+ x:	9.092252
+y:	10.422757
+map: 0
+player pos:
+ x:	9.008737
+y:	10.406936
+map: 0
+player pos:
+ x:	8.930135
+y:	10.392045
+map: 0
+player pos:
+ x:	8.846621
+y:	10.376224
+map: 0
+player pos:
+ x:	8.763106
+y:	10.360404
+map: 0
+player pos:
+ x:	8.684504
+y:	10.345513
+map: 0
+player pos:
+ x:	8.605902
+y:	10.330623
+map: 0
+player pos:
+ x:	8.527300
+y:	10.315733
+map: 0
+player pos:
+ x:	8.448698
+y:	10.300842
+map: 0
+player pos:
+ x:	8.370096
+y:	10.285952
+map: 0
+player pos:
+ x:	8.291494
+y:	10.271062
+map: 0
+player pos:
+ x:	8.212892
+y:	10.256172
+map: 0
+player pos:
+ x:	8.139202
+y:	10.242212
+map: 0
+player pos:
+ x:	8.060600
+y:	10.227322
+map: 0
+player pos:
+ x:	7.986911
+y:	10.213362
+map: 0
+player pos:
+ x:	7.903396
+y:	10.197541
+map: 0
+player pos:
+ x:	7.824794
+y:	10.182651
+map: 0
+player pos:
+ x:	7.746192
+y:	10.167760
+map: 0
+player pos:
+ x:	7.667590
+y:	10.152870
+map: 0
+player pos:
+ x:	7.588988
+y:	10.137980
+map: 0
+player pos:
+ x:	7.510386
+y:	10.123090
+map: 0
+player pos:
+ x:	7.431784
+y:	10.108199
+map: 0
+player pos:
+ x:	7.353182
+y:	10.093309
+map: 0
+player pos:
+ x:	7.274580
+y:	10.078419
+map: 0
+player pos:
+ x:	7.191065
+y:	10.062598
+map: 0
+player pos:
+ x:	7.112463
+y:	10.047708
+map: 0
+player pos:
+ x:	7.033861
+y:	10.032817
+map: 0
+player pos:
+ x:	6.955259
+y:	10.017927
+map: 0
+player pos:
+ x:	6.876657
+y:	10.003037
+map: 0
+player pos:
+ x:	6.798055
+y:	9.988146
+map: 0
+player pos:
+ x:	6.719453
+y:	9.973256
+map: 0
+player pos:
+ x:	6.640851
+y:	9.958366
+map: 0
+player pos:
+ x:	6.562249
+y:	9.943476
+map: 0
+player pos:
+ x:	6.483647
+y:	9.928585
+map: 0
+player pos:
+ x:	6.405045
+y:	9.913695
+map: 0
+player pos:
+ x:	6.321530
+y:	9.897874
+map: 0
+player pos:
+ x:	6.183977
+y:	9.871816
+map: 0
+player pos:
+ x:	6.095550
+y:	9.855064
+map: 0
+player pos:
+ x:	6.012035
+y:	9.839244
+map: 0
+player pos:
+ x:	5.928520
+y:	9.823423
+map: 0
+player pos:
+ x:	5.849918
+y:	9.808532
+map: 0
+player pos:
+ x:	5.766404
+y:	9.792711
+map: 0
+player pos:
+ x:	5.682889
+y:	9.776890
+map: 0
+player pos:
+ x:	5.599374
+y:	9.761070
+map: 0
+player pos:
+ x:	5.515860
+y:	9.745249
+map: 0
+player pos:
+ x:	10.349884
+y:	10.661001
+map: 0
+player pos:
+ x:	10.261457
+y:	10.644250
+map: 0
+player pos:
+ x:	10.173030
+y:	10.627498
+map: 0
+player pos:
+ x:	10.089515
+y:	10.611677
+map: 0
+player pos:
+ x:	10.006001
+y:	10.595856
+map: 0
+player pos:
+ x:	9.917573
+y:	10.579105
+map: 0
+player pos:
+ x:	9.834059
+y:	10.563284
+map: 0
+player pos:
+ x:	9.745631
+y:	10.546532
+map: 0
+player pos:
+ x:	9.662117
+y:	10.530711
+map: 0
+player pos:
+ x:	9.578602
+y:	10.514890
+map: 0
+player pos:
+ x:	9.480349
+y:	10.496277
+map: 0
+player pos:
+ x:	9.387010
+y:	10.478595
+map: 0
+player pos:
+ x:	9.303495
+y:	10.462774
+map: 0
+player pos:
+ x:	9.219980
+y:	10.446953
+map: 0

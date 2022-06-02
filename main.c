@@ -24,12 +24,10 @@ void test_print(t_gen_info *info)
 
 void	init_genaral_info(t_gen_info *info)
 {
-
 	info->map_x = 0;
 	info->map_y = 0;
 	info->win_x = 0;
 	info->win_y = 0;
-	// info->map_widht = 0;
 	info->ceiling.set = false;
 	info->ceiling.red = 0;
 	info->ceiling.yellow = 0;
@@ -39,6 +37,11 @@ void	init_genaral_info(t_gen_info *info)
 	info->floor.yellow = 0;
 	info->floor.blue = 0;
 	info->path = NULL;
+	info->side = 0; //was a NS or a EW wall hit?
+    info->frame.old_time = 0;
+    info->frame.frame_time = 0;
+    info->frame.movment_speed = 0;
+    info->frame.rotation_speed = 0;
 }
 
 void	init_raycast_info(t_gen_info *info)
@@ -86,7 +89,7 @@ int	main(int argc, char *argv[])
 	t_gen_info info;
 
 	init_genaral_info(&info);
-	// printf("Hex color: 125 155 200 in decimal: %X, %X, %X\n", 125, 155, 200);
+	// printf("Hex color: 125 155 200 in decimal: x0%X%X%X%X\n", 125, 155, 200, 255);
 	if (init_data_info(&info, argv, argc))
 	//1.1) was wenn keine spieler position angegeben ist
 	{
