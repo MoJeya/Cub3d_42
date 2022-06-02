@@ -50,7 +50,6 @@ void    insert_textures(t_gen_info *info, int x, int draw_start, int draw_end)
 
     tex_x = find_texture_x(info, texture);
 
-    // line_h = (int)(screenHeight / info->player.prep_wall_dist);
 	line_h = draw_end - draw_start;
     step = 2.0 * texture->height / line_h;
     texture_pos = (draw_start - screenHeight / 2 + line_h / 2) * step;
@@ -84,9 +83,9 @@ void draw_vertical_line(t_gen_info *info, int x)
 	{
 //nur noch da bleibt dann e stehn fur boden und ceiling
 	    if (i < info->raycast.draw_start)
-		    mlx_put_pixel(info->m_img, x, i, create_trgb(info->ceiling.red, info->ceiling.yellow, info->ceiling.blue, 225));
+		    mlx_put_pixel(info->m_img, x, i, create_trgb(info->ceiling.red, info->ceiling.yellow, info->ceiling.blue, 150));
 	    if (i > info->raycast.draw_end)
-		    mlx_put_pixel(info->m_img, x, i, create_trgb(info->floor.red, info->ceiling.yellow, info->floor.blue, 255));
+		    mlx_put_pixel(info->m_img, x, i, create_trgb(info->floor.red, info->ceiling.yellow, info->floor.blue, 150));
 		i++;
 	}
 }
@@ -106,8 +105,12 @@ long time_stamp()
 }
 
 
-void    render_wrld(t_gen_info *info)
+void    render_wrld(void *param)
 {
+
+    t_gen_info *info;
+
+    info = param;
     int x;
     int y;
     int map_pos_x; //which box of the map we're in
@@ -117,16 +120,13 @@ void    render_wrld(t_gen_info *info)
   
     x = 0;
     y = 0;
-    // info->side = 0; //was a NS or a EW wall hit?
-    // info->frame.old_time = 0;
-    // info->frame.frame_time = 0;
-    // info->frame.movment_speed = 0;
-    // info->frame.rotation_speed = 0;
+    info->side = 0; //was a NS or a EW wall hit?
+    info->frame.movment_speed = 0;
+    info->frame.rotation_speed = 0;
     screen_w = screenWidth;
     screen_h = screenHeight;
     //bis hier hin haben wir auch alles
     //jetzt kommt bei tam wie bei uns der WidthWhileLoop
-        info->frame.time = time_stamp();
     while (x < screenWidth)
     {
         info->hit = 0; // was the a wall?
@@ -145,7 +145,8 @@ void    render_wrld(t_gen_info *info)
             info->raycast.delta_dist.y = 1e30;
         else
             info->raycast.delta_dist.y = fabs(1/ info->raycast.dir.y);
-  
+        // printf("raycast side\nx:\t%f\ny:\t%f\nraycast_delta\nx:\t%f\ny:\t%f\n",info->raycast.side_dist.x, info->raycast.side_dist.y, info->raycast.delta_dist.x, info->raycast.delta_dist.y);
+        //tams set_loop
         if (info->raycast.dir.x < 0)
         {
             info->player.step_x = -1;
@@ -194,6 +195,7 @@ void    render_wrld(t_gen_info *info)
             //check dda_case first part
             if (info->map[map_pos_y][map_pos_x] > '0')
             {
+                // printf("map hit:\nx:\t%d\ny:\t%d\n", map_pos_x, map_pos_y);
                 info->hit = 1;
             }
         }
@@ -221,55 +223,22 @@ void    render_wrld(t_gen_info *info)
         //des haben wir auch
         // printf("map[%d][%d]: %c\n", map_pos_x, map_pos_y, info->map[map_pos_x][map_pos_y]);
         draw_vertical_line(info, x);
-        //AUSLAGERN
         x++;
     }
     //should be put in to a new Image
-    info->frame.old_time = info->frame.time;
-    info->frame.time = time_stamp();
-    // printf("time:\t%f\nold time:\t%f\n", info->frame.time, info->frame.old_time);
-    info->frame.frame_time = (info->frame.time - info->frame.old_time) / 10.0;
+    // info->frame.old_time = info->frame.time;
+    // info->frame.time = time_stamp();
+    // // printf("time:\t%f\nold time:\t%f\n", info->frame.time, info->frame.old_time);
+    // info->frame.frame_time = (info->frame.time - info->frame.old_time) / 10.0;
     // printf("frame time: %f\n", info->frame.frame_time);
-    info->frame.movment_speed = info->frame.frame_time * 0.05;
+    info->frame.movment_speed = 0.05;
     // printf("movment speed:\t%f\n", info->frame.movment_speed);
-    info->frame.rotation_speed = info->frame.frame_time * 0.05;
-    // printf("calculations are finished!\n");
+    info->frame.rotation_speed = 0.05;
     draw_minimap(info);
+    player_movment(info);
+    // printf("calculations are finished!\n");
 }
 
-
-void    rotate_mouse(t_gen_info *info)
-{
-    int         old_mouse_x;
-    int         old_mouse_y;
-
-    // mlx_get_mouse_pos(info->mlx, &info->mouse_x, &info->mouse_y);
-    old_mouse_x = info->mouse_x;
-    old_mouse_y = info->mouse_y;
-    mlx_get_mouse_pos(info->mlx, &info->mouse_x, &info->mouse_y);
-    // printf("old_mouse_x %d\n", old_mouse_x);
-    // printf("old_mouse_y %d\n", old_mouse_y);
-    // printf("mouse_x %d\n", info->mouse_x);
-    // printf("mouse_y %d\n", info->mouse_y);
-    if (info->mouse_x > old_mouse_x)//rechts shift
-    {
-        double old_dir_x = info->player.dir.x;
-        info->player.dir.x = info->player.dir.x * cos(-info->frame.rotation_speed) - info->player.dir.y * sin(-info->frame.rotation_speed);
-        info->player.dir.y = old_dir_x * sin(-info->frame.rotation_speed) + info->player.dir.y * cos(-info->frame.rotation_speed);
-        double old_plane_x = info->player.plane.x;
-        info->player.plane.x = info->player.plane.x * cos(-info->frame.rotation_speed) - info->player.plane.y * sin(-info->frame.rotation_speed);
-        info->player.plane.y = old_plane_x * sin(-info->frame.rotation_speed) + info->player.plane.y * cos(-info->frame.rotation_speed);        
-    }
-    if (info->mouse_x < old_mouse_x)// links shift
-    {
-        double old_dir_x = info->player.dir.x;
-        info->player.dir.x = info->player.dir.x * cos(info->frame.rotation_speed) - info->player.dir.y * sin(info->frame.rotation_speed);
-        info->player.dir.y = old_dir_x * sin(info->frame.rotation_speed) + info->player.dir.y * cos(info->frame.rotation_speed);
-        double old_plane_x = info->player.plane.x;
-        info->player.plane.x = info->player.plane.x * cos(info->frame.rotation_speed) - info->player.plane.y * sin(info->frame.rotation_speed);
-        info->player.plane.y = old_plane_x * sin(info->frame.rotation_speed) + info->player.plane.y * cos(info->frame.rotation_speed);
-    }
-}
 
 
  

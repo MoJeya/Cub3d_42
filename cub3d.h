@@ -10,12 +10,12 @@
 # include <stdlib.h>
 # include <math.h>
 # include <stdbool.h>
-#include <sys/time.h>
+# include <sys/time.h>
 
 # define TILES_W 8
 # define TILES_H 8
-#define screenWidth 800
-#define screenHeight 600
+# define screenWidth 800
+# define screenHeight 600
 # define KEY_A 0
 # define KEY_S 1
 # define KEY_D 2
@@ -25,7 +25,6 @@
 # define DOWN 125
 # define PI 3.1415926535
 # define BUFFER_SIZE 42
-
 
 typedef enum free_code{
 	INFO_STRING,
@@ -88,32 +87,30 @@ typedef struct s_gen_info
 	mlx_texture_t		*m_wall;
 	mlx_texture_t		*player_img;
 	mlx_texture_t		*back_g;
-	xpm_t			*xpm[4];
-	t_player 		player;
-	t_raycast		raycast;
-	t_frames		frame;
-	int			hit; // was there a wallhit;
-	int			side; // was there a NS or a EW wall hit?
-	int			line_h;
-	int			map_x;
-	int			map_y;
-	int			win_x;
-	int			win_y;
-	int			fd;
-	t_color		ceiling;
-	t_color		floor;
-	char		*path;
-	char		**map;
-	char		*texture_no_path;
-	char		*texture_so_path;
-	char		*texture_we_path;
-	char		*texture_ea_path;
-	char		**info_string;
-	int			mouse_x;
-	int			mouse_y;
-	// mlx_image_t *text_img[4];
+	xpm_t				*xpm[4];
+	t_player 			player;
+	t_raycast			raycast;
+	t_frames			frame;
+	int					hit; // was there a wallhit;
+	int					side; // was there a NS or a EW wall hit?
+	int					line_h;
+	int					map_x;
+	int					map_y;
+	int					win_x;
+	int					win_y;
+	int					fd;
+	t_color				ceiling;
+	t_color				floor;
+	char				*path;
+	char				**map;
+	char				*texture_no_path;
+	char				*texture_so_path;
+	char				*texture_we_path;
+	char				*texture_ea_path;
+	char				**info_string;
+	int					mouse_x;
+	int					mouse_y;
 }t_gen_info;
-
 
 /********************PARSER***************************/
 int		parse_data_info(t_gen_info *info);
@@ -123,10 +120,6 @@ int		get_max_len(char **str, t_gen_info *info);
 int		init_text_struct(char *str, t_gen_info *info);
 int		parse_color_settings(char *str, t_gen_info *info);
 int		map_parse_condition(t_gen_info *info, int i);
-
-
-
-
 
 /********************WINDOW_MLX***************************/
 int32_t	create_window(t_gen_info *info);
@@ -138,12 +131,13 @@ int		strcomp(char *str1, const char *str2);
 int		sides_check(t_gen_info *info);
 int		top_bottom_check(t_gen_info *info, int j);
 /*****************READ_TOOLS****************************/
-char *get_next_line(int fd);
-int check_map_valid(t_gen_info *info);
-int map_base_player_check(t_gen_info *info);
-int check_file_format(char *path);
-int init_data_info(t_gen_info *info, char *argv[], int argc);
-void set_direction_player(t_gen_info *info);
+char	*get_next_line(int fd);
+int		check_map_valid(t_gen_info *info);
+int		map_base_player_check(t_gen_info *info);
+int		check_file_format(char *path);
+int		init_data_info(t_gen_info *info, char *argv[], int argc);
+void	set_direction_player(t_gen_info *info);
+void	get_textures(t_gen_info *info);
 // void player_dir_init(t_gen_info *info);
 
 /*****************ERROR****************************/
@@ -151,16 +145,15 @@ void	error_exit(char *str, t_gen_info *info);
 void	error_free_exit(char *str, t_gen_info *info, int i);
 void	*my_calloc(size_t count, size_t size, t_gen_info *info, int state);
 
-
 /****************HELPER FUNCTIONS**********************/
 int		d_len_str(char **str);
 
 /****************3D************************************/
-void    rotate_mouse(t_gen_info *info);
-void    render_wrld(t_gen_info *info);
-void	player_movment(void *param);
+void	rotate_mouse(t_gen_info *info);
+void	render_wrld(void *param);
+void	player_movment(t_gen_info *info);
 // void main_loop(mlx_image_t *map);
 
-void draw_minimap(t_gen_info *info);
+void	draw_minimap(t_gen_info *info);
 
 #endif
