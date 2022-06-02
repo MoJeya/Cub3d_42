@@ -12,8 +12,8 @@
 # include <stdbool.h>
 #include <sys/time.h>
 
-# define TILES_W 25
-# define TILES_H 25
+# define TILES_W 16
+# define TILES_H 16
 #define screenWidth 820
 #define screenHeight 570
 # define KEY_A 0
@@ -58,6 +58,8 @@ typedef struct s_player
 	char			looking;
 	int				step_x;
 	int				step_y;
+	int				map_pos_x;
+	int				map_pos_y;
 	double			prep_wall_dist;
 	double			dis_to_wall;
 	mlx_image_t		*p_img;
@@ -87,6 +89,9 @@ typedef struct s_gen_info
 	t_raycast		raycast;
 	mlx_t			*mlx;
 	mlx_image_t		*m_img;
+	mlx_texture_t	*m_wall;
+	mlx_texture_t	*player_img;
+	mlx_texture_t	*back_g;
 	t_frames		frame;
 	int			hit; // was there a wallhit;
 	int			side; // was there a NS or a EW wall hit?
@@ -127,6 +132,7 @@ int		map_parse_condition(t_gen_info *info, int i);
 
 /********************WINDOW_MLX***************************/
 int32_t	create_window(t_gen_info *info);
+void draw_minimap(t_gen_info *info);
 
 /********************TOOLS************************/
 char	*ft_strchr_nl(char *str);

@@ -251,6 +251,7 @@ void    render_wrld(t_gen_info *info)
     // printf("movment speed:\t%f\n", info->frame.movment_speed);
     info->frame.rotation_speed = info->frame.frame_time * 0.10;
     // printf("calculations are finished!\n");
+    draw_minimap(info);
 }
 
 

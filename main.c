@@ -91,7 +91,7 @@ int	main(int argc, char *argv[])
 	//1.1) was wenn keine spieler position angegeben ist
 	{
 		init_raycast_info(&info);
-		// test_print(&info);
+		test_print(&info);
 		create_window(&info);
 	}
 	error_free_exit(NULL, &info, INFO_MAP);
