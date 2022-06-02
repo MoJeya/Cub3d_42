@@ -69,6 +69,8 @@ static bool check_wall_horizontal(t_gen_info *info, int p)
 
 void player_movment(t_gen_info *info)
 {
+    double  old_y;
+    double  old_x;
     //bis hier hin wurde alles mit dem window erledigt 
 
     if(mlx_is_mouse_down(info->mlx, MLX_MOUSE_BUTTON_LEFT))
@@ -83,8 +85,17 @@ void player_movment(t_gen_info *info)
 	{
         if (check_wall_vertical(info, 1))
         {
+            old_x = info->player.pos.x;
+            old_y = info->player.pos.y;
             info->player.pos.y += info->player.dir.y * info->frame.movment_speed;
             info->player.pos.x += info->player.dir.x * info->frame.movment_speed;
+            info->player.map_pos_y = (int)info->player.pos.y;
+            // info->player.map_pos_x = 
+            // printf("HALLO\n");
+            // printf ("oldx   %f\n", old_x);
+            // printf ("oldy   %f\n", old_y);
+            // printf ("info->player.pos.x %f\n", info->player.pos.x);
+            // printf ("info->player.pos.y %f\n", info->player.pos.y);
         }
 	}
 	if (mlx_is_key_down(info->mlx, MLX_KEY_S))
@@ -93,6 +104,8 @@ void player_movment(t_gen_info *info)
         {
             info->player.pos.y -= info->player.dir.y * info->frame.movment_speed;
             info->player.pos.x -= info->player.dir.x * info->frame.movment_speed;
+            info->player.map_pos_y = (int)info->player.pos.y;
+            // info->player.map_pos_x = (int)info->player.pos.y / 16;
         }
 	}
     if (mlx_is_key_down(info->mlx, MLX_KEY_D))
@@ -101,6 +114,8 @@ void player_movment(t_gen_info *info)
         {
             info->player.pos.y += info->player.plane.y * info->frame.movment_speed;
             info->player.pos.x += info->player.plane.x * info->frame.movment_speed;
+            // info->player.map_pos_y = (int)info->player.pos.x / 16;
+            info->player.map_pos_x = (int)info->player.pos.x;
         }
     }
     if (mlx_is_key_down(info->mlx, MLX_KEY_A))
@@ -109,6 +124,8 @@ void player_movment(t_gen_info *info)
         {
             info->player.pos.y -= info->player.plane.y * info->frame.movment_speed;
             info->player.pos.x -= info->player.plane.x * info->frame.movment_speed;
+            // info->player.map_pos_y = (int)info->player.pos.x / 16;
+            info->player.map_pos_x = (int)info->player.pos.x;
         }
     }
 	if (mlx_is_key_down(info->mlx, MLX_KEY_LEFT))
@@ -119,4 +136,6 @@ void player_movment(t_gen_info *info)
 	{
         rotate_player(info, -1);
 	}
+    // draw_minimap(info);
+
 }

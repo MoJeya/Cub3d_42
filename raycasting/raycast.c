@@ -234,9 +234,8 @@ void    render_wrld(void *param)
     info->frame.movment_speed = 0.05;
     // printf("movment speed:\t%f\n", info->frame.movment_speed);
     info->frame.rotation_speed = 0.05;
-    draw_minimap(info);
     player_movment(info);
-    // printf("calculations are finished!\n");
+    draw_minimap(info);
 }
 
 
