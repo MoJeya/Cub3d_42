@@ -1,25 +1,21 @@
 
 #include "cub3d.h"
 
-void test_print(t_gen_info *info)
+void	get_textures(t_gen_info *info)
 {
-	int	i;
-	printf("PATH: %s\n", info->texture_so_path);
-	printf("PATH: %s\n", info->texture_no_path);
-	printf("PATH: %s\n", info->texture_we_path);
-	printf("PATH: %s\n", info->texture_ea_path);
-	printf("F:\nred:%d\nyellow:%d\nblue:%d\n", info->floor.red, info->floor.yellow, info->floor.blue);
-	printf("C:\nred:%d\nyellow:%d\nblue:%d\n", info->ceiling.red, info->ceiling.yellow, info->ceiling.blue);
-	printf("MAP: \n");
+	int i;
+
 	i = 0;
-	while (info->map[i] != NULL)
-	{
-		printf("%s\n", info->map[i]);
-		i++;
-	}
-	// printf("player is looking: %c\n", info->player.looking);
-	printf("Player pos x: %f\nplayer pos y: %f\n", info->player.pos.x, info->player.pos.y);
-	printf("\n");
+
+	info->xpm[0] = mlx_load_xpm42(info->texture_no_path);
+	info->xpm[1] = mlx_load_xpm42(info->texture_so_path);
+	info->xpm[2] = mlx_load_xpm42(info->texture_we_path);
+	info->xpm[3] = mlx_load_xpm42(info->texture_ea_path);
+	info->m_wall = mlx_load_png("./minimap/img/walls.png");
+	info->player_img = mlx_load_png("./minimap/img/player.png");
+	info->back_g = mlx_load_png("./minimap/img/backgrounde.png");
+	//muss hier noch irgendeine delete function hin??
+	//nein sonst free fehler
 }
 
 void	init_genaral_info(t_gen_info *info)
@@ -93,6 +89,7 @@ int	main(int argc, char *argv[])
 	if (init_data_info(&info, argv, argc))
 	//1.1) was wenn keine spieler position angegeben ist
 	{
+		get_textures(&info);
 		init_raycast_info(&info);
 		// test_print(&info);
 		create_window(&info);

@@ -47,6 +47,8 @@ int	map_base_player_check(t_gen_info *info)
 					info->player.looking = info->map[i][j];
 					info->player.pos.y = (float)i + 0.5;
 					info->player.pos.x = (float)j + 0.5;
+					info->player.map_pos_x = j;
+					info->player.map_pos_y = i;
 					info->map[i][j] = '0';
 					player_cnt++;
 				}

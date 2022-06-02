@@ -12,8 +12,8 @@
 # include <stdbool.h>
 # include <sys/time.h>
 
-# define TILES_W 8
-# define TILES_H 8
+# define TILES_W 16
+# define TILES_H 16
 # define screenWidth 800
 # define screenHeight 600
 # define KEY_A 0
@@ -57,6 +57,8 @@ typedef struct s_player
 	char			looking;
 	int				step_x;
 	int				step_y;
+	int			map_pos_x;
+	int				map_pos_y;
 	double			prep_wall_dist;
 	double			dis_to_wall;
 	mlx_image_t		*p_img;
