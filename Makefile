@@ -31,6 +31,6 @@ clean:
 	rm -f ./libft/*.a ./NEW_MLX42/*.a 
 
 fclean: clean
-	rm -f $(NAME) *.o ./parser_stuff/*.o ./libft/obj/*.o ./raycasting/*.o
+	rm -f $(NAME) *.o ./parser_stuff/*.o ./libft/obj/*.o ./raycasting/*.o $(shell find ./NEW_MLX42/* -iname "*.o")
 
 re: fclean all

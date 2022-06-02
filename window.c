@@ -111,18 +111,18 @@ void	get_textures(t_gen_info *info)
 	info->player_img = mlx_load_png("./minimap/img/player.png");
 	info->back_g = mlx_load_png("./minimap/img/backgrounde.png");
 	//muss hier noch irgendeine delete function hin??
+	//nein sonst free fehler
 }
 
 int32_t	create_window(t_gen_info *info)
 {
-	mlx_image_t *txt_img = NULL;
 	
 	info->mlx = mlx_init(screenWidth, screenHeight, "CUBE3D", true);//wie wurde des berechnet, bzw warum passt es genau so von der grösse???
 	if (!info->mlx)
 		exit(EXIT_FAILURE);
 		//check
 	get_textures(info);
-	txt_img = mlx_texture_to_image(info->mlx, &info->xpm[0]->texture);
+	// txt_img = mlx_texture_to_image(info->mlx, &info->xpm[0]->texture);
 	//gibts nicht bei Tam
 	info->m_img = mlx_new_image(info->mlx, screenWidth, screenHeight);
 	//check
@@ -131,11 +131,14 @@ int32_t	create_window(t_gen_info *info)
 // load xpm to an image
 //go to taht image
 	mlx_image_to_window(info->mlx, info->m_img, 0, 0);
+	mlx_get_mouse_pos(info->mlx, &info->mouse_x, &info->mouse_y);
 	mlx_loop_hook(info->mlx, &player_movment, info);//nach dem fpointer kommen die values
+	// mlx_cursor_hook(info->mlx, func(xpos, ypos, NULL), NULL)
 	mlx_loop(info->mlx);
 	//check
 	//bis hierhin ist der Aufabu korrekt
 	mlx_terminate(info->mlx);
+	mlx_delete_image(info->mlx, info->m_img);
 	return (EXIT_SUCCESS);
 }
 

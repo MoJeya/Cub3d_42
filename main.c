@@ -97,6 +97,7 @@ int	main(int argc, char *argv[])
 		// test_print(&info);
 		create_window(&info);
 	}
+	error_free_exit(NULL, &info, INFO_MAP);
 	// create_window();
 	// system("leaks cube3d");
 	return(0);

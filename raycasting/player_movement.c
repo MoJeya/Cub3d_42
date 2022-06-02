@@ -46,6 +46,8 @@ void player_movment(void *param)
 	t_gen_info *info;
 
 	info = param;
+    if (mlx_is_mouse_down(info->mlx, MLX_MOUSE_BUTTON_LEFT))
+        rotate_mouse(info);
 	if (mlx_is_key_down(info->mlx, MLX_KEY_ESCAPE))
     {
         mlx_delete_image(info->mlx, info->m_img);

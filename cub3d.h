@@ -109,6 +109,8 @@ typedef struct s_gen_info
 	char		*texture_we_path;
 	char		*texture_ea_path;
 	char		**info_string;
+	int			mouse_x;
+	int			mouse_y;
 	// mlx_image_t *text_img[4];
 }t_gen_info;
 
@@ -154,6 +156,7 @@ void	*my_calloc(size_t count, size_t size, t_gen_info *info, int state);
 int		d_len_str(char **str);
 
 /****************3D************************************/
+void    rotate_mouse(t_gen_info *info);
 void    render_wrld(t_gen_info *info);
 void	player_movment(void *param);
 // void main_loop(mlx_image_t *map);

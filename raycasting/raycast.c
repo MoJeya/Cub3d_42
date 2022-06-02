@@ -52,7 +52,7 @@ void    insert_textures(t_gen_info *info, int x, int draw_start, int draw_end)
 
     // line_h = (int)(screenHeight / info->player.prep_wall_dist);
 	line_h = draw_end - draw_start;
-    step = 1.0 * texture->height / line_h;
+    step = 2.0 * texture->height / line_h;
     texture_pos = (draw_start - screenHeight / 2 + line_h / 2) * step;
     while (draw_start < draw_end)
     {
@@ -236,3 +236,40 @@ void    render_wrld(t_gen_info *info)
     // printf("calculations are finished!\n");
     draw_minimap(info);
 }
+
+
+void    rotate_mouse(t_gen_info *info)
+{
+    int         old_mouse_x;
+    int         old_mouse_y;
+
+    // mlx_get_mouse_pos(info->mlx, &info->mouse_x, &info->mouse_y);
+    old_mouse_x = info->mouse_x;
+    old_mouse_y = info->mouse_y;
+    mlx_get_mouse_pos(info->mlx, &info->mouse_x, &info->mouse_y);
+    // printf("old_mouse_x %d\n", old_mouse_x);
+    // printf("old_mouse_y %d\n", old_mouse_y);
+    // printf("mouse_x %d\n", info->mouse_x);
+    // printf("mouse_y %d\n", info->mouse_y);
+    if (info->mouse_x > old_mouse_x)//rechts shift
+    {
+        double old_dir_x = info->player.dir.x;
+        info->player.dir.x = info->player.dir.x * cos(-info->frame.rotation_speed) - info->player.dir.y * sin(-info->frame.rotation_speed);
+        info->player.dir.y = old_dir_x * sin(-info->frame.rotation_speed) + info->player.dir.y * cos(-info->frame.rotation_speed);
+        double old_plane_x = info->player.plane.x;
+        info->player.plane.x = info->player.plane.x * cos(-info->frame.rotation_speed) - info->player.plane.y * sin(-info->frame.rotation_speed);
+        info->player.plane.y = old_plane_x * sin(-info->frame.rotation_speed) + info->player.plane.y * cos(-info->frame.rotation_speed);        
+    }
+    if (info->mouse_x < old_mouse_x)// links shift
+    {
+        double old_dir_x = info->player.dir.x;
+        info->player.dir.x = info->player.dir.x * cos(info->frame.rotation_speed) - info->player.dir.y * sin(info->frame.rotation_speed);
+        info->player.dir.y = old_dir_x * sin(info->frame.rotation_speed) + info->player.dir.y * cos(info->frame.rotation_speed);
+        double old_plane_x = info->player.plane.x;
+        info->player.plane.x = info->player.plane.x * cos(info->frame.rotation_speed) - info->player.plane.y * sin(info->frame.rotation_speed);
+        info->player.plane.y = old_plane_x * sin(info->frame.rotation_speed) + info->player.plane.y * cos(info->frame.rotation_speed);
+    }
+}
+
+
+ 
