@@ -106,6 +106,8 @@ typedef struct s_gen_info
 	char		*texture_ea_path;
 	char		**info_string;
 	xpm_t		*xpm[4];
+	int			mouse_x;
+	int			mouse_y;
 	// mlx_image_t *text_img[4];
 }t_gen_info;
 
