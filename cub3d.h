@@ -12,8 +12,8 @@
 # include <stdbool.h>
 # include <sys/time.h>
 
-# define TILES_W 16
-# define TILES_H 16
+# define TILES_W 8
+# define TILES_H 8
 # define screenWidth 800
 # define screenHeight 600
 # define KEY_A 0
@@ -157,5 +157,7 @@ void	player_movment(t_gen_info *info);
 // void main_loop(mlx_image_t *map);
 
 void	draw_minimap(t_gen_info *info);
+void    minimap_movement(t_gen_info *info);
+
 
 #endif
