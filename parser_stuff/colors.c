@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   colors.c                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: rschleic <rschleic@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/06/03 18:30:17 by rschleic          #+#    #+#             */
+/*   Updated: 2022/06/03 18:31:16 by rschleic         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../cub3d.h"
 
 int	check_color_val(const char **str)
@@ -60,7 +72,7 @@ int	split_values(char *str, t_gen_info *info)
 	}
 	if (strcomp(tmp[0], "F"))
 	{
-		if (d_len_str(tmp2) != 3 || d_len_str(tmp) != 2) 
+		if (d_len_str(tmp2) != 3 || d_len_str(tmp) != 2)
 		{
 			free(tmp);
 			free(tmp2);

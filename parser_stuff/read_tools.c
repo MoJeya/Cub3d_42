@@ -1,6 +1,18 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   read_tools.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: rschleic <rschleic@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/06/03 18:30:48 by rschleic          #+#    #+#             */
+/*   Updated: 2022/06/03 19:08:36 by rschleic         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../cub3d.h"
 
-int d_len_str(char **str)
+int	d_len_str(char **str)
 {
 	int	i;
 
@@ -24,6 +36,17 @@ int	check_file_format(char *path)
 	return (0);
 }
 
+// void	set_player_info(t_gen_info *info, int i, int j, int *player_cnt)
+// {
+// 	info->player.looking = info->map[i][j];
+// 	info->player.pos.y = (float)i + 0.5;
+// 	info->player.pos.x = (float)j + 0.5;
+// 	info->player.map_pos_x = j + 0.5;
+// 	info->player.map_pos_y = i + 0.5;
+// 	info->map[i][j] = '0';
+// 	player_cnt++;
+// }
+
 int	map_base_player_check(t_gen_info *info)
 {
 	int		i;
@@ -44,6 +67,7 @@ int	map_base_player_check(t_gen_info *info)
 			{
 				if (ft_strchr("NESW", info->map[i][j]))
 				{
+					// set_player_info(info, i, j, &player_cnt);
 					info->player.looking = info->map[i][j];
 					info->player.pos.y = (float)i + 0.5;
 					info->player.pos.x = (float)j + 0.5;

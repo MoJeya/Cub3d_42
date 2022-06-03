@@ -1,12 +1,22 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.c                                             :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: rschleic <rschleic@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/06/03 17:54:23 by rschleic          #+#    #+#             */
+/*   Updated: 2022/06/03 18:26:32 by rschleic         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include "cub3d.h"
 
 void	get_textures(t_gen_info *info)
 {
-	int i;
+	int	i;
 
 	i = 0;
-
 	info->xpm[0] = mlx_load_xpm42(info->texture_no_path);
 	info->xpm[1] = mlx_load_xpm42(info->texture_so_path);
 	info->xpm[2] = mlx_load_xpm42(info->texture_we_path);
@@ -14,8 +24,6 @@ void	get_textures(t_gen_info *info)
 	info->m_wall = mlx_load_png("./minimap/img/dungeon.png");
 	info->player_img = mlx_load_png("./minimap/img/person.png");
 	info->back_g = mlx_load_png("./minimap/img/playground.png");
-	//muss hier noch irgendeine delete function hin??
-	//nein sonst free fehler
 }
 
 void	init_genaral_info(t_gen_info *info)
@@ -35,20 +43,25 @@ void	init_genaral_info(t_gen_info *info)
 	info->path = NULL;
 	info->side = 0;
 	info->player.step_x = 0;
-    info->player.step_y = 0;
-    info->raycast.camera_x = 0;
-    info->frame.old_time = 0;
-    info->frame.frame_time = 0;
-    info->frame.movment_speed = 0;
-    info->frame.rotation_speed = 0;
+	info->player.step_y = 0;
+	info->raycast.camera_x = 0;
+	info->frame.old_time = 0;
+	info->frame.frame_time = 0;
+	info->frame.movment_speed = 0;
+	info->frame.rotation_speed = 0;
 }
 
-void	init_raycast_info(t_gen_info *info)
+void	player_north_view(t_gen_info *info)
 {
 	info->player.dir.x = 0;
 	info->player.dir.y = -1;
 	info->player.plane.x = -0.66;
 	info->player.plane.y = 0;
+}
+
+void	init_raycast_info(t_gen_info *info)
+{
+	player_north_view(info);
 	if (info->player.looking == 'W')
 	{
 		info->player.dir.x = 1;
@@ -61,7 +74,7 @@ void	init_raycast_info(t_gen_info *info)
 		info->player.dir.x = 0;
 		info->player.dir.y = 1;
 		info->player.plane.x = 0.66;
-		info->player.plane.y = 0;	
+		info->player.plane.y = 0;
 	}
 	else if (info->player.looking == 'E')
 	{
@@ -70,12 +83,11 @@ void	init_raycast_info(t_gen_info *info)
 		info->player.plane.x = 0;
 		info->player.plane.y = 0.66;
 	}
-
 }
 
 int	main(int argc, char *argv[])
 {
-	t_gen_info info;
+	t_gen_info	info;
 
 	init_genaral_info(&info);
 	if (init_data_info(&info, argv, argc))
@@ -84,8 +96,7 @@ int	main(int argc, char *argv[])
 		init_raycast_info(&info);
 		create_window(&info);
 	}
+	system("leaks cube3d");
 	error_free_exit(NULL, &info, INFO_MAP);
-	// create_window();
-	// system("leaks cube3d");
-	return(0);
+	return (0);
 }
