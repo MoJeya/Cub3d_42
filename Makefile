@@ -3,7 +3,7 @@ NAME = cube3d
 
 CC = gcc
 
-CFLAGS = -Wall -Wextra -Werror -g3
+CFLAGS = -Wall -Wextra -Werror -g3 -g
 
 SRC = $(shell find *.c ./parser_stuff/*.c ./minimap/*.c ./raycasting/*.c)
 
