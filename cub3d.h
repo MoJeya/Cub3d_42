@@ -57,7 +57,7 @@ typedef struct s_player
 	char			looking;
 	int				step_x;
 	int				step_y;
-	int			map_pos_x;
+	int				map_pos_x;
 	int				map_pos_y;
 	double			prep_wall_dist;
 	double			dis_to_wall;
@@ -153,7 +153,7 @@ int		d_len_str(char **str);
 /****************3D************************************/
 void	rotate_mouse(t_gen_info *info);
 void	render_wrld(void *param);
-void	player_movment(t_gen_info *info);
+void	player_movment(t_gen_info *info, int map_posx, int map_posy);
 // void main_loop(mlx_image_t *map);
 
 void	draw_minimap(t_gen_info *info);
