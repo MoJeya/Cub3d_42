@@ -11,9 +11,9 @@ void	get_textures(t_gen_info *info)
 	info->xpm[1] = mlx_load_xpm42(info->texture_so_path);
 	info->xpm[2] = mlx_load_xpm42(info->texture_we_path);
 	info->xpm[3] = mlx_load_xpm42(info->texture_ea_path);
-	info->m_wall = mlx_load_png("./minimap/img/walls.png");
-	info->player_img = mlx_load_png("./minimap/img/player.png");
-	info->back_g = mlx_load_png("./minimap/img/backgrounde.png");
+	info->m_wall = mlx_load_png("./minimap/img/dungeon.png");
+	info->player_img = mlx_load_png("./minimap/img/person.png");
+	info->back_g = mlx_load_png("./minimap/img/playground.png");
 	//muss hier noch irgendeine delete function hin??
 	//nein sonst free fehler
 }

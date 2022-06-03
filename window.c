@@ -30,6 +30,7 @@ int32_t	create_window(t_gen_info *info)
 //go to taht image
 	mlx_image_to_window(info->mlx, info->m_img, 0, 0);
 	mlx_get_mouse_pos(info->mlx, &info->mouse_x, &info->mouse_y);
+	draw_minimap(info);
 	mlx_loop_hook(info->mlx, &render_wrld, info);//nach dem fpointer kommen die values
 	// mlx_cursor_hook(info->mlx, func(xpos, ypos, NULL), NULL)
 	mlx_loop(info->mlx);

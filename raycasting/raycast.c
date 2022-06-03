@@ -184,8 +184,9 @@ void    render_wrld(void *param)
     }
     // info->frame.movment_speed = 0.05;
     // info->frame.rotation_speed = 0.05;
-    draw_minimap(info);
     player_movment(info, map_pos_x, map_pos_y);
+    draw_minimap(info);
+    minimap_movement(info);
 }
 
 
