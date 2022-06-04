@@ -6,7 +6,7 @@
 /*   By: rschleic <rschleic@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/03 18:30:43 by rschleic          #+#    #+#             */
-/*   Updated: 2022/06/03 19:01:54 by rschleic         ###   ########.fr       */
+/*   Updated: 2022/06/04 18:22:28 by rschleic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,6 @@ int	map_parse_condition(t_gen_info *info, int i)
 	}
 	return (0);
 }
-//hier könte man die 0 gleich weg lassen
-//da am Anfnag ja nur leer oder 1 sein darf?
 
 int	parse_color_settings(char *str, t_gen_info *info)
 {

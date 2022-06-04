@@ -6,7 +6,7 @@
 /*   By: rschleic <rschleic@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/03 18:29:42 by rschleic          #+#    #+#             */
-/*   Updated: 2022/06/03 18:29:48 by rschleic         ###   ########.fr       */
+/*   Updated: 2022/06/04 19:34:03 by rschleic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,8 +69,6 @@ typedef struct s_player
 	char			looking;
 	int				step_x;
 	int				step_y;
-	int				map_pos_x;
-	int				map_pos_y;
 	double			prep_wall_dist;
 	double			dis_to_wall;
 	mlx_image_t		*p_img;
@@ -160,6 +158,8 @@ void	*my_calloc(size_t count, size_t size, t_gen_info *info, int state);
 
 /****************HELPER FUNCTIONS**********************/
 int		d_len_str(char **str);
+void	split_free(char	***tmp, char ***tmp2, t_gen_info **info, char *str);
+void	free_str(char **str);
 
 /****************3D************************************/
 void	rotate_mouse(t_gen_info *info);

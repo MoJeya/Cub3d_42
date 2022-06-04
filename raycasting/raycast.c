@@ -43,12 +43,12 @@ void    insert_textures(t_gen_info *info, int x, int draw_start, int draw_end)
     tex_x = find_texture_x(info, texture);
 	line_h = draw_end - draw_start;
     step = 2.0 * texture->height / line_h;
-    texture_pos = (draw_start - screenHeight / 2 + line_h / 2) * step;
+    texture_pos = (draw_start - SCREEN_H / 2 + line_h / 2) * step;
     while (draw_start < draw_end)
     {
         tex_y = (int)texture_pos & (texture->height - 1);
         texture_pos += step;
-        if (draw_start >= 0 && draw_start <= screenHeight)
+        if (draw_start >= 0 && draw_start <= SCREEN_H)
         {
             ft_memcpy(&info->m_img->pixels[(draw_start * info->m_img->width + x) * 4],
 				&texture->pixels[(tex_y * texture->height + tex_x) * 4], 4);
@@ -63,7 +63,7 @@ void draw_vertical_line(t_gen_info *info, int x)
 
     i = 0;
     insert_textures(info, x, info->raycast.draw_start, info->raycast.draw_end);
-    while (i < screenHeight)
+    while (i < SCREEN_H)
 	{
 	    if (i < info->raycast.draw_start)
 		    mlx_put_pixel(info->m_img, x, i, create_trgb(info->ceiling.red, info->ceiling.yellow, info->ceiling.blue, 150));
@@ -146,10 +146,10 @@ void    render_wrld(void *param)
     info->side = 0; //was a NS or a EW wall hit?
     info->frame.movment_speed = 0.05;
     info->frame.rotation_speed = 0.05;
-    screen_w = screenWidth;
-    screen_h = screenHeight;
+    screen_w = SCREEN_W;
+    screen_h = SCREEN_H;
 // printf("plane: x{%f}\tt{%f}\n", info->player.plane.x, info->player.plane.y);
-    while (x < screenWidth)
+    while (x < SCREEN_W)
     {
         info->hit = 0; // was the a wall?
         info->player.step_x = 1;

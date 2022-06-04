@@ -6,7 +6,7 @@
 /*   By: rschleic <rschleic@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/03 17:31:35 by rschleic          #+#    #+#             */
-/*   Updated: 2022/06/03 17:31:53 by rschleic         ###   ########.fr       */
+/*   Updated: 2022/06/04 19:29:30 by rschleic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,4 +44,17 @@ int	get_max_len(char **str, t_gen_info *info)
 	}
 	info->map_y = i;
 	return (len);
+}
+
+void	free_str(char **str)
+{
+	int	i;
+
+	i = 0;
+	while (str[i])
+	{
+		free(str[i]);
+		i++;
+	}
+	free(str);
 }
