@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   cub3d.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rschleic <rschleic@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mjeyavat <mjeyavat@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/03 18:29:42 by rschleic          #+#    #+#             */
-/*   Updated: 2022/06/04 19:34:03 by rschleic         ###   ########.fr       */
+/*   Updated: 2022/06/07 20:17:15 by mjeyavat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -139,7 +139,7 @@ int32_t	create_window(t_gen_info *info);
 char	*ft_strchr_nl(char *str);
 int		split_values(char *str, t_gen_info *info);
 int		strcomp(char *str1, const char *str2);
-int		sides_check(t_gen_info *info);
+int		sides_check(char **info_str);
 int		top_bottom_check(t_gen_info *info, int j);
 /*****************READ_TOOLS****************************/
 char	*get_next_line(int fd);
@@ -161,6 +161,8 @@ int		d_len_str(char **str);
 void	split_free(char	***tmp, char ***tmp2, t_gen_info **info, char *str);
 void	free_str(char **str);
 int		create_trgb(int t, int r, int g, int b);
+void	get_textures(t_gen_info *info);
+void	init_genaral_info(t_gen_info *info);
 
 /****************3D************************************/
 void	rotate_mouse(t_gen_info *info);
@@ -172,11 +174,14 @@ void	minimap_movement(t_gen_info *info);
 void	set_startval(int x, t_gen_info *info);
 void	set_delta_dist(t_gen_info *info);
 /****************PLAYER MOVMENT CALCULATION************/
+
 void	rotate_mouse(t_gen_info *info);
 void	rotate_player(t_gen_info *info, int dir);
 bool	check_side_wall(t_gen_info *info, int i, int end_value);
 void	calc_perp_walldist(t_gen_info *info);
 void	set_line_height(t_gen_info *info);
 void	dda_calc(t_gen_info *info, int map_pos_x, int map_pos_y);
-void    set_step(t_gen_info *info, int map_pos_x, int map_pos_y);
+void	set_step(t_gen_info *info, int map_pos_x, int map_pos_y);
+void	init_raycast_info(t_gen_info *info);
+
 #endif

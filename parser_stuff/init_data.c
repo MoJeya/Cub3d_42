@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   init_data.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rschleic <rschleic@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mjeyavat <mjeyavat@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/03 18:30:36 by rschleic          #+#    #+#             */
-/*   Updated: 2022/06/03 19:01:32 by rschleic         ###   ########.fr       */
+/*   Updated: 2022/06/07 20:24:16 by mjeyavat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,10 @@ int	parse_data_info(t_gen_info *info)
 			return (0);
 		if (map_parse_condition(info, i) == 1)
 		{
-			info->map_x = get_max_len(&info->info_string[i], info);
+			if (sides_check(&info->info_string[i]) == 0)
+				info->map_x = get_max_len(&info->info_string[i], info);
+			else
+				break ;
 			init_map(info, &info->info_string[i]);
 			break ;
 		}
@@ -48,6 +51,7 @@ int	parse_data_info(t_gen_info *info)
 		error_free_exit("ERROR\ncolor setting is missing", info, INFO_MAP);
 	if (check_map_valid(info) && map_base_player_check(info))
 		return (1);
+	info->map = NULL;
 	error_free_exit("\033[31mMAP IS NOT VALID\033[0m", info, INFO_MAP);
 	return (0);
 }

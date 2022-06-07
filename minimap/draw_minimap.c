@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   draw_minimap.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rschleic <rschleic@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mjeyavat <mjeyavat@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/04 17:55:30 by rschleic          #+#    #+#             */
-/*   Updated: 2022/06/04 19:31:45 by rschleic         ###   ########.fr       */
+/*   Updated: 2022/06/07 20:23:53 by mjeyavat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,7 @@ void	draw_minimap(t_gen_info *info)
 		y_tile += TILES_H;
 		y++;
 	}
+	minimap_movement(info);
 }
 
 void	minimap_movement(t_gen_info *info)
@@ -51,17 +52,3 @@ void	minimap_movement(t_gen_info *info)
 			- TILES_H / 2);
 	mlx_draw_texture(info->m_img, info->player_img, mini_x + TILES_W, mini_y);
 }
-/* 
-if (info->map[(int)info->player.pos.y][(int)(info->player.pos.x - 0.5)] == '1')
-	{
-		printf("HALLO\n");
-		mini_x = (mini_x - (mini_x % 8)) + 8;
-	}
-	if (info->map[(int)info->player.pos.y][(int)(info->player.pos.x + 0.5)] == '1')
-		mini_x = (mini_x - (mini_x % 8));
-	if (info->map[(int)(info->player.pos.y - 0.5)][(int)info->player.pos.x] == '1')
-		mini_y = (mini_y - (mini_y % 8)) + 8;
-	if (info->map[(int)(info->player.pos.y + 0.5)][(int)info->player.pos.x] == '1')
-		mini_y = (mini_y - (mini_y % 8));
-ist das ein case fur wennd er Spieler in der Wand steht?
-*/

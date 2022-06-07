@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   string_tools.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rschleic <rschleic@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mjeyavat <mjeyavat@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/03 18:30:59 by rschleic          #+#    #+#             */
-/*   Updated: 2022/06/04 19:26:36 by rschleic         ###   ########.fr       */
+/*   Updated: 2022/06/07 20:17:02 by mjeyavat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,24 +30,25 @@ int	top_bottom_check(t_gen_info *info, int j)
 	{
 		if ((info->map[info->map_y -1][j] != '1'
 			&& info->map[info->map_y -1][j] != ' '))
-			return (0);
+				return (0);
 	}
 	return (1);
 }
 
-int	sides_check(t_gen_info *info)
+int	sides_check(char **info_str)
 {
 	int	i;
 	int	j;
-
+	int	x;
+	
 	i = 0;
 	j = 0;
-	while (info->map[i] != NULL && i < info->map_y)
+	x = 0;
+	while (info_str[i] != NULL)
 	{
-		if (info->map[i][0] != '1' && info->map[i][0] != ' ')
-			j++;
-		if (info->map[i][info->map_x - 2] != '1'
-				&& info->map[i][info->map_x - 2] != ' ')
+		if (info_str[i][0] != '1' && info_str[i][0] != ' ')
+			x++;
+		if ((info_str[i][ft_strlen(info_str[i])-2] != '1') && (info_str[i][ft_strlen(info_str[i])-2] != ' '))
 			j++;
 		i++;
 	}
@@ -65,13 +66,13 @@ int	check_map_valid(t_gen_info *info)
 			return (0);
 		j++;
 	}
-	if (sides_check(info) == 0)
-	{
-		info->win_x = (info->map_x - 1) * 25;
-		info->win_y = info->map_y * 25;
-		return (1);
-	}
-	return (0);
+	// if (sides_check(info, ) == 0)
+	// {
+	// 	info->win_x = (info->map_x - 1) * 25;
+	// 	info->win_y = info->map_y * 25;
+	// 	return (1);
+	// }
+	return (1);
 }
 
 int	strcomp(char *str1, const char *str2)

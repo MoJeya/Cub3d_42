@@ -40,6 +40,15 @@ void	set_delta_dist(t_gen_info *info)
 		info->raycast.delta_dist.y = fabs(1 / info->raycast.dir.y);
 }
 
+void	set_line_height(t_gen_info *info)
+{
+	info->line_h = (int)(SCREEN_H / info->player.prep_wall_dist);
+	info->raycast.draw_start = -info->line_h / 2 + SCREEN_H / 2;
+	info->raycast.draw_end = info->line_h / 2 + SCREEN_H / 2;
+	if (info->raycast.draw_end >= SCREEN_H)
+		info->raycast.draw_end = SCREEN_H - 1;
+}
+
 void	calc_perp_walldist(t_gen_info *info)
 {
 	t_point	side_dist;
@@ -54,15 +63,6 @@ void	calc_perp_walldist(t_gen_info *info)
 	else if (info->side == 2 || info->side == 3)
 		info->player.prep_wall_dist = (side_dist.y - delta_dist.y);
 	set_line_height(info);
-}
-
-void	set_line_height(t_gen_info *info)
-{
-	info->line_h = (int)(SCREEN_H / info->player.prep_wall_dist);
-	info->raycast.draw_start = -info->line_h / 2 + SCREEN_H / 2;
-	info->raycast.draw_end = info->line_h / 2 + SCREEN_H / 2;
-	if (info->raycast.draw_end >= SCREEN_H)
-		info->raycast.draw_end = SCREEN_H - 1;
 }
 
 void	dda_calc(t_gen_info *info, int map_pos_x, int map_pos_y)
