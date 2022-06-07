@@ -177,4 +177,6 @@ void	rotate_player(t_gen_info *info, int dir);
 bool	check_side_wall(t_gen_info *info, int i, int end_value);
 void	calc_perp_walldist(t_gen_info *info);
 void	set_line_height(t_gen_info *info);
+void	dda_calc(t_gen_info *info, int map_pos_x, int map_pos_y);
+void    set_step(t_gen_info *info, int map_pos_x, int map_pos_y);
 #endif

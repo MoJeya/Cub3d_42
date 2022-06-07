@@ -1,16 +1,31 @@
 #include "../cub3d.h"
 
-void	set_startval(int x, t_gen_info *info)
+void	set_step(t_gen_info *info, int map_pos_x, int map_pos_y)
 {
-	t_point	view;
-
-	view.x = (info->player.plane.x * info->raycast.camera_x);
-	view.y = (info->player.plane.y * info->raycast.camera_x);
-	info->hit = 0;
-	info->player.step_x = 1;
-	info->raycast.camera_x = (double)(2 * x) / (double)SCREEN_W - 1;
-	info->raycast.dir.x = info->player.dir.x + view.x;
-	info->raycast.dir.y = info->player.dir.y + view.y;
+	if (info->raycast.dir.x < 0)
+	{
+		info->player.step_x = -1;
+		info->raycast.side_dist.x = (info->player.pos.x
+				- map_pos_x) * info->raycast.delta_dist.x;
+	}
+	else
+	{
+		info->player.step_x = 1;
+		info->raycast.side_dist.x = (map_pos_x + 1.0
+				- info->player.pos.x) * info->raycast.delta_dist.x;
+	}
+	if (info->raycast.dir.y < 0)
+	{
+		info->player.step_y = -1;
+		info->raycast.side_dist.y = (info->player.pos.y
+				- map_pos_y) * info->raycast.delta_dist.y;
+	}
+	else
+	{
+		info->player.step_y = 1;
+		info->raycast.side_dist.y = (map_pos_y + 1.0
+				- info->player.pos.y) * info->raycast.delta_dist.y;
+	}
 }
 
 void	set_delta_dist(t_gen_info *info)
@@ -38,6 +53,7 @@ void	calc_perp_walldist(t_gen_info *info)
 		info->player.prep_wall_dist = (side_dist.x - delta_dist.x);
 	else if (info->side == 2 || info->side == 3)
 		info->player.prep_wall_dist = (side_dist.y - delta_dist.y);
+	set_line_height(info);
 }
 
 void	set_line_height(t_gen_info *info)
@@ -47,4 +63,31 @@ void	set_line_height(t_gen_info *info)
 	info->raycast.draw_end = info->line_h / 2 + SCREEN_H / 2;
 	if (info->raycast.draw_end >= SCREEN_H)
 		info->raycast.draw_end = SCREEN_H - 1;
+}
+
+void	dda_calc(t_gen_info *info, int map_pos_x, int map_pos_y)
+{
+	while (info->hit == 0)
+	{
+		if (info->raycast.side_dist.x < info->raycast.side_dist.y)
+		{
+			info->raycast.side_dist.x += info->raycast.delta_dist.x;
+			map_pos_x += info->player.step_x;
+			if (info->raycast.dir.x < 0)
+				info->side = 0;
+			else
+				info->side = 1;
+		}
+		else
+		{
+			info->raycast.side_dist.y += info->raycast.delta_dist.y;
+			map_pos_y += info->player.step_y;
+			if (info->raycast.dir.y < 0)
+				info->side = 2;
+			else
+				info->side = 3;
+		}
+		if (info->map[map_pos_y][map_pos_x] > '0')
+			info->hit = 1;
+	}
 }

@@ -47,8 +47,9 @@ void	init_genaral_info(t_gen_info *info)
 	info->raycast.camera_x = 0;
 	info->frame.old_time = 0;
 	info->frame.frame_time = 0;
-	info->frame.movment_speed = 0;
-	info->frame.rotation_speed = 0;
+	info->side = 0;
+	info->frame.movment_speed = 0.05;
+	info->frame.rotation_speed = 0.05;
 }
 
 void	player_north_view(t_gen_info *info)
@@ -83,6 +84,19 @@ void	init_raycast_info(t_gen_info *info)
 		info->player.plane.x = 0;
 		info->player.plane.y = 0.66;
 	}
+}
+
+void	set_startval(int x, t_gen_info *info)
+{
+	t_point	view;
+
+	view.x = (info->player.plane.x * info->raycast.camera_x);
+	view.y = (info->player.plane.y * info->raycast.camera_x);
+	info->hit = 0;
+	info->player.step_x = 1;
+	info->raycast.camera_x = (double)(2 * x) / (double)SCREEN_W - 1;
+	info->raycast.dir.x = info->player.dir.x + view.x;
+	info->raycast.dir.y = info->player.dir.y + view.y;
 }
 
 int	main(int argc, char *argv[])
