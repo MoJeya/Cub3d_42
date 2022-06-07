@@ -96,7 +96,7 @@ int	main(int argc, char *argv[])
 		init_raycast_info(&info);
 		create_window(&info);
 	}
-	system("leaks cube3d");
+	// system("leaks cube3d");
 	error_free_exit(NULL, &info, INFO_MAP);
 	return (0);
 }

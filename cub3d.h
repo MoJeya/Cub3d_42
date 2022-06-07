@@ -164,7 +164,7 @@ void	free_str(char **str);
 /****************3D************************************/
 void	rotate_mouse(t_gen_info *info);
 void	render_wrld(void *param);
-void	player_movment(t_gen_info *info, int map_posx, int map_posy);
+void	player_movment(t_gen_info *info);
 void	draw_minimap(t_gen_info *info);
 void	minimap_movement(t_gen_info *info);
 

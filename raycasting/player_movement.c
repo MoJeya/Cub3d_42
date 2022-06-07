@@ -1,3 +1,4 @@
+
 #include "../cub3d.h"
 
 void rotate_player(t_gen_info *info, int dir)
@@ -61,60 +62,57 @@ static bool check_wall_vertical(t_gen_info *info, int p)
 	return (false);
 }
 
-static bool	check_wall_horizontal(t_gen_info *info, int p)
-{
-	double movment_speed;
-	t_point p_pos;
-	t_point p_plane;
-	t_point vec;
+bool	check_side_wall(t_gen_info *info, int i, int end_value)
+{	
+	t_point	plane;
+	t_point	pos;
 
-	movment_speed = info->frame.movment_speed * p;
-	p_pos.x = info->player.pos.x;
-	p_pos.y = info->player.pos.y;
-	p_plane.x = info->player.dir.x;
-	p_plane.y = info->player.dir.y;
-	vec.x = p_pos.x-0.5 + p_plane.x * movment_speed;
-	vec.y = p_pos.y-0.5 + p_plane.y * movment_speed;
-	if (info->map[(int)vec.y][(int)vec.x] != '1'
-	&& ((int)vec.y < info->map_y && (int)vec.x < info->map_x)
-	&& ((int)vec.x > 0 && (int)vec.y > 0))
+	plane = info->player.plane;
+	pos = info->player.pos;
+	while (i < end_value)
 	{
-		if (p == 1)
-		{
-			info->player.pos.y += info->player.plane.y * info->frame.movment_speed;
-			info->player.pos.x += info->player.plane.x * info->frame.movment_speed;
-		}
-		else if (p == -1)
-		{
-			info->player.pos.y -= info->player.plane.y * info->frame.movment_speed;
-			info->player.pos.x -= info->player.plane.x * info->frame.movment_speed;
-		}
-		return (true);
+		info->raycast.dir.x = info->player.dir.x;
+		info->raycast.dir.y = info->player.dir.y;
+		if (info->map[(int)(pos.y + plane.y * i * info->frame.movment_speed)]
+			[(int)(pos.x + plane.x * i * info->frame.movment_speed)] == '1')
+			return (false);
+		i++;
 	}
-	return (false);   
+	return (true);
 }
 
-void	player_movment(t_gen_info *info, int map_posx, int map_posy)
+static void	horizontal(t_gen_info *info, int p)
 {
-	t_point vec;
-	vec.x += info->player.pos.x + info->player.plane.x * info->frame.movment_speed;
-	vec.y += info->player.pos.y + info->player.plane.y * info->frame.movment_speed;
-	if (info->map[map_posy][map_posx] != '1')
-	{
-		if (mlx_is_key_down(info->mlx, MLX_KEY_LEFT))
-			rotate_player(info, 1);
-		if (mlx_is_key_down(info->mlx, MLX_KEY_RIGHT))
-			rotate_player(info, -1);
-	}
-	else
-	{
+	double	movment_speed;
+	int		i;
+	int		end_value;
 
-		// printf("map max val:\n x = %d\ny = %d\n", info->map_x, info->map_y);
-		// printf("player movement:\n\tx:\t%f\n\ty:\t%f\n", vec.x, vec.y);
-		printf("real map pos:\nx:%d\ny:%d\n",map_posx, map_posy);
-		// printf("info->dir.x: %f\ninfo->dir.y: %f\n", info->player.dir.x, info->player.dir.y);
-		// printf("info->plane.x: %f\ninfo->plane.y: %f\n", info->player.plane.x, info->player.plane.y);
+	movment_speed = info->frame.movment_speed;
+	end_value = 0;
+	i = 0;
+	if (p == -1)
+	{
+		i = -5;
+		end_value = 0;
 	}
+	else if (p == 1)
+	{
+		i = 0;
+		end_value = 5;
+	}
+	if (check_side_wall(info, i, end_value))
+	{
+		info->player.pos.x += info->player.plane.x * p * movment_speed;
+		info->player.pos.y += info->player.plane.y * p * movment_speed;
+	}
+}
+
+void	player_movment(t_gen_info *info)
+{	
+	if (mlx_is_key_down(info->mlx, MLX_KEY_LEFT))
+		rotate_player(info, 1);
+	if (mlx_is_key_down(info->mlx, MLX_KEY_RIGHT))
+		rotate_player(info, -1);
 	if (mlx_is_mouse_down(info->mlx, MLX_MOUSE_BUTTON_LEFT))
 		rotate_mouse(info);
 	if (mlx_is_key_down(info->mlx, MLX_KEY_ESCAPE))
@@ -124,19 +122,11 @@ void	player_movment(t_gen_info *info, int map_posx, int map_posy)
 		return ;
 	}
 	if (mlx_is_key_down(info->mlx, MLX_KEY_W))
-	{
 		check_wall_vertical(info, 1);
-	}
 	if (mlx_is_key_down(info->mlx, MLX_KEY_S))
-	{
 		check_wall_vertical(info, -1);
-	}
 	if (mlx_is_key_down(info->mlx, MLX_KEY_D))
-	{
-		check_wall_horizontal(info, 1);
-	}
+		horizontal(info, 1);
 	if (mlx_is_key_down(info->mlx, MLX_KEY_A))
-	{
-		check_wall_horizontal(info, -1);
-	}
+		horizontal(info, -1);
 }
