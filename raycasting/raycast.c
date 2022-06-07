@@ -1,10 +1,6 @@
 
 #include "../cub3d.h"
 
-int	create_trgb(int t, int r, int g, int b)
-{
-	return (t << 24 | r << 16 | g << 8 | b);
-}
 
 static double find_wall_x(t_gen_info *info)
 {
@@ -17,7 +13,6 @@ static double find_wall_x(t_gen_info *info)
     wall_x -= floor((wall_x));
     return (wall_x);
 }
-
 
 static int find_texture_x(t_gen_info *info, mlx_texture_t *texture)
 {
@@ -122,7 +117,6 @@ void dda_calc(t_gen_info *info, int map_pos_x, int map_pos_y)
         }
         if (info->map[map_pos_y][map_pos_x] > '0')
         {
-            // printf("\nplayer pos:\n\tx:\t%f\n\ty:\t%f\nmap_pos:\n\tx:\t%d\n\ty:\t%d\n", info->player.pos.x, info->player.pos.y, map_pos_x, map_pos_y);
             info->hit = 1;
         }
     }
@@ -136,54 +130,28 @@ void    render_wrld(void *param)
     info = param;
     int x;
     int y;
-    int map_pos_x; //which box of the map we're in
-    int map_pos_y; //which box of the map we're in
-    int screen_w;
-    int screen_h;
+    int map_pos_x;
+    int map_pos_y;
   
     x = 0;
     y = 0;
-    info->side = 0; //was a NS or a EW wall hit?
+    info->side = 0;
     info->frame.movment_speed = 0.05;
     info->frame.rotation_speed = 0.05;
-    screen_w = SCREEN_W;
-    screen_h = SCREEN_H;
-// printf("plane: x{%f}\tt{%f}\n", info->player.plane.x, info->player.plane.y);
     while (x < SCREEN_W)
     {
-        info->hit = 0; // was the a wall?
-        info->player.step_x = 1;
-        info->raycast.camera_x = (double)(2 * x) / (double)screen_w - 1;
-        info->raycast.dir.x = info->player.dir.x + (info->player.plane.x * info->raycast.camera_x);
-        info->raycast.dir.y = info->player.dir.y  + (info->player.plane.y * info->raycast.camera_x);
-    // printf("raycast direction:\n{x}\t%f\n{y}\t%f", info->raycast.dir.x, info->raycast.dir.y);
+        set_startval(x, info);
         map_pos_x = (int)info->player.pos.x;
         map_pos_y = (int)info->player.pos.y;
         info->raycast.side_dist.x = (map_pos_x + 1.0 - info->player.pos.x) * info->raycast.delta_dist.x;
-        if (info->raycast.dir.x == 0)
-            info->raycast.delta_dist.x = INFINITY;
-        else
-            info->raycast.delta_dist.x = fabs(1 / info->raycast.dir.x);
-        if (info->raycast.dir.y == 0)
-            info->raycast.delta_dist.y = INFINITY;
-        else
-            info->raycast.delta_dist.y = fabs(1/ info->raycast.dir.y);
+        set_delta_dist(info);
         set_step(info, map_pos_x, map_pos_y);
         dda_calc(info, map_pos_x, map_pos_y);
-        if (info->side == 0 || info->side == 1)
-            info->player.prep_wall_dist = (info->raycast.side_dist.x - info->raycast.delta_dist.x);
-        else if (info->side == 2 || info->side == 3)
-            info->player.prep_wall_dist = (info->raycast.side_dist.y - info->raycast.delta_dist.y);
-        info->line_h = (int)(screen_h / info->player.prep_wall_dist);
-        info->raycast.draw_start = -info->line_h / 2 + screen_h / 2;
-        info->raycast.draw_end = info->line_h / 2 + screen_h / 2;
-        if (info->raycast.draw_end >= screen_h)
-            info->raycast.draw_end = screen_h - 1;
+        calc_perp_walldist(info);
+        set_line_height(info);
         draw_vertical_line(info, x);
         x++;
     }
-    // info->frame.movment_speed = 0.05;
-    // info->frame.rotation_speed = 0.05;
     player_movment(info);
     draw_minimap(info);
     minimap_movement(info);

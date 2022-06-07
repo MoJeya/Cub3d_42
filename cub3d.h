@@ -160,6 +160,7 @@ void	*my_calloc(size_t count, size_t size, t_gen_info *info, int state);
 int		d_len_str(char **str);
 void	split_free(char	***tmp, char ***tmp2, t_gen_info **info, char *str);
 void	free_str(char **str);
+int		create_trgb(int t, int r, int g, int b);
 
 /****************3D************************************/
 void	rotate_mouse(t_gen_info *info);
@@ -167,5 +168,13 @@ void	render_wrld(void *param);
 void	player_movment(t_gen_info *info);
 void	draw_minimap(t_gen_info *info);
 void	minimap_movement(t_gen_info *info);
-
+/***********************RAYCAST MOVMENT******************/
+void	set_startval(int x, t_gen_info *info);
+void	set_delta_dist(t_gen_info *info);
+/****************PLAYER MOVMENT CALCULATION************/
+void	rotate_mouse(t_gen_info *info);
+void	rotate_player(t_gen_info *info, int dir);
+bool	check_side_wall(t_gen_info *info, int i, int end_value);
+void	calc_perp_walldist(t_gen_info *info);
+void	set_line_height(t_gen_info *info);
 #endif
