@@ -1,4 +1,23 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   string_tools.c                                     :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: rschleic <rschleic@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/06/03 18:30:59 by rschleic          #+#    #+#             */
+/*   Updated: 2022/06/04 19:26:36 by rschleic         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../cub3d.h"
+
+void	split_free(char	***tmp, char ***tmp2, t_gen_info **info, char *str)
+{
+	free((*tmp));
+	free((*tmp2));
+	error_free_exit(str, (*info), TEXTURE_PATH);
+}
 
 int	top_bottom_check(t_gen_info *info, int j)
 {
@@ -33,6 +52,26 @@ int	sides_check(t_gen_info *info)
 		i++;
 	}
 	return (j);
+}
+
+int	check_map_valid(t_gen_info *info)
+{
+	int		j;
+
+	j = 0;
+	while (j < info->map_x)
+	{
+		if (top_bottom_check(info, j) == 0)
+			return (0);
+		j++;
+	}
+	if (sides_check(info) == 0)
+	{
+		info->win_x = (info->map_x - 1) * 25;
+		info->win_y = info->map_y * 25;
+		return (1);
+	}
+	return (0);
 }
 
 int	strcomp(char *str1, const char *str2)

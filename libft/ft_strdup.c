@@ -6,13 +6,13 @@
 /*   By: rschleic <rschleic@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/28 15:14:41 by mjeyavat          #+#    #+#             */
-/*   Updated: 2022/05/09 15:55:17 by mjeyavat         ###   ########.fr       */
+/*   Updated: 2022/06/04 17:54:29 by rschleic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char *ft_strdup(const char *s1)
+char	*ft_strdup(const char *s1)
 {
 	size_t	len;
 	char	*ptr;

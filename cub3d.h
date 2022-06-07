@@ -1,3 +1,14 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   cub3d.h                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: rschleic <rschleic@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/06/03 18:29:42 by rschleic          #+#    #+#             */
+/*   Updated: 2022/06/04 19:34:03 by rschleic         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #ifndef CUB3D_H
 # define CUB3D_H
@@ -11,11 +22,12 @@
 # include <math.h>
 # include <stdbool.h>
 # include <sys/time.h>
+# include <string.h>
 
 # define TILES_W 8
 # define TILES_H 8
-# define screenWidth 800
-# define screenHeight 600
+# define SCREEN_W 800
+# define SCREEN_H 600
 # define KEY_A 0
 # define KEY_S 1
 # define KEY_D 2
@@ -57,8 +69,6 @@ typedef struct s_player
 	char			looking;
 	int				step_x;
 	int				step_y;
-	int				map_pos_x;
-	int				map_pos_y;
 	double			prep_wall_dist;
 	double			dis_to_wall;
 	mlx_image_t		*p_img;
@@ -66,11 +76,10 @@ typedef struct s_player
 
 typedef struct s_color
 {
-	bool set;
-	int red;
-	int yellow;
-	int blue;
-	
+	bool	set;
+	int		red;
+	int		yellow;
+	int		blue;
 }t_color;
 
 typedef struct s_frames
@@ -90,11 +99,11 @@ typedef struct s_gen_info
 	mlx_texture_t		*player_img;
 	mlx_texture_t		*back_g;
 	xpm_t				*xpm[4];
-	t_player 			player;
+	t_player			player;
 	t_raycast			raycast;
 	t_frames			frame;
-	int					hit; // was there a wallhit;
-	int					side; // was there a NS or a EW wall hit?
+	int					hit;
+	int					side;
 	int					line_h;
 	int					map_x;
 	int					map_y;
@@ -149,14 +158,14 @@ void	*my_calloc(size_t count, size_t size, t_gen_info *info, int state);
 
 /****************HELPER FUNCTIONS**********************/
 int		d_len_str(char **str);
+void	split_free(char	***tmp, char ***tmp2, t_gen_info **info, char *str);
+void	free_str(char **str);
 
 /****************3D************************************/
 void	rotate_mouse(t_gen_info *info);
 void	render_wrld(void *param);
 void	player_movment(t_gen_info *info, int map_posx, int map_posy);
-// void main_loop(mlx_image_t *map);
-
 void	draw_minimap(t_gen_info *info);
-void    minimap_movement(t_gen_info *info);
+void	minimap_movement(t_gen_info *info);
 
 #endif

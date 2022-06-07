@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   parser.c                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: rschleic <rschleic@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/06/03 18:30:43 by rschleic          #+#    #+#             */
+/*   Updated: 2022/06/04 18:22:28 by rschleic         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../cub3d.h"
 
 int	map_parse_condition(t_gen_info *info, int i)
@@ -10,8 +22,6 @@ int	map_parse_condition(t_gen_info *info, int i)
 	}
 	return (0);
 }
-//hier könte man die 0 gleich weg lassen
-//da am Anfnag ja nur leer oder 1 sein darf?
 
 int	parse_color_settings(char *str, t_gen_info *info)
 {
@@ -30,43 +40,39 @@ int	parse_color_settings(char *str, t_gen_info *info)
 	return (1);
 }
 
+int	store_texture(char *x, char *str, char **direction)
+{
+	char	*tmp;
+
+	*direction = ft_strdup(str + ft_strlen(x));
+	tmp = *direction;
+	free (*direction);
+	*direction = ft_strtrim(tmp, "\n");
+	if (!direction)
+		return (1);
+	return (0);
+}
+
 int	init_text_struct(char *str, t_gen_info *info)
 {
-	char *tmp;
 	if (strcomp(str, "NO ") == 1)
 	{
-		info->texture_no_path = ft_strdup(str + ft_strlen("NO "));
-		tmp = info->texture_no_path;
-		free (info->texture_no_path);
-		info->texture_no_path = ft_strtrim(tmp, "\n");
-		if (!info->texture_no_path)
+		if (store_texture("NO ", str, &info->texture_no_path))
 			return (1);
 	}
 	else if (strcomp(str, "SO "))
 	{
-		info->texture_so_path = ft_strdup(str + ft_strlen("SO "));
-		tmp = info->texture_so_path;
-		free (info->texture_so_path);
-		info->texture_so_path = ft_strtrim(tmp, "\n");
-		if (!info->texture_so_path)
+		if (store_texture("SO ", str, &info->texture_so_path))
 			return (1);
 	}
 	else if (strcomp(str, "WE "))
 	{
-		info->texture_we_path = ft_strdup(str + ft_strlen("WE "));
-		tmp = info->texture_we_path;
-		free (info->texture_we_path);
-		info->texture_we_path = ft_strtrim(tmp, "\n");
-		if (!info->texture_we_path)
+		if (store_texture("WE ", str, &info->texture_we_path))
 			return (1);
 	}
 	else if (strcomp(str, "EA "))
 	{
-		info->texture_ea_path = ft_strdup(str + ft_strlen("EA "));
-		tmp = info->texture_ea_path;
-		free (info->texture_ea_path);
-		info->texture_ea_path = ft_strtrim(tmp, "\n");
-		if (!info->texture_ea_path)
+		if (store_texture("EA ", str, &info->texture_ea_path))
 			return (1);
 	}
 	return (0);
@@ -97,15 +103,4 @@ int	set_values_to_map(t_gen_info *info, char **str, int *y)
 		(*y)++;
 	}
 	return ((*y));
-}
-
-int	init_map(t_gen_info *info, char **str)
-{
-	int	y;
-
-	y = 0;
-	info->map = my_calloc(info->map_y + 1, sizeof(char *), info, INFO_MAP);
-	y = set_values_to_map(info, str, &y);
-	info->map[y] = NULL;
-	return (1);
 }

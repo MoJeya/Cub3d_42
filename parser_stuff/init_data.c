@@ -1,4 +1,27 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   init_data.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: rschleic <rschleic@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/06/03 18:30:36 by rschleic          #+#    #+#             */
+/*   Updated: 2022/06/03 19:01:32 by rschleic         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../cub3d.h"
+
+int	init_map(t_gen_info *info, char **str)
+{
+	int	y;
+
+	y = 0;
+	info->map = my_calloc(info->map_y + 1, sizeof(char *), info, INFO_MAP);
+	y = set_values_to_map(info, str, &y);
+	info->map[y] = NULL;
+	return (1);
+}
 
 int	parse_data_info(t_gen_info *info)
 {
@@ -15,13 +38,12 @@ int	parse_data_info(t_gen_info *info)
 			return (0);
 		if (map_parse_condition(info, i) == 1)
 		{
-			info->map_x = get_max_len(&info->info_string[i], info);		
+			info->map_x = get_max_len(&info->info_string[i], info);
 			init_map(info, &info->info_string[i]);
 			break ;
 		}
 		i++;
 	}
-
 	if (!info->floor.set || !info->ceiling.set)
 		error_free_exit("ERROR\ncolor setting is missing", info, INFO_MAP);
 	if (check_map_valid(info) && map_base_player_check(info))
@@ -84,7 +106,7 @@ int	init_data_info(t_gen_info *info, char *argv[], int argc)
 	{
 		info->info_string[i] = ft_strdup(line);
 		if (!info->info_string[i])
-			error_free_exit("Error\nmalloc",info, INFO_STRING);
+			error_free_exit("Error\nmalloc", info, INFO_STRING);
 		free(line);
 		line = get_next_line(info->fd);
 		i++;

@@ -1,6 +1,18 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   read_tools.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: rschleic <rschleic@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/06/03 18:30:48 by rschleic          #+#    #+#             */
+/*   Updated: 2022/06/04 19:33:58 by rschleic         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../cub3d.h"
 
-int d_len_str(char **str)
+int	d_len_str(char **str)
 {
 	int	i;
 
@@ -24,15 +36,34 @@ int	check_file_format(char *path)
 	return (0);
 }
 
+int	set_player_info(t_gen_info **info, int *i, int *j, int *player_cnt)
+{
+	if (ft_isascii((*info)->map[(*i)][(*j)]))
+	{
+		if (ft_strchr("NESW", (*info)->map[(*i)][(*j)]))
+		{
+			(*info)->player.looking = (*info)->map[(*i)][(*j)];
+			(*info)->player.pos.y = (float)(*i) + 0.5;
+			(*info)->player.pos.x = (float)(*j) + 0.5;
+			(*info)->map[(*i)][(*j)] = '0';
+			(*player_cnt)++;
+		}
+		if (!ft_strchr("10 ", (*info)->map[(*i)][(*j)]) && (*player_cnt) != 1)
+			return (1);
+		if ((*info)->map[(*i)][(*j)] == ' ')
+			(*info)->map[(*i)][(*j)] = '1';
+	}
+	return (0);
+}
+
 int	map_base_player_check(t_gen_info *info)
 {
 	int		i;
-	int		j;
 	int		player_cnt;
+	int		j;
 	bool	right_type;
 
 	i = 0;
-	j = 0;
 	player_cnt = 0;
 	right_type = true;
 	while (info->map[i] != NULL)
@@ -40,25 +71,10 @@ int	map_base_player_check(t_gen_info *info)
 		j = 0;
 		while (info->map[i][j] != 10 && info->map[i][j] != '\0')
 		{
-			if (ft_isascii(info->map[i][j]))
+			if (set_player_info(&info, &i, &j, &player_cnt))
 			{
-				if (ft_strchr("NESW", info->map[i][j]))
-				{
-					info->player.looking = info->map[i][j];
-					info->player.pos.y = (float)i + 0.5;
-					info->player.pos.x = (float)j + 0.5;
-					info->player.map_pos_x = j + 0.5;
-					info->player.map_pos_y = i + 0.5;
-					info->map[i][j] = '0';
-					player_cnt++;
-				}
-				if (!ft_strchr("10 ", info->map[i][j]) && player_cnt != 1)
-				{
-					right_type = false;
-					break ;
-				}
-				if (info->map[i][j] == ' ')
-					info->map[i][j] = '1';
+				right_type = false;
+				break ;
 			}
 			j++;
 		}
@@ -66,27 +82,6 @@ int	map_base_player_check(t_gen_info *info)
 	}
 	if (player_cnt == 1 && right_type == true)
 		return (1);
-	return (0);
-}
-//to long
-
-int	check_map_valid(t_gen_info *info)
-{
-	int		j;
-
-	j = 0;
-	while (j < info->map_x)
-	{
-		if (top_bottom_check(info, j) == 0)
-			return (0);
-		j++;
-	}
-	if (sides_check(info) == 0)
-	{
-		info->win_x = (info->map_x - 1) * 25;
-		info->win_y = info->map_y * 25;
-		return (1);
-	}
 	return (0);
 }
 
