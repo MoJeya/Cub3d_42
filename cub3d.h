@@ -6,7 +6,7 @@
 /*   By: mjeyavat <mjeyavat@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/03 18:29:42 by rschleic          #+#    #+#             */
-/*   Updated: 2022/06/07 20:17:15 by mjeyavat         ###   ########.fr       */
+/*   Updated: 2022/06/08 15:31:46 by mjeyavat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -141,6 +141,7 @@ int		split_values(char *str, t_gen_info *info);
 int		strcomp(char *str1, const char *str2);
 int		sides_check(char **info_str);
 int		top_bottom_check(t_gen_info *info, int j);
+
 /*****************READ_TOOLS****************************/
 char	*get_next_line(int fd);
 int		check_map_valid(t_gen_info *info);
@@ -170,14 +171,15 @@ void	render_wrld(void *param);
 void	player_movment(t_gen_info *info);
 void	draw_minimap(t_gen_info *info);
 void	minimap_movement(t_gen_info *info);
+
 /***********************RAYCAST MOVMENT******************/
 void	set_startval(int x, t_gen_info *info);
 void	set_delta_dist(t_gen_info *info);
-/****************PLAYER MOVMENT CALCULATION************/
 
+/****************PLAYER MOVMENT CALCULATION************/
 void	rotate_mouse(t_gen_info *info);
 void	rotate_player(t_gen_info *info, int dir);
-bool	check_side_wall(t_gen_info *info, int i, int end_value);
+bool	check_for_wall(t_gen_info *info, int i, int end_value, t_point vec);
 void	calc_perp_walldist(t_gen_info *info);
 void	set_line_height(t_gen_info *info);
 void	dda_calc(t_gen_info *info, int map_pos_x, int map_pos_y);

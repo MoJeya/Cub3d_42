@@ -46,19 +46,17 @@ void	rotate_mouse(t_gen_info *info)
 		rotate_player(info, 1);
 }
 
-bool	check_side_wall(t_gen_info *info, int i, int end_value)
-{	
-	t_point	plane;
+bool	check_for_wall(t_gen_info *info, int i, int end_value, t_point vec)
+{
 	t_point	pos;
 
-	plane = info->player.plane;
 	pos = info->player.pos;
 	while (i < end_value)
 	{
 		info->raycast.dir.x = info->player.dir.x;
 		info->raycast.dir.y = info->player.dir.y;
-		if (info->map[(int)(pos.y + plane.y * i * info->frame.movment_speed)]
-			[(int)(pos.x + plane.x * i * info->frame.movment_speed)] == '1')
+		if (info->map[(int)(pos.y + vec.y * i * info->frame.movment_speed)]
+			[(int)(pos.x + vec.x * i * info->frame.movment_speed)] == '1')
 			return (false);
 		i++;
 	}

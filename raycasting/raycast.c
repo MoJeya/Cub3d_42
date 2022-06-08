@@ -6,7 +6,7 @@
 /*   By: mjeyavat <mjeyavat@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/07 18:34:11 by mjeyavat          #+#    #+#             */
-/*   Updated: 2022/06/07 18:38:37 by mjeyavat         ###   ########.fr       */
+/*   Updated: 2022/06/08 16:56:02 by mjeyavat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,11 +47,11 @@ void    insert_textures(t_gen_info *info, int x, int draw_start, int draw_end)
 	texture = &info->xpm[info->side]->texture;
 	tex_x = find_texture_x(info, texture);
 	line_h = draw_end - draw_start;
-	step = 1.0 * texture->height / line_h;
+	step = (1.0 * texture->height) / line_h;
 	texture_pos = (draw_start - SCREEN_H / 2 + line_h / 2) * step;
 	while (draw_start < draw_end)
 	{
-		tex_y = (int)texture_pos & (texture->height - 1);
+		tex_y = (int)(texture_pos) & (texture->height - 1);
 		texture_pos += step;
 		if (draw_start >= 0 && draw_start <= SCREEN_H)
 		{
