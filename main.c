@@ -6,7 +6,7 @@
 /*   By: mjeyavat <mjeyavat@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/03 17:54:23 by rschleic          #+#    #+#             */
-/*   Updated: 2022/06/07 19:47:11 by mjeyavat         ###   ########.fr       */
+/*   Updated: 2022/06/08 21:37:24 by mjeyavat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,12 @@ int	main(int argc, char *argv[])
 		init_raycast_info(&info);
 		create_window(&info);
 	}
-	// system("leaks cube3d");
+	else
+	{
+		close(info.fd);
+		system("leaks cube3d");
+		exit(1);
+	}
 	error_free_exit(NULL, &info, INFO_MAP);
 	return (0);
 }

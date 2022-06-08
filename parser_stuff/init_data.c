@@ -6,7 +6,7 @@
 /*   By: mjeyavat <mjeyavat@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/03 18:30:36 by rschleic          #+#    #+#             */
-/*   Updated: 2022/06/07 20:24:16 by mjeyavat         ###   ########.fr       */
+/*   Updated: 2022/06/08 21:34:51 by mjeyavat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,11 @@ int	parse_data_info(t_gen_info *info)
 		if (map_parse_condition(info, i) == 1)
 		{
 			if (sides_check(&info->info_string[i]) == 0)
+			{
 				info->map_x = get_max_len(&info->info_string[i], info);
+				if (t_b_check(&info->info_string[i], info) == 0)
+					break ;
+			}		
 			else
 				break ;
 			init_map(info, &info->info_string[i]);
@@ -67,9 +71,14 @@ void	open_cub_fd(t_gen_info *info, int argc, char *argv[])
 	else if (argc == 2 && check_file_format(argv[1]))
 	{
 		info->path = ft_strdup(argv[1]);
-		info->fd = open(info->path, O_RDONLY);
-		if (info->fd == -1)
-			error_exit("Error\nfiledescriptor", info);
+		if (file_name_handler(info->path) == true)
+		{
+			info->fd = open(info->path, O_RDONLY);
+			if (info->fd == -1)
+				error_exit("Error\nfiledescriptor", info);
+		}
+		else
+			error_exit("Error\nfile extension is wrong!\n", info);
 	}
 	else if (argc == 2 && !check_file_format(argv[1]))
 		error_exit("Error\nfile extension is wrong!\n", info);
@@ -106,7 +115,7 @@ int	init_data_info(t_gen_info *info, char *argv[], int argc)
 	open_cub_fd(info, argc, argv);
 	i = 0;
 	line = get_next_line(info->fd);
-	while (line)
+	while (line != NULL)
 	{
 		info->info_string[i] = ft_strdup(line);
 		if (!info->info_string[i])
@@ -114,6 +123,12 @@ int	init_data_info(t_gen_info *info, char *argv[], int argc)
 		free(line);
 		line = get_next_line(info->fd);
 		i++;
+	}
+	if (line == NULL)
+	{
+		printf("info->path: %s\n", info->path);
+		printf("i stop here\n");
+		return (0);
 	}
 	info->info_string[i] = NULL;
 	if (parse_data_info(info))

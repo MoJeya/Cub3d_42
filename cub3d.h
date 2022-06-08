@@ -6,7 +6,7 @@
 /*   By: mjeyavat <mjeyavat@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/03 18:29:42 by rschleic          #+#    #+#             */
-/*   Updated: 2022/06/08 15:31:46 by mjeyavat         ###   ########.fr       */
+/*   Updated: 2022/06/08 20:33:41 by mjeyavat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -186,4 +186,6 @@ void	dda_calc(t_gen_info *info, int map_pos_x, int map_pos_y);
 void	set_step(t_gen_info *info, int map_pos_x, int map_pos_y);
 void	init_raycast_info(t_gen_info *info);
 
+bool	file_name_handler(char *path_to_file);
+int		t_b_check(char **info_str, t_gen_info *info);
 #endif

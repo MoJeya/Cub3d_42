@@ -6,7 +6,7 @@
 /*   By: mjeyavat <mjeyavat@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/03 18:30:59 by rschleic          #+#    #+#             */
-/*   Updated: 2022/06/07 20:17:02 by mjeyavat         ###   ########.fr       */
+/*   Updated: 2022/06/08 20:47:21 by mjeyavat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,9 +30,61 @@ int	top_bottom_check(t_gen_info *info, int j)
 	{
 		if ((info->map[info->map_y -1][j] != '1'
 			&& info->map[info->map_y -1][j] != ' '))
-				return (0);
+			return (0);
 	}
 	return (1);
+}
+
+int t_b_loop(char **info_str, t_gen_info *info, int top, int bottom)
+{
+	int	i;
+	int	j;
+
+	i = 0;
+	j = 0;
+	while (info_str[1][i] != '\0' && i <= top)
+	{
+		if (info_str[1][i] == '1')
+			i++;
+		else
+			return (0);
+	}
+	while (info_str[info->map_y - 2][j] != '\0' && j <= bottom)
+	{
+		if (info_str[info->map_y - 2][j] == '1')
+			j++;
+		else
+			return (0);
+	}
+	return (1);
+}
+
+int	t_b_check(char **info_str, t_gen_info *info)
+{
+	int	i;
+	int	tsp_cnt;
+	int	bsp_cnt;
+
+	i = 0;
+	tsp_cnt = 0;
+	bsp_cnt = 0;
+	if (info_str[0] == NULL && info_str[info->map_y - 1] == NULL)
+		return (0);
+	while (info_str[0][i] != '\0' && info_str[0][i] != '0')
+	{
+		if (info_str[0][i] == ' ')
+			tsp_cnt++;
+		i++;
+	}
+	i = 0;
+	while (info_str[info->map_y - 1][i] != '\0'
+		&& info_str[info->map_y - 1][i] != '0')
+	{
+		if (info_str[info->map_y - 1][i] == ' ')
+			bsp_cnt++;
+		i++;
+	}
+	return (t_b_loop(info_str, info, tsp_cnt, bsp_cnt));
 }
 
 int	sides_check(char **info_str)
@@ -40,7 +92,7 @@ int	sides_check(char **info_str)
 	int	i;
 	int	j;
 	int	x;
-	
+
 	i = 0;
 	j = 0;
 	x = 0;
@@ -66,12 +118,6 @@ int	check_map_valid(t_gen_info *info)
 			return (0);
 		j++;
 	}
-	// if (sides_check(info, ) == 0)
-	// {
-	// 	info->win_x = (info->map_x - 1) * 25;
-	// 	info->win_y = info->map_y * 25;
-	// 	return (1);
-	// }
 	return (1);
 }
 
