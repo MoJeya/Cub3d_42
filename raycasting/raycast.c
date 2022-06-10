@@ -6,7 +6,7 @@
 /*   By: mjeyavat <mjeyavat@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/07 18:34:11 by mjeyavat          #+#    #+#             */
-/*   Updated: 2022/06/08 16:56:02 by mjeyavat         ###   ########.fr       */
+/*   Updated: 2022/06/10 20:02:16 by mjeyavat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -107,6 +107,7 @@ void    render_wrld(void *param)
 		x++;
 	}
 	player_movment(info);
-	draw_minimap(info);
+	if (info->mini_mp == true)	
+		draw_minimap(info);
 }
  

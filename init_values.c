@@ -38,6 +38,7 @@ void	init_genaral_info(t_gen_info *info)
 	info->side = 0;
 	info->frame.movment_speed = 0.05;
 	info->frame.rotation_speed = 0.05;
+	info->success = 0;
 }
 
 static void	player_north_view(t_gen_info *info)
@@ -46,6 +47,10 @@ static void	player_north_view(t_gen_info *info)
 	info->player.dir.y = -1;
 	info->player.plane.x = -0.66;
 	info->player.plane.y = 0;
+	info->texture_no_path = NULL;
+	info->texture_so_path = NULL;
+	info->texture_we_path = NULL;
+	info->texture_ea_path = NULL;
 }
 
 void	init_raycast_info(t_gen_info *info)
