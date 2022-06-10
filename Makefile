@@ -5,7 +5,7 @@ CC = gcc
 
 CFLAGS = -Wall -Wextra -Werror -g3 -g
 
-SRC = $(shell find *.c ./parser_stuff/*.c ./minimap/*.c ./raycasting/*.c)
+SRC = $(shell find *.c ./minimap/*.c ./raycasting/*.c) $(shell find ./parser_stuff/* -iname "*.c")
 
 OBJ = $(SRC:.c=.o);
 
@@ -31,6 +31,6 @@ clean:
 	rm -f ./libft/*.a ./NEW_MLX42/*.a 
 
 fclean: clean
-	rm -f $(NAME) *.o ./minimap/*.o ./parser_stuff/*.o ./libft/obj/*.o ./raycasting/*.o $(shell find ./NEW_MLX42/* -iname "*.o")
+	rm -f $(NAME) *.o ./minimap/*.o ./parser_stuff/*.o ./parser_stuff/map_check/*.o ./libft/obj/*.o ./raycasting/*.o $(shell find ./NEW_MLX42/* -iname "*.o")
 
 re: fclean all

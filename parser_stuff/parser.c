@@ -6,7 +6,7 @@
 /*   By: mjeyavat <mjeyavat@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/03 18:30:43 by rschleic          #+#    #+#             */
-/*   Updated: 2022/06/07 20:16:18 by mjeyavat         ###   ########.fr       */
+/*   Updated: 2022/06/10 23:16:35 by mjeyavat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,14 @@
 
 int	map_parse_condition(t_gen_info *info, int i)
 {
-	if (info->info_string[i][0] == ' '
-		|| info->info_string[i][0] == '0'
-		|| info->info_string[i][0] == '1')
-	{
+	int	j;
+
+	j = 0;
+	while (info->info_string[i][j] == ' ')
+		j++;
+	if (info->info_string[i][j] == '0'
+		|| info->info_string[i][j] == '1')
 		return (1);
-	}
 	return (0);
 }
 
@@ -44,38 +46,75 @@ int	store_texture(char *x, char *str, char **direction)
 {
 	char	*tmp;
 
-	*direction = ft_strdup(str + ft_strlen(x));
+	*direction = ft_strdup(set_texture(str, x));
 	tmp = *direction;
 	free (*direction);
 	*direction = ft_strtrim(tmp, "\n");
 	if (!direction)
-		return (1);
-	return (0);
+		return (0);
+	return (1);
 }
 
-int	init_text_struct(char *str, t_gen_info *info)
+int	init_text_struct(char **str, t_gen_info *info, int i)
 {
-	if (strcomp(str, "NO ") == 1)
+	bool	check[4];
+
+	check[0] = false;
+	check[1] = false;
+	check[2] = false;
+	check[3] = false;
+	printf("i start\n");
+	while (str[i] != NULL && i < 4)
 	{
-		if (store_texture("NO ", str, &info->texture_no_path))
-			return (1);
+		if (check[0] == false)
+		{
+			if (strcomp(str[i], "NO "))
+			{
+				if (store_texture("NO ", str[i], &info->texture_no_path))
+				{
+					check[0] = true;
+					info->success++;
+				}
+			}
+		}
+		else if (check[1] == false)
+		{
+			if (strcomp(str[i], "SO "))
+			{
+				if (store_texture("SO ", str[i], &info->texture_so_path))
+				{
+					check[1] = true;
+					info->success++;
+				}
+			}
+		}
+		else if (check[2] == false)
+		{
+			if (strcomp(str[i], "WE "))
+			{
+				if (store_texture("WE ", str[i], &info->texture_we_path))
+				{
+					check[2] = true;
+					info->success++;
+				}
+			}
+		}
+		else if (check[3] == false)
+		{
+			if (strcomp(str[i], "EA "))
+			{
+				if (store_texture("EA ", str[i], &info->texture_ea_path))
+				{
+					check[3] = true;
+					info->success++;	
+				}
+			}
+		}
+		i++;
 	}
-	else if (strcomp(str, "SO "))
-	{
-		if (store_texture("SO ", str, &info->texture_so_path))
-			return (1);
-	}
-	else if (strcomp(str, "WE "))
-	{
-		if (store_texture("WE ", str, &info->texture_we_path))
-			return (1);
-	}
-	else if (strcomp(str, "EA "))
-	{
-		if (store_texture("EA ", str, &info->texture_ea_path))
-			return (1);
-	}
-	return (0);
+	if (info->success < 4)
+		return (0);
+	return (1);
 }
 
 int	set_values_to_map(t_gen_info *info, char **str, int *y)

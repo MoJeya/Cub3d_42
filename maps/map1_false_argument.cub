@@ -1,7 +1,7 @@
   NO ./textures/semi_crafted_stone_wall.xpm
 SO ./textures/league_wall.xpm
-E ./textures/dirt_stone.xpm
-EA ./textures/stone_wall.xpm
+E ./textures/dirt_st
+EA ./textures/stone_w
 
 F 220,100,0
 C 225,30,0

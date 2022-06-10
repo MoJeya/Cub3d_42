@@ -1,37 +1,50 @@
 #include "../cub3d.h"
 
-bool	file_name_handler(char *path_to_file)
+bool	file_name_handler(char *pfile)
 {
-	char	*filename;
+	char	*fname;
 	int		i;
 	int		p;
 
 	i = 0;
 	p = 0;
-	filename = NULL;
-	if (path_to_file != NULL)
+	fname = NULL;
+	fname = ft_strdup(ft_strnstr(pfile, "maps/", ft_strlen("map/") + 1)
+			+ ft_strlen("map/") + 1);
+	while (fname[i] != '\0' && pfile != NULL)
 	{
-		filename = ft_strdup(ft_strnstr(path_to_file,
-					"maps/", ft_strlen("map/") + 1) + ft_strlen("map/") + 1);
-		if (filename[0] == '.')
+		if (fname[0] == '.')
 		{
-			free(filename);
+			free(fname);
 			return (false);
 		}
-		while (filename[i] != '\0')
-		{
-			if (filename[i] == '.')
-				p++;
-			if (p > 1)
-			{
-				free(filename);
-				return (false);
-			}
-			i++;
-		}
-		free(filename);
-		return (true);
+		if (fname[i] == '.')
+			p++;
+		i++;
 	}
-	free(filename);
+	free(fname);
+	if (p == 1)
+		return (true);
 	return (false);
+}
+
+char	*set_texture(char *str, const char *dir)
+{
+	int		i;
+	int		j;
+	char	*tmp;
+
+	i = 0;
+	j = 0;
+	tmp = NULL;
+	while (!ft_strchr(dir, str[i]))
+		i++;
+	tmp = ft_strdup(str + i);
+	while (tmp[j] != '\0')
+	{
+		if (tmp[j] == '.')
+			return (&tmp[j]);
+		j++;
+	}
+	return (NULL);
 }

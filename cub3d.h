@@ -6,7 +6,7 @@
 /*   By: mjeyavat <mjeyavat@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/03 18:29:42 by rschleic          #+#    #+#             */
-/*   Updated: 2022/06/08 20:33:41 by mjeyavat         ###   ########.fr       */
+/*   Updated: 2022/06/10 22:08:33 by mjeyavat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -121,6 +121,8 @@ typedef struct s_gen_info
 	char				**info_string;
 	int					mouse_x;
 	int					mouse_y;
+	bool				mini_mp;
+	int					success;
 }t_gen_info;
 
 /********************PARSER***************************/
@@ -128,7 +130,7 @@ int		parse_data_info(t_gen_info *info);
 int		init_map(t_gen_info *info, char **str);
 int		set_values_to_map(t_gen_info *info, char **str, int *y);
 int		get_max_len(char **str, t_gen_info *info);
-int		init_text_struct(char *str, t_gen_info *info);
+int		init_text_struct(char **str, t_gen_info *info, int i);
 int		parse_color_settings(char *str, t_gen_info *info);
 int		map_parse_condition(t_gen_info *info, int i);
 
@@ -186,6 +188,9 @@ void	dda_calc(t_gen_info *info, int map_pos_x, int map_pos_y);
 void	set_step(t_gen_info *info, int map_pos_x, int map_pos_y);
 void	init_raycast_info(t_gen_info *info);
 
-bool	file_name_handler(char *path_to_file);
+bool	file_name_handler(char *pfile);
+char	*set_texture(char *str, const char *dir);
 int		t_b_check(char **info_str, t_gen_info *info);
+int		side_len_check(char **info_str);
+void	set_success(t_gen_info *info);
 #endif
