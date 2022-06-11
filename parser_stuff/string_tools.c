@@ -6,7 +6,7 @@
 /*   By: mjeyavat <mjeyavat@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/03 18:30:59 by rschleic          #+#    #+#             */
-/*   Updated: 2022/06/10 23:10:06 by mjeyavat         ###   ########.fr       */
+/*   Updated: 2022/06/11 15:55:02 by mjeyavat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,8 @@ int	strcomp(char *str1, const char *str2)
 	i2 = 0;
 	while (str1[index] == ' ')
 		index++;
-	printf("str1: %s\n", &str1[index]);
+	// printf("str1: %s\n", &str1[index]);
+	// printf("str1: %s\n", str1);
 	if (!ft_strncmp(&str1[index], str2, 3))
 		return (1);
 	return (0);

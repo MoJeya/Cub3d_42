@@ -6,7 +6,7 @@
 /*   By: mjeyavat <mjeyavat@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/03 18:29:42 by rschleic          #+#    #+#             */
-/*   Updated: 2022/06/10 22:08:33 by mjeyavat         ###   ########.fr       */
+/*   Updated: 2022/06/11 15:12:19 by mjeyavat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -123,6 +123,7 @@ typedef struct s_gen_info
 	int					mouse_y;
 	bool				mini_mp;
 	int					success;
+	bool				check[4];
 }t_gen_info;
 
 /********************PARSER***************************/
