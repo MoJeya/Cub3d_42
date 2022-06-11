@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mjeyavat <mjeyavat@student.42.fr>          +#+  +:+       +#+        */
+/*   By: rschleic <rschleic@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/03 17:54:23 by rschleic          #+#    #+#             */
-/*   Updated: 2022/06/11 15:46:21 by mjeyavat         ###   ########.fr       */
+/*   Updated: 2022/06/11 19:02:16 by rschleic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,8 @@ void	set_startval(int x, t_gen_info *info)
 	info->raycast.camera_x = (double)(2 * x) / (double)SCREEN_W - 1;
 	info->raycast.dir.x = info->player.dir.x + view.x;
 	info->raycast.dir.y = info->player.dir.y + view.y;
+	info->frame.movment_speed = 0.05;
+	info->frame.rotation_speed = 0.05;
 }
 
 int	main(int argc, char *argv[])
@@ -32,9 +34,11 @@ int	main(int argc, char *argv[])
 	init_genaral_info(&info);
 	if (init_data_info(&info, argv, argc))
 	{
-		get_textures(&info);
-		init_raycast_info(&info);
-		create_window(&info);
+		if (get_textures(&info))
+		{
+			init_raycast_info(&info);
+			create_window(&info);
+		}
 	}
 	else
 	{
