@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   parser.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mjeyavat <mjeyavat@student.42.fr>          +#+  +:+       +#+        */
+/*   By: rschleic <rschleic@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/03 18:30:43 by rschleic          #+#    #+#             */
-/*   Updated: 2022/06/10 23:16:35 by mjeyavat         ###   ########.fr       */
+/*   Updated: 2022/06/11 13:06:28 by rschleic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,6 +50,7 @@ int	store_texture(char *x, char *str, char **direction)
 	tmp = *direction;
 	free (*direction);
 	*direction = ft_strtrim(tmp, "\n");
+	printf("direction	%s\n", *direction);
 	if (!direction)
 		return (0);
 	return (1);
@@ -75,7 +76,7 @@ int	init_text_struct(char **str, t_gen_info *info, int i)
 					check[0] = true;
 					info->success++;
 				}
-			}
+			}	
 		}
 		else if (check[1] == false)
 		{
@@ -86,7 +87,7 @@ int	init_text_struct(char **str, t_gen_info *info, int i)
 					check[1] = true;
 					info->success++;
 				}
-			}
+			} 
 		}
 		else if (check[2] == false)
 		{

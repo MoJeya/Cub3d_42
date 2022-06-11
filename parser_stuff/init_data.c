@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   init_data.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mjeyavat <mjeyavat@student.42.fr>          +#+  +:+       +#+        */
+/*   By: rschleic <rschleic@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/03 18:30:36 by rschleic          #+#    #+#             */
-/*   Updated: 2022/06/10 23:12:18 by mjeyavat         ###   ########.fr       */
+/*   Updated: 2022/06/11 13:07:55 by rschleic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,9 +33,16 @@ int	parse_data_info(t_gen_info *info)
 	while (info->info_string[i][0] != '\0')
 	{
 		if (ft_strchr(" NOSEW", info->info_string[i][0]))
+		//warum das O??
 		{
 			if (init_text_struct(&info->info_string[i], info, i) == 0)
-				error_free_exit("ERROR\nmalloc", info, TEXTURE_PATH);
+			{
+				info->texture_no_path = NULL;
+				info->texture_so_path = NULL;
+				info->texture_we_path = NULL;
+				info->texture_ea_path = NULL;
+				error_free_exit("ERROR\ntexture path", info, TEXTURE_PATH);
+			}
 			else
 				break;
 		}
@@ -88,6 +95,7 @@ void	open_cub_fd(t_gen_info *info, int argc, char *argv[])
 			if (info->fd == -1)
 				error_exit("Error\nfiledescriptor", info);
 			free(info->path);
+			//ist hier n double free??
 		}
 		else
 			error_exit("Error\nfile extension is wrong!\n", info);
@@ -95,6 +103,7 @@ void	open_cub_fd(t_gen_info *info, int argc, char *argv[])
 	else if (argc == 2 && !check_file_format(argv[1]))
 		error_exit("Error\nfile extension is wrong!\n", info);
 }
+//aber es enstehen auf jeden fall oepn file descriptors?!
 
 int	count_y(int tmp)
 {
