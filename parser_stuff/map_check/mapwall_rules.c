@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   mapwall_rules.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rschleic <rschleic@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mjeyavat <mjeyavat@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/11 14:49:58 by rschleic          #+#    #+#             */
-/*   Updated: 2022/06/11 14:50:01 by rschleic         ###   ########.fr       */
+/*   Updated: 2022/06/11 21:09:57 by mjeyavat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,19 +61,18 @@ int	check_if_open(char *str_check, char *str_top, char *str_bottom)
 	int	i;
 
 	i = 0;
-	printf("success always!\n");
 	while (str_check[i] != '\0')
 	{
 		if (str_check[i] == '0')
 		{
 			if (str_top[i] == ' ')
 			{
-				printf("failed!\n");
+				// printf("failed!\n");
 				return (0);
 			}
 			else if (str_bottom[i] == ' ')
 			{
-				printf("failed!\n");
+				// printf("failed!\n");
 				return (0);
 			}
 		}
@@ -91,6 +90,7 @@ int	side_len_check(char **info_str)
 	{
 		if (info_str[i + 1] != NULL)
 		{	
+			
 			if (check_if_open(info_str[i],
 					info_str[i - 1], info_str[i + 1]) == 0)
 			{

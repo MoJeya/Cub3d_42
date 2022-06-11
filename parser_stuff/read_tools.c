@@ -6,7 +6,7 @@
 /*   By: mjeyavat <mjeyavat@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/03 18:30:48 by rschleic          #+#    #+#             */
-/*   Updated: 2022/06/07 20:15:55 by mjeyavat         ###   ########.fr       */
+/*   Updated: 2022/06/11 21:11:13 by mjeyavat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,7 +81,10 @@ int	map_base_player_check(t_gen_info *info)
 		i++;
 	}
 	if (player_cnt == 1 && right_type == true)
+	{
 		return (1);
+	}
+	printf("works!\n");
 	return (0);
 }
 
