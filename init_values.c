@@ -6,28 +6,27 @@
 /*   By: rschleic <rschleic@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/11 15:19:03 by rschleic          #+#    #+#             */
-/*   Updated: 2022/06/11 15:19:12 by rschleic         ###   ########.fr       */
+/*   Updated: 2022/06/11 19:04:11 by rschleic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3d.h"
 
-void	get_textures(t_gen_info *info)
+int	get_textures(t_gen_info *info)
 {
 	int	i;
 
 	i = 0;
-	// printf("path no: %s\n", info->texture_no_path);
-	// printf("path so: %s\n", info->texture_so_path);
-	// printf("path we: %s\n", info->texture_we_path);
-	printf("path ea: %s\n", info->texture_ea_path);
 	info->xpm[0] = mlx_load_xpm42(info->texture_no_path);
 	info->xpm[1] = mlx_load_xpm42(info->texture_so_path);
 	info->xpm[2] = mlx_load_xpm42(info->texture_we_path);
 	info->xpm[3] = mlx_load_xpm42(info->texture_ea_path);
+	if (!info->xpm[0] || !info->xpm[1] || !info->xpm[2] || !info->xpm[3])
+		return (0);
 	info->m_wall = mlx_load_png("./minimap/img/dungeon.png");
 	info->player_img = mlx_load_png("./minimap/img/person.png");
 	info->back_g = mlx_load_png("./minimap/img/playground.png");
+	return (1);
 }
 
 void	init_genaral_info(t_gen_info *info)
@@ -52,8 +51,6 @@ void	init_genaral_info(t_gen_info *info)
 	info->frame.old_time = 0;
 	info->frame.frame_time = 0;
 	info->side = 0;
-	info->frame.movment_speed = 0.05;
-	info->frame.rotation_speed = 0.05;
 	info->success = 0;
 	info->check[0] = false;
 	info->check[1] = false;
