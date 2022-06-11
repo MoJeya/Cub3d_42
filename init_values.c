@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   init_values.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rschleic <rschleic@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mjeyavat <mjeyavat@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/11 15:19:03 by rschleic          #+#    #+#             */
-/*   Updated: 2022/06/11 15:19:12 by rschleic         ###   ########.fr       */
+/*   Updated: 2022/06/11 19:01:03 by mjeyavat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,10 +17,6 @@ void	get_textures(t_gen_info *info)
 	int	i;
 
 	i = 0;
-	// printf("path no: %s\n", info->texture_no_path);
-	// printf("path so: %s\n", info->texture_so_path);
-	// printf("path we: %s\n", info->texture_we_path);
-	printf("path ea: %s\n", info->texture_ea_path);
 	info->xpm[0] = mlx_load_xpm42(info->texture_no_path);
 	info->xpm[1] = mlx_load_xpm42(info->texture_so_path);
 	info->xpm[2] = mlx_load_xpm42(info->texture_we_path);

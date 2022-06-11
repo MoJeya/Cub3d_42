@@ -6,7 +6,7 @@
 /*   By: mjeyavat <mjeyavat@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/03 18:30:36 by rschleic          #+#    #+#             */
-/*   Updated: 2022/06/11 17:18:30 by mjeyavat         ###   ########.fr       */
+/*   Updated: 2022/06/11 19:03:32 by mjeyavat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,12 +32,10 @@ int	parse_data_info(t_gen_info *info)
 	i = 0;
 	j = 0;
 	mapper = false;
-	// printf("i: %d\n", i);
 	while (info->info_string[i][0] != '\0')
 	{
 		if (ft_strchr(" NOSEW", info->info_string[i][0]))
 		{
-			// printf("str[%d]:\t%s\n", i, info->info_string[i]);
 			if (init_text_struct(&info->info_string[i-1], info, i-1) == 0)
 			{
 				info->texture_no_path = NULL;
@@ -97,7 +95,6 @@ void	open_cub_fd(t_gen_info *info, int argc, char *argv[])
 			if (info->fd == -1)
 				error_exit("Error\nfiledescriptor", info);
 			free(info->path);
-			//ist hier n double free??
 		}
 		else
 			error_exit("Error\nfile extension is wrong!\n", info);
