@@ -3,11 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   init_data.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rschleic <rschleic@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mjeyavat <mjeyavat@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/03 18:30:36 by rschleic          #+#    #+#             */
-/*   Updated: 2022/06/11 19:03:32 by mjeyavat         ###   ########.fr       */
-/*   Updated: 2022/06/11 18:55:05 by rschleic         ###   ########.fr       */
+/*   Updated: 2022/06/11 20:30:05 by mjeyavat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,8 +25,9 @@ int	init_map(t_gen_info *info, char **str)
 
 int	parse_data_info(t_gen_info *info)
 {
-	int	i;
-	int	j;
+	int		i;
+	int		j;
+	bool	mapper;
 
 	i = 0;
 	j = 0;
@@ -36,7 +36,7 @@ int	parse_data_info(t_gen_info *info)
 	{
 		if (ft_strchr(" NOSEW", info->info_string[i][0]))
 		{
-			if (init_text_struct(&info->info_string[i-1], info, i-1) == 0)
+			if (init_text_struct(&info->info_string[i - 1], info, i-1) == 0)
 			{
 				info->texture_no_path = NULL;
 				info->texture_so_path = NULL;
@@ -45,12 +45,12 @@ int	parse_data_info(t_gen_info *info)
 				error_free_exit("ERROR\ntexture path", info, TEXTURE_PATH);
 			}
 			else
-				break;
+				break ;
 		}
 		i++;
 	}
-	printf("i: %d\n", i);
 	i = 0;
+	printf("i: %d\n", i);
 	while (info->info_string[i][0] != '\0')
 	{
 		if (!parse_color_settings(info->info_string[i], info))
@@ -62,7 +62,8 @@ int	parse_data_info(t_gen_info *info)
 				info->map_x = get_max_len(&info->info_string[i], info);
 				if (t_b_check(&info->info_string[i], info) == 0)
 					break ;
-			}		
+				mapper = true;
+			}	
 			else
 				break ;
 			init_map(info, &info->info_string[i]);
@@ -72,8 +73,11 @@ int	parse_data_info(t_gen_info *info)
 	}
 	if (!info->floor.set || !info->ceiling.set)
 		error_free_exit("ERROR\ncolor setting is missing", info, INFO_MAP);
-	if (map_base_player_check(info))
-		return (1);
+	if (mapper == true)
+	{
+		if (map_base_player_check(info))
+			return (1);	
+	}
 	info->map = NULL;
 	error_free_exit("\033[31mMAP IS NOT VALID\033[0m", info, INFO_MAP);
 	return (0);
