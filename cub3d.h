@@ -6,6 +6,7 @@
 /*   By: rschleic <rschleic@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/03 18:29:42 by rschleic          #+#    #+#             */
+/*   Updated: 2022/06/11 18:57:23 by mjeyavat         ###   ########.fr       */
 /*   Updated: 2022/06/11 18:10:54 by rschleic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
@@ -187,10 +188,12 @@ void	set_line_height(t_gen_info *info);
 void	dda_calc(t_gen_info *info, int map_pos_x, int map_pos_y);
 void	set_step(t_gen_info *info, int map_pos_x, int map_pos_y);
 void	init_raycast_info(t_gen_info *info);
-
+int		store_texture(char *x, char *str, char **direction);
 bool	file_name_handler(char *pfile);
 char	*set_texture(char *str, const char *dir);
 int		t_b_check(char **info_str, t_gen_info *info);
 int		side_len_check(char **info_str);
 void	set_success(t_gen_info *info);
+void	set_no_so(t_gen_info *info, char **str, int i);
+void	set_we_ea(t_gen_info *info, char **str, int i);
 #endif
