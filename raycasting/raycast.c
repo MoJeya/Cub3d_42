@@ -6,7 +6,7 @@
 /*   By: rschleic <rschleic@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/07 18:34:11 by mjeyavat          #+#    #+#             */
-/*   Updated: 2022/06/11 15:18:29 by rschleic         ###   ########.fr       */
+/*   Updated: 2022/06/11 19:01:07 by rschleic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -95,6 +95,7 @@ void	render_wrld(void *param)
 	info = param;
 	x = 0;
 	y = 0;
+	
 	while (x++ < SCREEN_W)
 	{
 		set_startval(x, info);

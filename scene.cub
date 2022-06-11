@@ -3,8 +3,12 @@ NO ./textures/NO.xpm42
 WE ./textures/WE.xpm42
 SO ./textures/SO.xpm42
 
+
 C 125,155,200
 F 60,255,100
+
+NO ./textures/NO.xpm42
+
 
         1111111111111111111111111
         1000000000110000000000001

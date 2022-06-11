@@ -3,10 +3,11 @@
 /*                                                        :::      ::::::::   */
 /*   cub3d.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mjeyavat <mjeyavat@student.42.fr>          +#+  +:+       +#+        */
+/*   By: rschleic <rschleic@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/03 18:29:42 by rschleic          #+#    #+#             */
 /*   Updated: 2022/06/11 18:57:23 by mjeyavat         ###   ########.fr       */
+/*   Updated: 2022/06/11 18:10:54 by rschleic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -152,7 +153,6 @@ int		map_base_player_check(t_gen_info *info);
 int		check_file_format(char *path);
 int		init_data_info(t_gen_info *info, char *argv[], int argc);
 void	set_direction_player(t_gen_info *info);
-void	get_textures(t_gen_info *info);
 // void player_dir_init(t_gen_info *info);
 
 /*****************ERROR****************************/
@@ -165,7 +165,7 @@ int		d_len_str(char **str);
 void	split_free(char	***tmp, char ***tmp2, t_gen_info **info, char *str);
 void	free_str(char **str);
 int		create_trgb(int t, int r, int g, int b);
-void	get_textures(t_gen_info *info);
+int		get_textures(t_gen_info *info);
 void	init_genaral_info(t_gen_info *info);
 
 /****************3D************************************/
