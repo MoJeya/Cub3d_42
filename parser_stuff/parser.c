@@ -6,7 +6,7 @@
 /*   By: mjeyavat <mjeyavat@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/03 18:30:43 by rschleic          #+#    #+#             */
-/*   Updated: 2022/06/11 19:02:35 by mjeyavat         ###   ########.fr       */
+/*   Updated: 2022/06/11 20:13:23 by mjeyavat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,14 +59,15 @@ int	init_text_struct(char **str, t_gen_info *info, int i)
 {
 	while (str[i] != NULL)
 	{
-		printf("%s\n", str[i]);
 		set_no_so(info, str, i);
 		set_we_ea(info, str, i);
-		if (info->success == 4)
-			return (1);
+		if (info->success > 4)
+			return (0);
 		i++;
 	}
-	return (0);
+	if (info->success < 4)
+		return (0);
+	return (1);
 }
 
 int	set_values_to_map(t_gen_info *info, char **str, int *y)

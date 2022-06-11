@@ -3,13 +3,13 @@
 /*                                                        :::      ::::::::   */
 /*   cub3d.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rschleic <rschleic@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mjeyavat <mjeyavat@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/03 18:29:42 by rschleic          #+#    #+#             */
-/*   Updated: 2022/06/11 18:57:23 by mjeyavat         ###   ########.fr       */
-/*   Updated: 2022/06/11 18:10:54 by rschleic         ###   ########.fr       */
+/*   Updated: 2022/06/11 20:14:34 by mjeyavat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 
 #ifndef CUB3D_H
 # define CUB3D_H
