@@ -50,14 +50,21 @@ int	check_if_open(char *str_check, char *str_top, char *str_bottom)
 	int	i;
 
 	i = 0;
+	printf("success always!\n");
 	while (str_check[i] != '\0')
 	{
 		if (str_check[i] == '0')
 		{
 			if (str_top[i] == ' ')
+			{
+				printf("failed!\n");
 				return (0);
+			}
 			else if (str_bottom[i] == ' ')
+			{
+				printf("failed!\n");
 				return (0);
+			}
 		}
 		i++;
 	}
@@ -72,10 +79,13 @@ int	side_len_check(char **info_str)
 	while (info_str[i] != NULL)
 	{
 		if (info_str[i + 1] != NULL)
-		{
+		{	
 			if (check_if_open(info_str[i],
 					info_str[i - 1], info_str[i + 1]) == 0)
+			{
+				printf("not so success!\n");
 				return (0);
+			}
 		}
 		i++;
 	}

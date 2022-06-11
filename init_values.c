@@ -5,6 +5,10 @@ void	get_textures(t_gen_info *info)
 	int	i;
 
 	i = 0;
+	// printf("path no: %s\n", info->texture_no_path);
+	// printf("path so: %s\n", info->texture_so_path);
+	// printf("path we: %s\n", info->texture_we_path);
+	printf("path ea: %s\n", info->texture_ea_path);
 	info->xpm[0] = mlx_load_xpm42(info->texture_no_path);
 	info->xpm[1] = mlx_load_xpm42(info->texture_so_path);
 	info->xpm[2] = mlx_load_xpm42(info->texture_we_path);
@@ -39,6 +43,10 @@ void	init_genaral_info(t_gen_info *info)
 	info->frame.movment_speed = 0.05;
 	info->frame.rotation_speed = 0.05;
 	info->success = 0;
+	info->check[0] = false;
+	info->check[1] = false;
+	info->check[2] = false;
+	info->check[3] = false;
 }
 
 static void	player_north_view(t_gen_info *info)

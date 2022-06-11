@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   parser.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rschleic <rschleic@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mjeyavat <mjeyavat@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/03 18:30:43 by rschleic          #+#    #+#             */
-/*   Updated: 2022/06/11 13:06:28 by rschleic         ###   ########.fr       */
+/*   Updated: 2022/06/11 17:20:47 by mjeyavat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,18 +27,21 @@ int	map_parse_condition(t_gen_info *info, int i)
 
 int	parse_color_settings(char *str, t_gen_info *info)
 {
-	if (!ft_strncmp(str, "F ", ft_strlen("F ")))
+	if (ft_strchr(str, 'F'))
 	{
 		if (!split_values(str, info))
 			return (0);
+		// printf("found F\n");
 		return (1);
 	}
-	else if (!ft_strncmp(str, "C ", ft_strlen("C ")))
+	else if (ft_strchr(str, 'C'))
 	{
 		if (!split_values(str, info))
 			return (0);
+		// printf("found C\n");
 		return (1);
 	}
+	// printf("retunrn 1\n");
 	return (1);
 }
 
@@ -50,7 +53,7 @@ int	store_texture(char *x, char *str, char **direction)
 	tmp = *direction;
 	free (*direction);
 	*direction = ft_strtrim(tmp, "\n");
-	printf("direction	%s\n", *direction);
+	// printf("direction	%s\n", *direction);
 	if (!direction)
 		return (0);
 	return (1);
@@ -58,64 +61,69 @@ int	store_texture(char *x, char *str, char **direction)
 
 int	init_text_struct(char **str, t_gen_info *info, int i)
 {
-	bool	check[4];
-
-	check[0] = false;
-	check[1] = false;
-	check[2] = false;
-	check[3] = false;
-	printf("i start\n");
-	while (str[i] != NULL && i < 4)
+	while (str[i] != NULL)
 	{
-		if (check[0] == false)
+		if (info->check[0] == false)
 		{
+			// printf("true? = %d\n",)
 			if (strcomp(str[i], "NO "))
 			{
 				if (store_texture("NO ", str[i], &info->texture_no_path))
 				{
-					check[0] = true;
+					printf("NO was found!\n");
 					info->success++;
+					info->check[0] = true;
 				}
 			}	
 		}
-		else if (check[1] == false)
+		if (info->check[1] == false)
 		{
 			if (strcomp(str[i], "SO "))
 			{
 				if (store_texture("SO ", str[i], &info->texture_so_path))
 				{
-					check[1] = true;
+					printf("SO was found!\n");
+					info->check[1] = true;
 					info->success++;
 				}
-			} 
+			}
 		}
-		else if (check[2] == false)
+		if (info->check[2] == false)
 		{
 			if (strcomp(str[i], "WE "))
 			{
 				if (store_texture("WE ", str[i], &info->texture_we_path))
 				{
-					check[2] = true;
+					printf("WE was found!\n");
+					info->check[2] = true;
 					info->success++;
 				}
 			}
 		}
-		else if (check[3] == false)
+		if (i == 1)
+			printf("ea: %s\n", str[i]);
+		if (info->check[3] == false)
 		{
 			if (strcomp(str[i], "EA "))
 			{
 				if (store_texture("EA ", str[i], &info->texture_ea_path))
 				{
-					check[3] = true;
+					printf("EA was found!\n");
+					info->check[3] = true;
 					info->success++;	
 				}
 			}
 		}
+		if (info->success == 4)
+		{
+			printf("success: %d\n", info->success);
+			return (1);
+		}
+		printf("i: %d\n", i);
 		i++;
 	}
-	if (info->success < 4)
-		return (0);
-	return (1);
+	printf("not success: %d\n", info->success);
+	return (0);
 }
 
 int	set_values_to_map(t_gen_info *info, char **str, int *y)
