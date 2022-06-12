@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mjeyavat <mjeyavat@student.42.fr>          +#+  +:+       +#+        */
+/*   By: rschleic <rschleic@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/03 17:54:23 by rschleic          #+#    #+#             */
-/*   Updated: 2022/06/12 16:20:10 by mjeyavat         ###   ########.fr       */
+/*   Updated: 2022/06/12 17:19:41 by rschleic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ int	main(int argc, char *argv[])
 {
 	t_gen_info	info;
 
-	init_genaral_info(&info);
+	ft_bzero(&info, sizeof(t_gen_info));
 	if (init_data_info(&info, argv, argc))
 	{
 		if (get_textures(&info))
