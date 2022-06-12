@@ -6,6 +6,7 @@
 /*   By: rschleic <rschleic@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/09 12:50:16 by rschleic          #+#    #+#             */
+/*   Updated: 2022/06/12 19:10:05 by mjeyavat         ###   ########.fr       */
 /*   Updated: 2022/06/12 18:40:26 by rschleic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
@@ -48,9 +49,7 @@ void	free_infostring(t_gen_info *info)
 		while (info->info_string[i])
 		{
 			if (info->info_string[i] != NULL)
-			{
 				free(info->info_string[i]);
-			}
 			i++;
 		}
 		free (info->info_string);

@@ -6,7 +6,7 @@
 /*   By: mjeyavat <mjeyavat@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/03 18:30:43 by rschleic          #+#    #+#             */
-/*   Updated: 2022/06/12 16:22:28 by mjeyavat         ###   ########.fr       */
+/*   Updated: 2022/06/12 19:10:49 by mjeyavat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,17 +60,11 @@ int	init_text_struct(char **str, t_gen_info *info, int i)
 		set_no_so(info, str, i);
 		set_we_ea(info, str, i);
 		if (info->success > 4)
-		{
-			printf("1\n");
 			return (0);
-		}
 		i++;
 	}
 	if (info->success < 4)
-	{
-		printf("2\n");
 		return (0);
-	}
 	return (1);
 }
 
