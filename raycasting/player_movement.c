@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   player_movement.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rschleic <rschleic@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mjeyavat <mjeyavat@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/11 14:50:42 by rschleic          #+#    #+#             */
-/*   Updated: 2022/06/11 14:50:43 by rschleic         ###   ########.fr       */
+/*   Updated: 2022/06/12 14:08:49 by mjeyavat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,6 +63,7 @@ void	player_movment(t_gen_info *info)
 	{
 		mlx_delete_image(info->mlx, info->m_img);
 		mlx_close_window(info->mlx);
+		//free everything?
 		return ;
 	}
 	if (mlx_is_key_down(info->mlx, MLX_KEY_LEFT))

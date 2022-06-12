@@ -6,10 +6,10 @@
 /*   By: mjeyavat <mjeyavat@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/11 15:19:03 by rschleic          #+#    #+#             */
-/*   Updated: 2022/06/11 19:01:03 by mjeyavat         ###   ########.fr       */
-/*   Updated: 2022/06/11 19:04:11 by rschleic         ###   ########.fr       */
+/*   Updated: 2022/06/12 14:15:02 by mjeyavat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 
 #include "cub3d.h"
 
@@ -23,7 +23,10 @@ int	get_textures(t_gen_info *info)
 	info->xpm[2] = mlx_load_xpm42(info->texture_we_path);
 	info->xpm[3] = mlx_load_xpm42(info->texture_ea_path);
 	if (!info->xpm[0] || !info->xpm[1] || !info->xpm[2] || !info->xpm[3])
-		return (0);
+	{
+		error_free_exit("ERROR\ntexture path", info, INFO_MAP);
+		// return (0);
+	}
 	info->m_wall = mlx_load_png("./minimap/img/dungeon.png");
 	info->player_img = mlx_load_png("./minimap/img/person.png");
 	info->back_g = mlx_load_png("./minimap/img/playground.png");

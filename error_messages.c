@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   error_messages.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rschleic <rschleic@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mjeyavat <mjeyavat@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/09 12:50:16 by rschleic          #+#    #+#             */
-/*   Updated: 2022/06/11 13:07:09 by rschleic         ###   ########.fr       */
+/*   Updated: 2022/06/12 14:32:10 by mjeyavat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,8 +43,10 @@ void	free_infostring(t_gen_info *info)
 	int	i;
 
 	i = 0;
+
 	if (info->info_string)
 	{
+		printf("i: %d\n", i);
 		while (info->info_string[i])
 		{
 			free(info->info_string[i]);
