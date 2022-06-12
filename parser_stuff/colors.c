@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   colors.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rschleic <rschleic@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mjeyavat <mjeyavat@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/03 18:30:17 by rschleic          #+#    #+#             */
-/*   Updated: 2022/06/04 19:28:11 by rschleic         ###   ########.fr       */
+/*   Updated: 2022/06/12 13:04:19 by mjeyavat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -94,6 +94,7 @@ int	split_values(char *str, t_gen_info *info)
 
 	i = 0;
 	j = 0;
+	printf("SPLIT VALUES==============\nincome str:\t%s\n", str);
 	tmp = ft_split(str, ' ');
 	if (tmp == NULL)
 		error_free_exit("ERROR\nsplit", info, TEXTURE_PATH);
