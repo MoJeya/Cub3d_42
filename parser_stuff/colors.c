@@ -6,7 +6,7 @@
 /*   By: mjeyavat <mjeyavat@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/03 18:30:17 by rschleic          #+#    #+#             */
-/*   Updated: 2022/06/12 16:54:17 by mjeyavat         ###   ########.fr       */
+/*   Updated: 2022/06/12 19:10:36 by mjeyavat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,10 +78,7 @@ void	floor_ceiling(char	***tmp, char ***tmp2, t_gen_info **info)
 	else if (strcomp((*tmp)[0], "C"))
 	{
 		if (d_len_str((*tmp2)) != 3 || d_len_str((*tmp)) != 2)
-		{
-			printf("Hallo\n\n");
 			split_free(tmp, tmp2, info, "ERROR\ncolor format");
-		}
 		if (check_color_val((const char **)(*tmp2)) == 0)
 			split_free(tmp, tmp2, info, "ERROR\ncolor input wrong");
 		set_ceiling_values(info, (*tmp2));
@@ -97,7 +94,6 @@ int	split_values(char *str, t_gen_info *info)
 
 	i = 0;
 	j = 0;
-	printf("SPLIT VALUES==============\nincome str:\t%s\n", str);
 	tmp = ft_split(str, ' ');
 	if (tmp == NULL)
 		error_free_exit("ERROR\nsplit", info, TEXTURE_PATH);
