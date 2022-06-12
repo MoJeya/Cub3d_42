@@ -3,7 +3,6 @@
 
 void	set_no_so(t_gen_info *info, char **str, int i)
 {
-	// printf("in 1 i: %d\nstr:\t%s\n", i, str[i]);
 	if (strcomp(str[i], "NO "))
 	{
 		if (store_texture("NO ", str[i], &info->texture_no_path))
@@ -24,7 +23,6 @@ void	set_no_so(t_gen_info *info, char **str, int i)
 
 void	set_we_ea(t_gen_info *info, char **str, int i)
 {
-	// printf("in 2 i: %d\nstr:\t%s\n", i, str[i]);
 	if (strcomp(str[i], "WE "))
 	{
 		if (store_texture("WE ", str[i], &info->texture_we_path))
@@ -37,7 +35,6 @@ void	set_we_ea(t_gen_info *info, char **str, int i)
 	{
 		if (store_texture("EA ", str[i], &info->texture_ea_path))
 		{
-			printf("%s\n", str[i]);
 			info->success++;
 			info->check[3] = true;
 		}

@@ -6,7 +6,7 @@
 /*   By: mjeyavat <mjeyavat@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/03 18:30:59 by rschleic          #+#    #+#             */
-/*   Updated: 2022/06/11 15:55:02 by mjeyavat         ###   ########.fr       */
+/*   Updated: 2022/06/12 16:58:27 by mjeyavat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,20 @@
 
 void	split_free(char	***tmp, char ***tmp2, t_gen_info **info, char *str)
 {
+	int	i;
+
+	i = 0;
+	while ((*tmp)[i] != NULL)
+	{
+		free((*tmp)[i]);
+		i++;
+	}
+	i = 0;
+	while ((*tmp2)[i] != NULL)
+	{
+		free((*tmp2)[i]);
+		i++;
+	}
 	free((*tmp));
 	free((*tmp2));
 	error_free_exit(str, (*info), TEXTURE_PATH);

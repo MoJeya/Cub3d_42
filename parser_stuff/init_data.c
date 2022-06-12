@@ -6,7 +6,7 @@
 /*   By: mjeyavat <mjeyavat@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/03 18:30:36 by rschleic          #+#    #+#             */
-/*   Updated: 2022/06/12 13:14:15 by mjeyavat         ###   ########.fr       */
+/*   Updated: 2022/06/12 16:27:24 by mjeyavat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,10 +38,7 @@ int	parse_data_info(t_gen_info *info)
 		{
 			if (init_text_struct(&info->info_string[i]-i, info, i) == 0)
 			{
-				info->texture_no_path = NULL;
-				info->texture_so_path = NULL;
-				info->texture_we_path = NULL;
-				info->texture_ea_path = NULL;
+				printf("XXX\n");
 				error_free_exit("ERROR\ntexture path", info, TEXTURE_PATH);
 			}
 			else
