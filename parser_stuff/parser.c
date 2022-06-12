@@ -6,7 +6,7 @@
 /*   By: mjeyavat <mjeyavat@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/03 18:30:43 by rschleic          #+#    #+#             */
-/*   Updated: 2022/06/11 20:13:23 by mjeyavat         ###   ########.fr       */
+/*   Updated: 2022/06/12 13:06:31 by mjeyavat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,6 +57,7 @@ int	store_texture(char *x, char *str, char **direction)
 
 int	init_text_struct(char **str, t_gen_info *info, int i)
 {
+	printf("INIT TEXTURE FUNCTION\n");
 	while (str[i] != NULL)
 	{
 		set_no_so(info, str, i);
