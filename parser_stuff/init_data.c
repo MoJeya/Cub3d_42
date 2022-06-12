@@ -6,7 +6,7 @@
 /*   By: mjeyavat <mjeyavat@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/03 18:30:36 by rschleic          #+#    #+#             */
-/*   Updated: 2022/06/12 16:27:24 by mjeyavat         ###   ########.fr       */
+/*   Updated: 2022/06/12 18:14:40 by mjeyavat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,27 +26,10 @@ int	init_map(t_gen_info *info, char **str)
 int	parse_data_info(t_gen_info *info)
 {
 	int		i;
-	int		j;
-	bool	mapper;
 
 	i = 0;
-	j = 0;
-	mapper = false;
-	while (info->info_string[i][0] != '\0')
-	{	
-		if (ft_strchr(" NOSEW", info->info_string[i][0]))
-		{
-			if (init_text_struct(&info->info_string[i]-i, info, i) == 0)
-			{
-				printf("XXX\n");
-				error_free_exit("ERROR\ntexture path", info, TEXTURE_PATH);
-			}
-			else
-				break ;
-		}
-		i++;
-	}
-	i = 0;
+	info->mapper = false;
+	texture_parsing(info);
 	while (info->info_string[i][0] != '\0')
 	{
 		if (!parse_color_settings(info->info_string[i], info))
@@ -55,11 +38,9 @@ int	parse_data_info(t_gen_info *info)
 		{
 			if (side_len_check(&info->info_string[i]) == 1)
 			{
-				info->map_x = get_max_len(&info->info_string[i], info);
-				if (t_b_check(&info->info_string[i], info) == 0)
+				if (top_bottom_valid(info, i, &info->mapper) == 0)
 					break ;
-				mapper = true;
-			}	
+			}		
 			else
 				break ;
 			init_map(info, &info->info_string[i]);
@@ -67,16 +48,7 @@ int	parse_data_info(t_gen_info *info)
 		}
 		i++;
 	}
-	if (!info->floor.set || !info->ceiling.set)
-		error_free_exit("ERROR\ncolor setting is missing", info, INFO_MAP);
-	if (mapper == true)
-	{
-		if (map_base_player_check(info))
-			return (1);
-	}
-	info->map = NULL;
-	error_free_exit("\033[31mMAP IS NOT VALID\033[0m", info, INFO_MAP);
-	return (0);
+	return (mapper_and_color(info, info->mapper));
 }
 
 void	open_cub_fd(t_gen_info *info, int argc, char *argv[])
@@ -103,7 +75,6 @@ void	open_cub_fd(t_gen_info *info, int argc, char *argv[])
 	else if (argc == 2 && !check_file_format(argv[1]))
 		error_exit("Error\nfile extension is wrong!\n", info);
 }
-//aber es enstehen auf jeden fall oepn file descriptors?!
 
 int	count_y(int tmp)
 {
