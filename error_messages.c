@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   error_messages.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mjeyavat <mjeyavat@student.42.fr>          +#+  +:+       +#+        */
+/*   By: rschleic <rschleic@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/09 12:50:16 by rschleic          #+#    #+#             */
-/*   Updated: 2022/06/12 16:44:04 by mjeyavat         ###   ########.fr       */
+/*   Updated: 2022/06/12 18:40:26 by rschleic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,8 +38,6 @@ void	free_map(t_gen_info *info)
 	}
 }
 
-
-
 void	free_infostring(t_gen_info *info)
 {
 	int	i;
@@ -49,10 +47,9 @@ void	free_infostring(t_gen_info *info)
 	{
 		while (info->info_string[i])
 		{
-			// printf("str:\t%s\n", info->info_string[i]);
 			if (info->info_string[i] != NULL)
 			{
-					free(info->info_string[i]);
+				free(info->info_string[i]);
 			}
 			i++;
 		}
@@ -78,13 +75,8 @@ void	error_free_exit(char *str, t_gen_info *info, int state)
 
 	i = 0;
 	close(info->fd);
-	printf("path:%s\npath:%s\npath:%s\npath:%s\ninfo path: %s\n", info->texture_no_path, info->texture_so_path, info->texture_ea_path, info->texture_we_path, info->path);
-	// if (info->path != NULL)
-		// free(info->path);
 	if (state == INFO_STRING)
-	{
 		free_infostring(info);
-	}
 	else if (state == TEXTURE_PATH)
 	{
 		free_texturepath(info);
