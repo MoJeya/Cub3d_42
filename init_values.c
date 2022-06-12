@@ -6,7 +6,7 @@
 /*   By: mjeyavat <mjeyavat@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/11 15:19:03 by rschleic          #+#    #+#             */
-/*   Updated: 2022/06/12 14:15:02 by mjeyavat         ###   ########.fr       */
+/*   Updated: 2022/06/12 16:25:47 by mjeyavat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@ int	get_textures(t_gen_info *info)
 	int	i;
 
 	i = 0;
+	printf("HALLOOO\n\n");
 	info->xpm[0] = mlx_load_xpm42(info->texture_no_path);
 	info->xpm[1] = mlx_load_xpm42(info->texture_so_path);
 	info->xpm[2] = mlx_load_xpm42(info->texture_we_path);
@@ -25,7 +26,6 @@ int	get_textures(t_gen_info *info)
 	if (!info->xpm[0] || !info->xpm[1] || !info->xpm[2] || !info->xpm[3])
 	{
 		error_free_exit("ERROR\ntexture path", info, INFO_MAP);
-		// return (0);
 	}
 	info->m_wall = mlx_load_png("./minimap/img/dungeon.png");
 	info->player_img = mlx_load_png("./minimap/img/person.png");
@@ -60,6 +60,10 @@ void	init_genaral_info(t_gen_info *info)
 	info->check[1] = false;
 	info->check[2] = false;
 	info->check[3] = false;
+	info->texture_no_path = NULL;
+	info->texture_so_path = NULL;
+	info->texture_we_path = NULL;
+	info->texture_ea_path = NULL;
 }
 
 static void	player_north_view(t_gen_info *info)
@@ -68,10 +72,10 @@ static void	player_north_view(t_gen_info *info)
 	info->player.dir.y = -1;
 	info->player.plane.x = -0.66;
 	info->player.plane.y = 0;
-	info->texture_no_path = NULL;
-	info->texture_so_path = NULL;
-	info->texture_we_path = NULL;
-	info->texture_ea_path = NULL;
+	// info->texture_no_path = NULL;
+	// info->texture_so_path = NULL;
+	// info->texture_we_path = NULL;
+	// info->texture_ea_path = NULL;
 }
 
 void	init_raycast_info(t_gen_info *info)

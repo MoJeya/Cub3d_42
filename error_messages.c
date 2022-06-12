@@ -6,7 +6,7 @@
 /*   By: mjeyavat <mjeyavat@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/09 12:50:16 by rschleic          #+#    #+#             */
-/*   Updated: 2022/06/12 14:32:10 by mjeyavat         ###   ########.fr       */
+/*   Updated: 2022/06/12 16:44:04 by mjeyavat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,18 +38,22 @@ void	free_map(t_gen_info *info)
 	}
 }
 
+
+
 void	free_infostring(t_gen_info *info)
 {
 	int	i;
 
 	i = 0;
-
 	if (info->info_string)
 	{
-		printf("i: %d\n", i);
 		while (info->info_string[i])
 		{
-			free(info->info_string[i]);
+			// printf("str:\t%s\n", info->info_string[i]);
+			if (info->info_string[i] != NULL)
+			{
+					free(info->info_string[i]);
+			}
 			i++;
 		}
 		free (info->info_string);
@@ -74,8 +78,9 @@ void	error_free_exit(char *str, t_gen_info *info, int state)
 
 	i = 0;
 	close(info->fd);
-	if (info->path != NULL)
-		free(info->path);
+	printf("path:%s\npath:%s\npath:%s\npath:%s\ninfo path: %s\n", info->texture_no_path, info->texture_so_path, info->texture_ea_path, info->texture_we_path, info->path);
+	// if (info->path != NULL)
+		// free(info->path);
 	if (state == INFO_STRING)
 	{
 		free_infostring(info);
@@ -92,5 +97,6 @@ void	error_free_exit(char *str, t_gen_info *info, int state)
 		free_map(info);
 	}
 	ft_putendl_fd(str, 2);
+	system("leaks cub3d");
 	exit(1);
 }

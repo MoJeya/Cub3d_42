@@ -33,6 +33,7 @@ char	*set_texture(char *str, const char *dir)
 	int		i;
 	int		j;
 	char	*tmp;
+	char	*ret;
 
 	i = 0;
 	j = 0;
@@ -43,7 +44,11 @@ char	*set_texture(char *str, const char *dir)
 	while (tmp[j] != '\0')
 	{
 		if (tmp[j] == '.')
-			return (&tmp[j]);
+		{
+			ret = &tmp[j];
+			free(tmp);
+			return (ret);
+		}
 		j++;
 	}
 	return (NULL);
