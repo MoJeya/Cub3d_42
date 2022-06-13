@@ -6,7 +6,7 @@
 /*   By: mjeyavat <mjeyavat@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/03 17:54:23 by rschleic          #+#    #+#             */
-/*   Updated: 2022/06/13 15:54:54 by mjeyavat         ###   ########.fr       */
+/*   Updated: 2022/06/13 17:28:31 by mjeyavat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,6 @@ int	main(int argc, char *argv[])
 {
 	t_gen_info	info;
 
-	// init_genaral_info(&info);
 	ft_bzero(&info, sizeof(t_gen_info));
 	if (init_data_info(&info, argv, argc))
 	{

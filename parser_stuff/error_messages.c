@@ -6,7 +6,7 @@
 /*   By: mjeyavat <mjeyavat@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/09 12:50:16 by rschleic          #+#    #+#             */
-/*   Updated: 2022/06/13 15:56:51 by mjeyavat         ###   ########.fr       */
+/*   Updated: 2022/06/13 17:28:54 by mjeyavat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,9 +74,7 @@ void	error_free_exit(char *str, t_gen_info *info, int state)
 	i = 0;
 	close(info->fd);
 	if (state == INFO_STRING)
-	{
 		free_infostring(info);
-	}
 	else if (state == TEXTURE_PATH)
 	{
 		free_texturepath(info);
