@@ -2,7 +2,7 @@
 
 ![Main_img](/img/wolfenstein3D01.png)
 
-**CUB3D is a 42 School Project.**
+**CUB3D is a 42Heilbronn School Project.**
 The Goal is to recreate the old-school Wolfenstein game.
 What we learned while doing this Porject is, how to create a raycasting system.
 
@@ -23,6 +23,9 @@ you only can run it with one argument
 ```
 /cub3D <PATH TO X.cub FILE>
 ```
+
+# Screenshot
+![screenshot](/img/ScreenShot.png)
 
 # controls
 <ul>
