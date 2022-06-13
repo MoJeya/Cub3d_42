@@ -6,11 +6,11 @@
 /*   By: mjeyavat <mjeyavat@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/11 14:50:42 by rschleic          #+#    #+#             */
-/*   Updated: 2022/06/12 15:49:31 by mjeyavat         ###   ########.fr       */
+/*   Updated: 2022/06/13 14:51:44 by mjeyavat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../cub3d.h"
+#include "../includes/cub3d.h"
 
 static void	vertical(t_gen_info *info, int p)
 {

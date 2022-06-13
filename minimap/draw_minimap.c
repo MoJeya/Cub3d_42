@@ -6,11 +6,11 @@
 /*   By: mjeyavat <mjeyavat@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/04 17:55:30 by rschleic          #+#    #+#             */
-/*   Updated: 2022/06/07 20:23:53 by mjeyavat         ###   ########.fr       */
+/*   Updated: 2022/06/13 14:50:03 by mjeyavat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../cub3d.h"
+#include "../includes/cub3d.h"
 
 void	draw_minimap(t_gen_info *info)
 {

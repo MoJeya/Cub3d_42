@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   raycast_helper.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rschleic <rschleic@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mjeyavat <mjeyavat@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/11 14:50:52 by rschleic          #+#    #+#             */
-/*   Updated: 2022/06/11 14:50:55 by rschleic         ###   ########.fr       */
+/*   Updated: 2022/06/13 14:51:47 by mjeyavat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../cub3d.h"
+#include "../includes/cub3d.h"
 
 void	set_step(t_gen_info *info, int map_pos_x, int map_pos_y)
 {

@@ -6,11 +6,11 @@
 /*   By: mjeyavat <mjeyavat@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/12 18:36:28 by mjeyavat          #+#    #+#             */
-/*   Updated: 2022/06/12 18:36:30 by mjeyavat         ###   ########.fr       */
+/*   Updated: 2022/06/13 14:51:02 by mjeyavat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../cub3d.h"
+#include "../includes/cub3d.h"
 
 bool	file_name_handler(char *pfile)
 {

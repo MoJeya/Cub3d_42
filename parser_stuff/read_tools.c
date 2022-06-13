@@ -6,11 +6,11 @@
 /*   By: mjeyavat <mjeyavat@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/03 18:30:48 by rschleic          #+#    #+#             */
-/*   Updated: 2022/06/12 17:13:20 by mjeyavat         ###   ########.fr       */
+/*   Updated: 2022/06/13 14:51:23 by mjeyavat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../cub3d.h"
+#include "../includes/cub3d.h"
 
 int	d_len_str(char **str)
 {

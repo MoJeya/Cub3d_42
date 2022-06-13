@@ -6,11 +6,11 @@
 /*   By: mjeyavat <mjeyavat@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/03 18:30:17 by rschleic          #+#    #+#             */
-/*   Updated: 2022/06/12 19:10:36 by mjeyavat         ###   ########.fr       */
+/*   Updated: 2022/06/13 14:50:54 by mjeyavat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../cub3d.h"
+#include "../includes/cub3d.h"
 
 int	check_color_val(const char **str)
 {

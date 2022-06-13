@@ -3,19 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   cub3d.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rschleic <rschleic@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mjeyavat <mjeyavat@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/03 18:29:42 by rschleic          #+#    #+#             */
-/*   Updated: 2022/06/12 19:13:16 by mjeyavat         ###   ########.fr       */
-/*   Updated: 2022/06/12 17:11:23 by rschleic         ###   ########.fr       */
+/*   Updated: 2022/06/13 17:29:22 by mjeyavat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef CUB3D_H
 # define CUB3D_H
 
-# include "NEW_MLX42/include/MLX42/MLX42.h"
-# include "libft/libft.h"
+# include "./NEW_MLX42/include/MLX42/MLX42.h"
+# include "./libft/libft.h"
 # include <fcntl.h>
 # include <unistd.h>
 # include <stdio.h>
