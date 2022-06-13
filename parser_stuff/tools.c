@@ -6,11 +6,11 @@
 /*   By: mjeyavat <mjeyavat@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/03 17:31:35 by rschleic          #+#    #+#             */
-/*   Updated: 2022/06/10 21:23:31 by mjeyavat         ###   ########.fr       */
+/*   Updated: 2022/06/13 15:46:53 by mjeyavat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "cub3d.h"
+#include "../includes/cub3d.h"
 
 int	create_trgb(int t, int r, int g, int b)
 {

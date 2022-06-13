@@ -6,11 +6,11 @@
 /*   By: mjeyavat <mjeyavat@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/12 18:37:46 by mjeyavat          #+#    #+#             */
-/*   Updated: 2022/06/12 18:37:48 by mjeyavat         ###   ########.fr       */
+/*   Updated: 2022/06/13 14:51:12 by mjeyavat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../cub3d.h"
+#include "../includes/cub3d.h"
 
 int	mapper_and_color(t_gen_info *info, bool mapper)
 {

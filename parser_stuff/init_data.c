@@ -6,11 +6,11 @@
 /*   By: mjeyavat <mjeyavat@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/03 18:30:36 by rschleic          #+#    #+#             */
-/*   Updated: 2022/06/12 18:14:40 by mjeyavat         ###   ########.fr       */
+/*   Updated: 2022/06/13 14:51:08 by mjeyavat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../cub3d.h"
+#include "../includes/cub3d.h"
 
 int	init_map(t_gen_info *info, char **str)
 {
@@ -36,15 +36,18 @@ int	parse_data_info(t_gen_info *info)
 			return (0);
 		if (map_parse_condition(info, i) == 1)
 		{
-			if (side_len_check(&info->info_string[i]) == 1)
+			if (sides_check(&info->info_string[i]) == 0)
 			{
-				if (top_bottom_valid(info, i, &info->mapper) == 0)
+				if (side_len_check(&info->info_string[i]) == 1)
+				{
+					if (top_bottom_valid(info, i, &info->mapper) == 0)
+						break ;
+				}		
+				else
 					break ;
-			}		
-			else
+				init_map(info, &info->info_string[i]);
 				break ;
-			init_map(info, &info->info_string[i]);
-			break ;
+			}
 		}
 		i++;
 	}
@@ -74,6 +77,8 @@ void	open_cub_fd(t_gen_info *info, int argc, char *argv[])
 	}
 	else if (argc == 2 && !check_file_format(argv[1]))
 		error_exit("Error\nfile extension is wrong!\n", info);
+	else if (argc > 2)
+		error_exit("Error\nTo manny arguments!\n", info);
 }
 
 int	count_y(int tmp)

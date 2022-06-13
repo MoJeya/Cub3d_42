@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   calc_movment.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rschleic <rschleic@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mjeyavat <mjeyavat@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/11 14:50:34 by rschleic          #+#    #+#             */
-/*   Updated: 2022/06/11 14:50:35 by rschleic         ###   ########.fr       */
+/*   Updated: 2022/06/13 14:51:36 by mjeyavat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../cub3d.h"
+#include "../includes/cub3d.h"
 
 static double	rot_calc_x(t_gen_info *info)
 {

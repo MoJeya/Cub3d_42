@@ -6,11 +6,11 @@
 /*   By: mjeyavat <mjeyavat@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/11 14:49:58 by rschleic          #+#    #+#             */
-/*   Updated: 2022/06/12 17:58:27 by mjeyavat         ###   ########.fr       */
+/*   Updated: 2022/06/13 14:50:30 by mjeyavat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../cub3d.h"
+#include "../../includes/cub3d.h"
 
 int	t_b_check(char **info_str, t_gen_info *info)
 {
@@ -46,10 +46,12 @@ int	sides_check(char **info_str)
 	x = 0;
 	while (info_str[i] != NULL)
 	{
-		if (info_str[i][0] != '1' && info_str[i][0] != ' ')
+		x = 0;
+		while (info_str[i][x] == ' ')
 			x++;
-		if ((info_str[i][ft_strlen(info_str[i]) - 2] != '1')
-			&& (info_str[i][ft_strlen(info_str[i]) - 2] != ' '))
+		if (info_str[i][x] != '1' && info_str[i][x] != ' ')
+			j++;
+		if ((info_str[i][ft_strlen(info_str[i]) - 2] != '1'))
 			j++;
 		i++;
 	}

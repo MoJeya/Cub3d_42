@@ -6,11 +6,11 @@
 /*   By: mjeyavat <mjeyavat@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/03 18:30:59 by rschleic          #+#    #+#             */
-/*   Updated: 2022/06/12 17:11:38 by mjeyavat         ###   ########.fr       */
+/*   Updated: 2022/06/13 14:51:26 by mjeyavat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../cub3d.h"
+#include "../includes/cub3d.h"
 
 void	split_free(char	***tmp, char ***tmp2, t_gen_info **info, char *str)
 {

@@ -6,11 +6,11 @@
 /*   By: mjeyavat <mjeyavat@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/09 12:50:16 by rschleic          #+#    #+#             */
-/*   Updated: 2022/06/12 19:10:05 by mjeyavat         ###   ########.fr       */
+/*   Updated: 2022/06/13 15:56:51 by mjeyavat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "cub3d.h"
+#include "../includes/cub3d.h"
 
 void	error_exit(char *str, t_gen_info *info)
 {
@@ -89,6 +89,5 @@ void	error_free_exit(char *str, t_gen_info *info, int state)
 		free_map(info);
 	}
 	ft_putendl_fd(str, 2);
-	system("leaks cub3d");
 	exit(1);
 }

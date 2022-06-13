@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: rschleic <rschleic@student.42.fr>          +#+  +:+       +#+         #
+#    By: mjeyavat <mjeyavat@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/07/08 20:37:33 by rschleic          #+#    #+#              #
-#    Updated: 2022/01/18 21:30:13 by rschleic         ###   ########.fr        #
+#    Updated: 2022/06/13 14:43:54 by mjeyavat         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,7 +25,7 @@ all: $(NAME)
 
 $(OBJ_DIR)%.o : %.c
 	mkdir -p $$(dirname $@)
-	$(CC) $(CFLAGS) -c $< -o $@
+	@$(CC) $(CFLAGS) -c $< -o $@
 
 $(NAME): $(OBJ)
 	ar -crs $(NAME) $(OBJ)

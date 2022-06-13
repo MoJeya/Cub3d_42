@@ -6,11 +6,11 @@
 /*   By: mjeyavat <mjeyavat@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/02 14:42:57 by mjeyavat          #+#    #+#             */
-/*   Updated: 2022/06/11 20:46:54 by mjeyavat         ###   ########.fr       */
+/*   Updated: 2022/06/13 15:46:57 by mjeyavat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "cub3d.h"
+#include "../includes/cub3d.h"
 
 int32_t	create_window(t_gen_info *info)
 {

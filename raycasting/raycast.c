@@ -6,11 +6,11 @@
 /*   By: mjeyavat <mjeyavat@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/07 18:34:11 by mjeyavat          #+#    #+#             */
-/*   Updated: 2022/06/11 20:46:24 by mjeyavat         ###   ########.fr       */
+/*   Updated: 2022/06/13 14:51:52 by mjeyavat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../cub3d.h"
+#include "../includes/cub3d.h"
 
 static double	find_wall_x(t_gen_info *info)
 {
